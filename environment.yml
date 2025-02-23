@@ -9,6 +9,9 @@ dependencies:
   - pandas
   - pydash
   - tqdm
+  - environs
+  - accelerate
+  - bitsandbytes
   - pytorch-gpu
   - lightning
   - transformers
