@@ -1,0 +1,14 @@
+name: data-extraction
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - altair
+  - jupyterlab
+  - numpy
+  - pandas
+  - pydash
+  - tqdm
+  - pytorch-gpu
+  - lightning
+  - transformers
