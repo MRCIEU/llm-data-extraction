@@ -148,4 +148,3 @@ print(json.dumps(fulldata, indent=4))
 out_file = output_path / "mr_extract_llama3_sample_0.json"
 with out_file.open("w") as f:
     json.dump(fulldata, f, indent=4)
-out_file.close()
