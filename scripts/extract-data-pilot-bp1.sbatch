@@ -9,6 +9,8 @@
 #SBATCH --mem=14G
 #SBATCH --account=SSCM013902
 
+echo $(date)
+
 cd "${SLURM_SUBMIT_DIR}"
 echo $(pwd)
 echo $(hostname)
@@ -16,3 +18,5 @@ echo $(hostname)
 scontrol write batch_script "${SLURM_JOB_ID}" "${SLURM_SUBMIT_DIR}"/slurm-script-"${SLURM_JOB_ID}".out
 
 micromamba run -n data-extraction python scripts/extract-data-pilot.py
+
+echo $(date)

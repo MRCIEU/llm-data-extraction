@@ -10,9 +10,10 @@ dependencies:
   - pydash
   - tqdm
   - environs
-  - accelerate
-  - bitsandbytes
-  - pytorch-gpu
-  - lightning
-  - transformers
   - cudatoolkit
+  - pip:
+    - bitsandbytes
+    - torch
+    - accelerate
+    - lightning
+    - transformers

@@ -8,12 +8,14 @@
 #SBATCH --gpus=1
 #SBATCH --mem=14G
 
+echo $(date)
+
 cd "${SLURM_SUBMIT_DIR}"
 echo $(pwd)
 echo $(hostname)
 
-out_log="${SLURM_SUBMIT_DIR}"/slurm-script-"${SLURM_JOB_ID}".out
-scontrol write batch_script "${SLURM_JOB_ID}" ${out_log}
+scontrol write batch_script "${SLURM_JOB_ID}" "${SLURM_SUBMIT_DIR}"/slurm-script-"${SLURM_JOB_ID}".out
 
-# TODO: update and remove "-test"
-micromamba run -n data-extraction-test python scripts/extract-data-pilot.py
+micromamba run -n data-extraction python scripts/extract-data-pilot.py
+
+echo $(date)
