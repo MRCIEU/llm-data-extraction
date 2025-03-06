@@ -10,10 +10,10 @@ dependencies:
   - pydash
   - tqdm
   - environs
-  - cudatoolkit
+  - pytorch-gpu
   - pip:
+    - transformers
+    - optimum
     - optimum-quanto
-    - torch
     - accelerate
     - lightning
-    - transformers
