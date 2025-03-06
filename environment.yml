@@ -12,7 +12,7 @@ dependencies:
   - environs
   - cudatoolkit
   - pip:
-    - bitsandbytes
+    - optimum-quanto
     - torch
     - accelerate
     - lightning
