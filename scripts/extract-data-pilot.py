@@ -4,8 +4,7 @@ import json
 import torch
 from environs import env
 
-# from transformers import AutoTokenizer, AutoModelForCausalLM, QuantoConfig
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 
 from local_funcs import prompts
 
@@ -33,13 +32,15 @@ print("Loaded abstracts")
 
 # Set up quantized model
 tokenizer = AutoTokenizer.from_pretrained(model_id, token=access_token)
-# quantization_config = QuantoConfig(weights="int4")
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+)
 model = AutoModelForCausalLM.from_pretrained(
     model_id,
     torch_dtype=dtype,
     device_map=device,
     token=access_token,
-    # load_in_8bit=True,
+    quantization_config=bnb_config,
 )
 print("Loaded model")
 
@@ -106,7 +107,7 @@ for abstract in pubmed[startpoint:endpoint]:
                 {
                     "role": "user",
                     "content": f"""
-             This is an abstract from a Mendelian randomization study. 
+             This is an abstract from a Mendelian randomization study.
                 "{abstract["ab"]}"   """,
                 },
                 prompts.metadataexample,
@@ -122,7 +123,7 @@ for abstract in pubmed[startpoint:endpoint]:
                 {
                     "role": "user",
                     "content": f"""
-             This is an abstract from a Mendelian randomization study. 
+             This is an abstract from a Mendelian randomization study.
                 "{abstract["ab"]}"   """,
                 },
                 prompts.resultsexample,
