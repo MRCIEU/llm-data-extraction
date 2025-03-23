@@ -1,3 +1,4 @@
 *.pyc
 *.env
 *.out
+*.ipynb_checkpoints
