@@ -1,0 +1,13 @@
+name: data-extraction-non-gpu
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - altair
+  - jupyterlab
+  - numpy
+  - pandas
+  - pydash
+  - tqdm
+  - environs
+
