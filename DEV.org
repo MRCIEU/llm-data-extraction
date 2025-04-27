@@ -1,5 +1,17 @@
 #+TITLE: Dev info
 
+#+begin_src elisp
+(yxl-org-babel-show-org-toc)
+#+end_src
+
+#+RESULTS:
+:  - Filetree
+:  - Setting up
+:  - Technical information
+:    - upstream data archive
+:    - conda environment
+:    - environment variables
+
 * Filetree
 
 #+begin_src shell :results code
