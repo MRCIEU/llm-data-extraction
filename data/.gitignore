@@ -1,2 +1,5 @@
 /*
-!/.gitignore
+!.gitignore
+!raw
+!intermediate
+!artifacts
