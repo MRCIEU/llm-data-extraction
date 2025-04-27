@@ -9,6 +9,8 @@ upstream:=epi-franklin2:/projects/MRC-IEU/research/projects/ieu3/p3/015/working/
 ## ==== sanity-check ====
 check-health:
 	echo "Data archive upstream: " $(upstream)
+	pip list | grep local_funcs
+	pip list | grep yiutils
 
 ## ==== data ====
 
