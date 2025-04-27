@@ -1,2 +1,2 @@
 [tool.ruff]
-extend-exclude = ["tom-s-code"]
+extend-exclude = ["docs"]
