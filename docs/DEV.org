@@ -15,27 +15,65 @@
 * Filetree
 
 #+begin_src shell :results code
-eza -T
+eza -T ../
 #+end_src
 
 #+RESULTS:
 #+begin_src shell
-.
+..
 ├── data
-├── DEV.org
+│   ├── artifacts
+│   ├── intermediate
+│   └── raw
+│       └── mr-pubmed-abstracts
+│           └── data
+│               ├── 211_universities.txt
+│               ├── 985_universities.txt
+│               ├── countries.csv
+│               ├── countries.xlsx
+│               ├── missing_pmids.txt
+│               ├── nature_index
+│               │   ├── 2016-research-leading-countries.csv
+│               │   ├── 2017-research-leading-countries.csv
+│               │   ├── 2018-research-leading-countries.csv
+│               │   ├── 2019-research-leading-countries.csv
+│               │   ├── 2020-research-leading-countries.csv
+│               │   ├── 2021-research-leading-countries.csv
+│               │   ├── 2022-research-leading-countries.csv
+│               │   ├── 2023-research-leading-countries.csv
+│               │   └── 2024-research-leading-countries.csv
+│               ├── predatory_journals.txt
+│               ├── pubmed.json
+│               ├── pubmed_abstracts.json
+│               ├── pubmed_abstracts2.json
+│               ├── pubmed_abstracts3.json
+│               ├── pubmed_abstracts_new.json
+│               ├── pubmed_authors.json
+│               ├── pubmed_counts
+│               │   ├── PubMed_Timeline_Results_by_Year-3.csv
+│               │   ├── PubMed_Timeline_Results_by_Year-4.csv
+│               │   ├── PubMed_Timeline_Results_by_Year-5.csv
+│               │   ├── PubMed_Timeline_Results_by_Year-6.csv
+│               │   ├── PubMed_Timeline_Results_by_Year-7.csv
+│               │   └── 'PubMed by Year.csv'
+│               ├── pubmed_new.json
+│               └── results.RData
 ├── docs
+│   ├── DEV.org
+│   ├── environment-bp1.yml
+│   ├── environment-non-gpu.yml
+│   ├── environment.yml
 │   ├── tldraw.tldr
 │   └── tom-s-code
 │       ├── extract_data.py
 │       ├── mrextract_array.sh
 │       └── prompts.py
-├── environment-bp1.yml
-├── environment-non-gpu.yml
-├── environment.yml
+├── Makefile
 ├── notebooks
 │   ├── colab-notebooks
 │   │   └── more-models.ipynb
 │   ├── more-models-bp1.ipynb
+│   ├── more-models.ipynb
 │   └── openai
 │       └── api-call.ipynb
 ├── output
@@ -49,43 +87,46 @@ eza -T
 │   ├── extract-data-pilot-bp1.py
 │   ├── extract-data-pilot-bp1.sbatch
 │   ├── extract-data-pilot-isb.sbatch
-│   └── extract-data-pilot.py
-├── setup.py
-├── src
-│   ├── local_funcs
-│   │   ├── __pycache__
-│   │   │   └── prompts.cpython-312.pyc
-│   │   ├── funcs.py
-│   │   └── prompts.py
-│   └── local_funcs.egg-info
-│       ├── dependency_links.txt
-│       ├── PKG-INFO
-│       ├── SOURCES.txt
-│       └── top_level.txt
-└── yiutils
-    ├── DEVEL.md
-    ├── dist
-    │   └── yiutils-0.1.0-py3-none-any.whl
-    ├── environment.yml
-    ├── Makefile
-    ├── poetry.lock
-    ├── pyproject.toml
-    ├── README.md
-    ├── scripts
-    │   └── sanity.py
-    ├── src
-    │   └── yiutils
-    │       ├── __init__.py
-    │       ├── __pycache__
-    │       │   ├── __init__.cpython-312.pyc
-    │       │   └── project_utils.cpython-312.pyc
-    │       ├── failsafe.py
-    │       └── project_utils.py
-    ├── tests
-    │   ├── __init__.py
-    │   ├── test_always_true.py
-    │   └── test_failsafe.py
-    └── TODO.org
+│   ├── extract-data-pilot.py
+│   └── jupyter-isb.sbatch
+└── src
+    ├── local_funcs
+    │   ├── setup.py
+    │   └── src
+    │       ├── local_funcs
+    │       │   ├── __pycache__
+    │       │   │   └── prompts.cpython-312.pyc
+    │       │   ├── funcs.py
+    │       │   └── prompts.py
+    │       └── local_funcs.egg-info
+    │           ├── dependency_links.txt
+    │           ├── PKG-INFO
+    │           ├── SOURCES.txt
+    │           └── top_level.txt
+    └── yiutils
+        ├── DEVEL.md
+        ├── dist
+        │   └── yiutils-0.1.0-py3-none-any.whl
+        ├── environment.yml
+        ├── Makefile
+        ├── poetry.lock
+        ├── pyproject.toml
+        ├── README.md
+        ├── scripts
+        │   └── sanity.py
+        ├── src
+        │   └── yiutils
+        │       ├── __init__.py
+        │       ├── __pycache__
+        │       │   ├── __init__.cpython-312.pyc
+        │       │   └── project_utils.cpython-312.pyc
+        │       ├── failsafe.py
+        │       └── project_utils.py
+        ├── tests
+        │   ├── __init__.py
+        │   ├── test_always_true.py
+        │   └── test_failsafe.py
+        └── TODO.org
 #+end_src
 
 * Setting up
@@ -98,6 +139,8 @@ inside conda env and at root, install local packages
 
 - local_funcs (src/local_funcs/src/local_funcs): python -m pip install -e src/local_funcs
 - yiutils (src/yiutils/src/yiutils): python -m pip install -e src/yiutils
+
+Add .env
 
 * Technical information
 ** upstream data archive
@@ -131,3 +174,7 @@ conda envs
 
 - `HUGGINGFACE_TOKEN`: huggingface token for llama3
 - `OPENAI_API_KEY`: OpenAI API key
+
+* analysis
+
+TODO
