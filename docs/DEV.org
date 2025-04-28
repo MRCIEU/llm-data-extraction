@@ -166,8 +166,8 @@ ssh epi-franklin2 'eza -T -L 3 /projects/MRC-IEU/research/projects/ieu3/p3/015/w
 
 conda envs
 - environment.yml / data-extraction: standard gpu env
-- environment-bp1.yml: bp1 gpu env
-- environment-non-gpu.yml: non gpu env
+- environment-bp1.yml / data-extraction-bp1: bp1 gpu env
+- environment-non-gpu.yml / data-extraction-non-gpu: non gpu env
 
 ** environment variables
 
@@ -182,4 +182,11 @@ Overarching principles:
 - Unless otherwise specified, run things at repo root
 
 Key logics
-TODO
+
+- isb
+  - scripts/isb/extract-data-pilot.sbatch: pilot run as an entrypoint
+  - scripts/isb/TODO1: perform extraction on TODO1 data
+- bp1
+  - ~LATER~
+- local
+  - ~LATER~
