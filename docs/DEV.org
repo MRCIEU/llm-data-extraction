@@ -1,6 +1,7 @@
 #+TITLE: Dev info
 
 #+begin_src elisp
+;; NOTE: self custom func
 (yxl-org-babel-show-org-toc)
 #+end_src
 
@@ -177,4 +178,8 @@ conda envs
 
 * analysis
 
+Overarching principles:
+- Unless otherwise specified, run things at repo root
+
+Key logics
 TODO
