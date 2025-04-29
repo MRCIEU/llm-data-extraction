@@ -7,7 +7,7 @@
 #SBATCH --time=12:00:00
 #SBATCH --gpus=1
 #SBATCH --mem=14G
-#SBATCH --output=output/slurm-logs/slurm-%j.out
+#SBATCH --output=output/slurm-logs/slurm-%A_%a.out
 #SBATCH --array=0
 
 echo $(date "+%Y-%m-%dT%H-%M")
