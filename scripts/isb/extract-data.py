@@ -5,7 +5,7 @@ from pathlib import Path
 import torch
 from environs import env
 from tqdm import tqdm
-from transformers import AutoModelForCausalLM, AutoTokenizer, QuantoConfig
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from local_funcs import chat_funcs, prompt_funcs
 from yiutils.project_utils import find_project_root
@@ -27,12 +27,14 @@ def main():
     args = parser.parse_args()
 
     # params
-    startpoint = 0
-    endpoint = 101
+    array_task_id = env.int("SLURM_ARRAY_TASK_ID")
+    num_docs = 100
+    startpoint = array_task_id * num_docs
+    endpoint = startpoint + num_docs + 1
     data_path = proj_root / "data"
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    out_file = output_dir / "mr_extract_llama3_sample_0.json"
+    out_file = output_dir / f"mr_extract_llama3_sample_array_{array_task_id}.json"
     access_token = env("HUGGINGFACE_TOKEN")
 
     # Get abstracts
@@ -47,13 +49,11 @@ def main():
     device = "cuda"
     dtype = torch.bfloat16
     tokenizer = AutoTokenizer.from_pretrained(model_id, token=access_token)
-    quantization_config = QuantoConfig(weights="int4")
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
         torch_dtype=dtype,
         device_map=device,
         token=access_token,
-        quantization_config=quantization_config,
     )
     print("Loaded model")
 
