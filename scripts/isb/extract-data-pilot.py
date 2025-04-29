@@ -7,55 +7,8 @@ from environs import env
 
 from transformers import AutoTokenizer, AutoModelForCausalLM, QuantoConfig
 
-from local_funcs import prompt_funcs
+from local_funcs import prompt_funcs, chat_funcs
 from yiutils.project_utils import find_project_root
-
-# def respond(prompt, tokenizer, model, device):
-#     """Instruct the model, returning a response
-#     Parameters:
-#         prompt: a string containing a LLM prompt
-#     Returns: the LLM response
-#     """
-#     input_ids = tokenizer.apply_chat_template(prompt, return_tensors="pt").to(device)
-#     output = model.generate(input_ids=input_ids, max_new_tokens=1000, pad_token_id=0)
-#     prompt_len = input_ids.shape[-1]
-#     return tokenizer.decode(output[0][prompt_len:], skip_special_tokens=True)
-
-
-def clean_result(result):
-    """Clean the results, removing anything outside the JSON
-    Parameters:
-        result: Output from the LLM
-    Returns: cleaned JSON output
-    """
-    result = result.split("}")
-    output = json.loads("}".join(result[0:-1]) + "}")
-    return output
-
-
-def extract(messages, tokenizer, model):
-    """Instruct the model, returning a response
-    Parameters:
-        messages: a string containing an LLM prompt
-    Returns: the LLM response
-    """
-    input_ids = tokenizer.apply_chat_template(
-        messages, add_generation_prompt=True, return_tensors="pt"
-    ).to(model.device)
-    terminators = [
-        tokenizer.eos_token_id,
-        tokenizer.convert_tokens_to_ids("<|eot_id|>"),
-    ]
-    outputs = model.generate(
-        input_ids,
-        max_new_tokens=1024,
-        eos_token_id=terminators,
-        do_sample=True,
-        temperature=0.1,
-        # top_p=0.15,
-    )
-    response = outputs[0][input_ids.shape[-1] :]
-    return tokenizer.decode(response, skip_special_tokens=True)
 
 
 def main():
@@ -113,10 +66,10 @@ def main():
         try:
             message_metadata = prompt_funcs.make_message_metadata(abstract["ab"])
             message_results = prompt_funcs.make_message_results(abstract["ab"])
-            completion_metadata = extract(message_metadata, tokenizer, model)
-            completion_results = extract(message_results, tokenizer, model)
-            result_metadata = clean_result(completion_metadata)
-            result_results = clean_result(completion_results)
+            completion_metadata = chat_funcs.extract(message_metadata, tokenizer, model)
+            completion_results = chat_funcs.extract(message_results, tokenizer, model)
+            result_metadata = chat_funcs.clean_result(completion_metadata)
+            result_results = chat_funcs.clean_result(completion_results)
             output = dict(abstract, **result_metadata, **result_results)
             fulldata.append(output)
         except Exception as e:
