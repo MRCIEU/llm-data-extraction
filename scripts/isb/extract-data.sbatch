@@ -18,9 +18,12 @@ echo $(hostname)
 echo "SLURM_ARRAY_JOB_ID: ${SLURM_ARRAY_JOB_ID}"
 echo "SLURM_ARRAY_TASK_ID: ${SLURM_ARRAY_TASK_ID}"
 
-timestring=$(date "+%Y-%m-%dT%H-%M")
-output_dir="${SLURM_SUBMIT_DIR}"/output/"${HOSTNAME}"-"${timestring}"
-mkdir -p "${output_dir}"/{data,logs}
+path_data="${SLURM_SUBMIT_DIR}"/data/raw/mr-pubmed-abstracts/pubmed.json
+
+prefix="isb-ai"
+output_dir="${SLURM_SUBMIT_DIR}"/output/"${prefix}"-"${SLURM_ARRAY_JOB_ID}"
+mkdir -p "${output_dir}"/{results,logs}
+output_results_dir="${output_dir}"/results
 
 output_log_file="${output_dir}"/logs/slurm-"${SLURM_ARRAY_JOB_ID}"_"${SLURM_ARRAY_TASK_ID}".out
 if [ "${SLURM_ARRAY_TASK_ID}" -eq 0 ]; then
@@ -32,7 +35,8 @@ module load cuda/12.2
 module load cudatoolkit/23.9_12.2
 micromamba run -n data-extraction \
     python scripts/isb/extract-data.py \
-    --output_dir "${output_dir}"/data \
+    --path_data ${path_data} \
+    --output_dir "${output_results_dir}" \
     > "${output_log_file}" 2>&1 
 
 echo $(date "+%Y-%m-%dT%H-%M")
