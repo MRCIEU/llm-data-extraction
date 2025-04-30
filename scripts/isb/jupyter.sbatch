@@ -7,7 +7,7 @@
 #SBATCH --gpus=1
 #SBATCH --time=24:00:00
 
-echo $(date)
+echo $(date "+%Y-%m-%dT%H-%M")
 
 cd "${SLURM_SUBMIT_DIR}"
 echo $(pwd)
@@ -26,5 +26,4 @@ LISTEN_PORT=8086
 set -o xtrace
 jupyter lab --no-browser --ip=${LISTEN_IP} --port=${LISTEN_PORT}
 
-echo $(date)
-
+echo $(date "+%Y-%m-%dT%H-%M")
