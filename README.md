@@ -4,4 +4,4 @@ description: TODO
 
 ## setup
 
-For setting up refer to `DEV.org`.
+For setting up and further details refer to `./docs/DEV.md`.

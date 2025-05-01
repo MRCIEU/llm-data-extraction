@@ -22,6 +22,14 @@ data-sync-dry:
 data-sync:
 	rsync -aLvzP ./data $(upstream)
 
+## ==== docs ====
+
+## docs-all: all docs
+docs-all: docs-filetree docs-data-archive
+
+## docs-filetree: show filetree
+
+## docs-data-archive: show details on data archive; need vpn
 
 ## ==== codebase ====
 
