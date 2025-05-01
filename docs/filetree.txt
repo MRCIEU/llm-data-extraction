@@ -1,0 +1,78 @@
+.
+├── data
+│   ├── artifacts
+│   ├── intermediate
+│   └── raw
+├── DEV.org
+├── docs
+│   ├── data_archive.txt
+│   ├── environment-bp1.yml
+│   ├── environment-non-gpu.yml
+│   ├── environment.yml
+│   ├── filetree.txt
+│   ├── tldraw.tldr
+│   └── tom-s-code
+│       ├── extract_data.py
+│       ├── mrextract_array.sh
+│       └── prompts.py
+├── Makefile
+├── notebooks
+│   ├── colab-notebooks
+│   │   └── more-models.ipynb
+│   ├── data-analysis
+│   │   └── mr-data.ipynb
+│   ├── more-models-bp1.ipynb
+│   ├── more-models.ipynb
+│   └── openai
+│       └── api-call.ipynb
+├── output
+│   └── slurm-logs
+├── pyproject.toml
+├── README.md
+├── scripts
+│   ├── bp1
+│   │   ├── extract-data-pilot-bp1.py
+│   │   └── extract-data-pilot-bp1.sbatch
+│   ├── isb
+│   │   ├── extract-data-array-new-data.py
+│   │   ├── extract-data-array-new-data.sbatch
+│   │   ├── extract-data-pilot.sbatch
+│   │   ├── extract-data.py
+│   │   ├── extract-data.sbatch
+│   │   └── jupyter.sbatch
+│   └── local
+└── src
+    ├── local_funcs
+    │   ├── pyproject.toml
+    │   └── src
+    │       └── local_funcs
+    │           ├── __init__.py
+    │           ├── __pycache__
+    │           ├── chat_funcs.py
+    │           ├── funcs.py
+    │           ├── prompt_funcs.py
+    │           └── prompt_templates.py
+    └── yiutils
+        ├── DEVEL.md
+        ├── dist
+        │   └── yiutils-0.1.0-py3-none-any.whl
+        ├── environment.yml
+        ├── Makefile
+        ├── poetry.lock
+        ├── pyproject.toml
+        ├── README.md
+        ├── scripts
+        │   └── sanity.py
+        ├── src
+        │   └── yiutils
+        │       ├── __init__.py
+        │       ├── __pycache__
+        │       │   ├── __init__.cpython-312.pyc
+        │       │   └── project_utils.cpython-312.pyc
+        │       ├── failsafe.py
+        │       └── project_utils.py
+        ├── tests
+        │   ├── __init__.py
+        │   ├── test_always_true.py
+        │   └── test_failsafe.py
+        └── TODO.org

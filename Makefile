@@ -1,6 +1,8 @@
 .PHONY: clean data lint docs
 
-upstream:=epi-franklin2:/projects/MRC-IEU/research/projects/ieu3/p3/015/working/data/llm-data-extraction/
+archive_host:=epi-franklin2
+archive_path:=/projects/MRC-IEU/research/projects/ieu3/p3/015/working/data/llm-data-extraction/
+data_archive:=$(archive_host):$(archive_path)
 
 #################################################################################
 # Rules
@@ -8,7 +10,7 @@ upstream:=epi-franklin2:/projects/MRC-IEU/research/projects/ieu3/p3/015/working/
 
 ## ==== sanity-check ====
 check-health:
-	echo "Data archive upstream: " $(upstream)
+	echo "Data archive data_archive: " $(data_archive)
 	pip list | grep local_funcs
 	pip list | grep yiutils
 
@@ -16,20 +18,26 @@ check-health:
 
 ## data sync (dry run)
 data-sync-dry:
-	rsync -aLvzP -n ./data $(upstream)
+	rsync -aLvzP -n ./data $(data_archive)
 
 ## data sync
 data-sync:
-	rsync -aLvzP ./data $(upstream)
+	rsync -aLvzP ./data $(data_archive)
 
 ## ==== docs ====
 
 ## docs-all: all docs
-docs-all: docs-filetree docs-data-archive
+docs-all: docs-data-archive docs-filetree
 
 ## docs-filetree: show filetree
+docs-filetree:
+	OUTFILE=./docs/filetree.txt; \
+	eza -T --git-ignore ./ > $${OUTFILE}
 
 ## docs-data-archive: show details on data archive; need vpn
+docs-data-archive:
+	OUTFILE=./docs/data_archive.txt; \
+	ssh $(archive_host) "eza -T -L 3 $(archive_path)" > $${OUTFILE}
 
 ## ==== codebase ====
 
