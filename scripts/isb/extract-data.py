@@ -90,7 +90,7 @@ def main():
 
     fulldata = []
 
-    # Loop over all specified abstracts in the dataset
+    # Loop overall specified abstracts in the dataset
     for abstract in tqdm(pubmed[startpoint:endpoint]):
         try:
             message_metadata = prompt_funcs.make_message_metadata(abstract["ab"])
