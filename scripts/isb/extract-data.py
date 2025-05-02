@@ -28,7 +28,7 @@ def main():
         "--path_data",
         type=str,
         default=None,
-        help="Path to pubmed.json",
+        help="Path to mr pubmed abstracts data",
     )
     parser.add_argument(
         "--pilot",
@@ -58,7 +58,9 @@ def main():
 
     # Get abstracts
     path_to_pubmed = Path(args.path_data)
-    assert args.path_data is not None and path_to_pubmed.exists(), print("pubmed data not found")
+    assert args.path_data is not None and path_to_pubmed.exists(), print(
+        "pubmed data not found"
+    )
     with path_to_pubmed.open("r") as f:
         pubmed = json.load(f)
     print("Loaded abstracts")
@@ -108,8 +110,6 @@ def main():
             result2 = {"results": {}, "resultsinformation": {"error": f"Failed {e}"}}
             output = dict(abstract, **result1, **result2)
             fulldata.append(output)
-
-    print(json.dumps(fulldata, indent=4))
 
     with out_file.open("w") as f:
         json.dump(fulldata, f, indent=4)

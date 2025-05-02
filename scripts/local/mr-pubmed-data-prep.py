@@ -28,7 +28,9 @@ def main():
     assert path_to_pubmed_new_json.exists()
 
     # path to output
-    path_to_output = data_dir / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data.json"
+    path_to_output = (
+        data_dir / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data.json"
+    )
     path_to_output.parent.mkdir(parents=True, exist_ok=True)
     # }}}
 
@@ -59,8 +61,6 @@ def main():
     mr_data_df.to_json(
         path_to_output,
         orient="records",
-        lines=True,
-        indent=4,
     )
 
 
