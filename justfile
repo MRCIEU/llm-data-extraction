@@ -59,14 +59,14 @@ devel-data-prep-mr-pubmed-data-prep:
 
 # ==== development ====
 
-# Perform data extraction, isb-ai, llama3, pilot
-[group('isb-ai')]
+# Perform data extraction, isb, llama3, pilot
+[group('isb')]
 [group('devel')]
 devel-isb-extract-data-pilot:
-    sbatch scripts/isb-ai/extract-data-pilot.sbatch
+    sbatch scripts/isb/extract-data-pilot.sbatch
 
-# Perform data extraction, isb-ai, llama3
-[group('isb-ai')]
+# Perform data extraction, isb, llama3
+[group('isb')]
 [group('devel')]
 devel-isb-extract-data:
-    sbatch scripts/isb-ai/extract-data.sbatch
+    sbatch scripts/isb/extract-data.sbatch
