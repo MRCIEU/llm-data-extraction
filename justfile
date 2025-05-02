@@ -23,12 +23,12 @@ check-health:
 # data sync, dry run
 [group('data')]
 data-sync-dry:
-    rsync -aLvzP -n ./data {{data_archive}}
+    rsync -aLvzP --delete -n ./data {{data_archive}}
 
 # data sync
 [group('data')]
 data-sync:
-    rsync -aLvzP ./data {{data_archive}}
+    rsync -aLvzP --delete ./data {{data_archive}}
 
 # ==== docs ====
 
