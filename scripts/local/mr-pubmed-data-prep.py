@@ -1,5 +1,5 @@
 """
-Combine pubmed.json and pubmed_new.json into a single mr-data.json file
+Combine pubmed.json and pubmed_new.json into a single mr-pubmed-data.json file
 for LLM data extraction use.
 """
 
@@ -28,7 +28,7 @@ def main():
     assert path_to_pubmed_new_json.exists()
 
     # path to output
-    path_to_output = data_dir / "intermediate" / "mr-data" / "mr-data.json"
+    path_to_output = data_dir / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data.json"
     path_to_output.parent.mkdir(parents=True, exist_ok=True)
     # }}}
 

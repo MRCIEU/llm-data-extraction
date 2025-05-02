@@ -58,7 +58,7 @@ def main():
 
     # Get abstracts
     path_to_pubmed = Path(args.path_data)
-    assert args.path_data is not None and path_to_pubmed.exists(), print("pubmed.json not found")
+    assert args.path_data is not None and path_to_pubmed.exists(), print("pubmed data not found")
     with path_to_pubmed.open("r") as f:
         pubmed = json.load(f)
     print("Loaded abstracts")

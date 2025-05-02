@@ -18,7 +18,7 @@ echo $(hostname)
 echo "SLURM_ARRAY_JOB_ID: ${SLURM_ARRAY_JOB_ID}"
 echo "SLURM_ARRAY_TASK_ID: ${SLURM_ARRAY_TASK_ID}"
 
-path_data="${SLURM_SUBMIT_DIR}"/data/raw/mr-pubmed-abstracts/data/pubmed.json
+path_data="${SLURM_SUBMIT_DIR}"/data/intermediate/mr-pubmed-data/mr-pubmed-data.json
 
 prefix="isb-ai"
 output_dir="${SLURM_SUBMIT_DIR}"/output/"${prefix}"-"${SLURM_ARRAY_JOB_ID}"

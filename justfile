@@ -7,6 +7,8 @@ data_archive := shell('echo ' + archive_host + ':' + archive_path)
 default:
     @just --list --unsorted
 
+# ==== codebase ====
+
 # sanity-check
 [group('check')]
 check-health:
@@ -15,6 +17,8 @@ check-health:
     micromamba env list | grep data-extraction
     pip list | grep local_funcs
     pip list | grep yiutils
+
+# ==== data ====
 
 # data sync, dry run
 [group('data')]
@@ -25,6 +29,8 @@ data-sync-dry:
 [group('data')]
 data-sync:
     rsync -aLvzP ./data {{data_archive}}
+
+# ==== docs ====
 
 # docs all
 [group('docs')]
@@ -44,7 +50,23 @@ docs-data-archive:
     OUTFILE="./docs/data_archive.txt"
     ssh {{archive_host}} "eza -T -L 3 {{archive_path}}" > $OUTFILE
 
-# data preprocessing: mr-data.json
+# ==== data preprocessing ====
+
+# data preprocessing: mr-pubmed-data.json
 [group('devel-data-prep')]
-devel-data-prep-mr-data-prep:
-    python scripts/local/mr-data-prep.py
+devel-data-prep-mr-pubmed-data-prep:
+    python scripts/local/mr-pubmed-data-prep.py
+
+# ==== development ====
+
+# Perform data extraction, isb-ai, llama3, pilot
+[group('isb-ai')]
+[group('devel')]
+devel-isb-extract-data-pilot:
+    sbatch scripts/isb-ai/extract-data-pilot.sbatch
+
+# Perform data extraction, isb-ai, llama3
+[group('isb-ai')]
+[group('devel')]
+devel-isb-extract-data:
+    sbatch scripts/isb-ai/extract-data.sbatch
