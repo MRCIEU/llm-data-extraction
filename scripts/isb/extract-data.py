@@ -91,24 +91,24 @@ def main():
     fulldata = []
 
     # Loop overall specified abstracts in the dataset
-    for abstract in tqdm(pubmed[startpoint:endpoint]):
+    for article_data in tqdm(pubmed[startpoint:endpoint]):
         try:
-            message_metadata = prompt_funcs.make_message_metadata(abstract["ab"])
-            message_results = prompt_funcs.make_message_results(abstract["ab"])
+            message_metadata = prompt_funcs.make_message_metadata(article_data["ab"])
+            message_results = prompt_funcs.make_message_results(article_data["ab"])
             completion_metadata = chat_funcs.extract(message_metadata, tokenizer, model)
             completion_results = chat_funcs.extract(message_results, tokenizer, model)
             result_metadata = chat_funcs.clean_result(completion_metadata)
             result_results = chat_funcs.clean_result(completion_results)
-            output = dict(abstract, **result_metadata, **result_results)
+            output = dict(article_data, **result_metadata, **result_results)
             fulldata.append(output)
         except Exception as e:
-            print(f"""\n\n=========== {abstract["pmid"]} ==========""")
+            print(f"""\n\n=========== {article_data["pmid"]} ==========""")
             print("""\n=========== FAILED! ==========""")
             # print(abstract)
             print(e)
             result1 = {"metadata": {}, "metainformation": {"error": f"Failed {e}"}}
             result2 = {"results": {}, "resultsinformation": {"error": f"Failed {e}"}}
-            output = dict(abstract, **result1, **result2)
+            output = dict(article_data, **result1, **result2)
             fulldata.append(output)
 
     with out_file.open("w") as f:
