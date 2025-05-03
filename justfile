@@ -10,13 +10,19 @@ default:
 # ==== codebase ====
 
 # sanity-check
-[group('check')]
+[group('codebase')]
 check-health:
     #!/bin/bash
     echo "Data archive data_archive: {{data_archive}}"
     micromamba env list | grep data-extraction
     pip list | grep local_funcs
     pip list | grep yiutils
+
+# vscode server
+[group('codebase')]
+[group('isb')]
+vscode-isb:
+    sbatch scripts/isb/vscode.sbatch
 
 # ==== data ====
 
