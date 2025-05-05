@@ -262,3 +262,63 @@
              '\n',
   'role': 'user'}
 ```
+
+# categories
+
+## trait (exposure / outcome) categories
+
+or "Other"
+
+```
+- molecular
+- socioeconomic
+- environmental
+- behavioural
+- anthropometric
+- clinical measures
+- infectious disease
+- neoplasm
+- disease of the blood and blood-forming organs
+- metabolic disease
+- mental disorder
+- disease of the nervous system
+- disease of the eye and adnexa
+- disease of the ear and mastoid process
+- disease of the circulatory system
+- disease of the digestive system
+- disease of the skin and subcutaneous tissue
+- disease of the musculoskeletal system and connective tissue
+- disease of the genitourinary system
+```
+
+## method categories
+
+or "Other"
+
+```
+- two-sample mendelian randomization
+- multivariable mendelian randomization
+- colocalization
+- network mendelian randomization
+- triangulation
+- reverse mendelian randomization
+- one-sample mendelian randomization
+- negative controls
+- sensitivity analysis
+- non-linear mendelian randomization
+- within-family mendelian randomization
+```
+
+## results schema
+
+```
+- exposure
+- outcome
+- beta
+- units
+- odds ratio
+- hazard ratio
+- 95% confidence interval
+- standard error
+- and P-value
+```
