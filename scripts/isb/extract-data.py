@@ -44,12 +44,12 @@ def main():
     access_token = env("HUGGINGFACE_TOKEN")
     num_docs = 100
     if args.pilot:
-        print("Running in pilot mode with 100 documents.")
+        print(f"Running in pilot mode with {num_docs} documents.")
         startpoint = 0
-        endpoint = 101
+        endpoint = startpoint + num_docs
     else:
         startpoint = array_task_id * num_docs
-        endpoint = startpoint + num_docs + 1
+        endpoint = startpoint + num_docs
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
