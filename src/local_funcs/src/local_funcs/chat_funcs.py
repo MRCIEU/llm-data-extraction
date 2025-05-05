@@ -50,4 +50,5 @@ def extract(messages: str, tokenizer: AutoTokenizer, model: AutoModelForCausalLM
         # top_p=0.15,
     )
     response = outputs[0][input_ids.shape[-1] :]
-    return tokenizer.decode(response, skip_special_tokens=True)
+    res = tokenizer.decode(response, skip_special_tokens=True)
+    return res
