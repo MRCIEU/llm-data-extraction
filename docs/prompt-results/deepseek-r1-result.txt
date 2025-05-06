@@ -1,0 +1,159 @@
+Alright, so I need to extract specific information from the provided abstract and present it in a structured JSON format. The user has given a detailed example, so I should follow that closely. First, I'll read through the abstract carefully to identify all the results mentioned.
+
+The abstract discusses two main exposures: alcohol consumption and problematic alcohol use. Each exposure is associated with several outcomes. For alcohol consumption, the outcomes are Parkinson's disease, prostate hyperplasia, rheumatoid arthritis, chronic pancreatitis, colorectal cancer, and head and neck cancers. The direction for alcohol consumption is that it decreases the risk of the first three outcomes and increases the risk of the latter three.
+
+Next, for problematic alcohol use, the outcomes are alcoholic liver disease, cirrhosis, acute and chronic pancreatitis, and pneumonia. The direction here is that problematic alcohol use increases the risk of all these outcomes.
+
+Now, I need to map each of these to the required JSON structure. Each result entry should include exposure, outcome, beta, units, odds ratio, hazard ratio, 95% CI, SE, P-value, and direction. If any of these are missing, I'll substitute with "null".
+
+Looking at the example, I see that numeric values are included where available, and where they're not, "null" is used. The direction is determined based on whether the exposure increases or decreases the outcome.
+
+I'll start by listing each exposure and its associated outcomes. For each outcome, I'll extract the relevant statistics if they're provided in the abstract. Since the abstract doesn't provide specific numbers, I'll mark them as "null" except for the direction.
+
+I need to ensure that the JSON is in strict pretty format without any markdown. Also, any errors or missing information should be included in the "resultsinformation" section with an appropriate message.
+
+Finally, I'll compile all the entries into the results array and include the resultsinformation with an explanation about missing values.
+</think>
+
+```json
+{
+    "results": [
+        {
+            "exposure": "Alcohol consumption",
+            "outcome": "Parkinson's disease",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": [null, null],
+            "SE": null,
+            "P-value": null,
+            "direction": "decreases"
+        },
+        {
+            "exposure": "Alcohol consumption",
+            "outcome": "Prostate hyperplasia",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": [null, null],
+            "SE": null,
+            "P-value": null,
+            "direction": "decreases"
+        },
+        {
+            "exposure": "Alcohol consumption",
+            "outcome": "Rheumatoid arthritis",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": [null, null],
+            "SE": null,
+            "P-value": null,
+            "direction": "decreases"
+        },
+        {
+            "exposure": "Alcohol consumption",
+            "outcome": "Chronic pancreatitis",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": [null, null],
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Alcohol consumption",
+            "outcome": "Colorectal cancer",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": [null, null],
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Alcohol consumption",
+            "outcome": "Head and neck cancers",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": [null, null],
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Problematic alcohol use",
+            "outcome": "Alcoholic liver disease",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": [null, null],
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Problematic alcohol use",
+            "outcome": "Cirrhosis",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": [null, null],
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Problematic alcohol use",
+            "outcome": "Acute pancreatitis",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": [null, null],
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Problematic alcohol use",
+            "outcome": "Chronic pancreatitis",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": [null, null],
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Problematic alcohol use",
+            "outcome": "Pneumonia",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": [null, null],
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        }
+    ],
+    "resultsinformation": {
+        "error": "Missing numeric values for beta, odds ratio, hazard ratio, 95% CI, SE, and P-value in the abstract.",
+        "explanation": "The abstract does not provide specific numeric values for the results, making it impossible to extract accurate numerical data."
+    }
+}
+```
