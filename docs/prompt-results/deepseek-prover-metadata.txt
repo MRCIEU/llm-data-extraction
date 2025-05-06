@@ -1,0 +1,160 @@
+### Step 1: Extract Exposures and Outcomes
+From the abstract, the exposures and outcomes are:
+- Exposures:
+  - Alcohol consumption
+  - Problematic alcohol use
+- Outcomes:
+  - Parkinson's disease
+  - Prostate hyperplasia
+  - Rheumatoid arthritis
+  - Chronic pancreatitis
+  - Colorectal cancer
+  - Head and neck cancers
+  - Alcoholic liver disease
+  - Cirrhosis
+  - Acute pancreatitis
+  - Chronic pancreatitis
+  - Pneumonia
+
+### Step 2: Categorize Exposures and Outcomes
+- **Exposures**:
+  - Alcohol consumption (behavioral)
+  - Problematic alcohol use (behavioral)
+- **Outcomes**:
+  - Parkinson's disease (disease of the nervous system)
+  - Prostate hyperplasia (disease of the genitourinary system)
+  - Rheumatoid arthritis (disease of the musculoskeletal system and connective tissue)
+  - Chronic pancreatitis (disease of the digestive system)
+  - Colorectal cancer (neoplasm)
+  - Head and neck cancers (neoplasm)
+  - Alcoholic liver disease (disease of the digestive system)
+  - Cirrhosis (disease of the digestive system)
+  - Acute pancreatitis (disease of the digestive system)
+  - Chronic pancreatitis (disease of the digestive system)
+  - Pneumonia (infectious disease)
+
+### Step 3: Analytical Methods
+The methods used are:
+- Mendelian randomization (MR)
+- Meta-analysis
+- De novo MR analyses
+- Summary statistics from FinnGen consortium R9 release
+
+### Step 4: Population
+The population is:
+- European men
+- Breast cancer patients
+- African-Americans
+
+### Step 5: JSON Output
+```json
+{
+  "metadata": {
+    "exposures": [
+      {
+        "id": "1",
+        "trait": "Alcohol consumption",
+        "category": "behavioral"
+      },
+      {
+        "id": "2",
+        "trait": "Problematic alcohol use",
+        "category": "behavioral"
+      }
+    ],
+    "outcomes": [
+      {
+        "id": "1",
+        "trait": "Parkinson's disease",
+        "category": "disease of the nervous system"
+      },
+      {
+        "id": "2",
+        "trait": "Prostate hyperplasia",
+        "category": "disease of the genitourinary system"
+      },
+      {
+        "id": "3",
+        "trait": "Rheumatoid arthritis",
+        "category": "disease of the musculoskeletal system and connective tissue"
+      },
+      {
+        "id": "4",
+        "trait": "Chronic pancreatitis",
+        "category": "disease of the digestive system"
+      },
+      {
+        "id": "5",
+        "trait": "Colorectal cancer",
+        "category": "neoplasm"
+      },
+      {
+        "id": "6",
+        "trait": "Head and neck cancers",
+        "category": "neoplasm"
+      },
+      {
+        "id": "7",
+        "trait": "Alcoholic liver disease",
+        "category": "disease of the digestive system"
+      },
+      {
+        "id": "8",
+        "trait": "Cirrhosis",
+        "category": "disease of the digestive system"
+      },
+      {
+        "id": "9",
+        "trait": "Acute pancreatitis",
+        "category": "disease of the digestive system"
+      },
+      {
+        "id": "10",
+        "trait": "Chronic pancreatitis",
+        "category": "disease of the digestive system"
+      },
+      {
+        "id": "11",
+        "trait": "Pneumonia",
+        "category": "infectious disease"
+      }
+    ],
+    "methods": [
+      {
+        "id": "1",
+        "name": "Mendelian randomization (MR)"
+      },
+      {
+        "id": "2",
+        "name": "Meta-analysis"
+      },
+      {
+        "id": "3",
+        "name": "De novo MR analyses"
+      },
+      {
+        "id": "4",
+        "name": "Summary statistics from FinnGen consortium R9 release"
+      }
+    ],
+    "population": [
+      {
+        "id": "1",
+        "name": "European men"
+      },
+      {
+        "id": "2",
+        "name": "Breast cancer patients"
+      },
+      {
+        "id": "3",
+        "name": "African-Americans"
+      }
+    ],
+    "metainformation": {
+      "error": "No information on population is provided in abstract",
+      "explanation": "Some methods do not match those listed in the prompt"
+    }
+  }
+}
+```
