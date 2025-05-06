@@ -24,6 +24,12 @@ check-health:
 vscode-isb:
     sbatch scripts/isb/vscode.sbatch
 
+# vscode server, 2gpus
+[group('codebase')]
+[group('isb')]
+vscode-isb-2gpus:
+    sbatch scripts/isb/vscode-2gpus.sbatch
+
 # ==== data ====
 
 # data sync, dry run
