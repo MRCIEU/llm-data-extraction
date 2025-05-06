@@ -43,7 +43,7 @@ def extract(messages: str, tokenizer: AutoTokenizer, model: AutoModelForCausalLM
     ]
     outputs = model.generate(
         input_ids,
-        max_new_tokens=1024,
+        max_new_tokens=2048,
         eos_token_id=terminators,
         do_sample=True,
         temperature=0.1,
