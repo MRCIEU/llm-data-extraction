@@ -1,0 +1,74 @@
+{
+  "exposures": [
+    {
+      "id": 1,
+      "trait": "alcohol consumption",
+      "category": "behavioural"
+    },
+    {
+      "id": 2,
+      "trait": "problematic alcohol use",
+      "category": "behavioural"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": 1,
+      "trait": "Parkinson's disease",
+      "category": "disease of the nervous system"
+    },
+    {
+      "id": 2,
+      "trait": "prostate hyperplasia",
+      "category": "disease of the reproductive system"
+    },
+    {
+      "id": 3,
+      "trait": "rheumatoid arthritis",
+      "category": "metabolic disease"
+    },
+    {
+      "id": 4,
+      "trait": "chronic pancreatitis",
+      "category": "disease of the digestive system"
+    },
+    {
+      "id": 5,
+      "trait": "colorectal cancer",
+      "category": "neoplasm"
+    },
+    {
+      "id": 6,
+      "trait": "head and neck cancers",
+      "category": "neoplasm"
+    },
+    {
+      "id": 7,
+      "trait": "alcoholic liver disease",
+      "category": "disease of the digestive system"
+    },
+    {
+      "id": 8,
+      "trait": "cirrhosis",
+      "category": "disease of the digestive system"
+    },
+    {
+      "id": 9,
+      "trait": "pneumonia",
+      "category": "infectious disease"
+    }
+  ],
+  "methods": [
+    "two-sample mendelian randomization",
+    "multivariable mendelian randomization",
+    "colocalization",
+    "network mendelian randomization"
+  ],
+  "population": "European men",
+  "metainformation": {
+    "error": "No information on analytical methods is provided in the abstract",
+    "explanation": "The study did not mention the category for some of the outcomes"
+  }
+}
+"
+

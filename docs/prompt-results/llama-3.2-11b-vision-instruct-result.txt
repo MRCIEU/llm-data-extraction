@@ -1,0 +1,82 @@
+{
+  "exposures": [
+    {
+      "id": "1",
+      "trait": "Alcohol consumption",
+      "category": "behavioural"
+    },
+    {
+      "id": "2",
+      "trait": "Problematic alcohol use",
+      "category": "behavioural"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "1",
+      "trait": "Parkinson's disease",
+      "category": "disease of the nervous system"
+    },
+    {
+      "id": "2",
+      "trait": "Prostate hyperplasia",
+      "category": "disease of the genitourinary system"
+    },
+    {
+      "id": "3",
+      "trait": "Rheumatoid arthritis",
+      "category": "disease of the musculoskeletal system and connective tissue"
+    },
+    {
+      "id": "4",
+      "trait": "Chronic pancreatitis",
+      "category": "disease of the digestive system"
+    },
+    {
+      "id": "5",
+      "trait": "Colorectal cancer",
+      "category": "neoplasm"
+    },
+    {
+      "id": "6",
+      "trait": "Head and neck cancers",
+      "category": "neoplasm"
+    },
+    {
+      "id": "7",
+      "trait": "Alcoholic liver disease",
+      "category": "disease of the digestive system"
+    },
+    {
+      "id": "8",
+      "trait": "Cirrhosis",
+      "category": "disease of the digestive system"
+    },
+    {
+      "id": "9",
+      "trait": "Acute pancreatitis",
+      "category": "disease of the digestive system"
+    },
+    {
+      "id": "10",
+      "trait": "Chronic pancreatitis",
+      "category": "disease of the digestive system"
+    },
+    {
+      "id": "11",
+      "trait": "Pneumonia",
+      "category": "infectious disease"
+    }
+  ],
+  "methods": [
+    "Mendelian randomization"
+  ],
+  "metainformation": {
+    "error": "Methods do not match those listed in the prompt",
+    "explanation": "The abstract does not specify the exact method used, but it mentions 'de novo MR analyses' and'meta-analysis'."
+  },
+  "population": {
+    "error": "No information on population is provided in abstract",
+    "explanation": "The abstract does not specify the population on which the study was based."
+  }
+}

@@ -1,0 +1,63 @@
+ This is an example output in JSON format: 
+    {
+    "results": [
+        {
+            "exposure": "Particulate matter 2.5"},
+            "outcome": "Forced expiratory volume in 1 s"
+            "beta": 0.154,
+            "units": "mmHg",
+            "hazard ratio": null,
+            "odds ratio": null,
+            "95% CI": [0.101,0.215],
+            "SE": 0.102,
+            "P-value": 0.0015,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Body mass index"},
+            "outcome": "Gastroesophageal reflux disease"
+            "beta": null,
+            "units": null,
+            "hazard ratio": null,
+            "odds ratio": 1.114,
+            "95% CI": [1.021,1.314],
+            "SE": null,
+            "P-value": 0.0157,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Body mass index"},
+            "outcome": "Non-alcoholic fatty liver disease (NAFLD)"
+            "beta": null,
+            "units": null,
+            "hazard ratio": null,
+            "odds ratio": null,
+            "95% CI": [null,null],
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        }
+    ]
+    "resultsinformation": {
+        "error": "No results provided in abstract",
+        "explanation": "P-values were string, not numeric values"
+    }
+    }
+
+The output should be in strict pretty JSON format, with the following fields:
+
+- "results": an array of objects, each containing a single result.
+- "results.exposure": the exposure variable.
+- "results.outcome": the outcome variable.
+- "results.beta": the beta variable.
+- "results.units": the units variable.
+- "results.hazard_ratio": the hazard ratio variable.
+- "results.odds_ratio": the odds ratio variable.
+- "results.direction": the direction variable.
+- "results.SE": the standard error of the estimate.
+- "results.P-value": the P-value for the estimate.
+- "results.error": an error message if the results are missing.
+- "results.explanation": an explanation of the results.
+
+The "results.beta" variable should be a numeric value, not a string. The "results.units" variable should be a numeric value, not a string. The "results.hazard_ratio" variable should be a numeric value, not a string. The "results.odds_ratio" variable should be a numeric value, not a string. The "results.direction" variable should be a string, not a numeric value. The "results.SE" variable should be a numeric value, not a string. The "results.P-value" variable should be a numeric value, not a string. The "results.error" variable should be a string, not a numeric value. The "results.explanation" variable should be a string, not a numeric value.
+

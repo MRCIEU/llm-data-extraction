@@ -1,0 +1,141 @@
+{
+  "results": [
+    {
+      "exposure": "Alcohol consumption",
+      "outcome": "Parkinson's disease",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": null,
+      "SE": null,
+      "P-value": null,
+      "direction": "decreases"
+    },
+    {
+      "exposure": "Alcohol consumption",
+      "outcome": "Prostate hyperplasia",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": null,
+      "SE": null,
+      "P-value": null,
+      "direction": "decreases"
+    },
+    {
+      "exposure": "Alcohol consumption",
+      "outcome": "Rheumatoid arthritis",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": null,
+      "SE": null,
+      "P-value": null,
+      "direction": "decreases"
+    },
+    {
+      "exposure": "Alcohol consumption",
+      "outcome": "Chronic pancreatitis",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": null,
+      "SE": null,
+      "P-value": null,
+      "direction": "increases"
+    },
+    {
+      "exposure": "Alcohol consumption",
+      "outcome": "Colorectal cancer",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": null,
+      "SE": null,
+      "P-value": null,
+      "direction": "increases"
+    },
+    {
+      "exposure": "Alcohol consumption",
+      "outcome": "Head and neck cancers",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": null,
+      "SE": null,
+      "P-value": null,
+      "direction": "increases"
+    },
+    {
+      "exposure": "Problematic alcohol use",
+      "outcome": "Alcoholic liver disease",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": null,
+      "SE": null,
+      "P-value": null,
+      "direction": "increases"
+    },
+    {
+      "exposure": "Problematic alcohol use",
+      "outcome": "Cirrhosis",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": null,
+      "SE": null,
+      "P-value": null,
+      "direction": "increases"
+    },
+    {
+      "exposure": "Problematic alcohol use",
+      "outcome": "Acute pancreatitis",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": null,
+      "SE": null,
+      "P-value": null,
+      "direction": "increases"
+    },
+    {
+      "exposure": "Problematic alcohol use",
+      "outcome": "Chronic pancreatitis",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": null,
+      "SE": null,
+      "P-value": null,
+      "direction": "increases"
+    },
+    {
+      "exposure": "Problematic alcohol use",
+      "outcome": "Pneumonia",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": null,
+      "SE": null,
+      "P-value": null,
+      "direction": "increases"
+    }
+  ],
+  "resultsinformation": {
+    "error": "No numerical results provided in the abstract",
+    "explanation": "All numerical values were not explicitly stated in the abstract"
+  }
+}
+

@@ -1,0 +1,140 @@
+{
+    "results": [
+        {
+            "exposure": "Genetic predisposition to alcohol consumption",
+            "outcome": "Parkinson's disease",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": null,
+            "SE": null,
+            "P-value": null,
+            "direction": "decreases"
+        },
+        {
+            "exposure": "Genetic predisposition to alcohol consumption",
+            "outcome": "Prostate hyperplasia",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": null,
+            "SE": null,
+            "P-value": null,
+            "direction": "decreases"
+        },
+        {
+            "exposure": "Genetic predisposition to alcohol consumption",
+            "outcome": "Rheumatoid arthritis",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": null,
+            "SE": null,
+            "P-value": null,
+            "direction": "decreases"
+        },
+        {
+            "exposure": "Genetic predisposition to alcohol consumption",
+            "outcome": "Chronic pancreatitis",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": null,
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Genetic predisposition to alcohol consumption",
+            "outcome": "Colorectal cancer",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": null,
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Genetic predisposition to alcohol consumption",
+            "outcome": "Head and neck cancers",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": null,
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Genetic predisposition to problematic alcohol use",
+            "outcome": "Alcoholic liver disease",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": null,
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Genetic predisposition to problematic alcohol use",
+            "outcome": "Cirrhosis",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": null,
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Genetic predisposition to problematic alcohol use",
+            "outcome": "Acute pancreatitis",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": null,
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Genetic predisposition to problematic alcohol use",
+            "outcome": "Chronic pancreatitis",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": null,
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        },
+        {
+            "exposure": "Genetic predisposition to problematic alcohol use",
+            "outcome": "Pneumonia",
+            "beta": null,
+            "units": null,
+            "odds ratio": null,
+            "hazard ratio": null,
+            "95% CI": null,
+            "SE": null,
+            "P-value": null,
+            "direction": "increases"
+        }
+    ],
+    "resultsinformation": {
+        "error": "Some results are missing P-values, standard errors, and confidence intervals",
+        "explanation": "The abstract does not provide enough information to calculate these values"
+    }
+}
