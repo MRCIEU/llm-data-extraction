@@ -2,19 +2,23 @@ name: data-extraction
 channels:
   - conda-forge
 dependencies:
-  - python=3.12
   - altair
+  - environs
   - jupyterlab
+  - just
   - numpy
   - pandas
+  - pip
   - pydash
-  - tqdm
-  - environs
+  - python=3.12
   - pytorch-gpu
-  - just
+  - tqdm
   - pip:
-    - transformers
-    - optimum
-    - optimum-quanto
-    - accelerate
-    - lightning
+    - accelerate==1.4.0
+    - compressed-tensors==0.9.4
+    - lightning==2.5.0.post0
+    - optimum==1.24.0
+    - optimum-quanto==0.2.7
+    - transformers==4.51.3
+
+prefix: "/lus/lfs1aip1/home/b5a/ik18445.b5a/micromamba/envs/data-extraction"
