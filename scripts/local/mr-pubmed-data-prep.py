@@ -10,56 +10,52 @@ import pandas as pd
 
 from yiutils.project_utils import find_project_root
 
+# config {{{
+PROJ_ROOT = find_project_root()
+DATA_DIR = PROJ_ROOT / "data"
+
+MR_RAW_DATA_DIR = DATA_DIR / "raw" / "mr-pubmed-abstracts" / "data"
+RAW_DATA_PATHS = [
+    MR_RAW_DATA_DIR / "pubmed.json",
+    MR_RAW_DATA_DIR / "pubmed_new.json",
+    MR_RAW_DATA_DIR / "pubmed_abstracts_20250502.json",
+    MR_RAW_DATA_DIR / "pubmed_abstracts_20250519.json",
+]
+
+PATH_TO_OUTPUT = DATA_DIR / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data.json"
+# }}}
+
 
 def main():
     # init
-    # {{{
-    proj_root = find_project_root()
+    assert DATA_DIR.exists(), f"Data directory {DATA_DIR} does not exist."
+    PATH_TO_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 
-    data_dir = proj_root / "data"
-    assert data_dir.exists(), f"Data directory {data_dir} does not exist."
-    path_to_pubmed_json = (
-        data_dir / "raw" / "mr-pubmed-abstracts" / "data" / "pubmed.json"
-    )
-    assert path_to_pubmed_json.exists()
-    path_to_pubmed_new_json = (
-        data_dir / "raw" / "mr-pubmed-abstracts" / "data" / "pubmed_new.json"
-    )
-    assert path_to_pubmed_new_json.exists()
-
-    # path to output
-    path_to_output = (
-        data_dir / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data.json"
-    )
-    path_to_output.parent.mkdir(parents=True, exist_ok=True)
+    # load raw data {{{
+    mr_raw_data = []
+    for path in RAW_DATA_PATHS:
+        print(f"Loading {path}")
+        assert path.exists(), f"Path {path} does not exist."
+        with Path(path).open("r") as f:
+            raw_data = json.load(f)
+            raw_df = pd.DataFrame(raw_data)
+            raw_df.info()
+            mr_raw_data.append(raw_df)
     # }}}
 
-    # load in json files
-    with Path(path_to_pubmed_json).open("r") as f:
-        pubmed_json = json.load(f)
-        pubmed_df = pd.DataFrame(pubmed_json)
-
-    with Path(path_to_pubmed_new_json).open("r") as f:
-        pubmed_new_json = json.load(f)
-        pubmed_new_df = pd.DataFrame(pubmed_new_json)
-
-    # data process
-    # - combine
-    # - drop recs with missing abstracts
-    # {{{
+    # Convert to DataFrame for processing
     mr_data_df = (
-        pd.concat([pubmed_df, pubmed_new_df], ignore_index=True)
-        .drop_duplicates()
-        .dropna(subset=["ab"])
+        pd.concat(mr_raw_data)
+        .dropna(subset=["ab", "pmid"])
+        .drop_duplicates(subset=["pmid"])
         .reset_index(drop=True)
     )
     mr_data_df.info()
-    # }}}
 
     # write
-    print(f"Writing to {path_to_output}")
+    print(f"Writing to {PATH_TO_OUTPUT}")
     mr_data_df.to_json(
-        path_to_output,
+        PATH_TO_OUTPUT,
         orient="records",
     )
 

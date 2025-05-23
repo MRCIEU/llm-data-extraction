@@ -64,7 +64,7 @@ docs-data-archive:
 
 # ==== data preprocessing ====
 
-# data preprocessing: mr-pubmed-data.jsonl
+# data preprocessing: mr-pubmed-data.json
 [group('data-prep')]
 data-prep-mr-pubmed:
     python scripts/local/mr-pubmed-data-prep.py
