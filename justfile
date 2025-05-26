@@ -74,11 +74,11 @@ data-prep-mr-pubmed:
 # Perform data extraction, isb, llama3, pilot
 [group('isb')]
 [group('devel')]
-devel-isb-extract-data-pilot:
-    sbatch scripts/isb/extract-data-pilot.sbatch
+devel-isb-extract-data-llama3-pilot:
+    sbatch scripts/isb/extract-data-llama3-pilot.sbatch
 
 # Perform data extraction, isb, llama3
 [group('isb')]
 [group('devel')]
-devel-isb-extract-data:
-    sbatch scripts/isb/extract-data.sbatch
+devel-isb-extract-data-llama3:
+    sbatch scripts/isb/extract-data-llama3.sbatch

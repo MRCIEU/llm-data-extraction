@@ -1,3 +1,7 @@
+"""
+Extract mr pubmed abstracts data using Llama3 model.
+"""
+
 import argparse
 import json
 from pathlib import Path
@@ -17,7 +21,9 @@ def main():
     env.read_env()
 
     # Parse arguments
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+    )
     parser.add_argument(
         "--output_dir",
         type=str,
@@ -36,6 +42,7 @@ def main():
         help="Enable pilot mode. Defaults to False.",
     )
     args = parser.parse_args()
+    print(f"args: {args}")
     print(f"args: {args}")
 
     # params

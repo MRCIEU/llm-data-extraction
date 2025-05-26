@@ -34,7 +34,7 @@ fi
 module load cuda/12.2
 module load cudatoolkit/23.9_12.2
 micromamba run -n data-extraction \
-    python scripts/isb/extract-data.py \
+    python scripts/isb/extract-data-llama3.py \
     --path_data ${path_data} \
     --output_dir "${output_results_dir}" \
     --pilot \
