@@ -1,140 +1,82 @@
 {
-    "results": [
-        {
-            "exposure": "Genetic predisposition to alcohol consumption",
-            "outcome": "Parkinson's disease",
-            "beta": null,
-            "units": null,
-            "odds ratio": null,
-            "hazard ratio": null,
-            "95% CI": null,
-            "SE": null,
-            "P-value": null,
-            "direction": "decreases"
-        },
-        {
-            "exposure": "Genetic predisposition to alcohol consumption",
-            "outcome": "Prostate hyperplasia",
-            "beta": null,
-            "units": null,
-            "odds ratio": null,
-            "hazard ratio": null,
-            "95% CI": null,
-            "SE": null,
-            "P-value": null,
-            "direction": "decreases"
-        },
-        {
-            "exposure": "Genetic predisposition to alcohol consumption",
-            "outcome": "Rheumatoid arthritis",
-            "beta": null,
-            "units": null,
-            "odds ratio": null,
-            "hazard ratio": null,
-            "95% CI": null,
-            "SE": null,
-            "P-value": null,
-            "direction": "decreases"
-        },
-        {
-            "exposure": "Genetic predisposition to alcohol consumption",
-            "outcome": "Chronic pancreatitis",
-            "beta": null,
-            "units": null,
-            "odds ratio": null,
-            "hazard ratio": null,
-            "95% CI": null,
-            "SE": null,
-            "P-value": null,
-            "direction": "increases"
-        },
-        {
-            "exposure": "Genetic predisposition to alcohol consumption",
-            "outcome": "Colorectal cancer",
-            "beta": null,
-            "units": null,
-            "odds ratio": null,
-            "hazard ratio": null,
-            "95% CI": null,
-            "SE": null,
-            "P-value": null,
-            "direction": "increases"
-        },
-        {
-            "exposure": "Genetic predisposition to alcohol consumption",
-            "outcome": "Head and neck cancers",
-            "beta": null,
-            "units": null,
-            "odds ratio": null,
-            "hazard ratio": null,
-            "95% CI": null,
-            "SE": null,
-            "P-value": null,
-            "direction": "increases"
-        },
-        {
-            "exposure": "Genetic predisposition to problematic alcohol use",
-            "outcome": "Alcoholic liver disease",
-            "beta": null,
-            "units": null,
-            "odds ratio": null,
-            "hazard ratio": null,
-            "95% CI": null,
-            "SE": null,
-            "P-value": null,
-            "direction": "increases"
-        },
-        {
-            "exposure": "Genetic predisposition to problematic alcohol use",
-            "outcome": "Cirrhosis",
-            "beta": null,
-            "units": null,
-            "odds ratio": null,
-            "hazard ratio": null,
-            "95% CI": null,
-            "SE": null,
-            "P-value": null,
-            "direction": "increases"
-        },
-        {
-            "exposure": "Genetic predisposition to problematic alcohol use",
-            "outcome": "Acute pancreatitis",
-            "beta": null,
-            "units": null,
-            "odds ratio": null,
-            "hazard ratio": null,
-            "95% CI": null,
-            "SE": null,
-            "P-value": null,
-            "direction": "increases"
-        },
-        {
-            "exposure": "Genetic predisposition to problematic alcohol use",
-            "outcome": "Chronic pancreatitis",
-            "beta": null,
-            "units": null,
-            "odds ratio": null,
-            "hazard ratio": null,
-            "95% CI": null,
-            "SE": null,
-            "P-value": null,
-            "direction": "increases"
-        },
-        {
-            "exposure": "Genetic predisposition to problematic alcohol use",
-            "outcome": "Pneumonia",
-            "beta": null,
-            "units": null,
-            "odds ratio": null,
-            "hazard ratio": null,
-            "95% CI": null,
-            "SE": null,
-            "P-value": null,
-            "direction": "increases"
-        }
-    ],
-    "resultsinformation": {
-        "error": "Some results are missing P-values, standard errors, and confidence intervals",
-        "explanation": "The abstract does not provide enough information to calculate these values"
+  "exposures": [
+    {
+      "id": "1",
+      "trait": "Alcohol consumption",
+      "category": "behavioural"
+    },
+    {
+      "id": "2",
+      "trait": "Problematic alcohol use",
+      "category": "behavioural"
     }
+  ],
+  "outcomes": [
+    {
+      "id": "1",
+      "trait": "Parkinson's disease",
+      "category": "disease of the nervous system"
+    },
+    {
+      "id": "2",
+      "trait": "Prostate hyperplasia",
+      "category": "disease of the genitourinary system"
+    },
+    {
+      "id": "3",
+      "trait": "Rheumatoid arthritis",
+      "category": "disease of the musculoskeletal system and connective tissue"
+    },
+    {
+      "id": "4",
+      "trait": "Chronic pancreatitis",
+      "category": "disease of the digestive system"
+    },
+    {
+      "id": "5",
+      "trait": "Colorectal cancer",
+      "category": "neoplasm"
+    },
+    {
+      "id": "6",
+      "trait": "Head and neck cancers",
+      "category": "neoplasm"
+    },
+    {
+      "id": "7",
+      "trait": "Alcoholic liver disease",
+      "category": "disease of the digestive system"
+    },
+    {
+      "id": "8",
+      "trait": "Cirrhosis",
+      "category": "disease of the digestive system"
+    },
+    {
+      "id": "9",
+      "trait": "Acute pancreatitis",
+      "category": "disease of the digestive system"
+    },
+    {
+      "id": "10",
+      "trait": "Chronic pancreatitis",
+      "category": "disease of the digestive system"
+    },
+    {
+      "id": "11",
+      "trait": "Pneumonia",
+      "category": "infectious disease"
+    }
+  ],
+  "methods": [
+    "Mendelian randomization"
+  ],
+  "metainformation": {
+    "error": "Methods do not match those listed in the prompt",
+    "explanation": "The abstract does not specify the exact method used, but it mentions 'de novo MR analyses' and'meta-analysis'."
+  },
+  "population": {
+    "error": "No information on population is provided in abstract",
+    "explanation": "The abstract does not specify the population on which the study was based."
+  }
 }
