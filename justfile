@@ -88,3 +88,9 @@ devel-isb-extract-data-llama3:
 [group('devel')]
 devel-isb-extract-data-ds-pilot:
     sbatch scripts/isb/extract-data-ds-pilot.sbatch
+
+# Perform data extraction, isb, deepseek
+[group('isb')]
+[group('devel')]
+devel-isb-extract-data-ds:
+    sbatch scripts/isb/extract-data-ds.sbatch
