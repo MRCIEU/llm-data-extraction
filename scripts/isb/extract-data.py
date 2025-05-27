@@ -1,5 +1,5 @@
 """
-Extract mr pubmed abstracts data using deepseek r1 distilled model.
+Extract mr pubmed abstracts data using llms
 - Processes abstracts in batches based on SLURM array task ID.
 """
 
@@ -16,8 +16,15 @@ from local_funcs import chat_funcs, prompt_funcs
 from yiutils.project_utils import find_project_root
 
 PROJECT_ROOT = find_project_root("justfile")
-DATA_DIR = PROJECT_ROOT / "data" 
+DATA_DIR = PROJECT_ROOT / "data"
 PATH_DATA = DATA_DIR / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data.json"
+
+MODEL_CONFIGS = {
+    "deepseek-r1": {"model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"},
+    "deepseek-prover": {"model_id": "deepseek-ai/DeepSeek-Prover-V2-7B"},
+    "llama-3.2": {"model_id": "meta-llama/Llama-3.2-11B-Vision-Instruct"},
+}
+
 
 def main():
     # init
@@ -51,6 +58,11 @@ def main():
         action="store_true",
         help="Enable pilot mode. Defaults to False.",
     )
+    parser.add_argument(
+        "--model",
+        type=str,
+        help="Which model to use. Must not be empty",
+    )
     args = parser.parse_args()
     print(f"args: {args}")
 
@@ -76,6 +88,12 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
     pilot_suffix = "_pilot" if args.pilot else ""
     out_file = output_dir / f"mr_extract_array_{array_task_id}{pilot_suffix}.json"
+
+    model_config_name = args.model
+    assert (
+        model_config_name is not None and model_config_name in MODEL_CONFIGS.keys()
+    ), print("--model must not be empty and must be one of the configs")
+    model_config = MODEL_CONFIGS[model_config_name]
     # }}}
 
     # Get abstracts
@@ -84,12 +102,12 @@ def main():
     print("Loaded abstracts")
 
     # Set up model
-    MODEL_ID = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
+    model_id = model_config["model_id"]
     device = "cuda"
     dtype = torch.bfloat16
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, token=access_token)
+    tokenizer = AutoTokenizer.from_pretrained(model_id, token=access_token)
     model = AutoModelForCausalLM.from_pretrained(
-        MODEL_ID,
+        model_id,
         torch_dtype=dtype,
         device_map=device,
         token=access_token,

@@ -32,9 +32,10 @@ fi
 module load cuda/12.2
 module load cudatoolkit/23.9_12.2
 micromamba run -n data-extraction \
-    python scripts/isb/extract-data-ds.py \
+    python scripts/isb/extract-data.py \
     --output_dir "${output_results_dir}" \
     --array-id "${SLURM_ARRAY_TASK_ID}" \
+    --model deepseek-r1 \
     --pilot \
     > "${output_log_file}" 2>&1 
 

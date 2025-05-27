@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=extract-data
+#SBATCH --job-name=extract-data-pilot
 #SBATCH --partition=workq
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
@@ -8,7 +8,7 @@
 #SBATCH --gpus=1
 #SBATCH --mem=14G
 #SBATCH --output=output/slurm-logs/slurm-%A_%a.out
-#SBATCH --array=0-69%8
+#SBATCH --array=0
 
 echo $(date "+%Y-%m-%dT%H-%M")
 
@@ -35,7 +35,8 @@ micromamba run -n data-extraction \
     python scripts/isb/extract-data.py \
     --output_dir "${output_results_dir}" \
     --array-id "${SLURM_ARRAY_TASK_ID}" \
-    --model deepseek-r1 \
+    --model deepseek-prover \
+    --pilot \
     > "${output_log_file}" 2>&1 
 
 echo $(date "+%Y-%m-%dT%H-%M")
