@@ -1,5 +1,9 @@
 """
 Extract mr pubmed abstracts data using llms
+
+NOTE: this should be part of a slurm job submission
+
+Logics
 - Processes abstracts in batches based on SLURM array task ID.
 """
 
