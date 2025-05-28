@@ -18,8 +18,6 @@ echo $(hostname)
 echo "SLURM_ARRAY_JOB_ID: ${SLURM_ARRAY_JOB_ID}"
 echo "SLURM_ARRAY_TASK_ID: ${SLURM_ARRAY_TASK_ID}"
 
-path_data="${SLURM_SUBMIT_DIR}"/data/intermediate/mr-pubmed-data/mr-pubmed-data.json
-
 prefix="isb-ai"
 output_dir="${SLURM_SUBMIT_DIR}"/output/"${prefix}"-"${SLURM_ARRAY_JOB_ID}"
 mkdir -p "${output_dir}"/{results,logs}
@@ -34,9 +32,10 @@ fi
 module load cuda/12.2
 module load cudatoolkit/23.9_12.2
 micromamba run -n data-extraction \
-    python scripts/isb/extract-data-llama3.py \
-    --path_data ${path_data} \
+    python scripts/isb/extract-data.py \
     --output_dir "${output_results_dir}" \
+    --array-id "${SLURM_ARRAY_TASK_ID}" \
+    --model llama-3 \
     > "${output_log_file}" 2>&1 
 
 echo $(date "+%Y-%m-%dT%H-%M")

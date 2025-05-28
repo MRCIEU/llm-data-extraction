@@ -20,9 +20,10 @@ DATA_DIR = PROJECT_ROOT / "data"
 PATH_DATA = DATA_DIR / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data.json"
 
 MODEL_CONFIGS = {
+    "llama-3": {"model_id": "meta-llama/Meta-Llama-3-8B-Instruct"},
+    "llama-3.2": {"model_id": "meta-llama/Llama-3.2-11B-Vision-Instruct"},
     "deepseek-r1": {"model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"},
     "deepseek-prover": {"model_id": "deepseek-ai/DeepSeek-Prover-V2-7B"},
-    "llama-3.2": {"model_id": "meta-llama/Llama-3.2-11B-Vision-Instruct"},
 }
 
 

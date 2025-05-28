@@ -39,7 +39,6 @@ def extract(messages: str, tokenizer: AutoTokenizer, model: AutoModelForCausalLM
     ).to(model.device)
     terminators = [
         tokenizer.eos_token_id,
-        tokenizer.convert_tokens_to_ids("<|eot_id|>"),
     ]
     outputs = model.generate(
         input_ids,
