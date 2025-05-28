@@ -27,8 +27,8 @@ output_results_dir="${output_dir}"/results
 
 output_log_file="${output_dir}"/logs/slurm-"${SLURM_ARRAY_JOB_ID}"_"${SLURM_ARRAY_TASK_ID}".out
 if [ "${SLURM_ARRAY_TASK_ID}" -eq 0 ]; then
-    submit_script_log_file="${output_dir}"/logs/script-"${SLURM_JOB_ID}".out
-    scontrol write batch_script "${SLURM_JOB_ID}" ${submit_script_log_file}
+    submit_script_log_file="${output_dir}"/logs/script-"${SLURM_ARRAY_JOB_ID}".out
+    scontrol write batch_script "${SLURM_ARRAY_JOB_ID}" ${submit_script_log_file}
 fi
 
 module load cuda/12.2
