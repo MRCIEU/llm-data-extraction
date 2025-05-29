@@ -24,5 +24,6 @@ Only outputs of interest are moved here
 - isb-ai-111997: llama3 full, version 1 data
 - isb-ai-116732: llama3 full, version 2 data
 - isb-ai-117256: deepseek-r1-distilled full, version 2 data
+- isb-ai-117535: llama3.2 full, version 2 data
 
 # artifacts
