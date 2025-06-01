@@ -19,6 +19,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from local_funcs import chat_funcs, prompt_funcs
 from yiutils.project_utils import find_project_root
 
+# ==== params ====
 PROJECT_ROOT = find_project_root("justfile")
 DATA_DIR = PROJECT_ROOT / "data"
 PATH_DATA = DATA_DIR / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data.json"
@@ -32,11 +33,11 @@ MODEL_CONFIGS = {
 
 
 def main():
-    # init
+    # ==== init ====
     proj_root = find_project_root()
     env.read_env()
 
-    # Parse arguments
+    # ==== arg parser ====
     parser = argparse.ArgumentParser(
         description=__doc__,
     )
@@ -71,7 +72,7 @@ def main():
     args = parser.parse_args()
     print(f"args: {args}")
 
-    # params
+    # ==== Config params ====
     # {{{
     array_task_id = args.array_id
     access_token = env("HUGGINGFACE_TOKEN")
@@ -101,12 +102,12 @@ def main():
     model_config = MODEL_CONFIGS[model_config_name]
     # }}}
 
-    # Get abstracts
+    # ==== data loading ====
     with path_to_pubmed.open("r") as f:
         pubmed = json.load(f)
     print("Loaded abstracts")
 
-    # Set up model
+    # ==== Set up model ====
     model_id = model_config["model_id"]
     device = "cuda"
     dtype = torch.bfloat16
@@ -121,7 +122,7 @@ def main():
 
     fulldata = []
 
-    # Loop overall specified abstracts in the dataset
+    # ==== Loop overall specified abstracts in the dataset ====
     for article_data in tqdm(pubmed[startpoint:endpoint]):
         try:
             message_metadata = prompt_funcs.make_message_metadata(article_data["ab"])
@@ -144,6 +145,7 @@ def main():
             output = dict(article_data, **result1, **result2)
             print(f"Output: {output}")
 
+    # ==== wrap up ====
     with out_file.open("w") as f:
         json.dump(fulldata, f, indent=4)
 
