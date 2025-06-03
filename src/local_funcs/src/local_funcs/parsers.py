@@ -1,6 +1,7 @@
 import json
 import re
 
+
 def extract_json_from_markdown(md_string):
     """
     Extracts and parses the first JSON object found in a markdown code block.
@@ -18,6 +19,19 @@ def extract_json_from_markdown(md_string):
             return None
     return None
 
+
+def parse_json(json_string):
+    """
+    Parses a JSON string and returns the corresponding Python object.
+    Returns None if the JSON is invalid.
+    Used for reasoning model output
+    """
+    try:
+        return json.loads(json_string)
+    except json.JSONDecodeError:
+        return None
+
+
 def extract_thinking(md_string):
     """
     Extracts the text before the first markdown JSON code block.
@@ -26,6 +40,7 @@ def extract_thinking(md_string):
     Used for reasoning model output
     """
     import re
+
     pattern = r"(.*?)```json\s.*?```"
     match = re.search(pattern, md_string, re.DOTALL | re.IGNORECASE)
     if match:
