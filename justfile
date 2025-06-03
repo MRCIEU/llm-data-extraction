@@ -1,6 +1,6 @@
 # Variables
 archive_host := "epi-franklin2"
-archive_path := "/projects/MRC-IEU/research/projects/ieu3/p3/015/working/data/llm-data-extraction/"
+archive_path := "/projects/MRC-IEU/research/projects/ieu3/p3/015/working/data/llm-data-extraction/data/"
 data_archive := shell('echo ' + archive_host + ':' + archive_path)
 
 # list recipes
@@ -32,15 +32,25 @@ vscode-isb-2gpus:
 
 # ==== data ====
 
-# data sync, dry run
+# data push, dry run
 [group('data')]
-data-sync-dry:
+data-push-dry:
     rsync -aLvzP --delete -n ./data {{data_archive}}
 
-# data sync
+# data push
 [group('data')]
-data-sync:
+data-push:
     rsync -aLvzP --delete ./data {{data_archive}}
+
+# data pull, dry run
+[group('data')]
+data-pull-dry:
+    rsync -aLvzP --delete -n {{data_archive}} ./data/
+
+# data pull
+[group('data')]
+data-pull:
+    rsync -aLvzP --delete {{data_archive}} ./data/
 
 # ==== docs ====
 
