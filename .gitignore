@@ -2,3 +2,4 @@
 *.env
 *.out
 *.ipynb_checkpoints
+/output
