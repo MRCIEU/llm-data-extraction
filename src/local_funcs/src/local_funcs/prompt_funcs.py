@@ -12,7 +12,7 @@ def make_message_metadata(abstract: str):
             "role": "user",
             "content": f"""
                 This is an abstract from a Mendelian randomization study.
-                    "{abstract}"   
+                    "{abstract}"
                     """,
         },
         prompt_templates.metadataexample,
@@ -32,7 +32,7 @@ def make_message_results(abstract: str):
             "role": "user",
             "content": f"""
                 This is an abstract from a Mendelian randomization study.
-                    "{abstract}"   
+                    "{abstract}"
                     """,
         },
         prompt_templates.resultsexample,
