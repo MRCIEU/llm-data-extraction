@@ -1,0 +1,558 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sample Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+        .toc {
+            width: 15%;
+            background: #f5f5f5;
+            padding: 1em;
+            overflow-y: auto;
+            border-right: 1px solid #ccc;
+        }
+        .content {
+            width: 55%;
+            padding: 2em;
+            overflow-y: auto;
+        }
+        .results {
+            width: 30%;
+            background: #fafafa;
+            padding: 2em;
+            overflow-y: auto;
+            border-left: 1px solid #ccc;
+        }
+        .record {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 2em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2em;
+        }
+        .record-main {
+            width: 60%;
+            padding-right: 2em;
+        }
+        .record-results {
+            width: 40%;
+        }
+        .pubmed-info h2 {
+            margin: 0 0 0.5em 0;
+        }
+        .pubmed-info h3 {
+            margin: 0 0 1em 0;
+            font-weight: normal;
+            color: #333;
+        }
+        .abstract {
+            background: #f9f9f9;
+            padding: 1em;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        /* Tabs */
+        .tab {
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+        }
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 16px;
+            transition: 0.3s;
+            font-size: 1em;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tab button.active {
+            background-color: #ccc;
+        }
+        .tabcontent {
+            display: none;
+            padding: 1em 0 0 0;
+        }
+        .tabcontent pre {
+            background: #f4f4f4;
+            padding: 1em;
+            border-radius: 4px;
+            font-size: 0.95em;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="toc"><h3>PMIDs</h3><ul>
+<li><a href="#pmid-33261611">33261611</a></li>
+</ul></div>
+        <div class="content">
+            
+    <div class="record">
+        <div class="record-main">
+            
+    <div class="pubmed-info" id="pmid-33261611">
+        <h2>33261611</h2>
+        <h3>Genetically proxied milk consumption and risk of colorectal, bladder, breast, and prostate cancer: a two-sample Mendelian randomization study.</h3>
+        <pre class="abstract">Observational studies have shown that milk consumption is inversely associated with colorectal, bladder, and breast cancer risk, but positively associated with prostate cancer. However, whether the associations reflect causality remains debatable. We investigated the potential causal associations of milk consumption with the risk of colorectal, bladder, breast, and prostate cancer using a genetic variant near the LCT gene as proxy for milk consumption.We obtained genetic association estimates for cancer from the UK Biobank (n = 367,643 women and men), FinnGen consortium (n = 135,638 women and men), Breast Cancer Association Consortium (n = 228,951 women), and Prostate Cancer Association Group to Investigate Cancer Associated Alterations in the Genome consortium (n = 140,254 men). Milk consumption was proxied by a genetic variant (rs4988235 or rs182549) upstream of the gene encoding lactase, which catalyzes the breakdown of lactose.Genetically proxied milk consumption was associated with a reduced risk of colorectal cancer. The odds ratio (OR) for each additional milk intake increasing allele was 0.95 (95% confidence interval [CI] 0.91-0.99; P = 0.009). There was no overall association of genetically predicted milk consumption with bladder (OR 0.99; 95% CI 0.94-1.05; P = 0.836), breast (OR 1.01; 95% CI 1.00-1.02; P = 0.113), and prostate cancer (OR 1.01; 95% CI 0.99-1.02; P = 0.389), but a positive association with prostate cancer was observed in the FinnGen consortium (OR 1.07; 95% CI 1.01-1.13; P = 0.026).Our findings strengthen the evidence for a protective role of milk consumption on colorectal cancer risk. There was no or limited evidence that milk consumption affects the risk of bladder, breast, and prostate cancer.</pre>
+    </div>
+    
+        </div>
+        <div class="record-results">
+            
+    <div class="model-tabs">
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'tab-ds_r1-33261611')" id="defaultOpen">ds_r1</button><button class="tablinks" onclick="openTab(event, 'tab-llama3-33261611')" >llama3</button><button class="tablinks" onclick="openTab(event, 'tab-llama3_2-33261611')" >llama3_2</button>
+        </div>
+        
+        <div id="tab-ds_r1-33261611" class="tabcontent" style="display:block">
+            <pre>{
+  &quot;metadata_thinking&quot;: &quot;Alright, so I&#x27;m trying to figure out how to respond to this user&#x27;s query. They provided an abstract from a Mendelian randomization study and want me to extract specific information. Let me break down what they&#x27;re asking for.\n\nFirst, they want the exposures and outcomes listed, categorized into specific groups. The categories are quite detailed, like molecular, environmental, etc. I need to make sure I correctly identify each exposure and outcome and assign the right category. If something doesn&#x27;t fit, I should mark it as \&quot;Other\&quot;.\n\nNext, they want the analytical methods used in the abstract. The methods have to be matched against a specific list, and if any method not on the list is used, I should note it as \&quot;Other\&quot; with the method name. I should double-check the abstract to see if any of these methods are mentioned.\n\nThen, I need to describe the population(s) on which the study is based. The abstract mentions UK Biobank, FinnGen, and several consortia, so I&#x27;ll list those as the populations. Also, the user wants the response in strict pretty JSON format without markdown, so I need to structure it correctly.\n\nI should also include any error messages and explanations in the \&quot;metainformation\&quot; section if there are any mismatches or missing data. For example, if a method isn&#x27;t recognized, I&#x27;ll note that and explain why.\n\nLooking at the abstract, the exposures are \&quot;milk consumption\&quot; and the outcomes are \&quot;colorectal cancer, bladder cancer, breast cancer, and prostate cancer.\&quot; I&#x27;ll categorize \&quot;milk consumption\&quot; as a behavioural exposure. The outcomes are all neoplasms, so they fall under the \&quot;neoplasm\&quot; category.\n\nFor the methods, the abstract mentions Mendelian randomization, specifically using a genetic variant as a proxy for milk consumption. It doesn&#x27;t specify any other methods like colocalization or network MR, so I&#x27;ll assume they used two-sample Mendelian randomization.\n\nThe populations are mainly European men and women from the UK Biobank and FinnGen, along with specific consortia for breast and prostate cancer. I&#x27;ll list these as the population.\n\nI think I&#x27;ve covered all the points. Now, I&#x27;ll structure the JSON accordingly, making sure it&#x27;s pretty and correctly formatted. I&#x27;ll also ensure that any potential errors are included in the metainformation section.\n&lt;/think&gt;&quot;,
+  &quot;metadata&quot;: {
+    &quot;metadata&quot;: {
+      &quot;exposures&quot;: [
+        {
+          &quot;id&quot;: &quot;1&quot;,
+          &quot;trait&quot;: &quot;Milk consumption&quot;,
+          &quot;category&quot;: &quot;behavioural&quot;
+        }
+      ],
+      &quot;outcomes&quot;: [
+        {
+          &quot;id&quot;: &quot;1&quot;,
+          &quot;trait&quot;: &quot;Colorectal cancer&quot;,
+          &quot;category&quot;: &quot;neoplasm&quot;
+        },
+        {
+          &quot;id&quot;: &quot;2&quot;,
+          &quot;trait&quot;: &quot;Bladder cancer&quot;,
+          &quot;category&quot;: &quot;neoplasm&quot;
+        },
+        {
+          &quot;id&quot;: &quot;3&quot;,
+          &quot;trait&quot;: &quot;Breast cancer&quot;,
+          &quot;category&quot;: &quot;neoplasm&quot;
+        },
+        {
+          &quot;id&quot;: &quot;4&quot;,
+          &quot;trait&quot;: &quot;Prostate cancer&quot;,
+          &quot;category&quot;: &quot;neoplasm&quot;
+        }
+      ],
+      &quot;methods&quot;: [
+        {
+          &quot;id&quot;: &quot;1&quot;,
+          &quot;trait&quot;: &quot;Mendelian randomization&quot;,
+          &quot;category&quot;: &quot;Other&quot;
+        }
+      ],
+      &quot;population&quot;: [
+        &quot;UK Biobank&quot;,
+        &quot;FinnGen consortium&quot;,
+        &quot;Breast Cancer Association Consortium&quot;,
+        &quot;Prostate Cancer Association Group to Investigate Cancer Associated Alterations in the Genome consortium&quot;
+      ],
+      &quot;metainformation&quot;: {
+        &quot;error&quot;: &quot;The methods listed in the abstract do not match the methods specified in the method list. The abstract mentions &#x27;Mendelian randomization&#x27;, which is not explicitly listed as a method in the provided method list.&quot;,
+        &quot;explanation&quot;: &quot;Some exposures and outcomes do not fit into any of the provided categories. &#x27;Milk consumption&#x27; is categorized as &#x27;behavioural&#x27;, and all outcomes are categorized as &#x27;neoplasm&#x27;.&quot;
+      }
+    }
+  },
+  &quot;results_thinking&quot;: &quot;Alright, so I&#x27;m trying to figure out how to respond to the user&#x27;s query. They provided a JSON example and an abstract from a study on milk consumption and cancer risks. The user wants me to extract specific information from the abstract and present it in a JSON format with certain fields. \n\nFirst, I need to understand the structure they&#x27;re asking for. They mentioned including fields like exposure, outcome, beta, units, odds ratio, hazard ratio, 95% CI, SE, P-value, and direction. If any of these are missing, I should put \&quot;null\&quot;. Also, they want a \&quot;resultsinformation\&quot; field for any errors or explanations.\n\nLooking at the abstract, I see it discusses several cancers: colorectal, bladder, breast, and prostate. The study uses a genetic variant near the LCT gene to proxy milk consumption. The results show that genetically predicted milk consumption is associated with a reduced risk of colorectal cancer, but not with bladder, breast, or prostate cancer. However, there&#x27;s a positive association with prostate cancer in the FinnGen consortium.\n\nSo, I&#x27;ll need to extract each of these findings. For colorectal cancer, the odds ratio is 0.95, units are not specified, so I&#x27;ll put \&quot;null\&quot;. The beta is 0.95, and the direction is \&quot;decreases\&quot; since the OR is less than 1. For the other cancers, the odds ratio is 1.01 or 1.07, but the P-values aren&#x27;t significant enough except for prostate in FinnGen. \n\nI notice that some P-values are given as strings like \&quot;0.009\&quot; instead of numeric values. The example JSON had an error message about this, so I&#x27;ll include that in the \&quot;resultsinformation\&quot; field.\n\nI should make sure each result is a separate object in the \&quot;results\&quot; array. For each, I&#x27;ll extract the relevant data points, substituting \&quot;null\&quot; where information is missing. The \&quot;direction\&quot; will be based on whether the odds ratio is greater than 1 (increases) or less than 1 (decreases).\n\nFinally, I&#x27;ll structure the JSON accordingly, ensuring it&#x27;s pretty-printed and in the correct format without any markdown. I&#x27;ll also include the error message and explanation in the \&quot;resultsinformation\&quot; section as per the example.\n&lt;/think&gt;&quot;,
+  &quot;results&quot;: {
+    &quot;results&quot;: [
+      {
+        &quot;exposure&quot;: &quot;Genetically predicted milk consumption&quot;,
+        &quot;outcome&quot;: &quot;Colorectal cancer&quot;,
+        &quot;beta&quot;: 0.9500000000000001,
+        &quot;units&quot;: null,
+        &quot;odds ratio&quot;: 0.9500000000000001,
+        &quot;hazard ratio&quot;: null,
+        &quot;95% CI&quot;: [
+          0.91,
+          0.99
+        ],
+        &quot;SE&quot;: null,
+        &quot;P-value&quot;: &quot;0.009&quot;,
+        &quot;Direction&quot;: &quot;decreases&quot;
+      },
+      {
+        &quot;exposure&quot;: &quot;Genetically predicted milk consumption&quot;,
+        &quot;outcome&quot;: &quot;Bladder cancer&quot;,
+        &quot;beta&quot;: null,
+        &quot;units&quot;: null,
+        &quot;odds ratio&quot;: 0.99,
+        &quot;hazard ratio&quot;: null,
+        &quot;95% CI&quot;: [
+          0.9400000000000001,
+          1.05
+        ],
+        &quot;SE&quot;: null,
+        &quot;P-value&quot;: &quot;0.836&quot;,
+        &quot;Direction&quot;: &quot;null&quot;
+      },
+      {
+        &quot;exposure&quot;: &quot;Genetically predicted milk consumption&quot;,
+        &quot;outcome&quot;: &quot;Breast cancer&quot;,
+        &quot;beta&quot;: null,
+        &quot;units&quot;: null,
+        &quot;odds ratio&quot;: 1.01,
+        &quot;hazard ratio&quot;: null,
+        &quot;95% CI&quot;: [
+          1.0,
+          1.02
+        ],
+        &quot;SE&quot;: null,
+        &quot;P-value&quot;: &quot;0.113&quot;,
+        &quot;Direction&quot;: &quot;null&quot;
+      },
+      {
+        &quot;exposure&quot;: &quot;Genetically predicted milk consumption&quot;,
+        &quot;outcome&quot;: &quot;Prostate cancer&quot;,
+        &quot;beta&quot;: null,
+        &quot;units&quot;: null,
+        &quot;odds ratio&quot;: 1.01,
+        &quot;hazard ratio&quot;: null,
+        &quot;95% CI&quot;: [
+          0.99,
+          1.02
+        ],
+        &quot;SE&quot;: null,
+        &quot;P-value&quot;: &quot;0.389&quot;,
+        &quot;Direction&quot;: &quot;null&quot;
+      },
+      {
+        &quot;exposure&quot;: &quot;Genetically predicted milk consumption&quot;,
+        &quot;outcome&quot;: &quot;Prostate cancer (FinnGen)&quot;,
+        &quot;beta&quot;: null,
+        &quot;units&quot;: null,
+        &quot;odds ratio&quot;: 1.07,
+        &quot;hazard ratio&quot;: null,
+        &quot;95% CI&quot;: [
+          1.01,
+          1.13
+        ],
+        &quot;SE&quot;: null,
+        &quot;P-value&quot;: &quot;0.026&quot;,
+        &quot;Direction&quot;: &quot;increases&quot;
+      }
+    ],
+    &quot;resultsinformation&quot;: {
+      &quot;error&quot;: &quot;P-values were string, not numeric values&quot;,
+      &quot;explanation&quot;: &quot;P-values were provided as strings (e.g., &#x27;0.009&#x27;) instead of numeric values.&quot;
+    }
+  }
+}</pre>
+        </div>
+        
+        <div id="tab-llama3-33261611" class="tabcontent" style="display:none">
+            <pre>{
+  &quot;metadata&quot;: {
+    &quot;exposures&quot;: [
+      {
+        &quot;id&quot;: &quot;1&quot;,
+        &quot;trait&quot;: &quot;Milk consumption&quot;,
+        &quot;category&quot;: &quot;behavioural&quot;
+      }
+    ],
+    &quot;outcomes&quot;: [
+      {
+        &quot;id&quot;: &quot;1&quot;,
+        &quot;trait&quot;: &quot;Colorectal cancer&quot;,
+        &quot;category&quot;: &quot;neoplasm&quot;
+      },
+      {
+        &quot;id&quot;: &quot;2&quot;,
+        &quot;trait&quot;: &quot;Bladder cancer&quot;,
+        &quot;category&quot;: &quot;neoplasm&quot;
+      },
+      {
+        &quot;id&quot;: &quot;3&quot;,
+        &quot;trait&quot;: &quot;Breast cancer&quot;,
+        &quot;category&quot;: &quot;neoplasm&quot;
+      },
+      {
+        &quot;id&quot;: &quot;4&quot;,
+        &quot;trait&quot;: &quot;Prostate cancer&quot;,
+        &quot;category&quot;: &quot;neoplasm&quot;
+      }
+    ],
+    &quot;methods&quot;: [
+      {
+        &quot;id&quot;: &quot;1&quot;,
+        &quot;method&quot;: &quot;two-sample mendelian randomization&quot;
+      }
+    ],
+    &quot;population&quot;: [
+      &quot;UK Biobank (women and men)&quot;,
+      &quot;FinnGen consortium (women and men)&quot;,
+      &quot;Breast Cancer Association Consortium (women)&quot;,
+      &quot;Prostate Cancer Association Group to Investigate Cancer Associated Alterations in the Genome consortium (men)&quot;
+    ],
+    &quot;metainformation&quot;: {
+      &quot;error&quot;: &quot;No information on population is provided in abstract&quot;,
+      &quot;explanation&quot;: &quot;Some methods do not match those listed in the prompt&quot;
+    }
+  },
+  &quot;results&quot;: [
+    {
+      &quot;exposure&quot;: &quot;Genetically proxied milk consumption&quot;,
+      &quot;outcome&quot;: &quot;Colorectal cancer risk&quot;,
+      &quot;beta&quot;: null,
+      &quot;units&quot;: null,
+      &quot;odds ratio&quot;: 0.9500000000000001,
+      &quot;hazard ratio&quot;: null,
+      &quot;95% CI&quot;: [
+        0.91,
+        0.99
+      ],
+      &quot;SE&quot;: null,
+      &quot;P-value&quot;: 0.009000000000000001,
+      &quot;direction&quot;: &quot;decreases&quot;
+    },
+    {
+      &quot;exposure&quot;: &quot;Genetically proxied milk consumption&quot;,
+      &quot;outcome&quot;: &quot;Bladder cancer risk&quot;,
+      &quot;beta&quot;: null,
+      &quot;units&quot;: null,
+      &quot;odds ratio&quot;: 0.99,
+      &quot;hazard ratio&quot;: null,
+      &quot;95% CI&quot;: [
+        0.9400000000000001,
+        1.05
+      ],
+      &quot;SE&quot;: null,
+      &quot;P-value&quot;: 0.836,
+      &quot;direction&quot;: &quot;decreases&quot;
+    },
+    {
+      &quot;exposure&quot;: &quot;Genetically proxied milk consumption&quot;,
+      &quot;outcome&quot;: &quot;Breast cancer risk&quot;,
+      &quot;beta&quot;: null,
+      &quot;units&quot;: null,
+      &quot;odds ratio&quot;: 1.01,
+      &quot;hazard ratio&quot;: null,
+      &quot;95% CI&quot;: [
+        1.0,
+        1.02
+      ],
+      &quot;SE&quot;: null,
+      &quot;P-value&quot;: 0.113,
+      &quot;direction&quot;: &quot;increases&quot;
+    },
+    {
+      &quot;exposure&quot;: &quot;Genetically proxied milk consumption&quot;,
+      &quot;outcome&quot;: &quot;Prostate cancer risk&quot;,
+      &quot;beta&quot;: null,
+      &quot;units&quot;: null,
+      &quot;odds ratio&quot;: 1.01,
+      &quot;hazard ratio&quot;: null,
+      &quot;95% CI&quot;: [
+        0.99,
+        1.02
+      ],
+      &quot;SE&quot;: null,
+      &quot;P-value&quot;: 0.389,
+      &quot;direction&quot;: &quot;increases&quot;
+    },
+    {
+      &quot;exposure&quot;: &quot;Genetically proxied milk consumption&quot;,
+      &quot;outcome&quot;: &quot;Prostate cancer risk (FinnGen consortium)&quot;,
+      &quot;beta&quot;: null,
+      &quot;units&quot;: null,
+      &quot;odds ratio&quot;: 1.07,
+      &quot;hazard ratio&quot;: null,
+      &quot;95% CI&quot;: [
+        1.01,
+        1.13
+      ],
+      &quot;SE&quot;: null,
+      &quot;P-value&quot;: 0.026000000000000002,
+      &quot;direction&quot;: &quot;increases&quot;
+    }
+  ]
+}</pre>
+        </div>
+        
+        <div id="tab-llama3_2-33261611" class="tabcontent" style="display:none">
+            <pre>{
+  &quot;metadata&quot;: {
+    &quot;exposures&quot;: [
+      {
+        &quot;id&quot;: &quot;1&quot;,
+        &quot;trait&quot;: &quot;Milk consumption&quot;,
+        &quot;category&quot;: &quot;behavioural&quot;
+      }
+    ],
+    &quot;outcomes&quot;: [
+      {
+        &quot;id&quot;: &quot;1&quot;,
+        &quot;trait&quot;: &quot;Colorectal cancer&quot;,
+        &quot;category&quot;: &quot;neoplasm&quot;
+      },
+      {
+        &quot;id&quot;: &quot;2&quot;,
+        &quot;trait&quot;: &quot;Bladder cancer&quot;,
+        &quot;category&quot;: &quot;neoplasm&quot;
+      },
+      {
+        &quot;id&quot;: &quot;3&quot;,
+        &quot;trait&quot;: &quot;Breast cancer&quot;,
+        &quot;category&quot;: &quot;neoplasm&quot;
+      },
+      {
+        &quot;id&quot;: &quot;4&quot;,
+        &quot;trait&quot;: &quot;Prostate cancer&quot;,
+        &quot;category&quot;: &quot;neoplasm&quot;
+      }
+    ],
+    &quot;methods&quot;: [
+      &quot;two-sample mendelian randomization&quot;
+    ],
+    &quot;population&quot;: [
+      &quot;UK Biobank (women and men)&quot;,
+      &quot;FinnGen consortium (women and men)&quot;,
+      &quot;Breast Cancer Association Consortium (women)&quot;,
+      &quot;Prostate Cancer Association Group to Investigate Cancer Associated Alterations in the Genome consortium (men)&quot;
+    ],
+    &quot;metainformation&quot;: {
+      &quot;error&quot;: &quot;No information on analytical methods used in the study is provided in the abstract&quot;,
+      &quot;explanation&quot;: &quot;Some methods do not match those listed in the prompt&quot;
+    }
+  },
+  &quot;results&quot;: {
+    &quot;results&quot;: [
+      {
+        &quot;exposure&quot;: &quot;genetically proxied milk consumption&quot;,
+        &quot;outcome&quot;: &quot;colorectal cancer&quot;,
+        &quot;beta&quot;: null,
+        &quot;units&quot;: null,
+        &quot;hazard ratio&quot;: null,
+        &quot;odds ratio&quot;: 0.9500000000000001,
+        &quot;95% CI&quot;: [
+          0.91,
+          0.99
+        ],
+        &quot;SE&quot;: null,
+        &quot;P-value&quot;: 0.009000000000000001,
+        &quot;Direction&quot;: &quot;decreases&quot;
+      },
+      {
+        &quot;exposure&quot;: &quot;genetically predicted milk consumption&quot;,
+        &quot;outcome&quot;: &quot;bladder cancer&quot;,
+        &quot;beta&quot;: null,
+        &quot;units&quot;: null,
+        &quot;hazard ratio&quot;: null,
+        &quot;odds ratio&quot;: 0.99,
+        &quot;95% CI&quot;: [
+          0.9400000000000001,
+          1.05
+        ],
+        &quot;SE&quot;: null,
+        &quot;P-value&quot;: 0.836,
+        &quot;Direction&quot;: &quot;decreases&quot;
+      },
+      {
+        &quot;exposure&quot;: &quot;genetically predicted milk consumption&quot;,
+        &quot;outcome&quot;: &quot;breast cancer&quot;,
+        &quot;beta&quot;: null,
+        &quot;units&quot;: null,
+        &quot;hazard ratio&quot;: null,
+        &quot;odds ratio&quot;: 1.01,
+        &quot;95% CI&quot;: [
+          1.0,
+          1.02
+        ],
+        &quot;SE&quot;: null,
+        &quot;P-value&quot;: 0.113,
+        &quot;Direction&quot;: &quot;increases&quot;
+      },
+      {
+        &quot;exposure&quot;: &quot;genetically predicted milk consumption&quot;,
+        &quot;outcome&quot;: &quot;prostate cancer&quot;,
+        &quot;beta&quot;: null,
+        &quot;units&quot;: null,
+        &quot;hazard ratio&quot;: null,
+        &quot;odds ratio&quot;: 1.01,
+        &quot;95% CI&quot;: [
+          0.99,
+          1.02
+        ],
+        &quot;SE&quot;: null,
+        &quot;P-value&quot;: 0.389,
+        &quot;Direction&quot;: &quot;increases&quot;
+      },
+      {
+        &quot;exposure&quot;: &quot;genetically predicted milk consumption&quot;,
+        &quot;outcome&quot;: &quot;prostate cancer&quot;,
+        &quot;beta&quot;: null,
+        &quot;units&quot;: null,
+        &quot;hazard ratio&quot;: null,
+        &quot;odds ratio&quot;: 1.07,
+        &quot;95% CI&quot;: [
+          1.01,
+          1.13
+        ],
+        &quot;SE&quot;: null,
+        &quot;P-value&quot;: 0.026000000000000002,
+        &quot;Direction&quot;: &quot;increases&quot;
+      }
+    ],
+    &quot;resultsinformation&quot;: {
+      &quot;error&quot;: null,
+      &quot;explanation&quot;: null
+    }
+  }
+}</pre>
+        </div>
+        
+    </div>
+    
+        </div>
+    </div>
+    
+        </div>
+    </div>
+    <script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = evt.currentTarget.parentNode.getElementsByTagName("button");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    // Open first tab by default for each record
+    document.addEventListener("DOMContentLoaded", function() {
+        var allTabs = document.querySelectorAll('.tab');
+        allTabs.forEach(function(tab) {
+            var firstBtn = tab.querySelector('button');
+            if (firstBtn) {
+                firstBtn.click();
+            }
+        });
+    });
+    </script>
+</body>
+</html>
+    
