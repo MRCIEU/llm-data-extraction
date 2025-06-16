@@ -79,7 +79,7 @@ docs-data-archive:
 data-prep-mr-pubmed:
     python scripts/python/mr-pubmed-data-prep.py
 
-# ==== development ====
+# ==== model batch processing ====
 
 # Perform data extraction, isb, llama3, pilot
 [group('isb')]
@@ -128,3 +128,11 @@ devel-isb-extract-data-llama3-2-pilot:
 [group('devel')]
 devel-isb-extract-data-llama3-2:
     sbatch scripts/isb/extract-data-llama3-2.sbatch
+
+# ==== post-batch processing ====
+
+# Aggregate LLM batch results
+[group('data-processing')]
+aggregate-llm-batch-results:
+    python scripts/python/aggregate-llm-batch-results.py
+
