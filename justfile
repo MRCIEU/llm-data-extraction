@@ -136,3 +136,8 @@ devel-isb-extract-data-llama3-2:
 aggregate-llm-batch-results:
     python scripts/python/aggregate-llm-batch-results.py
 
+# analysis sample: trial
+[group('data-processing')]
+analysis-sample-trial:
+    python scripts/python/make-analysis-sample.py --size 20 --seed 42
+    python scripts/python/render-analysis-sample.py --file sample-42-20.json
