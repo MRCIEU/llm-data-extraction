@@ -1,12 +1,17 @@
 """
-Process and aggregate results from LLM batch inference.
+Aggregate results from LLM batch inference from
+
+data / intermediate / llm-results / <EXPERIMENT-ID> / results / *.json.
+
+to
+
+data / intermediate / llm-results-aggregated / <MODEL-NAME> / raw_results.json.
 """
 
 import json
 
 import pandas as pd
 
-from local_funcs import parsers
 from yiutils.project_utils import find_project_root
 
 # experiment ID directories for model results
@@ -41,38 +46,6 @@ def process_deepseek_r1_distilled(model_config):
     with open(output_path, "w") as f:
         raw_results_df.to_json(f, orient="records", indent=2)
 
-    # ---- processed results ----
-    results_df = raw_results_df.assign(
-        metadata_thinking=lambda df: df["completion_metadata"].apply(
-            parsers.extract_thinking
-        ),
-        metadata=lambda df: df["completion_metadata"].apply(
-            parsers.extract_json_from_markdown
-        ),
-        results_thinking=lambda df: df["completion_results"].apply(
-            parsers.extract_thinking
-        ),
-        results=lambda df: df["completion_results"].apply(
-            parsers.extract_json_from_markdown
-        ),
-    )[
-        [
-            "pmid",
-            "ab",
-            "title",
-            "metadata_thinking",
-            "metadata",
-            "results_thinking",
-            "results",
-        ]
-    ]
-    print("Deepseek-r1-distilled processed results_df:")
-    results_df.info()
-
-    output_path = model_config["output"] / "processed_results.json"
-    with open(output_path, "w") as f:
-        results_df.to_json(f, orient="records", indent=2)
-
 
 def process_llama3_2(model_config):
     path_to_llama3_2_result_dir = model_config["input"]
@@ -103,26 +76,6 @@ def process_llama3_2(model_config):
     with open(output_path, "w") as f:
         raw_results_df.to_json(f, orient="records", indent=2)
 
-    # ---- processed results ----
-    results_df = raw_results_df.assign(
-        metadata=lambda df: df["completion_metadata"].apply(parsers.parse_json),
-        results=lambda df: df["completion_results"].apply(parsers.parse_json),
-    )[
-        [
-            "pmid",
-            "ab",
-            "title",
-            "metadata",
-            "results",
-        ]
-    ]
-    print("llama3-2 processed results_df:")
-    results_df.info()
-
-    output_path = model_config["output"] / "processed_results.json"
-    with open(output_path, "w") as f:
-        results_df.to_json(f, orient="records", indent=2)
-
 
 def process_llama3(model_config):
     json_files = list(model_config["input"].glob("*.json"))
@@ -149,23 +102,6 @@ def process_llama3(model_config):
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w") as f:
         raw_results_df.to_json(f, orient="records", indent=2)
-
-    # ---- processed results ----
-    results_df = raw_results_df[
-        [
-            "pmid",
-            "ab",
-            "title",
-            "metadata",
-            "results",
-        ]
-    ]
-    print("llama3 processed results_df:")
-    results_df.info()
-
-    output_path = model_config["output"] / "processed_results.json"
-    with open(output_path, "w") as f:
-        results_df.to_json(f, orient="records", indent=2)
 
 
 def main():

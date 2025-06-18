@@ -133,8 +133,9 @@ devel-isb-extract-data-llama3-2:
 
 # Aggregate LLM batch results
 [group('data-processing')]
-aggregate-llm-batch-results:
+process-llm-batch-results:
     python scripts/python/aggregate-llm-batch-results.py
+    python scripts/python/process-llm-aggregated-results.py
 
 # analysis sample: trial
 [group('data-processing')]

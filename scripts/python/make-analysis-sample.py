@@ -45,7 +45,6 @@ def load_model_results(model_name: str, data_dir: Path):
         pd.read_json(path_to_results, orient="records")
         .dropna(subset=["metadata", "results"])
         .assign(pmid=lambda x: x["pmid"].astype(str))
-        .drop(columns=["ab", "title"])
     )
     id_set = set(data["pmid"].unique())
     res = {
