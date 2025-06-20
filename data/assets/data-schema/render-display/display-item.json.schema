@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Display Item",
+  "type": "object",
+  "properties": {
+    "pmid": { "type": "string" },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "exposures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "trait": { "type": "string" },
+              "category": { "type": "string" }
+            },
+            "required": ["id", "trait", "category"],
+            "additionalProperties": false
+          }
+        },
+        "outcomes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "trait": { "type": "string" },
+              "category": { "type": "string" }
+            },
+            "required": ["id", "trait", "category"],
+            "additionalProperties": false
+          }
+        },
+        "methods": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "population": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["exposures", "outcomes", "methods", "population"],
+      "additionalProperties": false
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "exposure": { "type": "string" },
+          "outcome": { "type": "string" },
+          "beta": { "type": ["number", "null"] },
+          "units": { "type": ["string", "null"] },
+          "odds ratio": { "type": ["number", "null"] },
+          "hazard ratio": { "type": ["number", "null"] },
+          "95% CI": { "type": ["array", "null"], "items": { "type": ["number", "null"] }, "minItems": 2, "maxItems": 2 },
+          "SE": { "type": ["number", "null"] },
+          "P-value": { "type": ["number", "null"] },
+          "Direction": { "type": ["string", "null"] }
+        },
+        "required": ["exposure", "outcome", "beta", "units", "odds ratio", "hazard ratio", "95% CI", "SE", "P-value", "Direction"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["pmid", "metadata", "results"],
+  "additionalProperties": false
+}
