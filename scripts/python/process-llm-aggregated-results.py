@@ -8,11 +8,22 @@ to
 data / intermediate / <MODEL-NAME> / processed_results.json.
 """
 
+import json
+
+import jsonschema
 import pandas as pd
 from loguru import logger
 
 from local_funcs import parsers
 from yiutils.project_utils import find_project_root
+
+
+def validate_with_schema(item, schema) -> bool:
+    try:
+        jsonschema.validate(instance=item, schema=schema)
+        return True
+    except jsonschema.ValidationError:
+        return False
 
 
 def process_deepseek_r1_distilled(model_config):
@@ -23,7 +34,15 @@ def process_deepseek_r1_distilled(model_config):
     )
     raw_results_df = pd.read_json(path_to_raw_results, orient="records")
 
+    # ---- schema files ----
+    with open(model_config["schema"]["metadata"]) as f:
+        meta_schema = json.load(f)
+    with open(model_config["schema"]["results"]) as f:
+        results_schema = json.load(f)
+
     # ---- process results ----
+    # Parsing metadata and results
+    logger.info("deepseek-r1-distilled: parsing metadata and results")
     results_df = raw_results_df.assign(
         metadata_thinking=lambda df: df["completion_metadata"].apply(
             parsers.extract_thinking
@@ -46,6 +65,22 @@ def process_deepseek_r1_distilled(model_config):
             "results",
         ]
     ]
+    logger.info("deepseek-r1-distilled: parsing metadata and results, done")
+
+    # Schema validation
+    results_df = results_df.assign(
+        metadata_valid=lambda df: df["metadata"].apply(
+            validate_with_schema, schema=meta_schema
+        ),
+        results_valid=lambda df: df["results"].apply(
+            validate_with_schema, schema=results_schema
+        ),
+    )
+    print(f"metadata_valid sum: {results_df['metadata_valid'].sum()}")
+    print(f"results_valid sum: {results_df['results_valid'].sum()}")
+    results_df = results_df[results_df["metadata_valid"] & results_df["results_valid"]]
+    results_df = results_df.drop(columns=["metadata_valid", "results_valid"])
+
     print("Deepseek-r1-distilled processed results_df:")
     results_df.info()
 
@@ -62,7 +97,14 @@ def process_llama3_2(model_config):
     )
     raw_results_df = pd.read_json(path_to_raw_results, orient="records")
 
+    # ---- schema files ----
+    with open(model_config["schema"]["metadata"]) as f:
+        meta_schema = json.load(f)
+    with open(model_config["schema"]["results"]) as f:
+        results_schema = json.load(f)
+
     # ---- process results ----
+    logger.info("llama3-2: parsing metadata and results")
     results_df = raw_results_df.assign(
         metadata=lambda df: df["completion_metadata"].apply(parsers.parse_json),
         results=lambda df: df["completion_results"].apply(parsers.parse_json),
@@ -73,6 +115,22 @@ def process_llama3_2(model_config):
             "results",
         ]
     ]
+    logger.info("llama3-2: parsing metadata and results, done")
+
+    # Schema validation
+    results_df = results_df.assign(
+        metadata_valid=lambda df: df["metadata"].apply(
+            validate_with_schema, schema=meta_schema
+        ),
+        results_valid=lambda df: df["results"].apply(
+            validate_with_schema, schema=results_schema
+        ),
+    )
+    print(f"metadata_valid sum: {results_df['metadata_valid'].sum()}")
+    print(f"results_valid sum: {results_df['results_valid'].sum()}")
+    results_df = results_df[results_df["metadata_valid"] & results_df["results_valid"]]
+    results_df = results_df.drop(columns=["metadata_valid", "results_valid"])
+
     print("llama3-2 processed results_df:")
     results_df.info()
 
@@ -89,7 +147,14 @@ def process_llama3(model_config):
     )
     raw_results_df = pd.read_json(path_to_raw_results, orient="records")
 
+    # ---- schema files ----
+    with open(model_config["schema"]["metadata"]) as f:
+        meta_schema = json.load(f)
+    with open(model_config["schema"]["results"]) as f:
+        results_schema = json.load(f)
+
     # ---- process results ----
+    logger.info("llama3: parsing metadata and results")
     results_df = raw_results_df[
         [
             "pmid",
@@ -97,6 +162,22 @@ def process_llama3(model_config):
             "results",
         ]
     ]
+    logger.info("llama3: parsing metadata and results, done")
+
+    # Schema validation
+    results_df = results_df.assign(
+        metadata_valid=lambda df: df["metadata"].apply(
+            validate_with_schema, schema=meta_schema
+        ),
+        results_valid=lambda df: df["results"].apply(
+            validate_with_schema, schema=results_schema
+        ),
+    )
+    print(f"metadata_valid sum: {results_df['metadata_valid'].sum()}")
+    print(f"results_valid sum: {results_df['results_valid'].sum()}")
+    results_df = results_df[results_df["metadata_valid"] & results_df["results_valid"]]
+    results_df = results_df.drop(columns=["metadata_valid", "results_valid"])
+
     print("llama3 processed results_df:")
     results_df.info()
 
@@ -109,18 +190,55 @@ def main():
     proj_root = find_project_root("justfile")
     print(f"Project root: {proj_root}")
 
-    data_dir = proj_root / "data" / "intermediate" / "llm-results-aggregated"
-    assert data_dir.exists()
+    data_dir = proj_root / "data"
+    agg_data_dir = data_dir / "intermediate" / "llm-results-aggregated"
+    assert agg_data_dir.exists()
 
     model_configs = {
         "deepseek-r1-distilled": {
-            "data_dir": data_dir / "deepseek-r1-distilled",
+            "data_dir": agg_data_dir / "deepseek-r1-distilled",
+            "schema": {
+                "metadata": data_dir
+                / "assets"
+                / "data-schema"
+                / "deepseek-r1-distilled"
+                / "metadata.json.schema",
+                "results": data_dir
+                / "assets"
+                / "data-schema"
+                / "deepseek-r1-distilled"
+                / "results.json.schema",
+            },
         },
         "llama3": {
-            "data_dir": data_dir / "llama3",
+            "data_dir": agg_data_dir / "llama3",
+            "schema": {
+                "metadata": data_dir
+                / "assets"
+                / "data-schema"
+                / "llama3"
+                / "metadata.json.schema",
+                "results": data_dir
+                / "assets"
+                / "data-schema"
+                / "llama3"
+                / "results.json.schema",
+            },
         },
         "llama3-2": {
-            "data_dir": data_dir / "llama3-2",
+            "data_dir": agg_data_dir / "llama3-2",
+            "schema": {
+                "metadata": data_dir
+                / "assets"
+                / "data-schema"
+                / "llama3-2"
+                / "metadata.json.schema",
+                "results": data_dir
+                / "assets"
+                / "data-schema"
+                / "llama3-2"
+                / "results.json.schema",
+            },
         },
     }
     for k, v in model_configs.items():
