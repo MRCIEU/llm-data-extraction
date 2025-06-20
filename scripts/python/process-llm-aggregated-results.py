@@ -67,6 +67,10 @@ def process_deepseek_r1_distilled(model_config):
     ]
     logger.info("deepseek-r1-distilled: parsing metadata and results, done")
 
+    output_path = model_config["data_dir"] / "processed_results.json"
+    with open(output_path, "w") as f:
+        results_df.to_json(f, orient="records", indent=2)
+
     # Schema validation
     results_df = results_df.assign(
         metadata_valid=lambda df: df["metadata"].apply(
@@ -78,15 +82,26 @@ def process_deepseek_r1_distilled(model_config):
     )
     print(f"metadata_valid sum: {results_df['metadata_valid'].sum()}")
     print(f"results_valid sum: {results_df['results_valid'].sum()}")
-    results_df = results_df[results_df["metadata_valid"] & results_df["results_valid"]]
-    results_df = results_df.drop(columns=["metadata_valid", "results_valid"])
+    results_df_valid = results_df[
+        results_df["metadata_valid"] & results_df["results_valid"]
+    ].drop(columns=["metadata_valid", "results_valid"])
+
+    results_df_invalid = results_df[
+        ~(results_df["metadata_valid"] & results_df["results_valid"])
+    ].drop(columns=["metadata_valid", "results_valid"])
 
     print("Deepseek-r1-distilled processed results_df:")
-    results_df.info()
+    results_df_valid.info()
+    print("Deepseek-r1-distilled invalid results_df:")
+    results_df_invalid.info()
 
-    output_path = model_config["data_dir"] / "processed_results.json"
+    output_path = model_config["data_dir"] / "processed_results_valid.json"
     with open(output_path, "w") as f:
-        results_df.to_json(f, orient="records", indent=2)
+        results_df_valid.to_json(f, orient="records", indent=2)
+
+    output_path_invalid = model_config["data_dir"] / "processed_results_invalid.json"
+    with open(output_path_invalid, "w") as f:
+        results_df_invalid.to_json(f, orient="records", indent=2)
 
 
 def process_llama3_2(model_config):
@@ -117,6 +132,10 @@ def process_llama3_2(model_config):
     ]
     logger.info("llama3-2: parsing metadata and results, done")
 
+    output_path = model_config["data_dir"] / "processed_results.json"
+    with open(output_path, "w") as f:
+        results_df.to_json(f, orient="records", indent=2)
+
     # Schema validation
     results_df = results_df.assign(
         metadata_valid=lambda df: df["metadata"].apply(
@@ -128,15 +147,26 @@ def process_llama3_2(model_config):
     )
     print(f"metadata_valid sum: {results_df['metadata_valid'].sum()}")
     print(f"results_valid sum: {results_df['results_valid'].sum()}")
-    results_df = results_df[results_df["metadata_valid"] & results_df["results_valid"]]
-    results_df = results_df.drop(columns=["metadata_valid", "results_valid"])
+    results_df_valid = results_df[
+        results_df["metadata_valid"] & results_df["results_valid"]
+    ].drop(columns=["metadata_valid", "results_valid"])
+
+    results_df_invalid = results_df[
+        ~(results_df["metadata_valid"] & results_df["results_valid"])
+    ].drop(columns=["metadata_valid", "results_valid"])
 
     print("llama3-2 processed results_df:")
-    results_df.info()
+    results_df_valid.info()
+    print("llama3-2 invalid results_df:")
+    results_df_invalid.info()
 
-    output_path = model_config["data_dir"] / "processed_results.json"
+    output_path = model_config["data_dir"] / "processed_results_valid.json"
     with open(output_path, "w") as f:
-        results_df.to_json(f, orient="records", indent=2)
+        results_df_valid.to_json(f, orient="records", indent=2)
+
+    output_path_invalid = model_config["data_dir"] / "processed_results_invalid.json"
+    with open(output_path_invalid, "w") as f:
+        results_df_invalid.to_json(f, orient="records", indent=2)
 
 
 def process_llama3(model_config):
@@ -164,6 +194,10 @@ def process_llama3(model_config):
     ]
     logger.info("llama3: parsing metadata and results, done")
 
+    output_path = model_config["data_dir"] / "processed_results.json"
+    with open(output_path, "w") as f:
+        results_df.to_json(f, orient="records", indent=2)
+
     # Schema validation
     results_df = results_df.assign(
         metadata_valid=lambda df: df["metadata"].apply(
@@ -175,15 +209,26 @@ def process_llama3(model_config):
     )
     print(f"metadata_valid sum: {results_df['metadata_valid'].sum()}")
     print(f"results_valid sum: {results_df['results_valid'].sum()}")
-    results_df = results_df[results_df["metadata_valid"] & results_df["results_valid"]]
-    results_df = results_df.drop(columns=["metadata_valid", "results_valid"])
+    results_df_valid = results_df[
+        results_df["metadata_valid"] & results_df["results_valid"]
+    ].drop(columns=["metadata_valid", "results_valid"])
+
+    results_df_invalid = results_df[
+        ~(results_df["metadata_valid"] & results_df["results_valid"])
+    ].drop(columns=["metadata_valid", "results_valid"])
 
     print("llama3 processed results_df:")
-    results_df.info()
+    results_df_valid.info()
+    print("llama3 invalid results_df:")
+    results_df_invalid.info()
 
-    output_path = model_config["data_dir"] / "processed_results.json"
+    output_path = model_config["data_dir"] / "processed_results_valid.json"
     with open(output_path, "w") as f:
-        results_df.to_json(f, orient="records", indent=2)
+        results_df_valid.to_json(f, orient="records", indent=2)
+
+    output_path_invalid = model_config["data_dir"] / "processed_results_invalid.json"
+    with open(output_path_invalid, "w") as f:
+        results_df_invalid.to_json(f, orient="records", indent=2)
 
 
 def main():
