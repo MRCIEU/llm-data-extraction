@@ -47,7 +47,12 @@
           ]
         }
       },
-      "population": { "type": "array", "items": { "type": "string" } },
+      "population": {
+        "oneOf": [
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "string" }
+        ]
+      },
       "metainformation": {
         "type": "object"
       }

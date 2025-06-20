@@ -24,7 +24,9 @@ def validate_with_schema(item, schema, log_file) -> bool:
         return True
     except jsonschema.ValidationError as e:
         with open(log_file, "a") as errfile:
-            errfile.write(f"Validation error: {e.message}\nInstance: {json.dumps(item, ensure_ascii=False)}\n\n")
+            errfile.write(
+                f"Validation error: {e.message}\nInstance: {json.dumps(item, ensure_ascii=False)}\n\n"
+            )
         return False
 
 
@@ -74,13 +76,15 @@ def process_deepseek_r1_distilled(model_config):
         results_df.to_json(f, orient="records", indent=2)
 
     # ---- Schema validation ----
-    model_config["error_log"].parent.mkdir(parents=True, exist_ok=True)
+    log_file = model_config["error_log"]
+    log_file.parent.mkdir(parents=True, exist_ok=True)
+    log_file.touch(exist_ok=True)
     results_df = results_df.assign(
         metadata_valid=lambda df: df["metadata"].apply(
-            validate_with_schema, schema=meta_schema, log_file=model_config["error_log"]
+            validate_with_schema, schema=meta_schema, log_file=log_file
         ),
         results_valid=lambda df: df["results"].apply(
-            validate_with_schema, schema=results_schema, log_file=model_config["error_log"]
+            validate_with_schema, schema=results_schema, log_file=log_file
         ),
     )
     print(f"metadata_valid sum: {results_df['metadata_valid'].sum()}")
@@ -140,13 +144,16 @@ def process_llama3_2(model_config):
         results_df.to_json(f, orient="records", indent=2)
 
     # ---- Schema validation ----
+    log_file = model_config["error_log"]
+    log_file.parent.mkdir(parents=True, exist_ok=True)
+    log_file.touch(exist_ok=True)
     model_config["error_log"].parent.mkdir(parents=True, exist_ok=True)
     results_df = results_df.assign(
         metadata_valid=lambda df: df["metadata"].apply(
-            validate_with_schema, schema=meta_schema, log_file=model_config["error_log"]
+            validate_with_schema, schema=meta_schema, log_file=log_file
         ),
         results_valid=lambda df: df["results"].apply(
-            validate_with_schema, schema=results_schema, log_file=model_config["error_log"]
+            validate_with_schema, schema=results_schema, log_file=log_file
         ),
     )
     print(f"metadata_valid sum: {results_df['metadata_valid'].sum()}")
@@ -203,13 +210,15 @@ def process_llama3(model_config):
         results_df.to_json(f, orient="records", indent=2)
 
     # ---- Schema validation ----
-    model_config["error_log"].parent.mkdir(parents=True, exist_ok=True)
+    log_file = model_config["error_log"]
+    log_file.parent.mkdir(parents=True, exist_ok=True)
+    log_file.touch(exist_ok=True)
     results_df = results_df.assign(
         metadata_valid=lambda df: df["metadata"].apply(
-            validate_with_schema, schema=meta_schema, log_file=model_config["error_log"]
+            validate_with_schema, schema=meta_schema, log_file=log_file
         ),
         results_valid=lambda df: df["results"].apply(
-            validate_with_schema, schema=results_schema, log_file=model_config["error_log"]
+            validate_with_schema, schema=results_schema, log_file=log_file
         ),
     )
     print(f"metadata_valid sum: {results_df['metadata_valid'].sum()}")
@@ -259,7 +268,10 @@ def main():
                 / "deepseek-r1-distilled"
                 / "results.json.schema",
             },
-            "error_log": proj_root / "output" / "logs" / "deepseek-r1-distilled_schema_validation_errors.log",
+            "error_log": proj_root
+            / "output"
+            / "logs"
+            / "deepseek-r1-distilled_schema_validation_errors.log",
         },
         "llama3": {
             "data_dir": agg_data_dir / "llama3",
@@ -275,7 +287,10 @@ def main():
                 / "llama3"
                 / "results.json.schema",
             },
-            "error_log": proj_root / "output" / "logs" / "llama3_schema_validation_errors.log",
+            "error_log": proj_root
+            / "output"
+            / "logs"
+            / "llama3_schema_validation_errors.log",
         },
         "llama3-2": {
             "data_dir": agg_data_dir / "llama3-2",
@@ -291,7 +306,10 @@ def main():
                 / "llama3-2"
                 / "results.json.schema",
             },
-            "error_log": proj_root / "output" / "logs" / "llama3-2_schema_validation_errors.log",
+            "error_log": proj_root
+            / "output"
+            / "logs"
+            / "llama3-2_schema_validation_errors.log",
         },
     }
     for k, v in model_configs.items():
