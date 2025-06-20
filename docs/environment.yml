@@ -13,6 +13,7 @@ dependencies:
   - python=3.12
   - pytorch-gpu
   - tqdm
+  - loguru
   - pip:
     - accelerate==1.4.0
     - compressed-tensors==0.9.4

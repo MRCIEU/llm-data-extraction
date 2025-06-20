@@ -12,6 +12,7 @@ dependencies:
   - environs
   - pytorch-gpu
   - just
+  - loguru
   - pip:
     - transformers
     - optimum-quanto
