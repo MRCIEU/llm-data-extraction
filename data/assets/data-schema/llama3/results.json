@@ -1,0 +1,32 @@
+[
+  {
+    "exposure": "SGLT2 inhibition",
+    "outcome": "Heart Failure (HF)",
+    "beta": null,
+    "units": null,
+    "odds ratio": 0.44,
+    "hazard ratio": null,
+    "95% CI": [
+      0.26,
+      0.76
+    ],
+    "SE": null,
+    "P-value": 0.003,
+    "direction": "decreases"
+  },
+  {
+    "exposure": "SGLT2 inhibition",
+    "outcome": "LRRTM2",
+    "beta": -0.2,
+    "units": null,
+    "odds ratio": null,
+    "hazard ratio": null,
+    "95% CI": [
+      -0.39,
+      -0.06
+    ],
+    "SE": null,
+    "P-value": 0.02,
+    "direction": "decreases"
+  }
+]

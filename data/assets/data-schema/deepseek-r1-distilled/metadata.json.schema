@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Metadata",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "exposures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "trait": { "type": "string" },
+              "category": { "type": "string" }
+            },
+            "required": ["id", "trait", "category"],
+            "additionalProperties": false
+          }
+        },
+        "outcomes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "trait": { "type": "string" },
+              "category": { "type": "string" }
+            },
+            "required": ["id", "trait", "category"],
+            "additionalProperties": false
+          }
+        },
+        "methods": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "description": { "type": "string" }
+            },
+            "required": ["id", "name", "description"],
+            "additionalProperties": false
+          }
+        },
+        "population": { "type": "string" },
+        "metainformation": {
+          "type": "object",
+          "properties": {
+            "error": { "type": "string" },
+            "explanation": { "type": "string" }
+          },
+          "required": ["error", "explanation"],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "exposures",
+        "outcomes",
+        "methods",
+        "population",
+        "metainformation"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": ["metadata"],
+  "additionalProperties": false
+}

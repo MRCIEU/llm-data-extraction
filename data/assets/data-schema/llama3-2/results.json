@@ -1,0 +1,50 @@
+{
+  "results": [
+    {
+      "exposure": "SGLT2 inhibition",
+      "outcome": "Heart Failure (HF)",
+      "beta": null,
+      "units": null,
+      "hazard ratio": null,
+      "odds ratio": 0.44,
+      "95% CI": [
+        0.26,
+        0.76
+      ],
+      "SE": null,
+      "P-value": 0.003,
+      "Direction": "decreases"
+    },
+    {
+      "exposure": "SGLT2 inhibition",
+      "outcome": "4,907 circulating proteins",
+      "beta": null,
+      "units": null,
+      "hazard ratio": null,
+      "odds ratio": null,
+      "95% CI": null,
+      "SE": null,
+      "P-value": null,
+      "Direction": null
+    },
+    {
+      "exposure": "SGLT2 inhibition",
+      "outcome": "Heart Failure (HF) through LRRTM2",
+      "beta": -0.2,
+      "units": null,
+      "hazard ratio": null,
+      "odds ratio": null,
+      "95% CI": [
+        -0.39,
+        -0.06
+      ],
+      "SE": null,
+      "P-value": 0.02,
+      "Direction": "decreases"
+    }
+  ],
+  "resultsinformation": {
+    "error": "Missing values for some fields",
+    "explanation": "Some fields were not provided in the abstract, such as beta, units, hazard ratio, and SE for the second result."
+  }
+}

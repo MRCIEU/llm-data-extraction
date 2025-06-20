@@ -1,0 +1,31 @@
+{
+  "exposures": [
+    {
+      "id": "1",
+      "trait": "Sodium-glucose cotransporter 2 (SGLT2) inhibition",
+      "category": "molecular"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "1",
+      "trait": "Heart Failure (HF)",
+      "category": "disease of the circulatory system"
+    }
+  ],
+  "methods": [
+    {
+      "id": "1",
+      "method": "two-sample, two-step Mendelian Randomization (MR) analysis",
+      "category": "Other"
+    }
+  ],
+  "population": [
+    "deCODE study",
+    "Heart Failure Molecular Epidemiology for Therapeutic Targets (HERMES) consortium"
+  ],
+  "metainformation": {
+    "error": "No information on population is provided in abstract",
+    "explanation": "Some methods do not match those listed in the prompt"
+  }
+}

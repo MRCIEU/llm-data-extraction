@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "exposures": [
+      {
+        "id": "1",
+        "trait": "Genetic variants",
+        "category": "molecular"
+      }
+    ],
+    "outcomes": [
+      {
+        "id": "1",
+        "trait": "Cardiometabolic traits",
+        "category": "clinical measures"
+      }
+    ],
+    "methods": [
+      {
+        "id": "1",
+        "name": "two-sample mendelian randomization",
+        "description": "A method used to estimate causal effects by leveraging genetic variation."
+      },
+      {
+        "id": "2",
+        "name": "multivariable mendelian randomization",
+        "description": "An extension of Mendelian randomization that accounts for multiple genetic variants simultaneously."
+      }
+    ],
+    "population": "No specific population mentioned",
+    "metainformation": {
+      "error": "No information on population is provided in abstract",
+      "explanation": "Some methods do not match those listed in the prompt"
+    }
+  }
+}

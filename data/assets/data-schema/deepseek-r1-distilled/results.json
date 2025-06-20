@@ -1,0 +1,68 @@
+{
+  "results": [
+    {
+      "exposure": "Genetic variants associated with cardiometabolic traits",
+      "outcome": "Causality inference",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": [
+        null,
+        null
+      ],
+      "SE": null,
+      "P-value": null,
+      "Direction": null
+    },
+    {
+      "exposure": "Mendelian randomization design",
+      "outcome": "Causal inferences from observational data",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": [
+        null,
+        null
+      ],
+      "SE": null,
+      "P-value": null,
+      "Direction": null
+    },
+    {
+      "exposure": "Cardiovascular risk factors",
+      "outcome": "Drug efficacy and safety",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": [
+        null,
+        null
+      ],
+      "SE": null,
+      "P-value": null,
+      "Direction": null
+    },
+    {
+      "exposure": "Existing and novel drugs",
+      "outcome": "Repurposing potential",
+      "beta": null,
+      "units": null,
+      "odds ratio": null,
+      "hazard ratio": null,
+      "95% CI": [
+        null,
+        null
+      ],
+      "SE": null,
+      "P-value": null,
+      "Direction": null
+    }
+  ],
+  "resultsinformation": {
+    "error": "No results provided in abstract",
+    "explanation": "P-values were mentioned but not numeric values. No specific numerical results were found in the abstract."
+  }
+}
