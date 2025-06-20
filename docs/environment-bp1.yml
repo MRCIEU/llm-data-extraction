@@ -18,3 +18,4 @@ dependencies:
     - optimum-quanto
     - accelerate
     - lightning
+    - jsonschema

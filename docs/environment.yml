@@ -21,5 +21,4 @@ dependencies:
     - optimum==1.24.0
     - optimum-quanto==0.2.7
     - transformers==4.51.3
-
-prefix: "/lus/lfs1aip1/home/b5a/ik18445.b5a/micromamba/envs/data-extraction"
+    - jsonschema
