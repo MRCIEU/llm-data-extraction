@@ -1,54 +1,38 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Results",
-  "type": "object",
-  "properties": {
-    "results": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "exposure": { "type": "string" },
-          "outcome": { "type": "string" },
-          "beta": { "type": ["number", "null"] },
-          "units": { "type": ["string", "null"] },
-          "odds ratio": { "type": ["number", "null"] },
-          "hazard ratio": { "type": ["number", "null"] },
-          "95% CI": {
-            "type": "array",
-            "items": { "type": ["number", "null"] },
-            "minItems": 2,
-            "maxItems": 2
-          },
-          "SE": { "type": ["number", "null"] },
-          "P-value": { "type": ["number", "null"] },
-          "Direction": { "type": ["string", "null"] }
-        },
-        "required": [
-          "exposure",
-          "outcome",
-          "beta",
-          "units",
-          "odds ratio",
-          "hazard ratio",
-          "95% CI",
-          "SE",
-          "P-value",
-          "Direction"
-        ],
-        "additionalProperties": false
-      }
-    },
-    "resultsinformation": {
-      "type": "object",
-      "properties": {
-        "error": { "type": "string" },
-        "explanation": { "type": "string" }
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "exposure": { "type": "string" },
+      "outcome": { "type": "string" },
+      "beta": { "type": ["number", "null"] },
+      "units": { "type": ["string", "null"] },
+      "odds ratio": { "type": ["number", "null"] },
+      "hazard ratio": { "type": ["number", "null"] },
+      "95% CI": {
+        "type": ["array", "null"],
+        "items": { "type": ["number", "null"] },
+        "minItems": 2,
+        "maxItems": 2
       },
-      "required": ["error", "explanation"],
-      "additionalProperties": false
-    }
-  },
-  "required": ["results", "resultsinformation"],
-  "additionalProperties": false
+      "SE": { "type": ["number", "null"] },
+      "P-value": { "type": ["number", "null"] },
+      "direction": { "type": ["string", "null"] }
+    },
+    "required": [
+      "exposure",
+      "outcome",
+      "beta",
+      "units",
+      "odds ratio",
+      "hazard ratio",
+      "95% CI",
+      "SE",
+      "P-value",
+      "direction"
+    ],
+    "additionalProperties": false
+  }
 }

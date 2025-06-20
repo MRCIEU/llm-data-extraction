@@ -15,7 +15,7 @@
           "odds ratio": { "type": ["number", "null"] },
           "hazard ratio": { "type": ["number", "null"] },
           "95% CI": {
-            "type": "array",
+            "type": ["array", "null"],
             "items": { "type": ["number", "null"] },
             "minItems": 2,
             "maxItems": 2
