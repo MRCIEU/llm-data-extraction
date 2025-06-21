@@ -21,7 +21,7 @@ from yiutils.project_utils import find_project_root
 # Remapping of commonly wrong keys
 RESULT_REMAPS = {
     "95% confidence interval": "95% CI",
-    "95_CI": "95% CI",
+    "95%_CI": "95% CI",
     "standard error": "SE",
     "odds_ratio": "odds ratio",
     "hazard_ratio": "hazard ratio",
