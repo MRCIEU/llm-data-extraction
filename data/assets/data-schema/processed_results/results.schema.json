@@ -18,7 +18,7 @@
           },
           {
             "type": ["array", "null"],
-            "items": { "type": ["number", "null"] },
+            "items": { "type": ["number", "null", "string"] },
             "minItems": 2,
             "maxItems": 2
           }
@@ -26,7 +26,6 @@
       },
       "SE": { "type": ["number", "null", "string"] },
       "P-value": { "type": ["number", "null", "string"] },
-      "Direction": { "type": ["string", "null"] },
       "direction": { "type": ["string", "null"] }
     },
     "required": [
@@ -38,7 +37,8 @@
       "hazard ratio",
       "95% CI",
       "SE",
-      "P-value"
+      "P-value",
+      "direction"
     ],
     "additionalProperties": false
   }

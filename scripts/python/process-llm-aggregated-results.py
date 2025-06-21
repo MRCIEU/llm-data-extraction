@@ -18,6 +18,16 @@ from loguru import logger
 from local_funcs import parsers
 from yiutils.project_utils import find_project_root
 
+# Remapping of commonly wrong keys
+RESULT_REMAPS = {
+    "95% confidence interval": "95% CI",
+    "95_CI": "95% CI",
+    "standard error": "SE",
+    "odds_ratio": "odds ratio",
+    "hazard_ratio": "hazard ratio",
+    "Direction": "direction",
+}
+
 
 def validate_item_with_schema(item, schema, log_file) -> bool:
     try:
@@ -40,11 +50,11 @@ def load_raw_results(model_config) -> pd.DataFrame:
     return raw_results_df
 
 
-def load_schema_files(model_config) -> tuple:
+def load_schema_files(global_config) -> tuple:
     # ---- schema files ----
-    with open(model_config["schema"]["metadata"]) as f:
+    with open(global_config["schema"]["metadata"]) as f:
         meta_schema = json.load(f)
-    with open(model_config["schema"]["results"]) as f:
+    with open(global_config["schema"]["results"]) as f:
         results_schema = json.load(f)
     return (meta_schema, results_schema)
 
@@ -62,10 +72,18 @@ def process_metadata(metadata):
 def process_results(results):
     """
     - If "results" property is found, return its value
+    - After this step, results is expected to be a list of dicts.
+      If a key "95% confidence interval" is found in any dict, replace it with "95% CI".
     """
     res = results
     if isinstance(results, dict) and "results" in results.keys():
         res = results["results"]
+    if isinstance(res, list):
+        for d in res:
+            if isinstance(d, dict):
+                for k, v in RESULT_REMAPS.items():
+                    if k in d:
+                        d[v] = d.pop(k)
     return res
 
 
@@ -106,10 +124,15 @@ def validate_schema(model_config, results_df, meta_schema, results_schema):
         results_df_invalid.to_json(f, orient="records", indent=2)
 
 
-def process_deepseek_r1_distilled(model_config):
+def process_deepseek_r1_distilled(model_config, global_config):
+    # ---- init ----
     logger.info(f"{model_config['name']}")
+
     raw_results_df = load_raw_results(model_config)
-    meta_schema, results_schema = load_schema_files(model_config)
+    logger.info(f"{model_config['name']}: raw_results_df info")
+    raw_results_df.info()
+
+    meta_schema, results_schema = load_schema_files(global_config)
 
     # ---- process results ----
     # Parsing metadata and results
@@ -130,14 +153,12 @@ def process_deepseek_r1_distilled(model_config):
     )
     logger.info(f"{model_config['name']}: parsing metadata and results, done")
     results_df = results_df[
-        [
-            "pmid",
-            "metadata_thinking",
-            "metadata",
-            "results_thinking",
-            "results",
-        ]
+        ["pmid", "metadata_thinking", "metadata", "results_thinking", "results"]
     ]
+    results_df = results_df.dropna(subset=["metadata", "results"]).assign(
+        metadata=lambda df: df["metadata"].apply(process_metadata),
+        results=lambda df: df["results"].apply(process_results),
+    )
     results_df.info()
 
     output_path = model_config["data_dir"] / "processed_results.json"
@@ -148,7 +169,7 @@ def process_deepseek_r1_distilled(model_config):
     validate_schema(model_config, results_df, meta_schema, results_schema)
 
 
-def process_llama3_2(model_config):
+def process_llama3_2(model_config, global_config):
     # ---- init ----
     logger.info(f"{model_config['name']}")
 
@@ -156,7 +177,7 @@ def process_llama3_2(model_config):
     logger.info(f"{model_config['name']}: raw_results_df info")
     raw_results_df.info()
 
-    meta_schema, results_schema = load_schema_files(model_config)
+    meta_schema, results_schema = load_schema_files(global_config)
 
     # ---- process results ----
     logger.info(f"{model_config['name']}: parsing metadata and results")
@@ -181,7 +202,7 @@ def process_llama3_2(model_config):
     validate_schema(model_config, results_df, meta_schema, results_schema)
 
 
-def process_llama3(model_config):
+def process_llama3(model_config, global_config):
     # ---- init ----
     logger.info(f"{model_config['name']}")
 
@@ -189,7 +210,7 @@ def process_llama3(model_config):
     logger.info(f"{model_config['name']}: raw_results_df info")
     raw_results_df.info()
 
-    meta_schema, results_schema = load_schema_files(model_config)
+    meta_schema, results_schema = load_schema_files(global_config)
 
     # ---- process results ----
     results_df = raw_results_df[["pmid", "metadata", "results"]]
@@ -226,22 +247,25 @@ def main():
     agg_data_dir = data_dir / "intermediate" / "llm-results-aggregated"
     assert agg_data_dir.exists()
 
+    global_config = {
+        "schema": {
+            "metadata": data_dir
+            / "assets"
+            / "data-schema"
+            / "processed_results"
+            / "metadata.schema.json",
+            "results": data_dir
+            / "assets"
+            / "data-schema"
+            / "processed_results"
+            / "results.schema.json",
+        }
+    }
+
     model_configs = {
         "deepseek-r1-distilled": {
             "name": "deepseek-r1-distilled",
             "data_dir": agg_data_dir / "deepseek-r1-distilled",
-            "schema": {
-                "metadata": data_dir
-                / "assets"
-                / "data-schema"
-                / "processed_results"
-                / "metadata.schema.json",
-                "results": data_dir
-                / "assets"
-                / "data-schema"
-                / "processed_results"
-                / "results.schema.json",
-            },
             "error_log": proj_root
             / "output"
             / "logs"
@@ -251,18 +275,6 @@ def main():
         "llama3": {
             "name": "llama3",
             "data_dir": agg_data_dir / "llama3",
-            "schema": {
-                "metadata": data_dir
-                / "assets"
-                / "data-schema"
-                / "processed_results"
-                / "metadata.schema.json",
-                "results": data_dir
-                / "assets"
-                / "data-schema"
-                / "processed_results"
-                / "results.schema.json",
-            },
             "error_log": proj_root
             / "output"
             / "logs"
@@ -272,18 +284,6 @@ def main():
         "llama3-2": {
             "name": "llama3-2",
             "data_dir": agg_data_dir / "llama3-2",
-            "schema": {
-                "metadata": data_dir
-                / "assets"
-                / "data-schema"
-                / "processed_results"
-                / "metadata.schema.json",
-                "results": data_dir
-                / "assets"
-                / "data-schema"
-                / "processed_results"
-                / "results.schema.json",
-            },
             "error_log": proj_root
             / "output"
             / "logs"
@@ -298,11 +298,11 @@ def main():
 
     if not args.model:
         for model, model_config in model_configs.items():
-            model_config["func"](model_config)
+            model_config["func"](model_config, global_config)
     else:
         for model in args.model:
             model_config = model_configs[model]
-            model_config["func"](model_config)
+            model_config["func"](model_config, global_config)
 
 
 if __name__ == "__main__":
