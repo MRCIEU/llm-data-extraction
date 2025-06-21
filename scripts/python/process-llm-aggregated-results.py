@@ -266,8 +266,7 @@ def main():
         "deepseek-r1-distilled": {
             "name": "deepseek-r1-distilled",
             "data_dir": agg_data_dir / "deepseek-r1-distilled",
-            "error_log": proj_root
-            / "output"
+            "error_log": agg_data_dir
             / "logs"
             / "deepseek-r1-distilled_schema_validation_errors.log",
             "func": process_deepseek_r1_distilled,
@@ -275,8 +274,7 @@ def main():
         "llama3": {
             "name": "llama3",
             "data_dir": agg_data_dir / "llama3",
-            "error_log": proj_root
-            / "output"
+            "error_log": agg_data_dir
             / "logs"
             / "llama3_schema_validation_errors.log",
             "func": process_llama3,
@@ -284,8 +282,7 @@ def main():
         "llama3-2": {
             "name": "llama3-2",
             "data_dir": agg_data_dir / "llama3-2",
-            "error_log": proj_root
-            / "output"
+            "error_log": agg_data_dir
             / "logs"
             / "llama3-2_schema_validation_errors.log",
             "func": process_llama3_2,
