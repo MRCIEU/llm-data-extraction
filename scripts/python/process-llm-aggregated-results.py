@@ -209,12 +209,12 @@ def main():
                 / "assets"
                 / "data-schema"
                 / "deepseek-r1-distilled"
-                / "metadata.json.schema",
+                / "metadata.schema.json",
                 "results": data_dir
                 / "assets"
                 / "data-schema"
                 / "deepseek-r1-distilled"
-                / "results.json.schema",
+                / "results.schema.json",
             },
             "error_log": proj_root
             / "output"
@@ -230,12 +230,12 @@ def main():
                 / "assets"
                 / "data-schema"
                 / "llama3"
-                / "metadata.json.schema",
+                / "metadata.schema.json",
                 "results": data_dir
                 / "assets"
                 / "data-schema"
                 / "llama3"
-                / "results.json.schema",
+                / "results.schema.json",
             },
             "error_log": proj_root
             / "output"
@@ -251,12 +251,12 @@ def main():
                 / "assets"
                 / "data-schema"
                 / "llama3-2"
-                / "metadata.json.schema",
+                / "metadata.schema.json",
                 "results": data_dir
                 / "assets"
                 / "data-schema"
                 / "llama3-2"
-                / "results.json.schema",
+                / "results.schema.json",
             },
             "error_log": proj_root
             / "output"
