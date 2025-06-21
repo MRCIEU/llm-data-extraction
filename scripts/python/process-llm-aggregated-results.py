@@ -149,11 +149,14 @@ def process_deepseek_r1_distilled(model_config):
 
 
 def process_llama3_2(model_config):
+    # ---- init ----
     logger.info(f"{model_config['name']}")
+
     raw_results_df = load_raw_results(model_config)
-    meta_schema, results_schema = load_schema_files(model_config)
     logger.info(f"{model_config['name']}: raw_results_df info")
     raw_results_df.info()
+
+    meta_schema, results_schema = load_schema_files(model_config)
 
     # ---- process results ----
     logger.info(f"{model_config['name']}: parsing metadata and results")
@@ -179,12 +182,21 @@ def process_llama3_2(model_config):
 
 
 def process_llama3(model_config):
+    # ---- init ----
     logger.info(f"{model_config['name']}")
+
     raw_results_df = load_raw_results(model_config)
+    logger.info(f"{model_config['name']}: raw_results_df info")
+    raw_results_df.info()
+
     meta_schema, results_schema = load_schema_files(model_config)
 
     # ---- process results ----
     results_df = raw_results_df[["pmid", "metadata", "results"]]
+    results_df = results_df.dropna(subset=["metadata", "results"]).assign(
+        metadata=lambda df: df["metadata"].apply(process_metadata),
+        results=lambda df: df["results"].apply(process_results),
+    )
     results_df.info()
 
     output_path = model_config["data_dir"] / "processed_results.json"
@@ -222,12 +234,12 @@ def main():
                 "metadata": data_dir
                 / "assets"
                 / "data-schema"
-                / "deepseek-r1-distilled"
+                / "processed_results"
                 / "metadata.schema.json",
                 "results": data_dir
                 / "assets"
                 / "data-schema"
-                / "deepseek-r1-distilled"
+                / "processed_results"
                 / "results.schema.json",
             },
             "error_log": proj_root
@@ -243,12 +255,12 @@ def main():
                 "metadata": data_dir
                 / "assets"
                 / "data-schema"
-                / "llama3"
+                / "processed_results"
                 / "metadata.schema.json",
                 "results": data_dir
                 / "assets"
                 / "data-schema"
-                / "llama3"
+                / "processed_results"
                 / "results.schema.json",
             },
             "error_log": proj_root
@@ -264,12 +276,12 @@ def main():
                 "metadata": data_dir
                 / "assets"
                 / "data-schema"
-                / "llama3-2"
+                / "processed_results"
                 / "metadata.schema.json",
                 "results": data_dir
                 / "assets"
                 / "data-schema"
-                / "llama3-2"
+                / "processed_results"
                 / "results.schema.json",
             },
             "error_log": proj_root
