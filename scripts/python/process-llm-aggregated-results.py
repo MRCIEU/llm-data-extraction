@@ -8,6 +8,7 @@ to
 data / intermediate / <MODEL-NAME> / processed_results.json.
 """
 
+import argparse
 import json
 
 import jsonschema
@@ -18,7 +19,7 @@ from local_funcs import parsers
 from yiutils.project_utils import find_project_root
 
 
-def validate_with_schema(item, schema, log_file) -> bool:
+def validate_item_with_schema(item, schema, log_file) -> bool:
     try:
         jsonschema.validate(instance=item, schema=schema)
         return True
@@ -30,23 +31,70 @@ def validate_with_schema(item, schema, log_file) -> bool:
         return False
 
 
-def process_deepseek_r1_distilled(model_config):
+def load_raw_results(model_config) -> pd.DataFrame:
     # ---- read raw results ----
     path_to_raw_results = model_config["data_dir"] / "raw_results.json"
     assert path_to_raw_results.exists(), (
         f"Raw results file does not exist: {path_to_raw_results}"
     )
     raw_results_df = pd.read_json(path_to_raw_results, orient="records")
+    return raw_results_df
 
+
+def load_schema_files(model_config) -> tuple:
     # ---- schema files ----
     with open(model_config["schema"]["metadata"]) as f:
         meta_schema = json.load(f)
     with open(model_config["schema"]["results"]) as f:
         results_schema = json.load(f)
+    return (meta_schema, results_schema)
+
+
+def validate_schema(model_config, results_df, meta_schema, results_schema):
+    log_file = model_config["error_log"]
+    log_file.parent.mkdir(parents=True, exist_ok=True)
+    log_file.touch(exist_ok=True)
+    results_df = results_df.assign(
+        metadata_valid=lambda df: df["metadata"].apply(
+            validate_item_with_schema, schema=meta_schema, log_file=log_file
+        ),
+        results_valid=lambda df: df["results"].apply(
+            validate_item_with_schema, schema=results_schema, log_file=log_file
+        ),
+    )
+    print(f"metadata_valid sum: {results_df['metadata_valid'].sum()}")
+    print(f"results_valid sum: {results_df['results_valid'].sum()}")
+
+    results_df_valid = results_df[
+        results_df["metadata_valid"] & results_df["results_valid"]
+    ].drop(columns=["metadata_valid", "results_valid"])
+
+    results_df_invalid = results_df[
+        ~(results_df["metadata_valid"] & results_df["results_valid"])
+    ].drop(columns=["metadata_valid", "results_valid"])
+
+    print(f"{model_config['name']}: valid results_df")
+    results_df_valid.info()
+    print(f"{model_config['name']}: invalid results_df")
+    results_df_invalid.info()
+
+    output_path = model_config["data_dir"] / "processed_results_valid.json"
+    with open(output_path, "w") as f:
+        results_df_valid.to_json(f, orient="records", indent=2)
+
+    output_path_invalid = model_config["data_dir"] / "processed_results_invalid.json"
+    with open(output_path_invalid, "w") as f:
+        results_df_invalid.to_json(f, orient="records", indent=2)
+
+
+def process_deepseek_r1_distilled(model_config):
+    logger.info(f"{model_config['name']}")
+    raw_results_df = load_raw_results(model_config)
+    meta_schema, results_schema = load_schema_files(model_config)
 
     # ---- process results ----
     # Parsing metadata and results
-    logger.info("deepseek-r1-distilled: parsing metadata and results")
+    logger.info(f"{model_config['name']}: parsing metadata and results")
     results_df = raw_results_df.assign(
         metadata_thinking=lambda df: df["completion_metadata"].apply(
             parsers.extract_thinking
@@ -60,7 +108,9 @@ def process_deepseek_r1_distilled(model_config):
         results=lambda df: df["completion_results"].apply(
             parsers.extract_json_from_markdown
         ),
-    )[
+    )
+    logger.info(f"{model_config['name']}: parsing metadata and results, done")
+    results_df = results_df[
         [
             "pmid",
             "metadata_thinking",
@@ -69,133 +119,51 @@ def process_deepseek_r1_distilled(model_config):
             "results",
         ]
     ]
-    logger.info("deepseek-r1-distilled: parsing metadata and results, done")
+    results_df.info()
 
     output_path = model_config["data_dir"] / "processed_results.json"
     with open(output_path, "w") as f:
         results_df.to_json(f, orient="records", indent=2)
 
     # ---- Schema validation ----
-    log_file = model_config["error_log"]
-    log_file.parent.mkdir(parents=True, exist_ok=True)
-    log_file.touch(exist_ok=True)
-    results_df = results_df.assign(
-        metadata_valid=lambda df: df["metadata"].apply(
-            validate_with_schema, schema=meta_schema, log_file=log_file
-        ),
-        results_valid=lambda df: df["results"].apply(
-            validate_with_schema, schema=results_schema, log_file=log_file
-        ),
-    )
-    print(f"metadata_valid sum: {results_df['metadata_valid'].sum()}")
-    print(f"results_valid sum: {results_df['results_valid'].sum()}")
-    results_df_valid = results_df[
-        results_df["metadata_valid"] & results_df["results_valid"]
-    ].drop(columns=["metadata_valid", "results_valid"])
-
-    results_df_invalid = results_df[
-        ~(results_df["metadata_valid"] & results_df["results_valid"])
-    ].drop(columns=["metadata_valid", "results_valid"])
-
-    print("Deepseek-r1-distilled processed results_df:")
-    results_df_valid.info()
-    print("Deepseek-r1-distilled invalid results_df:")
-    results_df_invalid.info()
-
-    output_path = model_config["data_dir"] / "processed_results_valid.json"
-    with open(output_path, "w") as f:
-        results_df_valid.to_json(f, orient="records", indent=2)
-
-    output_path_invalid = model_config["data_dir"] / "processed_results_invalid.json"
-    with open(output_path_invalid, "w") as f:
-        results_df_invalid.to_json(f, orient="records", indent=2)
+    validate_schema(model_config, results_df, meta_schema, results_schema)
 
 
 def process_llama3_2(model_config):
-    # ---- read raw results ----
-    path_to_raw_results = model_config["data_dir"] / "raw_results.json"
-    assert path_to_raw_results.exists(), (
-        f"Raw results file does not exist: {path_to_raw_results}"
-    )
-    raw_results_df = pd.read_json(path_to_raw_results, orient="records")
-
-    # ---- schema files ----
-    with open(model_config["schema"]["metadata"]) as f:
-        meta_schema = json.load(f)
-    with open(model_config["schema"]["results"]) as f:
-        results_schema = json.load(f)
+    logger.info(f"{model_config['name']}")
+    raw_results_df = load_raw_results(model_config)
+    meta_schema, results_schema = load_schema_files(model_config)
 
     # ---- process results ----
-    logger.info("llama3-2: parsing metadata and results")
+    logger.info(f"{model_config['name']}: parsing metadata and results")
     results_df = raw_results_df.assign(
         metadata=lambda df: df["completion_metadata"].apply(parsers.parse_json),
         results=lambda df: df["completion_results"].apply(parsers.parse_json),
-    )[
+    )
+    logger.info(f"{model_config['name']}: parsing metadata and results, done")
+    results_df = results_df[
         [
             "pmid",
             "metadata",
             "results",
         ]
     ]
-    logger.info("llama3-2: parsing metadata and results, done")
+    results_df.info()
 
     output_path = model_config["data_dir"] / "processed_results.json"
     with open(output_path, "w") as f:
         results_df.to_json(f, orient="records", indent=2)
 
     # ---- Schema validation ----
-    log_file = model_config["error_log"]
-    log_file.parent.mkdir(parents=True, exist_ok=True)
-    log_file.touch(exist_ok=True)
-    model_config["error_log"].parent.mkdir(parents=True, exist_ok=True)
-    results_df = results_df.assign(
-        metadata_valid=lambda df: df["metadata"].apply(
-            validate_with_schema, schema=meta_schema, log_file=log_file
-        ),
-        results_valid=lambda df: df["results"].apply(
-            validate_with_schema, schema=results_schema, log_file=log_file
-        ),
-    )
-    print(f"metadata_valid sum: {results_df['metadata_valid'].sum()}")
-    print(f"results_valid sum: {results_df['results_valid'].sum()}")
-    results_df_valid = results_df[
-        results_df["metadata_valid"] & results_df["results_valid"]
-    ].drop(columns=["metadata_valid", "results_valid"])
-
-    results_df_invalid = results_df[
-        ~(results_df["metadata_valid"] & results_df["results_valid"])
-    ].drop(columns=["metadata_valid", "results_valid"])
-
-    print("llama3-2 processed results_df:")
-    results_df_valid.info()
-    print("llama3-2 invalid results_df:")
-    results_df_invalid.info()
-
-    output_path = model_config["data_dir"] / "processed_results_valid.json"
-    with open(output_path, "w") as f:
-        results_df_valid.to_json(f, orient="records", indent=2)
-
-    output_path_invalid = model_config["data_dir"] / "processed_results_invalid.json"
-    with open(output_path_invalid, "w") as f:
-        results_df_invalid.to_json(f, orient="records", indent=2)
+    validate_schema(model_config, results_df, meta_schema, results_schema)
 
 
 def process_llama3(model_config):
-    # ---- read raw results ----
-    path_to_raw_results = model_config["data_dir"] / "raw_results.json"
-    assert path_to_raw_results.exists(), (
-        f"Raw results file does not exist: {path_to_raw_results}"
-    )
-    raw_results_df = pd.read_json(path_to_raw_results, orient="records")
-
-    # ---- schema files ----
-    with open(model_config["schema"]["metadata"]) as f:
-        meta_schema = json.load(f)
-    with open(model_config["schema"]["results"]) as f:
-        results_schema = json.load(f)
+    logger.info(f"{model_config['name']}")
+    raw_results_df = load_raw_results(model_config)
+    meta_schema, results_schema = load_schema_files(model_config)
 
     # ---- process results ----
-    logger.info("llama3: parsing metadata and results")
     results_df = raw_results_df[
         [
             "pmid",
@@ -203,49 +171,28 @@ def process_llama3(model_config):
             "results",
         ]
     ]
-    logger.info("llama3: parsing metadata and results, done")
+    results_df.info()
 
     output_path = model_config["data_dir"] / "processed_results.json"
     with open(output_path, "w") as f:
         results_df.to_json(f, orient="records", indent=2)
 
     # ---- Schema validation ----
-    log_file = model_config["error_log"]
-    log_file.parent.mkdir(parents=True, exist_ok=True)
-    log_file.touch(exist_ok=True)
-    results_df = results_df.assign(
-        metadata_valid=lambda df: df["metadata"].apply(
-            validate_with_schema, schema=meta_schema, log_file=log_file
-        ),
-        results_valid=lambda df: df["results"].apply(
-            validate_with_schema, schema=results_schema, log_file=log_file
-        ),
-    )
-    print(f"metadata_valid sum: {results_df['metadata_valid'].sum()}")
-    print(f"results_valid sum: {results_df['results_valid'].sum()}")
-    results_df_valid = results_df[
-        results_df["metadata_valid"] & results_df["results_valid"]
-    ].drop(columns=["metadata_valid", "results_valid"])
-
-    results_df_invalid = results_df[
-        ~(results_df["metadata_valid"] & results_df["results_valid"])
-    ].drop(columns=["metadata_valid", "results_valid"])
-
-    print("llama3 processed results_df:")
-    results_df_valid.info()
-    print("llama3 invalid results_df:")
-    results_df_invalid.info()
-
-    output_path = model_config["data_dir"] / "processed_results_valid.json"
-    with open(output_path, "w") as f:
-        results_df_valid.to_json(f, orient="records", indent=2)
-
-    output_path_invalid = model_config["data_dir"] / "processed_results_invalid.json"
-    with open(output_path_invalid, "w") as f:
-        results_df_invalid.to_json(f, orient="records", indent=2)
+    validate_schema(model_config, results_df, meta_schema, results_schema)
 
 
 def main():
+    parser = argparse.ArgumentParser(
+        description="Process and validate LLM aggregated results."
+    )
+    parser.add_argument(
+        "--model",
+        nargs="+",
+        choices=["deepseek-r1-distilled", "llama3", "llama3-2"],
+        help="Specify one or more models to process. If not supplied, all models will be processed.",
+    )
+    args = parser.parse_args()
+
     proj_root = find_project_root("justfile")
     print(f"Project root: {proj_root}")
 
@@ -255,6 +202,7 @@ def main():
 
     model_configs = {
         "deepseek-r1-distilled": {
+            "name": "deepseek-r1-distilled",
             "data_dir": agg_data_dir / "deepseek-r1-distilled",
             "schema": {
                 "metadata": data_dir
@@ -272,8 +220,10 @@ def main():
             / "output"
             / "logs"
             / "deepseek-r1-distilled_schema_validation_errors.log",
+            "func": process_deepseek_r1_distilled,
         },
         "llama3": {
+            "name": "llama3",
             "data_dir": agg_data_dir / "llama3",
             "schema": {
                 "metadata": data_dir
@@ -291,8 +241,10 @@ def main():
             / "output"
             / "logs"
             / "llama3_schema_validation_errors.log",
+            "func": process_llama3,
         },
         "llama3-2": {
+            "name": "llama3-2",
             "data_dir": agg_data_dir / "llama3-2",
             "schema": {
                 "metadata": data_dir
@@ -310,6 +262,7 @@ def main():
             / "output"
             / "logs"
             / "llama3-2_schema_validation_errors.log",
+            "func": process_llama3_2,
         },
     }
     for k, v in model_configs.items():
@@ -317,14 +270,13 @@ def main():
             f"Input path for {k} does not exist: {v['data_dir']}"
         )
 
-    logger.info("deepseek-r1-distilled")
-    process_deepseek_r1_distilled(model_configs["deepseek-r1-distilled"])
-
-    logger.info("llama3")
-    process_llama3(model_configs["llama3"])
-
-    logger.info("llama3_2")
-    process_llama3_2(model_configs["llama3-2"])
+    if not args.model:
+        for model, model_config in model_configs.items():
+            model_config["func"](model_config)
+    else:
+        for model in args.model:
+            model_config = model_configs[model]
+            model_config["func"](model_config)
 
 
 if __name__ == "__main__":
