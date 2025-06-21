@@ -114,6 +114,7 @@ HTML_TEMPLATE = """
             overflow-x: auto;
             max-height: 1200px;
             overflow-y: auto;
+            text-wrap: wrap;
         }}
         @media (max-width: 1200px) {{
             .container {{
