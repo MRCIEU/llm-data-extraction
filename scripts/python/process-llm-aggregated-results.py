@@ -25,9 +25,8 @@ def validate_item_with_schema(item, schema, log_file) -> bool:
         return True
     except jsonschema.ValidationError as e:
         with open(log_file, "a") as errfile:
-            errfile.write(
-                f"Validation error: {e.message}\nInstance: {json.dumps(item, ensure_ascii=False)}\n\n"
-            )
+            instance = json.dumps(item, ensure_ascii=False, indent=2)
+            errfile.write(f"Validation error: {e.message}\nInstance: \n{instance}\n\n")
         return False
 
 
@@ -50,10 +49,30 @@ def load_schema_files(model_config) -> tuple:
     return (meta_schema, results_schema)
 
 
+def process_metadata(metadata):
+    """
+    - If "metadata" property is found, return its value
+    """
+    res = metadata
+    if isinstance(metadata, dict) and "metadata" in metadata.keys():
+        res = metadata["metadata"]
+    return res
+
+
+def process_results(results):
+    """
+    - If "results" property is found, return its value
+    """
+    res = results
+    if isinstance(results, dict) and "results" in results.keys():
+        res = results["results"]
+    return res
+
+
 def validate_schema(model_config, results_df, meta_schema, results_schema):
     log_file = model_config["error_log"]
     log_file.parent.mkdir(parents=True, exist_ok=True)
-    log_file.touch(exist_ok=True)
+    log_file.write_text("")
     results_df = results_df.assign(
         metadata_valid=lambda df: df["metadata"].apply(
             validate_item_with_schema, schema=meta_schema, log_file=log_file
@@ -133,6 +152,8 @@ def process_llama3_2(model_config):
     logger.info(f"{model_config['name']}")
     raw_results_df = load_raw_results(model_config)
     meta_schema, results_schema = load_schema_files(model_config)
+    logger.info(f"{model_config['name']}: raw_results_df info")
+    raw_results_df.info()
 
     # ---- process results ----
     logger.info(f"{model_config['name']}: parsing metadata and results")
@@ -141,13 +162,12 @@ def process_llama3_2(model_config):
         results=lambda df: df["completion_results"].apply(parsers.parse_json),
     )
     logger.info(f"{model_config['name']}: parsing metadata and results, done")
-    results_df = results_df[
-        [
-            "pmid",
-            "metadata",
-            "results",
-        ]
-    ]
+
+    results_df = results_df[["pmid", "metadata", "results"]]
+    results_df = results_df.dropna(subset=["metadata", "results"]).assign(
+        metadata=lambda df: df["metadata"].apply(process_metadata),
+        results=lambda df: df["results"].apply(process_results),
+    )
     results_df.info()
 
     output_path = model_config["data_dir"] / "processed_results.json"
@@ -164,13 +184,7 @@ def process_llama3(model_config):
     meta_schema, results_schema = load_schema_files(model_config)
 
     # ---- process results ----
-    results_df = raw_results_df[
-        [
-            "pmid",
-            "metadata",
-            "results",
-        ]
-    ]
+    results_df = raw_results_df[["pmid", "metadata", "results"]]
     results_df.info()
 
     output_path = model_config["data_dir"] / "processed_results.json"
