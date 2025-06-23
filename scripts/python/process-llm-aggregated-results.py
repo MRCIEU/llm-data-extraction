@@ -62,11 +62,18 @@ def load_schema_files(global_config) -> tuple:
 def process_metadata(metadata):
     """
     - If "metadata" property is found, return its value
+    - If an error occurs, return None
     """
-    res = metadata
-    if isinstance(metadata, dict) and "metadata" in metadata.keys():
-        res = metadata["metadata"]
-    return res
+    try:
+        res = metadata
+        if isinstance(metadata, dict) and "metadata" in metadata.keys():
+            res = metadata["metadata"]
+        if isinstance(metadata, dict) and "metainformation" in metadata.keys():
+            metadata.pop("metainformation")
+        return res
+    except Exception as e:
+        print(f"Error processing metadata: \n{e}")
+        return None
 
 
 def process_results(results):
@@ -74,17 +81,22 @@ def process_results(results):
     - If "results" property is found, return its value
     - After this step, results is expected to be a list of dicts.
       If a key "95% confidence interval" is found in any dict, replace it with "95% CI".
+    - If an error occurs, return None
     """
-    res = results
-    if isinstance(results, dict) and "results" in results.keys():
-        res = results["results"]
-    if isinstance(res, list):
-        for d in res:
-            if isinstance(d, dict):
-                for k, v in RESULT_REMAPS.items():
-                    if k in d:
-                        d[v] = d.pop(k)
-    return res
+    try:
+        res = results
+        if isinstance(results, dict) and "results" in results.keys():
+            res = results["results"]
+        if isinstance(res, list):
+            for d in res:
+                if isinstance(d, dict):
+                    for k, v in RESULT_REMAPS.items():
+                        if k in d:
+                            d[v] = d.pop(k)
+        return res
+    except Exception as e:
+        print(f"Error processing results: \n{e}")
+        return None
 
 
 def validate_schema(model_config, results_df, meta_schema, results_schema):
@@ -274,9 +286,7 @@ def main():
         "llama3": {
             "name": "llama3",
             "data_dir": agg_data_dir / "llama3",
-            "error_log": agg_data_dir
-            / "logs"
-            / "llama3_schema_validation_errors.log",
+            "error_log": agg_data_dir / "logs" / "llama3_schema_validation_errors.log",
             "func": process_llama3,
         },
         "llama3-2": {
