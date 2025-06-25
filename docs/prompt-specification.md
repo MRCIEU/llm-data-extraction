@@ -39,6 +39,8 @@
   'role': 'user'},
 ```
 
+>     "Alcohol consumption significantly impacts disease burden and has been linked to various diseases in observational studies. However, comprehensive meta-analyses using Mendelian randomization (MR) to examine drinking patterns are limited. We aimed to evaluate the health risks of alcohol use by integrating findings from MR studies. A thorough search was conducted for MR studies focused on alcohol exposure. We utilized two sets of instrumental variables-alcohol consumption and problematic alcohol use-and summary statistics from the FinnGen consortium R9 release to perform de novo MR analyses. Our meta-analysis encompassed 64 published and 151 de novo MR analyses across 76 distinct primary outcomes. Results show that a genetic predisposition to alcohol consumption, independent of smoking, significantly correlates with a decreased risk of Parkinson\'s disease, prostate hyperplasia, and rheumatoid arthritis. It was also associated with an increased risk of chronic pancreatitis, colorectal cancer, and head and neck cancers. Additionally, a genetic predisposition to problematic alcohol use is strongly associated with increased risks of alcoholic liver disease, cirrhosis, both acute and chronic pancreatitis, and pneumonia. Evidence from our MR study supports the notion that alcohol consumption and problematic alcohol use are causally associated with a range of diseases, predominantly by increasing the risk."  
+
 ```
  {'content': 'This is an example output in JSON format: \n'
              '    { "metadata": {\n'
