@@ -1,6 +1,6 @@
 metadataexample = {
     "role": "assistant",
-    "content": """This is an example output in JSON format: 
+    "content": """This is an example output in JSON format:
     { "metadata": {
     "exposures": [
     {
@@ -54,7 +54,7 @@ metadataexample = {
 
 metadataprompt = {
     "role": "user",
-    "content": """What are the exposures, outcomes in this abstract? If there are multiple exposures or outcomes, provide them all. If there are no exposures or outcomes, provide an empty list. Also categorize the exposures and outcomes into the following groups using the exact category names provided: 
+    "content": """What are the exposures, outcomes in this abstract? If there are multiple exposures or outcomes, provide them all. If there are no exposures or outcomes, provide an empty list. Also categorize the exposures and outcomes into the following groups using the exact category names provided:
 - molecular
 - socioeconomic
 - environmental
@@ -74,7 +74,7 @@ metadataprompt = {
 - disease of the skin and subcutaneous tissue
 - disease of the musculoskeletal system and connective tissue
 - disease of the genitourinary system
-If an exposure or outcome does not fit into any of these groups, specify "Other". 
+If an exposure or outcome does not fit into any of these groups, specify "Other".
 
 List the analytical methods used in the abstract. Match the methods to the following list of exact method names. If a method is used that is not in the list, specify "Other" and also provide the name of the method. The list of methods is as follows:
 - two-sample mendelian randomization
@@ -97,7 +97,7 @@ Provide your answer in strict pretty JSON format using exactly the format as the
 
 resultsexample = {
     "role": "assistant",
-    "content": """This is an example output in JSON format: 
+    "content": """This is an example output in JSON format:
     {
     "results": [
         {
@@ -149,8 +149,8 @@ resultsexample = {
 resultsprompt = {
     "role": "user",
     "content": """
-List all of the results in the abstract, with each entry comprising: exposure, outcome, beta, units, odds ratio, hazard ratio, 95% confidence interval, standard error, and P-value. If any of these fields is missing, substitute them with "null". Add a field called "direction" which describes whether the exposure "increases" or "decreases" the outcome. 
-Provide your answer in strict pretty JSON format using exactly the format as the example output and without markdown code blocks. You must only include values explicitly written in the abstract. Any error messages and explanations must be included in the JSON output with the key "resultsinformation". 
+List all of the results in the abstract, with each entry comprising: exposure, outcome, beta, units, odds ratio, hazard ratio, 95% confidence interval, standard error, and P-value. If any of these fields is missing, substitute them with "null". Add a field called "direction" which describes whether the exposure "increases" or "decreases" the outcome.
+Provide your answer in strict pretty JSON format using exactly the format as the example output and without markdown code blocks. You must only include values explicitly written in the abstract. Any error messages and explanations must be included in the JSON output with the key "resultsinformation".
 
 """,
 }
