@@ -1,20 +1,18 @@
+# This is just a set of temp helper utils
 from local_funcs import prompt_templates
 
 
 def generate_message(abstract):
     messages = [
-        {
-            "role": "system",
-            "content": "You are a data scientist responsible for extracting accurate information from research papers. You answer each question with a single JSON string.",
-        },
+        prompt_templates.system_prompt,
         {
             "role": "user",
             "content": f"""
                 This is an abstract from a Mendelian randomization study.
                     "{abstract["ab"]}"   """,
         },
-        prompt_templates.metadataexample,
-        prompt_templates.metadataprompt,
+        prompt_templates.metadata_example,
+        prompt_templates.metadata_prompt,
     ]
     return messages
 

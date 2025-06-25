@@ -1,4 +1,11 @@
-metadataexample = {
+# ==== metadata ====
+system_promt = {
+    "role": "system",
+    "content": "You are a data scientist responsible for extracting accurate information from research papers. You answer each question with a single JSON string.",
+}
+
+# ---- metadata example ----
+metadata_example = {
     "role": "assistant",
     "content": """This is an example output in JSON format:
     { "metadata": {
@@ -52,7 +59,8 @@ metadataexample = {
     """,
 }
 
-metadataprompt = {
+# ---- metadata prompt ----
+metadata_prompt = {
     "role": "user",
     "content": """What are the exposures, outcomes in this abstract? If there are multiple exposures or outcomes, provide them all. If there are no exposures or outcomes, provide an empty list. Also categorize the exposures and outcomes into the following groups using the exact category names provided:
 - molecular
@@ -95,7 +103,10 @@ Provide your answer in strict pretty JSON format using exactly the format as the
 """,
 }
 
-resultsexample = {
+# ==== results ====
+
+# ---- results example ----
+results_example = {
     "role": "assistant",
     "content": """This is an example output in JSON format:
     {
@@ -145,8 +156,8 @@ resultsexample = {
     """,
 }
 
-
-resultsprompt = {
+# ---- results prompt ----
+results_prompt = {
     "role": "user",
     "content": """
 List all of the results in the abstract, with each entry comprising: exposure, outcome, beta, units, odds ratio, hazard ratio, 95% confidence interval, standard error, and P-value. If any of these fields is missing, substitute them with "null". Add a field called "direction" which describes whether the exposure "increases" or "decreases" the outcome.

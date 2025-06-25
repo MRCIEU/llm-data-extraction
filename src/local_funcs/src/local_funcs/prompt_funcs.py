@@ -3,11 +3,7 @@ from . import prompt_templates
 
 def make_message_metadata(abstract: str):
     res = [
-        {
-            "role": "system",
-            "content": "You are a data scientist responsible for extracting accurate information from research papers. "
-            + "You answer each question with a single JSON string.",
-        },
+        prompt_templates.system_prompt,
         {
             "role": "user",
             "content": f"""
@@ -15,19 +11,15 @@ def make_message_metadata(abstract: str):
                     "{abstract}"
                     """,
         },
-        prompt_templates.metadataexample,
-        prompt_templates.metadataprompt,
+        prompt_templates.metadata_example,
+        prompt_templates.metadata_prompt,
     ]
     return res
 
 
 def make_message_results(abstract: str):
     res = [
-        {
-            "role": "system",
-            "content": "You are a data scientist responsible for extracting accurate information from research papers. "
-            + "You answer each question with a single JSON string.",
-        },
+        prompt_templates.system_prompt,
         {
             "role": "user",
             "content": f"""
@@ -35,7 +27,7 @@ def make_message_results(abstract: str):
                     "{abstract}"
                     """,
         },
-        prompt_templates.resultsexample,
-        prompt_templates.resultsprompt,
+        prompt_templates.results_example,
+        prompt_templates.results_prompt,
     ]
     return res
