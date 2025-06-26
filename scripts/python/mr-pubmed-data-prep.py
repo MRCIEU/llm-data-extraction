@@ -10,7 +10,7 @@ import pandas as pd
 
 from yiutils.project_utils import find_project_root
 
-# config {{{
+# ==== config ====
 PROJ_ROOT = find_project_root()
 DATA_DIR = PROJ_ROOT / "data"
 
@@ -22,16 +22,19 @@ RAW_DATA_PATHS = [
     MR_RAW_DATA_DIR / "pubmed_abstracts_20250519.json",
 ]
 
-PATH_TO_OUTPUT = DATA_DIR / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data.json"
-# }}}
+OUTPUT_DIR = DATA_DIR / "intermediate" / "mr-pubmed-data"
+
+# NOTE: this is the length used in llm batch results
+SAMPLE_SIZE = 69 * 100 + 100
+SAMPLE_LITE_SIZE = 20
 
 
 def main():
-    # init
+    # ==== init ====
     assert DATA_DIR.exists(), f"Data directory {DATA_DIR} does not exist."
-    PATH_TO_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # load raw data {{{
+    # ==== raw data ====
     mr_raw_data = []
     for path in RAW_DATA_PATHS:
         print(f"Loading {path}")
@@ -41,7 +44,8 @@ def main():
             raw_df = pd.DataFrame(raw_data)
             raw_df.info()
             mr_raw_data.append(raw_df)
-    # }}}
+
+    # ==== full data prep ====
 
     # Convert to DataFrame for processing
     mr_data_df = (
@@ -53,11 +57,23 @@ def main():
     mr_data_df.info()
 
     # write
-    print(f"Writing to {PATH_TO_OUTPUT}")
-    mr_data_df.to_json(
-        PATH_TO_OUTPUT,
-        orient="records",
-    )
+    output_path = OUTPUT_DIR / "mr-pubmed-data.json"
+    print(f"Writing to {output_path}")
+    mr_data_df.to_json(output_path, orient="records")
+
+    # ==== sample ====
+    mr_data_sample = mr_data_df[:SAMPLE_SIZE]
+
+    output_path = OUTPUT_DIR / "mr-pubmed-data-sample.json"
+    print(f"Writing sample to {output_path}")
+    mr_data_sample.to_json(output_path, orient="records")
+
+    # ==== sample lite ====
+    mr_data_sample_lite = mr_data_df[:SAMPLE_LITE_SIZE]
+
+    output_path = OUTPUT_DIR / "mr-pubmed-data-sample-lite.json"
+    print(f"Writing sample to {output_path}")
+    mr_data_sample_lite.to_json(output_path, orient="records")
 
 
 if __name__ == "__main__":
