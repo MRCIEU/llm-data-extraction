@@ -1,8 +1,13 @@
-# ==== metadata ====
-system_promt = {
+# ==== system prompt ====
+system_prompt = {
     "role": "system",
     "content": "You are a data scientist responsible for extracting accurate information from research papers. You answer each question with a single JSON string.",
 }
+
+# ==== user input ====
+# NOTE: this is generated on the fly
+
+# ==== metadata ====
 
 # ---- metadata example ----
 metadata_example = {
