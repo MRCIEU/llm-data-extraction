@@ -79,7 +79,7 @@ docs-data-archive:
 data-prep-mr-pubmed:
     python scripts/python/mr-pubmed-data-prep.py
 
-# ==== model batch processing ====
+# ==== local llm batch processing ====
 
 # Perform data extraction, isb, llama3, pilot
 [group('isb')]
@@ -128,6 +128,25 @@ devel-isb-extract-data-llama3-2-pilot:
 [group('devel')]
 devel-isb-extract-data-llama3-2:
     sbatch scripts/isb/extract-data-llama3-2.sbatch
+
+
+# ==== openai model batch processing ====
+[group('openai')]
+[group('devel')]
+devel-openai-extract-data-lite:
+    python scripts/python/extract-data-openai.py \
+        --models o3-mini \
+        --input data/intermediate/mr-pubmed-data/mr-pubmed-data-sample-lite.json \
+        --output data/intermediate/openai-batch-results/
+
+# TODO: do it on epi-franklin2
+[group('openai')]
+[group('devel')]
+devel-openai-extract-data:
+    python scripts/python/extract-data-openai.py \
+        --models o3-mini gpt-4o \
+        --input data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
+        --output data/intermediate/openai-batch-results/
 
 # ==== post-batch processing ====
 
