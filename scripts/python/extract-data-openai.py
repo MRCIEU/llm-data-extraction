@@ -17,7 +17,7 @@ from openai import OpenAI
 from tqdm import tqdm
 
 from local_funcs import openai_funcs, prompt_funcs
-from local_funcs.funcs import calculate_start_end
+from yiutils.chunking import calculate_chunk_start_end
 from yiutils.project_utils import find_project_root
 
 # ==== params ====
@@ -29,7 +29,7 @@ MODEL_CONFIGS = {
     "o4-mini": {"model_id": "o4-mini"},
     "gpt-4o": {"model_id": "gpt-4o"},
 }
-NUM_DOCS = 100
+PILOT_NUM_DOCS = 20
 ARRAY_LENGTH = 30
 
 
@@ -75,7 +75,7 @@ def get_config(args):
     env.read_env()
     array_task_id = args.array_id
     openai_api_key = env("OPENAI_API_KEY")
-    num_docs = NUM_DOCS
+    pilot_num_docs = PILOT_NUM_DOCS
     array_length = ARRAY_LENGTH
 
     path_to_pubmed = Path(args.path_data)
@@ -89,24 +89,19 @@ def get_config(args):
     data_length = len(pubmed)
 
     # Use calculate_start_end to determine startpoint and endpoint
-    startpoint, endpoint = calculate_start_end(
-        array_task_id=array_task_id,
-        array_length=array_length,
-        num_docs=num_docs,
+    startpoint, endpoint = calculate_chunk_start_end(
+        chunk_id=array_task_id,
+        num_chunks=array_length,
         data_length=data_length,
+        pilot_num_docs=pilot_num_docs,
         pilot=args.pilot,
+        verbose=True,
     )
     if startpoint is None or endpoint is None:
         print(
-            f"WARNING: startpoint {startpoint} exceeds data length {data_length}. Exiting."
+            f"WARNING: startpoint {startpoint} endpoint {endpoint}"
         )
         sys.exit(0)
-    if args.pilot:
-        print(f"Running in pilot mode with {num_docs} documents.")
-    elif endpoint > data_length:
-        print(
-            f"Endpoint {endpoint} exceeds data length {data_length}. Truncating to {data_length}."
-        )
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -124,7 +119,7 @@ def get_config(args):
     return {
         "array_task_id": array_task_id,
         "openai_api_key": openai_api_key,
-        "num_docs": num_docs,
+        "num_docs": pilot_num_docs,
         "startpoint": startpoint,
         "endpoint": endpoint,
         "path_to_pubmed": path_to_pubmed,

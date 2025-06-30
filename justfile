@@ -23,11 +23,6 @@ check-health:
 test:
     python -m pytest
 
-# sanity-check
-[group('codebase')]
-sanity-check:
-    python scripts/sanity-check/calculate_start_end.py
-
 # vscode server
 [group('codebase')]
 [group('isb')]
