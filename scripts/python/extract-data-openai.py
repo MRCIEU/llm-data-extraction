@@ -17,6 +17,7 @@ from openai import OpenAI
 from tqdm import tqdm
 
 from local_funcs import openai_funcs, prompt_funcs
+from local_funcs.funcs import calculate_start_end
 from yiutils.project_utils import find_project_root
 
 # ==== params ====
@@ -87,24 +88,25 @@ def get_config(args):
         pubmed = json.load(f)
     data_length = len(pubmed)
 
+    # Use calculate_start_end to determine startpoint and endpoint
+    startpoint, endpoint = calculate_start_end(
+        array_task_id=array_task_id,
+        array_length=array_length,
+        num_docs=num_docs,
+        data_length=data_length,
+        pilot=args.pilot,
+    )
+    if startpoint is None or endpoint is None:
+        print(
+            f"WARNING: startpoint {startpoint} exceeds data length {data_length}. Exiting."
+        )
+        sys.exit(0)
     if args.pilot:
         print(f"Running in pilot mode with {num_docs} documents.")
-        startpoint = 0
-        endpoint = startpoint + num_docs
-    else:
-        # Calculate startpoint and endpoint using array_id, ARRAY_LENGTH, NUM_DOCS, and data length
-        startpoint = array_task_id * array_length * num_docs
-        endpoint = startpoint + num_docs
-        if startpoint >= data_length:
-            print(
-                f"WARNING: startpoint {startpoint} exceeds data length {data_length}. Exiting."
-            )
-            sys.exit(0)
-        if endpoint > data_length:
-            print(
-                f"Endpoint {endpoint} exceeds data length {data_length}. Truncating to {data_length}."
-            )
-            endpoint = data_length
+    elif endpoint > data_length:
+        print(
+            f"Endpoint {endpoint} exceeds data length {data_length}. Truncating to {data_length}."
+        )
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
