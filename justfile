@@ -18,6 +18,16 @@ check-health:
     pip list | grep local_funcs
     pip list | grep yiutils
 
+# test
+[group('codebase')]
+test:
+    python -m pytest
+
+# sanity-check
+[group('codebase')]
+sanity-check:
+    python scripts/sanity-check/calculate_start_end.py
+
 # vscode server
 [group('codebase')]
 [group('isb')]
