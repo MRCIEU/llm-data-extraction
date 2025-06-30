@@ -146,6 +146,7 @@ devel-openai-extract-data-lite:
         --output_dir data/intermediate/openai-batch-results/
 
 # TODO: do it on epi-franklin2
+# TODO: do a wrapper instead of this
 [group('openai')]
 [group('devel')]
 devel-openai-extract-data:

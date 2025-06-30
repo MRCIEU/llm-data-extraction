@@ -78,15 +78,17 @@ def get_config(args):
     pilot_num_docs = PILOT_NUM_DOCS
     array_length = ARRAY_LENGTH
 
+    # ==== chunking data ====
     path_to_pubmed = Path(args.path_data)
     assert args.path_data is not None and path_to_pubmed.exists(), print(
         "pubmed data not found"
     )
 
     # Load data length for correct startpoint/endpoint calculation
+    print(f"Loading data from {path_to_pubmed}")
     with path_to_pubmed.open("r") as f:
-        pubmed = json.load(f)
-    data_length = len(pubmed)
+        pubmed_data = json.load(f)
+    data_length = len(pubmed_data)
 
     # Use calculate_start_end to determine startpoint and endpoint
     startpoint, endpoint = calculate_chunk_start_end(
@@ -102,7 +104,9 @@ def get_config(args):
             f"WARNING: startpoint {startpoint} endpoint {endpoint}"
         )
         sys.exit(0)
+    pubmed_data = pubmed_data[startpoint:endpoint]
 
+    # ==== output directory and file ====
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     pilot_suffix = "_pilot" if args.pilot else ""
@@ -110,32 +114,35 @@ def get_config(args):
         output_dir / f"mr_extract_openai_array_{array_task_id}{pilot_suffix}.json"
     )
 
+    # ==== model config ====
     model_config_name = args.model
     assert (
         model_config_name is not None and model_config_name in MODEL_CONFIGS.keys()
     ), print("--model must not be empty and must be one of the configs")
     model_config = MODEL_CONFIGS[model_config_name]
 
-    return {
+    # ==== return config and data ====
+    config = {
         "array_task_id": array_task_id,
         "openai_api_key": openai_api_key,
         "num_docs": pilot_num_docs,
-        "startpoint": startpoint,
-        "endpoint": endpoint,
         "path_to_pubmed": path_to_pubmed,
         "output_dir": output_dir,
         "out_file": out_file,
         "model_config_name": model_config_name,
         "model_config": model_config,
-        "pubmed": pubmed,
     }
+    print(f"Config: {config}")
+    print(f"Loaded {len(pubmed_data)} abstracts from {path_to_pubmed}")
+    res = (config, pubmed_data)
+    return res
 
 
 def load_pubmed(path_to_pubmed):
     with path_to_pubmed.open("r") as f:
-        pubmed = json.load(f)
+        pubmed_data = json.load(f)
     print("Loaded abstracts")
-    return pubmed
+    return pubmed_data
 
 
 def setup_openai_client(api_key):
@@ -144,9 +151,9 @@ def setup_openai_client(api_key):
     return client
 
 
-def process_abstracts(pubmed, startpoint, endpoint, client, model_config_name):
+def process_abstracts(pubmed_data, client, model_config_name):
     fulldata = []
-    for article_data in tqdm(pubmed[startpoint:endpoint]):
+    for article_data in tqdm(pubmed_data):
         try:
             # Use prompt_funcs to generate messages for OpenAI
             prompt_funcs.make_message_metadata(article_data["ab"])
@@ -186,12 +193,10 @@ def write_output(fulldata, out_file):
 
 def main():
     args = parse_args()
-    config = get_config(args=args)
+    config, pubmed_data = get_config(args=args)
     client = setup_openai_client(api_key=config["openai_api_key"])
     fulldata = process_abstracts(
-        pubmed=config["pubmed"],
-        startpoint=config["startpoint"],
-        endpoint=config["endpoint"],
+        pubmed_data=pubmed_data,
         client=client,
         model_config_name=config["model_config_name"],
     )
