@@ -4,8 +4,21 @@ system_prompt = {
     "content": "You are a data scientist responsible for extracting accurate information from research papers. You answer each question with a single JSON string.",
 }
 
+
 # ==== user input ====
 # NOTE: this is generated on the fly
+def make_abstract_input_prompt(abstract):
+    abstract_input_prompt = (
+        {
+            "role": "user",
+            "content": f"""
+                This is an abstract from a Mendelian randomization study.
+                    "{abstract}"
+                    """,
+        },
+    )
+    return abstract_input_prompt
+
 
 # ==== metadata ====
 
@@ -63,6 +76,35 @@ metadata_example = {
     }
     """,
 }
+
+
+def make_example_output_prompt(json_example, json_schema):
+    """
+    Generate an example output prompt with both the example and schema as JSON code blocks.
+
+    Args:
+        json_example (str): The JSON example string.
+        json_schema (str): The JSON schema string.
+
+    Returns:
+        dict: A prompt dictionary.
+    """
+    content = (
+        "Here is an example of the expected extraction output and its JSON schema.\n\n"
+        "Example output:\n"
+        "```json\n"
+        f"{json_example}\n"
+        "```\n\n"
+        "JSON schema:\n"
+        "```json\n"
+        f"{json_schema}\n"
+        "```\n"
+    )
+    return {
+        "role": "assistant",
+        "content": content,
+    }
+
 
 # ---- metadata prompt ----
 metadata_prompt = {
