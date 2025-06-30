@@ -33,9 +33,10 @@ def test_normal_mode_within_bounds():
         data_length=50,
         pilot=False,
     )
-    # start = 1*2*10 = 20, end = 20+10 = 30
-    assert start == 20
-    assert end == 30
+    # With array_length=2, data_length=50, chunk_size = 25
+    # array_task_id=1: start=25, end=50
+    assert start == 25
+    assert end == 50
 
 
 def test_normal_mode_endpoint_truncated():
@@ -46,7 +47,8 @@ def test_normal_mode_endpoint_truncated():
         data_length=25,
         pilot=False,
     )
-    # start = 2*2*10 = 40, which is > 25, so should return (None, None)
+    # With array_length=2, data_length=25, chunk_size=13
+    # array_task_id=2: start=26, which is >= 25, so should return (None, None)
     assert start is None
     assert end is None
 
@@ -59,6 +61,7 @@ def test_normal_mode_endpoint_exact():
         data_length=25,
         pilot=False,
     )
-    # start = 20, end = 30, but data_length=25, so end should be 25
-    assert start == 20
+    # With array_length=2, data_length=25, chunk_size=13
+    # array_task_id=1: start=13, end=25
+    assert start == 13
     assert end == 25

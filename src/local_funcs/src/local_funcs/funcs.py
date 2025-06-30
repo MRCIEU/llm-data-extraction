@@ -29,10 +29,13 @@ def calculate_start_end(
         endpoint = min(num_docs, data_length)
         return startpoint, endpoint
 
-    startpoint = array_task_id * array_length * num_docs
-    endpoint = startpoint + num_docs
+    # Divide the data into array_length chunks, each of up to num_docs size
+    total_chunks = array_length
+    chunk_size = (data_length + total_chunks - 1) // total_chunks  # ceil division
+
+    startpoint = array_task_id * chunk_size
+    endpoint = min(startpoint + chunk_size, data_length)
+
     if startpoint >= data_length:
         return None, None
-    if endpoint > data_length:
-        endpoint = data_length
     return startpoint, endpoint
