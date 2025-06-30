@@ -146,6 +146,7 @@ devel-openai-extract-data-lite:
 devel-openai-extract-data:
     python scripts/python/extract-data-openai.py \
         --models o3-mini gpt-4o \
+        --pilot \
         --input data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
         --output data/intermediate/openai-batch-results/
 

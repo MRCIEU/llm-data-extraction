@@ -9,6 +9,7 @@ Logics
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
 from environs import env
@@ -21,12 +22,14 @@ from yiutils.project_utils import find_project_root
 # ==== params ====
 PROJECT_ROOT = find_project_root("justfile")
 DATA_DIR = PROJECT_ROOT / "data"
-PATH_DATA = DATA_DIR / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data.json"
+PATH_DATA = DATA_DIR / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data-sample.json"
 
 MODEL_CONFIGS = {
     "o4-mini": {"model_id": "o4-mini"},
     "gpt-4o": {"model_id": "gpt-4o"},
 }
+NUM_DOCS = 100
+ARRAY_LENGTH = 30
 
 
 def parse_args():
@@ -71,19 +74,37 @@ def get_config(args):
     env.read_env()
     array_task_id = args.array_id
     openai_api_key = env("OPENAI_API_KEY")
-    num_docs = 100
-    if args.pilot:
-        print(f"Running in pilot mode with {num_docs} documents.")
-        startpoint = 0
-        endpoint = startpoint + num_docs
-    else:
-        startpoint = array_task_id * num_docs
-        endpoint = startpoint + num_docs
+    num_docs = NUM_DOCS
+    array_length = ARRAY_LENGTH
 
     path_to_pubmed = Path(args.path_data)
     assert args.path_data is not None and path_to_pubmed.exists(), print(
         "pubmed data not found"
     )
+
+    # Load data length for correct startpoint/endpoint calculation
+    with path_to_pubmed.open("r") as f:
+        pubmed = json.load(f)
+    data_length = len(pubmed)
+
+    if args.pilot:
+        print(f"Running in pilot mode with {num_docs} documents.")
+        startpoint = 0
+        endpoint = startpoint + num_docs
+    else:
+        # Calculate startpoint and endpoint using array_id, ARRAY_LENGTH, NUM_DOCS, and data length
+        startpoint = array_task_id * array_length * num_docs
+        endpoint = startpoint + num_docs
+        if startpoint >= data_length:
+            print(
+                f"WARNING: startpoint {startpoint} exceeds data length {data_length}. Exiting."
+            )
+            sys.exit(0)
+        if endpoint > data_length:
+            print(
+                f"Endpoint {endpoint} exceeds data length {data_length}. Truncating to {data_length}."
+            )
+            endpoint = data_length
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -109,6 +130,7 @@ def get_config(args):
         "out_file": out_file,
         "model_config_name": model_config_name,
         "model_config": model_config,
+        "pubmed": pubmed,
     }
 
 
@@ -167,17 +189,16 @@ def write_output(fulldata, out_file):
 
 def main():
     args = parse_args()
-    config = get_config(args)
-    pubmed = load_pubmed(config["path_to_pubmed"])
-    client = setup_openai_client(config["openai_api_key"])
+    config = get_config(args=args)
+    client = setup_openai_client(api_key=config["openai_api_key"])
     fulldata = process_abstracts(
-        pubmed,
-        config["startpoint"],
-        config["endpoint"],
-        client,
-        config["model_config_name"],
+        pubmed=config["pubmed"],
+        startpoint=config["startpoint"],
+        endpoint=config["endpoint"],
+        client=client,
+        model_config_name=config["model_config_name"],
     )
-    write_output(fulldata, config["out_file"])
+    write_output(fulldata=fulldata, out_file=config["out_file"])
 
 
 if __name__ == "__main__":
