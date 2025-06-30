@@ -32,12 +32,8 @@ MODEL_CONFIGS = {
 }
 
 
-def main():
-    # ==== init ====
+def parse_args():
     proj_root = find_project_root()
-    env.read_env()
-
-    # ==== arg parser ====
     parser = argparse.ArgumentParser(
         description=__doc__,
     )
@@ -71,9 +67,11 @@ def main():
     )
     args = parser.parse_args()
     print(f"args: {args}")
+    return args
 
-    # ==== Config params ====
-    # {{{
+
+def get_config(args):
+    env.read_env()
     array_task_id = args.array_id
     access_token = env("HUGGINGFACE_TOKEN")
     num_docs = 100
@@ -100,15 +98,29 @@ def main():
         model_config_name is not None and model_config_name in MODEL_CONFIGS.keys()
     ), print("--model must not be empty and must be one of the configs")
     model_config = MODEL_CONFIGS[model_config_name]
-    # }}}
 
-    # ==== data loading ====
+    return {
+        "array_task_id": array_task_id,
+        "access_token": access_token,
+        "num_docs": num_docs,
+        "startpoint": startpoint,
+        "endpoint": endpoint,
+        "path_to_pubmed": path_to_pubmed,
+        "output_dir": output_dir,
+        "out_file": out_file,
+        "model_config_name": model_config_name,
+        "model_config": model_config,
+    }
+
+
+def load_pubmed(path_to_pubmed):
     with path_to_pubmed.open("r") as f:
         pubmed = json.load(f)
     print("Loaded abstracts")
+    return pubmed
 
-    # ==== Set up model ====
-    model_id = model_config["model_id"]
+
+def setup_model(model_id, access_token):
     device = "cuda"
     dtype = torch.bfloat16
     tokenizer = AutoTokenizer.from_pretrained(model_id, token=access_token)
@@ -119,10 +131,11 @@ def main():
         token=access_token,
     )
     print("Loaded model")
+    return tokenizer, model
 
+
+def process_abstracts(pubmed, startpoint, endpoint, tokenizer, model):
     fulldata = []
-
-    # ==== Loop overall specified abstracts in the dataset ====
     for article_data in tqdm(pubmed[startpoint:endpoint]):
         try:
             message_metadata = prompt_funcs.make_message_metadata(article_data["ab"])
@@ -138,16 +151,34 @@ def main():
         except Exception as e:
             print(f"""\n\n=========== {article_data["pmid"]} ==========""")
             print("""\n=========== FAILED! ==========""")
-            # print(abstract)
             print(e)
             result1 = {"metadata": {}, "metainformation": {"error": f"Failed {e}"}}
             result2 = {"results": {}, "resultsinformation": {"error": f"Failed {e}"}}
             output = dict(article_data, **result1, **result2)
             print(f"Output: {output}")
+    return fulldata
 
-    # ==== wrap up ====
+
+def write_output(fulldata, out_file):
     with out_file.open("w") as f:
         json.dump(fulldata, f, indent=4)
+
+
+def main():
+    args = parse_args()
+    config = get_config(args)
+    pubmed = load_pubmed(config["path_to_pubmed"])
+    tokenizer, model = setup_model(
+        config["model_config"]["model_id"], config["access_token"]
+    )
+    fulldata = process_abstracts(
+        pubmed,
+        config["startpoint"],
+        config["endpoint"],
+        tokenizer,
+        model,
+    )
+    write_output(fulldata, config["out_file"])
 
 
 if __name__ == "__main__":

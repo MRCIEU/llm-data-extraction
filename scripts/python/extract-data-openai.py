@@ -29,12 +29,8 @@ MODEL_CONFIGS = {
 }
 
 
-def main():
-    # ==== init ====
+def parse_args():
     proj_root = find_project_root()
-    env.read_env()
-
-    # ==== arg parser ====
     parser = argparse.ArgumentParser(
         description=__doc__,
     )
@@ -68,9 +64,11 @@ def main():
     )
     args = parser.parse_args()
     print(f"args: {args}")
+    return args
 
-    # ==== Config params ====
-    # {{{
+
+def get_config(args):
+    env.read_env()
     array_task_id = args.array_id
     openai_api_key = env("OPENAI_API_KEY")
     num_docs = 100
@@ -99,24 +97,40 @@ def main():
         model_config_name is not None and model_config_name in MODEL_CONFIGS.keys()
     ), print("--model must not be empty and must be one of the configs")
     model_config = MODEL_CONFIGS[model_config_name]
-    # }}}
 
-    # ==== data loading ====
+    return {
+        "array_task_id": array_task_id,
+        "openai_api_key": openai_api_key,
+        "num_docs": num_docs,
+        "startpoint": startpoint,
+        "endpoint": endpoint,
+        "path_to_pubmed": path_to_pubmed,
+        "output_dir": output_dir,
+        "out_file": out_file,
+        "model_config_name": model_config_name,
+        "model_config": model_config,
+    }
+
+
+def load_pubmed(path_to_pubmed):
     with path_to_pubmed.open("r") as f:
         pubmed = json.load(f)
     print("Loaded abstracts")
+    return pubmed
 
-    # ==== Set up OpenAI client ====
-    client = OpenAI(api_key=openai_api_key)
+
+def setup_openai_client(api_key):
+    client = OpenAI(api_key=api_key)
     print("Loaded OpenAI client")
+    return client
 
+
+def process_abstracts(pubmed, startpoint, endpoint, client, model_config_name):
     fulldata = []
-
-    # ==== Loop overall specified abstracts in the dataset ====
     for article_data in tqdm(pubmed[startpoint:endpoint]):
         try:
             # Use prompt_funcs to generate messages for OpenAI
-            message_metadata = prompt_funcs.make_message_metadata(article_data["ab"])
+            prompt_funcs.make_message_metadata(article_data["ab"])
             # Call the appropriate OpenAI function
             if model_config_name == "o4-mini":
                 completion_metadata = openai_funcs.get_o4_mini_result(
@@ -142,11 +156,28 @@ def main():
             result1 = {"metadata": {}, "metainformation": {"error": f"Failed {e}"}}
             output = dict(article_data, **result1)
             print(f"Output: {output}")
+    return fulldata
 
-    # ==== wrap up ====
+
+def write_output(fulldata, out_file):
     with out_file.open("w") as f:
         json.dump(fulldata, f, indent=4)
     print(f"Wrote results to {out_file}")
+
+
+def main():
+    args = parse_args()
+    config = get_config(args)
+    pubmed = load_pubmed(config["path_to_pubmed"])
+    client = setup_openai_client(config["openai_api_key"])
+    fulldata = process_abstracts(
+        pubmed,
+        config["startpoint"],
+        config["endpoint"],
+        client,
+        config["model_config_name"],
+    )
+    write_output(fulldata, config["out_file"])
 
 
 if __name__ == "__main__":
