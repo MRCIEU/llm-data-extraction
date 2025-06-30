@@ -133,11 +133,12 @@ devel-isb-extract-data-llama3-2:
 # ==== openai model batch processing ====
 [group('openai')]
 [group('devel')]
+[group('local')]
 devel-openai-extract-data-lite:
     python scripts/python/extract-data-openai.py \
         --models o3-mini \
-        --input data/intermediate/mr-pubmed-data/mr-pubmed-data-sample-lite.json \
-        --output data/intermediate/openai-batch-results/
+        --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample-lite.json \
+        --output_dir data/intermediate/openai-batch-results/
 
 # TODO: do it on epi-franklin2
 [group('openai')]
