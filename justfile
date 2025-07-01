@@ -142,7 +142,7 @@ devel-isb-extract-data-llama3-2:
 devel-openai-extract-data-lite:
     python scripts/python/extract-data-openai.py \
         --model o4-mini \
-        --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample-lite.json \
+        --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
         --output_dir data/intermediate/openai-batch-results/
 
 # TODO: do it on epi-franklin2

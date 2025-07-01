@@ -105,20 +105,20 @@ def get_config(args):
         sys.exit(0)
     pubmed_data = pubmed_data[startpoint:endpoint]
 
-    # ==== output directory and file ====
-    output_dir = Path(args.output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
-    pilot_suffix = "_pilot" if args.pilot else ""
-    out_file = (
-        output_dir / f"mr_extract_openai_array_{array_task_id}{pilot_suffix}.json"
-    )
-
     # ==== model config ====
     model_config_name = args.model
     assert (
         model_config_name is not None and model_config_name in MODEL_CONFIGS.keys()
     ), print("--model must not be empty and must be one of the configs")
     model_config = MODEL_CONFIGS[model_config_name]
+
+    # ==== output directory and file ====
+    output_dir = Path(args.output_dir) / model_config_name
+    output_dir.mkdir(parents=True, exist_ok=True)
+    pilot_suffix = "_pilot" if args.pilot else ""
+    out_file = (
+        output_dir / f"mr_extract_openai_array_{array_task_id}{pilot_suffix}.json"
+    )
 
     # ==== return config and data ====
     config = {
