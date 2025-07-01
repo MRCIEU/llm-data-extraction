@@ -2,7 +2,7 @@
   "results": [
     {
       "exposure": "Particulate matter 2.5",
-      "outcome": "Forced expiratory volume in 1 s"
+      "outcome": "Forced expiratory volume in 1 s",
       "beta": 0.154,
       "units": "mmHg",
       "hazard ratio": null,
@@ -14,7 +14,7 @@
     },
     {
       "exposure": "Body mass index",
-      "outcome": "Gastroesophageal reflux disease"
+      "outcome": "Gastroesophageal reflux disease",
       "beta": null,
       "units": null,
       "hazard ratio": null,
@@ -26,7 +26,7 @@
     },
     {
       "exposure": "Body mass index",
-      "outcome": "Non-alcoholic fatty liver disease (NAFLD)"
+      "outcome": "Non-alcoholic fatty liver disease (NAFLD)",
       "beta": null,
       "units": null,
       "hazard ratio": null,

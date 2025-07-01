@@ -150,9 +150,9 @@ def setup_openai_client(api_key):
     return client
 
 
-def process_abstract(article_data, schema_data, client, model_config_name):
+def process_abstract(article_data, schema_data, client, model_config):
     try:
-        chat_func = model_config_name["chat_func"]
+        chat_func = model_config["chat_func"]
         input_prompt_metadata = prompt_funcs.make_message_metadata_new(
             abstract=article_data["ab"],
             json_example=schema_data["metadata"]["example"],

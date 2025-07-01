@@ -141,7 +141,7 @@ devel-isb-extract-data-llama3-2:
 [group('local')]
 devel-openai-extract-data-lite:
     python scripts/python/extract-data-openai.py \
-        --models o3-mini \
+        --model o4-mini \
         --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample-lite.json \
         --output_dir data/intermediate/openai-batch-results/
 
