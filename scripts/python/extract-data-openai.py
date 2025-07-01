@@ -24,10 +24,11 @@ from yiutils.project_utils import find_project_root
 PROJECT_ROOT = find_project_root("justfile")
 DATA_DIR = PROJECT_ROOT / "data"
 PATH_DATA = DATA_DIR / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data-sample.json"
+PATH_SCHEMA_DIR = DATA_DIR / "assets" / "data-schema" / "example-data"
 
 MODEL_CONFIGS = {
-    "o4-mini": {"model_id": "o4-mini"},
-    "gpt-4o": {"model_id": "gpt-4o"},
+    "o4-mini": {"model_id": "o4-mini", "chat_func": openai_funcs.get_o4_mini_result},
+    "gpt-4o": {"model_id": "gpt-4o", "chat_funcs": openai_funcs.get_gpt_4o_result},
 }
 PILOT_NUM_DOCS = 20
 ARRAY_LENGTH = 30
@@ -100,9 +101,7 @@ def get_config(args):
         verbose=True,
     )
     if startpoint is None or endpoint is None:
-        print(
-            f"WARNING: startpoint {startpoint} endpoint {endpoint}"
-        )
+        print(f"WARNING: startpoint {startpoint} endpoint {endpoint}")
         sys.exit(0)
     pubmed_data = pubmed_data[startpoint:endpoint]
 
@@ -151,56 +150,94 @@ def setup_openai_client(api_key):
     return client
 
 
-def process_abstracts(pubmed_data, client, model_config_name):
-    fulldata = []
-    for article_data in tqdm(pubmed_data):
-        try:
-            # Use prompt_funcs to generate messages for OpenAI
-            prompt_funcs.make_message_metadata(article_data["ab"])
-            # Call the appropriate OpenAI function
-            if model_config_name == "o4-mini":
-                completion_metadata = openai_funcs.get_o4_mini_result(
-                    client, article_data
-                )
-            elif model_config_name == "gpt-4o":
-                completion_metadata = openai_funcs.get_gpt_4o_result(
-                    client, article_data
-                )
+def process_abstract(article_data, schema_data, client, model_config_name):
+    try:
+        chat_func = model_config_name["chat_func"]
+        input_prompt_metadata = prompt_funcs.make_message_metadata_new(
+            abstract=article_data["ab"],
+            json_example=schema_data["metadata"]["example"],
+            json_schema=schema_data["metadata"]["schema"],
+        )
+        input_prompt_results = prompt_funcs.make_message_metadata_new(
+            abstract=article_data["ab"],
+            json_example=schema_data["results"]["example"],
+            json_schema=schema_data["results"]["schema"],
+        )
+        completion_metadata = chat_func(client, input_prompt_metadata)
+        completion_results = chat_func(client, input_prompt_results)
+        result = {
+            "completion_metadata": completion_metadata,
+            "completion_results": completion_results,
+        }
+        output = dict(article_data, **result)
+        return output
+    except Exception as e:
+        print(f"""\n\n=========== {article_data.get("pmid", "NO PMID")} ==========""")
+        print("""\n=========== FAILED! ==========""")
+        print(e)
+        result1 = {"metadata": {}, "metainformation": {"error": f"Failed {e}"}}
+        output = dict(article_data, **result1)
+        print(f"Output: {output}")
+        return output
+
+
+def load_schema_data():
+    schema_config = {
+        "metadata": {
+            "example": PATH_SCHEMA_DIR / "metadata.json",
+            "schema": PATH_SCHEMA_DIR / "metadata.schema.json",
+        },
+        "results": {
+            "example": PATH_SCHEMA_DIR / "results.json",
+            "schema": PATH_SCHEMA_DIR / "results.schema.json",
+        },
+    }
+    # Check if the four schema files exist
+    missing_files = []
+    schema_data = {}
+    for section_name, section in schema_config.items():
+        schema_data[section_name] = {}
+        for key, path in section.items():
+            if not path.exists():
+                missing_files.append(str(path))
+                schema_data[section_name][key] = None
             else:
-                raise ValueError(f"Unknown model: {model_config_name}")
-            result = {
-                "completion_metadata": completion_metadata,
-            }
-            output = dict(article_data, **result)
-            fulldata.append(output)
-        except Exception as e:
-            print(
-                f"""\n\n=========== {article_data.get("pmid", "NO PMID")} =========="""
-            )
-            print("""\n=========== FAILED! ==========""")
-            print(e)
-            result1 = {"metadata": {}, "metainformation": {"error": f"Failed {e}"}}
-            output = dict(article_data, **result1)
-            print(f"Output: {output}")
-    return fulldata
-
-
-def write_output(fulldata, out_file):
-    with out_file.open("w") as f:
-        json.dump(fulldata, f, indent=4)
-    print(f"Wrote results to {out_file}")
+                with path.open("r") as f:
+                    try:
+                        schema_data[section_name][key] = json.load(f)
+                    except Exception as e:
+                        print(f"ERROR loading {path}: {e}")
+                        schema_data[section_name][key] = None
+    if missing_files:
+        print(f"WARNING: The following schema files do not exist: {missing_files}")
+    else:
+        print("All schema files found.")
+    return schema_data
 
 
 def main():
+    # ==== init ====
     args = parse_args()
     config, pubmed_data = get_config(args=args)
     client = setup_openai_client(api_key=config["openai_api_key"])
-    fulldata = process_abstracts(
-        pubmed_data=pubmed_data,
-        client=client,
-        model_config_name=config["model_config_name"],
-    )
-    write_output(fulldata=fulldata, out_file=config["out_file"])
+    schema_data = load_schema_data()
+
+    # ==== process abstracts ====
+    fulldata = []
+    for article_data in tqdm(pubmed_data):
+        output = process_abstract(
+            article_data=article_data,
+            schema_data=schema_data,
+            client=client,
+            model_config=config["model_config"],
+        )
+        fulldata.append(output)
+
+    # ==== save output ====
+    out_file = config["out_file"]
+    print(f"Wrote results to {out_file}")
+    with out_file.open("w") as f:
+        json.dump(fulldata, f, indent=4)
 
 
 if __name__ == "__main__":
