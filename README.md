@@ -1,11 +1,11 @@
 # Data Extraction using LLMs
 
-description: TODO
+---
 
-## setup
+# setup
 
 For setting up and further details refer to `./DEV.md`.
 
-## analysis
+# analysis
 
 For analysis refer to `./ANALYSIS.md`
