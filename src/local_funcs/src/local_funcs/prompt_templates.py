@@ -7,16 +7,15 @@ system_prompt = {
 
 # ==== user input ====
 # NOTE: this is generated on the fly
-def make_abstract_input_prompt(abstract):
-    abstract_input_prompt = (
-        {
-            "role": "user",
-            "content": f"""
+def make_abstract_input_prompt(abstract) -> dict:
+    abstract_input_prompt = {
+        "role": "user",
+        "content": f"""
                 This is an abstract from a Mendelian randomization study.
-                    "{abstract}"
-                    """,
-        },
-    )
+                "{abstract}"
+                """,
+    }
+
     return abstract_input_prompt
 
 
@@ -78,7 +77,7 @@ metadata_example = {
 }
 
 
-def make_example_output_prompt(json_example, json_schema):
+def make_example_output_prompt(json_example, json_schema) -> dict:
     """
     Generate an example output prompt with both the example and schema as JSON code blocks.
 

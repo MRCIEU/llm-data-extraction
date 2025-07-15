@@ -3,3 +3,5 @@
 *.out
 *.ipynb_checkpoints
 /output
+
+__marimo__
