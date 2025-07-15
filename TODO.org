@@ -1,9 +1,0 @@
-* openai models
-
-** TODO port to epi-franklin
-
-** TODO scripting for full batch results
-
-** data aggregation script
-
-** data processing script
