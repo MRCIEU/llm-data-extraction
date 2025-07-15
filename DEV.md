@@ -32,4 +32,4 @@ conda envs
 .env in repo root
 
 - ~HUGGINGFACE_TOKEN~: huggingface token for llama3
-- ~OPENAI_API_KEY~: OpenAI API key
+- ~PROJECT_OPENAI_API_KEY~: OpenAI API key
