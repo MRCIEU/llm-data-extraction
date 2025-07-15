@@ -75,7 +75,7 @@ def parse_args():
 def get_config(args):
     env.read_env()
     array_task_id = args.array_id
-    openai_api_key = env("OPENAI_API_KEY")
+    openai_api_key = env("PROJECT_OPENAI_API_KEY")
     pilot_num_docs = PILOT_NUM_DOCS
     array_length = ARRAY_LENGTH
 

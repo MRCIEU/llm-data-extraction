@@ -1,7 +1,5 @@
 * openai models
 
-** DO Fix env issue: use PROJECT_OPENAI_API_KEY
-
 ** TODO port to epi-franklin
 
 ** TODO scripting for full batch results
