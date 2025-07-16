@@ -92,19 +92,14 @@ devel-openai-extract-data-pilot:
 [group('openai'), group('devel'), group('bc4')]
 devel-openai-extract-data-lite:
     sbatch scripts/bc4/extract-data-o4-mini-lite.sbatch
-    # TODO slurm wrapper
-    # python scripts/python/extract-data-openai.py \
-    #     --model o4-mini \
-    #     --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
-    #     --output_dir data/intermediate/openai-batch-results/
 
 [group('openai'), group('devel'), group('bc4')]
-devel-openai-extract-data:
-    # TODO slurm wrapper
-    # python scripts/python/extract-data-openai.py \
-    #     --model o4-mini \
-    #     --input data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
-    #     --output data/intermediate/openai-batch-results/
+devel-openai-extract-data-o4-mini:
+    sbatch scripts/bc4/extract-data-o4-mini.sbatch
+
+[group('openai'), group('devel'), group('bc4')]
+devel-openai-extract-data-gpt-4o:
+    sbatch scripts/bc4/extract-data-gpt-4o.sbatch
 
 # ==== post-batch processing ====
 
