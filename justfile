@@ -81,6 +81,14 @@ devel-isb-extract-data-llama3-2:
 
 
 # ==== openai model batch processing ====
+[group('openai'), group('devel')]
+devel-openai-extract-data-pilot:
+    python scripts/python/extract-data-openai.py \
+        --model o4-mini \
+        --pilot \
+        --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
+        --output_dir data/intermediate/openai-batch-results/
+
 [group('openai'), group('devel'), group('local')]
 devel-openai-extract-data-lite:
     python scripts/python/extract-data-openai.py \
@@ -93,8 +101,7 @@ devel-openai-extract-data-lite:
 [group('openai'), group('devel')]
 devel-openai-extract-data:
     python scripts/python/extract-data-openai.py \
-        --models o3-mini gpt-4o \
-        --pilot \
+        --model o4-mini \
         --input data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
         --output data/intermediate/openai-batch-results/
 

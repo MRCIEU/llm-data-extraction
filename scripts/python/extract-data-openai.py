@@ -13,6 +13,7 @@ import sys
 from pathlib import Path
 
 from environs import env
+from loguru import logger
 from openai import OpenAI
 from tqdm import tqdm
 
@@ -30,7 +31,7 @@ MODEL_CONFIGS = {
     "o4-mini": {"model_id": "o4-mini", "chat_func": openai_funcs.get_o4_mini_result},
     "gpt-4o": {"model_id": "gpt-4o", "chat_funcs": openai_funcs.get_gpt_4o_result},
 }
-PILOT_NUM_DOCS = 20
+PILOT_NUM_DOCS = 5
 ARRAY_LENGTH = 30
 
 
@@ -58,6 +59,12 @@ def parse_args():
         help="Array ID",
     )
     parser.add_argument(
+        "--array-length",
+        type=int,
+        default=ARRAY_LENGTH,
+        help=f"Number of chunks to split the data into (default: {ARRAY_LENGTH})",
+    )
+    parser.add_argument(
         "--pilot",
         action="store_true",
         help="Enable pilot mode. Defaults to False.",
@@ -66,6 +73,12 @@ def parse_args():
         "--model",
         type=str,
         help="Which model to use. Must not be empty",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        default=False,
+        help="If set, print config and schema data then exit without processing.",
     )
     args = parser.parse_args()
     print(f"args: {args}")
@@ -77,7 +90,7 @@ def get_config(args):
     array_task_id = args.array_id
     openai_api_key = env("PROJECT_OPENAI_API_KEY")
     pilot_num_docs = PILOT_NUM_DOCS
-    array_length = ARRAY_LENGTH
+    array_length = args.array_length
 
     # ==== chunking data ====
     path_to_pubmed = Path(args.path_data)
@@ -222,7 +235,14 @@ def main():
     client = setup_openai_client(api_key=config["openai_api_key"])
     schema_data = load_schema_data()
 
+    if args.dry_run:
+        print("Dry run enabled. Printing config and schema_data, then exiting.")
+        print("Config:")
+        print(json.dumps({k: str(v) for k, v in config.items()}, indent=2))
+        sys.exit(0)
+
     # ==== process abstracts ====
+    logger.info("Processing abstracts")
     fulldata = []
     for article_data in tqdm(pubmed_data):
         output = process_abstract(
@@ -232,10 +252,11 @@ def main():
             model_config=config["model_config"],
         )
         fulldata.append(output)
+    logger.info("Processing abstracts, done")
 
     # ==== save output ====
     out_file = config["out_file"]
-    print(f"Wrote results to {out_file}")
+    logger.info(f"Wrote results to {out_file}")
     with out_file.open("w") as f:
         json.dump(fulldata, f, indent=4)
 
