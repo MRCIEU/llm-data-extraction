@@ -7,15 +7,21 @@
 
 # Setting up
 
+## Clone
 git clone; git submodule update --init --recursive
 
+## conda env
 bootstrap conda env
 
+## local packages
 inside conda env and at root, install local packages
 
 - local_funcs (src/local_funcs/src/local_funcs): python -m pip install -e src/local_funcs
 - yiutils (src/yiutils/src/yiutils): python -m pip install -e src/yiutils
 
+sanity check: run `pip list | less` and check installation paths
+
+## env variables
 Add .env
 
 # Technical information
