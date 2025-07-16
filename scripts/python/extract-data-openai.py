@@ -137,7 +137,7 @@ def get_config(args):
     config = {
         "array_task_id": array_task_id,
         "openai_api_key": openai_api_key,
-        "num_docs": pilot_num_docs,
+        "num_docs": len(pubmed_data),
         "path_to_pubmed": path_to_pubmed,
         "output_dir": output_dir,
         "out_file": out_file,

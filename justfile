@@ -91,6 +91,7 @@ devel-openai-extract-data-pilot:
 
 [group('openai'), group('devel'), group('bc4')]
 devel-openai-extract-data-lite:
+    sbatch scripts/bc4/extract-data-o4-mini-lite.sbatch
     # TODO slurm wrapper
     # python scripts/python/extract-data-openai.py \
     #     --model o4-mini \
