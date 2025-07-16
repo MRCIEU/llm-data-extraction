@@ -89,21 +89,21 @@ devel-openai-extract-data-pilot:
         --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
         --output_dir data/intermediate/openai-batch-results/
 
-[group('openai'), group('devel'), group('local')]
+[group('openai'), group('devel'), group('bc4')]
 devel-openai-extract-data-lite:
-    python scripts/python/extract-data-openai.py \
-        --model o4-mini \
-        --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
-        --output_dir data/intermediate/openai-batch-results/
+    # TODO slurm wrapper
+    # python scripts/python/extract-data-openai.py \
+    #     --model o4-mini \
+    #     --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
+    #     --output_dir data/intermediate/openai-batch-results/
 
-# TODO: do it on epi-franklin2
-# TODO: do a wrapper instead of this
-[group('openai'), group('devel')]
+[group('openai'), group('devel'), group('bc4')]
 devel-openai-extract-data:
-    python scripts/python/extract-data-openai.py \
-        --model o4-mini \
-        --input data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
-        --output data/intermediate/openai-batch-results/
+    # TODO slurm wrapper
+    # python scripts/python/extract-data-openai.py \
+    #     --model o4-mini \
+    #     --input data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
+    #     --output data/intermediate/openai-batch-results/
 
 # ==== post-batch processing ====
 
