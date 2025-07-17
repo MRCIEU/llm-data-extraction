@@ -30,7 +30,7 @@ if [ "${SLURM_ARRAY_TASK_ID}" -eq 0 ]; then
 fi
 
 micromamba run -n data-extraction-non-gpu \
-  python scripts/python/extract_data_openai.py \
+  python scripts/python/extract-data-openai.py \
   --model o4-mini \
   --array-length 30 \
   --array-id "${SLURM_ARRAY_TASK_ID}" \
