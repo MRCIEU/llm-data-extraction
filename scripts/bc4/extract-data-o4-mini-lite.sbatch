@@ -30,7 +30,7 @@ if [ "${SLURM_ARRAY_TASK_ID}" -eq 0 ]; then
 fi
 
 micromamba run -n data-extraction-non-gpu \
-  python scripts/python/extract-data-openai.py \
+  python scripts/python/extract_data_openai.py \
   --model o4-mini \
   --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
   --output_dir "${output_results_dir}" \

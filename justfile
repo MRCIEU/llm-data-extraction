@@ -83,7 +83,7 @@ devel-isb-extract-data-llama3-2:
 # ==== openai model batch processing ====
 [group('openai'), group('devel')]
 devel-openai-extract-data-pilot:
-    python scripts/python/extract-data-openai.py \
+    python scripts/python/extract_data-openai.py \
         --model o4-mini \
         --pilot \
         --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
