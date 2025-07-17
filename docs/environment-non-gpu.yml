@@ -16,4 +16,5 @@ dependencies:
   - pip:
     - openai
     - jsonschema
+    - marimo
 
