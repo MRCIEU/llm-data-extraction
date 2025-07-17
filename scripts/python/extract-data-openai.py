@@ -29,7 +29,7 @@ PATH_SCHEMA_DIR = DATA_DIR / "assets" / "data-schema" / "example-data"
 
 MODEL_CONFIGS = {
     "o4-mini": {"model_id": "o4-mini", "chat_func": openai_funcs.get_o4_mini_result},
-    "gpt-4o": {"model_id": "gpt-4o", "chat_funcs": openai_funcs.get_gpt_4o_result},
+    "gpt-4o": {"model_id": "gpt-4o", "chat_func": openai_funcs.get_gpt_4o_result},
 }
 PILOT_NUM_DOCS = 5
 ARRAY_LENGTH = 30
