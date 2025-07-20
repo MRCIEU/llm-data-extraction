@@ -66,10 +66,10 @@ def process_metadata(metadata):
     """
     try:
         res = metadata
-        if isinstance(metadata, dict) and "metadata" in metadata.keys():
-            res = metadata["metadata"]
-        if isinstance(metadata, dict) and "metainformation" in metadata.keys():
-            metadata.pop("metainformation")
+        if isinstance(res, dict) and "metadata" in res.keys():
+            res = res["metadata"]
+        if isinstance(res, dict) and "metainformation" in res.keys():
+            res.pop("metainformation")
         return res
     except Exception as e:
         print(f"Error processing metadata: \n{e}")
