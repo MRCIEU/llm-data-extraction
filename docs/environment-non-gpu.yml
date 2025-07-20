@@ -17,4 +17,5 @@ dependencies:
     - openai
     - jsonschema
     - marimo
+    - watchdog
 
