@@ -14,6 +14,7 @@ check-health:
     micromamba env list | grep data-extraction
     pip list | grep local_funcs
     pip list | grep yiutils
+    python scripts/python/check-health.py
 
 # test
 [group('codebase')]
