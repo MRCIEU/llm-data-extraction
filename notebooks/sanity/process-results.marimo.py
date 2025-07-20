@@ -20,23 +20,22 @@ def module_init():
     spec = importlib.util.spec_from_file_location(
         "process_results", str(path_to_script)
     )
-    process_results = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(process_results)
+    proc = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(proc)
 
-    return (
-        process_results,
-        project_root,
-    )
+    return proc, project_root
 
 
 @app.cell
-def init(process_results, process_o4_mini, project_root):
+def init(proc, project_root):
     from local_funcs import parsers
 
-    load_raw_results = process_results.load_raw_results
-    load_schema_files = process_results.load_schema_files
-    process_gpt_4o = process_results.process_gpt_4o
-    process_o4_mini = process_results.process_o4_mini
+    load_raw_results = proc.load_raw_results
+    load_schema_files = proc.load_schema_files
+    process_gpt_4o = proc.process_gpt_4o
+    process_o4_mini = proc.process_o4_mini
+    process_metadata = proc.process_metadata
+    process_results = proc.process_results
 
     data_dir = project_root / "data"
     agg_data_dir = data_dir / "intermediate" / "llm-results-aggregated"
@@ -75,7 +74,15 @@ def init(process_results, process_o4_mini, project_root):
         assert v["data_dir"].exists(), (
             f"Input path for {k} does not exist: {v['data_dir']}"
         )
-    return global_config, model_configs, parsers
+    return (
+        global_config,
+        load_raw_results,
+        load_schema_files,
+        model_configs,
+        parsers,
+        process_metadata,
+        process_results,
+    )
 
 
 @app.cell
@@ -85,6 +92,8 @@ def o4_mini(
     load_schema_files,
     model_configs,
     parsers,
+    process_metadata,
+    process_results,
 ):
     model_config = model_configs["o4-mini"]
     raw_results_df = load_raw_results(model_config)
@@ -94,6 +103,12 @@ def o4_mini(
     results_df = raw_results_df.assign(
         metadata=lambda df: df["completion_metadata"].apply(parsers.parse_json),
         results=lambda df: df["completion_results"].apply(parsers.parse_json),
+    )
+
+    results_df = results_df[["pmid", "metadata", "results"]]
+    results_df = results_df.dropna(subset=["metadata", "results"]).assign(
+        metadata=lambda df: df["metadata"].apply(process_metadata),
+        results=lambda df: df["results"].apply(process_results),
     )
     return
 
