@@ -119,7 +119,7 @@ devel-openai-extract-data-gpt-4o:
 # Aggregate LLM batch results
 [group('data-processing')]
 aggregate-llm-batch-results:
-    python scripts/python/aggregate-llm-batch-results.py
+    python scripts/python/aggregate-llm-batch-results.py --all
 
 # Process LLM batch results
 [group('data-processing')]
