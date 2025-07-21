@@ -84,7 +84,7 @@ def client(config, setup_openai_client):
     client = setup_openai_client(api_key=config["openai_api_key"])
     print("OpenAI client initialized")
 
-    return
+    return (client,)
 
 
 @app.cell
@@ -109,23 +109,6 @@ def _(mo):
     return
 
 
-@app.cell
-def process_abstract(pubmed_data):
-    article_data = pubmed_data[0]
-    print(article_data.keys())
-
-    # process_abstract = extract_data.process_abstract
-    # output = process_abstract(
-    #     article_data=article_data,
-    #     schema_data=schema_data,
-    #     client=client,
-    #     model_config=config["model_config"],
-    # )
-
-    # print(output, article_data)
-    return (article_data,)
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""---""")
@@ -140,12 +123,39 @@ def _(mo):
 
 @app.cell
 def _(mo):
+    mo.md(r"""## setup""")
+    return
+
+
+@app.cell
+def process_abstract_setup(config, pubmed_data):
+    model_config = config["model_config"]
+
+    article_data = pubmed_data[0]
+    print(article_data.keys())
+
+    chat_func = model_config["chat_func"]
+
+    # process_abstract = extract_data.process_abstract
+    # output = process_abstract(
+    #     article_data=article_data,
+    #     schema_data=schema_data,
+    #     client=client,
+    #     model_config=config["model_config"],
+    # )
+
+    # print(output, article_data)
+    return article_data, chat_func
+
+
+@app.cell
+def _(mo):
     mo.md(r"""## prompts""")
     return
 
 
 @app.cell
-def prompt_metadata(article_data, json, project_root, schema_data):
+def prompt_metadata(article_data, schema_data):
     from pprint import pprint
 
     from local_funcs import prompt_funcs
@@ -159,13 +169,11 @@ def prompt_metadata(article_data, json, project_root, schema_data):
     )
     pprint(input_prompt_metadata)
 
-    with (project_root / "output" / "input_prompt_metadata.json").open("w") as _:
-        json.dump(input_prompt_metadata, _, indent=2)
-    return pprint, prompt_funcs
+    return input_prompt_metadata, pprint, prompt_funcs
 
 
 @app.cell
-def _(article_data, json, pprint, project_root, prompt_funcs, schema_data):
+def prompt_results(article_data, pprint, prompt_funcs, schema_data):
     input_prompt_results = prompt_funcs.make_message_results_new(
         abstract=article_data["ab"],
         json_example=schema_data["results"]["example"],
@@ -173,8 +181,30 @@ def _(article_data, json, pprint, project_root, prompt_funcs, schema_data):
     )
     pprint(input_prompt_results)
 
-    with (project_root / "output" / "input_prompt_results.json").open("w") as _:
-        json.dump(input_prompt_results, _, indent=2)
+    return (input_prompt_results,)
+
+
+@app.cell
+def process_abstract(
+    article_data,
+    chat_func,
+    client,
+    input_prompt_metadata,
+    input_prompt_results,
+    json,
+    project_root,
+):
+    completion_metadata = chat_func(client, input_prompt_metadata)
+    completion_results = chat_func(client, input_prompt_results)
+    result = {
+        "completion_metadata": completion_metadata,
+        "completion_results": completion_results,
+    }
+    output = dict(article_data, **result)
+
+    _output_path = project_root / "output" / "openai_output.json"
+    with _output_path.open("w") as _:
+        json.dump(output, _, indent=2)
     return
 
 
