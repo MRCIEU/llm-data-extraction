@@ -18,6 +18,7 @@ from openai import OpenAI
 from tqdm import tqdm
 
 from local_funcs import openai_funcs, prompt_funcs
+from local_funcs.schema_funcs import load_schema_data
 from yiutils.chunking import calculate_chunk_start_end
 from yiutils.project_utils import find_project_root
 
@@ -192,40 +193,6 @@ def process_abstract(article_data, schema_data, client, model_config):
         output = dict(article_data, **result1)
         print(f"Output: {output}")
         return output
-
-
-def load_schema_data():
-    schema_config = {
-        "metadata": {
-            "example": PATH_SCHEMA_DIR / "metadata.json",
-            "schema": PATH_SCHEMA_DIR / "metadata.schema.json",
-        },
-        "results": {
-            "example": PATH_SCHEMA_DIR / "results.json",
-            "schema": PATH_SCHEMA_DIR / "results.schema.json",
-        },
-    }
-    # Check if the four schema files exist
-    missing_files = []
-    schema_data = {}
-    for section_name, section in schema_config.items():
-        schema_data[section_name] = {}
-        for key, path in section.items():
-            if not path.exists():
-                missing_files.append(str(path))
-                schema_data[section_name][key] = None
-            else:
-                with path.open("r") as f:
-                    try:
-                        schema_data[section_name][key] = json.load(f)
-                    except Exception as e:
-                        print(f"ERROR loading {path}: {e}")
-                        schema_data[section_name][key] = None
-    if missing_files:
-        print(f"WARNING: The following schema files do not exist: {missing_files}")
-    else:
-        print("All schema files found.")
-    return schema_data
 
 
 def main():
