@@ -8,7 +8,7 @@ app = marimo.App(width="full")
 def _():
     import marimo as mo
 
-    return (mo,)
+    return
 
 
 @app.cell
@@ -20,12 +20,11 @@ def init():
     from local_funcs.schema_funcs import load_schema_data
     from yiutils.project_utils import find_project_root
 
-    return pprint, prompt_funcs, find_project_root, json, load_schema_data
-
+    return find_project_root, json, load_schema_data, pprint, prompt_funcs
 
 
 @app.cell
-def load_abstract(pubmed_data, json, find_project_root, load_schema_data):
+def load_abstract(find_project_root, json, load_schema_data):
     project_root = find_project_root("justfile")
     data_dir = project_root / "data"
     path_to_pubmed = data_dir / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data-sample.json"
@@ -38,10 +37,18 @@ def load_abstract(pubmed_data, json, find_project_root, load_schema_data):
     print(article_data.keys())
 
     schema_data = load_schema_data()
-    return article_data, schema_data, project_root
+    return article_data, project_root, schema_data
+
 
 @app.cell
-def prompt_metadata(pprint, json, prompt_funcs, project_root, article_data, schema_data):
+def prompt_metadata(
+    article_data,
+    json,
+    pprint,
+    project_root,
+    prompt_funcs,
+    schema_data,
+):
     input_prompt_metadata = prompt_funcs.make_message_metadata_new(
         abstract=article_data["ab"],
         json_example=schema_data["metadata"]["example"],
@@ -55,8 +62,15 @@ def prompt_metadata(pprint, json, prompt_funcs, project_root, article_data, sche
 
 
 @app.cell
-def prompt_results(article_data, json, pprint, project_root, prompt_funcs, schema_data):
-    input_prompt_results = prompt_funcs.make_message_metadata_new(
+def prompt_results(
+    article_data,
+    json,
+    pprint,
+    project_root,
+    prompt_funcs,
+    schema_data,
+):
+    input_prompt_results = prompt_funcs.make_message_results_new(
         abstract=article_data["ab"],
         json_example=schema_data["results"]["example"],
         json_schema=schema_data["results"]["schema"],

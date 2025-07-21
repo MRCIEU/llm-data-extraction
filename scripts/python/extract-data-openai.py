@@ -172,7 +172,7 @@ def process_abstract(article_data, schema_data, client, model_config):
             json_example=schema_data["metadata"]["example"],
             json_schema=schema_data["metadata"]["schema"],
         )
-        input_prompt_results = prompt_funcs.make_message_metadata_new(
+        input_prompt_results = prompt_funcs.make_message_results_new(
             abstract=article_data["ab"],
             json_example=schema_data["results"]["example"],
             json_schema=schema_data["results"]["schema"],

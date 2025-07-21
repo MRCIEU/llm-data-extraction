@@ -166,7 +166,7 @@ def prompt_metadata(article_data, json, project_root, schema_data):
 
 @app.cell
 def _(article_data, json, pprint, project_root, prompt_funcs, schema_data):
-    input_prompt_results = prompt_funcs.make_message_metadata_new(
+    input_prompt_results = prompt_funcs.make_message_results_new(
         abstract=article_data["ab"],
         json_example=schema_data["results"]["example"],
         json_schema=schema_data["results"]["schema"],
