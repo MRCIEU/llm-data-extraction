@@ -28,6 +28,7 @@ def module_init():
 
 @app.cell
 def init(proc, project_root):
+    import jsonschema
     from local_funcs import parsers
 
     load_raw_results = proc.load_raw_results
@@ -76,6 +77,7 @@ def init(proc, project_root):
         )
     return (
         global_config,
+        jsonschema,
         load_raw_results,
         load_schema_files,
         model_configs,
@@ -110,6 +112,46 @@ def o4_mini(
         metadata=lambda df: df["metadata"].apply(process_metadata),
         results=lambda df: df["results"].apply(process_results),
     )
+    return meta_schema, results_df, results_schema
+
+
+@app.cell
+def validate(meta_schema, proc, results_df):
+    metadata = results_df["metadata"][0]
+    validate_item_with_schema = proc.validate_item_with_schema
+    validate_item_with_schema(
+        metadata,
+        meta_schema,
+        "/dev/null"
+        )
+    return (validate_item_with_schema,)
+
+
+@app.cell
+def _(meta_schema, results_df, validate_item_with_schema):
+    metadata_s = results_df["metadata"]
+    valid_s = metadata_s.apply(validate_item_with_schema, schema=meta_schema, log_file="/dev/null")
+    return
+
+
+@app.cell
+def _(jsonschema, results_df, results_schema, validate_item_with_schema):
+    results = results_df["results"][0]
+    _ = validate_item_with_schema(
+        results,
+        results_schema,
+        "/dev/null"
+        )
+    print(_)
+
+    jsonschema.validate(instance=results, schema=results_schema)
+    return
+
+
+@app.cell
+def _(results_df, results_schema, validate_item_with_schema):
+    results_s = results_df["results"]
+    valid_results_s = results_s.apply(validate_item_with_schema, schema=results_schema, log_file="/dev/null")
     return
 
 

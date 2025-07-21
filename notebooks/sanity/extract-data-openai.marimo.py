@@ -1,7 +1,13 @@
 import marimo
 
-__generated_with = "0.14.10"
-app = marimo.App(width="medium")
+__generated_with = "0.14.12"
+app = marimo.App(width="full")
+
+
+@app.cell
+def _():
+    import marimo as mo
+    return (mo,)
 
 
 @app.cell
@@ -20,6 +26,12 @@ def module_init():
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""# Init""")
+    return
+
+
+@app.cell
 def init(extract_data):
     # Import required modules for data processing
     import json
@@ -29,7 +41,7 @@ def init(extract_data):
     load_schema_data = extract_data.load_schema_data
     setup_openai_client = extract_data.setup_openai_client
 
-    return get_config, json, load_schema_data, setup_openai_client
+    return get_config, load_schema_data, setup_openai_client
 
 
 @app.cell
@@ -83,21 +95,19 @@ def schema(load_schema_data):
 
 
 @app.cell
-def _(config, json, mock_args):
-    # Handle dry run mode
-    if mock_args.dry_run:
-        print("Dry run enabled. Printing config and schema_data, then exiting.")
-        print("Config:")
-        print(json.dumps({k: str(v) for k, v in config.items()}, indent=2))
-        print("Would exit here in script mode")
-    else:
-        print("Proceeding with data processing...")
-
+def _(mo):
+    mo.md(r"""---""")
     return
 
 
 @app.cell
-def _(client, config, extract_data, pubmed_data, schema_data):
+def _(mo):
+    mo.md(r"""# Process abstract""")
+    return
+
+
+@app.cell
+def process_abstract(client, config, extract_data, pubmed_data, schema_data):
     article_data = pubmed_data[0]
     print(article_data.keys())
 
@@ -109,12 +119,36 @@ def _(client, config, extract_data, pubmed_data, schema_data):
         model_config=config["model_config"],
     )
 
-    return (output,)
+    print(output, article_data)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""---""")
+    return
 
 
 @app.cell
-def _(output):
-    output
+def _(mo):
+    mo.md(r"""# Process abstract logics""")
+    return
+
+
+@app.cell
+def _(config, article_data, schema_data):
+    from local_funcs import prompt_funcs
+    from pprint import pprint
+
+    model_config = config["model_config"]
+    chat_func = model_config["chat_func"]
+
+    input_prompt_metadata = prompt_funcs.make_message_metadata_new(
+        abstract=article_data["ab"],
+        json_example=schema_data["metadata"]["example"],
+        json_schema=schema_data["metadata"]["schema"],
+    )
+    pprint(input_prompt_metadata)
     return
 
 
