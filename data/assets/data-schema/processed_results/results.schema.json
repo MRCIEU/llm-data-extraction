@@ -21,6 +21,12 @@
             "items": { "type": ["number", "null", "string"] },
             "minItems": 2,
             "maxItems": 2
+          },
+          {
+            "type": "array",
+            "items": {"type": "null"},
+            "minItems": 2,
+            "maxItems": 2
           }
         ]
       },
