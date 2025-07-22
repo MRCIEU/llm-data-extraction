@@ -1,5 +1,5 @@
 """
-Validate output with schema passing
+Validate output with schema passing, single case
 """
 import marimo
 
