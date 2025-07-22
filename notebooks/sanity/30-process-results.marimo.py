@@ -23,8 +23,8 @@ def module_init():
     spec = importlib.util.spec_from_file_location(
         "process_results", str(path_to_script)
     )
-    proc = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(proc)
+    proc = importlib.util.module_from_spec(spec)  # type: ignore
+    spec.loader.exec_module(proc)  # type: ignore
 
     return proc, project_root
 

@@ -25,8 +25,8 @@ def module_init():
     import importlib.util
 
     spec = importlib.util.spec_from_file_location("extract_data", str(path_to_script))
-    extract_data = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(extract_data)
+    extract_data = importlib.util.module_from_spec(spec)  # type: ignore
+    spec.loader.exec_module(extract_data)  # type: ignore
 
     return extract_data, project_root
 
@@ -185,6 +185,11 @@ def prompt_results(article_data, pprint, prompt_funcs, schema_data):
     pprint(input_prompt_results)
 
     return (input_prompt_results,)
+
+@app.cell
+def _(mo):
+    mo.md(r"""## chat completion results""")
+    return
 
 
 @app.cell
