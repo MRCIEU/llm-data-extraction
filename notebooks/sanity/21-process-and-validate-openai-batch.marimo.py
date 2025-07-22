@@ -1,6 +1,7 @@
 """
 Validate output with schema passing, single case
 """
+
 import marimo
 
 __generated_with = "0.14.12"
@@ -10,8 +11,6 @@ app = marimo.App(width="full")
 @app.cell
 def init():
     import json
-    from pprint import pprint
-
     import jsonschema
     import pandas as pd
 
@@ -19,7 +18,7 @@ def init():
     from yiutils.project_utils import find_project_root
 
     project_root = find_project_root("justfile")
-    return json, jsonschema, parsers, pprint, pd, project_root
+    return json, jsonschema, parsers, pd, project_root
 
 
 @app.cell
@@ -43,14 +42,14 @@ def module_init(project_root):
 
 
 @app.cell
-def setup_data(json, pprint, pd, project_root):
+def setup_data(pd, project_root):
     result_path = project_root / "output" / "openai_batch.json"
     raw_results_df = pd.read_json(result_path, orient="records")
     return (raw_results_df,)
 
 
 @app.cell
-def process_data(raw_results_df, parsers, process_metadata, process_results):
+def process_data(parsers, process_metadata, process_results, raw_results_df):
     results_df = raw_results_df.assign(
         metadata=lambda df: df["completion_metadata"].apply(parsers.parse_json),
         results=lambda df: df["completion_results"].apply(parsers.parse_json),
@@ -61,7 +60,8 @@ def process_data(raw_results_df, parsers, process_metadata, process_results):
         results=lambda df: df["results"].apply(process_results),
     )
     results_df.info()
-    return results_df
+    return (results_df,)
+
 
 @app.cell
 def load_schema(json, project_root):
@@ -90,22 +90,28 @@ def load_schema(json, project_root):
 
 
 @app.cell
-def validate_metadata(jsonschema, results_df, meta_schema):
+def validate_metadata(jsonschema, meta_schema, results_df):
+    metadata_failed_attempts = 0
     for _ in results_df["metadata"]:
         try:
             jsonschema.validate(instance=_, schema=meta_schema)
         except jsonschema.ValidationError as e:
             print(e)
+            metadata_failed_attempts = metadata_failed_attempts + 1
+    print(f"{metadata_failed_attempts=}")
     return
 
 
 @app.cell
 def validate_results(jsonschema, results_df, results_schema):
-    for _ in results_df["metadata"]:
+    results_failed_attempts = 0
+    for _ in results_df["results"]:
         try:
             jsonschema.validate(instance=_, schema=results_schema)
         except jsonschema.ValidationError as e:
             print(e)
+            results_failed_attempts = results_failed_attempts + 1
+    print(f"{results_failed_attempts=}")
     return
 
 

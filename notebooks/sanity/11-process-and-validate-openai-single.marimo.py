@@ -46,11 +46,11 @@ def _(project_root):
     spec = importlib.util.spec_from_file_location(
         "process_results", str(path_to_script)
     )
-    proc = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(proc)
+    proc = importlib.util.module_from_spec(spec)  # type: ignore
+    spec.loader.exec_module(proc)  # type: ignore
 
-    process_metadata = proc.process_metadata
-    process_results = proc.process_results
+    process_metadata = proc.process_metadata  # type: ignore
+    process_results = proc.process_results  # type: ignore
     return process_metadata, process_results
 
 
