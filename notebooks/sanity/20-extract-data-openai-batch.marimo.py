@@ -1,19 +1,12 @@
 """
 Lite batch extraction by openai models
 """
+
 import marimo
 
 __generated_with = "0.14.12"
 app = marimo.App(width="full")
 
-
-@app.cell
-def _():
-    import marimo as mo
-
-    return (mo,)
-
-# ==== module init ====
 
 @app.cell
 def module_init():
@@ -31,9 +24,6 @@ def module_init():
     return extract_data, project_root
 
 
-# ==== init ====
-
-
 @app.cell
 def init(extract_data):
     # Import required modules for data processing
@@ -46,12 +36,18 @@ def init(extract_data):
     setup_openai_client = extract_data.setup_openai_client
     process_abstract = extract_data.process_abstract
 
-    return get_config, json, load_schema_data, setup_openai_client, process_abstract, tqdm
+    return (
+        get_config,
+        json,
+        load_schema_data,
+        process_abstract,
+        setup_openai_client,
+        tqdm,
+    )
 
 
 @app.cell
-def config(get_config, project_root, extract_data):
-
+def config(extract_data, get_config, project_root):
     class MockArgs:
         def __init__(self):
             self.output_dir = project_root / "output"
@@ -92,11 +88,18 @@ def schema(load_schema_data):
 
     return (schema_data,)
 
-# ==== full data run ====
 
 @app.cell
-def process_abstract(json, tqdm, project_root, config, schema_data, pubmed_data):
-
+def process_abstract(
+    client,
+    config,
+    json,
+    process_abstract,
+    project_root,
+    pubmed_data,
+    schema_data,
+    tqdm,
+):
     fulldata = []
     for article_data in tqdm(pubmed_data):
         output = process_abstract(
@@ -112,6 +115,7 @@ def process_abstract(json, tqdm, project_root, config, schema_data, pubmed_data)
         json.dump(fulldata, _, indent=2)
 
     return
+
 
 if __name__ == "__main__":
     app.run()
