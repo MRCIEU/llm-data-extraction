@@ -1,3 +1,6 @@
+"""
+Validate output with schema passing
+"""
 import marimo
 
 __generated_with = "0.14.12"

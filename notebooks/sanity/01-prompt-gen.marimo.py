@@ -1,3 +1,6 @@
+"""
+Check generated prompt message
+"""
 import marimo
 
 __generated_with = "0.14.12"

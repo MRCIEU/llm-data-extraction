@@ -1,3 +1,6 @@
+"""
+Lite batch extraction by openai models
+"""
 import marimo
 
 __generated_with = "0.14.10"
