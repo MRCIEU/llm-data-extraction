@@ -12,7 +12,7 @@ from yiutils.project_utils import find_project_root
 
 # They should look like this in the filesystem
 # data_dir / "intermediate" / "llm-results-aggregated" / <MODEL-NAME> / "processed_results.json"
-MODEL_RESULTS = ["llama3", "llama3-2", "deepseek-r1-distilled"]
+MODEL_RESULTS = ["llama3", "llama3-2", "deepseek-r1-distilled", "o4-mini"]
 
 
 def parse_args():
