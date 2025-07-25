@@ -276,7 +276,7 @@ def process_o4_mini(model_config, global_config):
     validate_schema(model_config, results_df, meta_schema, results_schema)
 
 
-def process_gpt_4o(model_config, global_config):
+def process_gpt_4_1(model_config, global_config):
     # ---- init ----
     logger.info(f"{model_config['name']}")
 
