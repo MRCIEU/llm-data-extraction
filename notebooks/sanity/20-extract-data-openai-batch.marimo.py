@@ -55,7 +55,7 @@ def config(extract_data, get_config, project_root):
             self.array_id = 0
             self.array_length = 30
             self.pilot = True  # Enable pilot mode for testing
-            self.model = "o4-mini"  # or "gpt-4o"
+            self.model = "gpt-4-1"  # or "gpt-4o"
             # self.model = "gpt-4o"
             self.dry_run = False
 
