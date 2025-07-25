@@ -21,7 +21,7 @@ DEEPSEEK_R1_DISTILLED_INPUT = "isb-ai-117256"
 LLAMA3_2_INPUT = "isb-ai-117535"
 LLAMA3_INPUT = "isb-ai-116732"
 OPENAI_O4MINI_INPUT = "bc4-12390298"
-OPENAI_GPT4O_INPUT = "bc4-12391186"
+OPENAI_GPT4_1_INPUT = "TODO"
 
 
 def process_deepseek_r1_distilled(model_config):
@@ -138,12 +138,12 @@ def process_o4_mini(model_config):
         raw_results_df.to_json(f, orient="records", indent=2)
 
 
-def process_gpt_4o(model_config):
+def process_gpt_4_1(model_config):
     path_to_result_dir = model_config["input"]
     assert path_to_result_dir.exists()
 
     json_files = list(path_to_result_dir.glob("*.json"))
-    print(f"gpt-4o: {len(json_files)} files")
+    print(f"gpt-4-1: {len(json_files)} files")
 
     # ---- load data ----
     json_data = []
@@ -159,7 +159,7 @@ def process_gpt_4o(model_config):
             for data in json_data
         ],
     ).reset_index(drop=True)
-    print("gpt-4o raw_results_df:")
+    print("gpt-4-1 raw_results_df:")
     raw_results_df.info()
 
     output_path = model_config["output"] / "raw_results.json"
@@ -175,7 +175,7 @@ def main():
     parser.add_argument(
         "--models",
         nargs="+",
-        choices=["deepseek-r1-distilled", "llama3", "llama3-2", "o4-mini", "gpt-4o"],
+        choices=["deepseek-r1-distilled", "llama3", "llama3-2", "o4-mini", "gpt-4-1"],
         help="List of models to process (space separated).",
     )
     parser.add_argument("--all", action="store_true", help="Process all models.")
@@ -213,10 +213,10 @@ def main():
             "output": output_dir / "o4-mini",
             "func": process_o4_mini,
         },
-        "gpt-4o": {
-            "input": llm_results_dir / OPENAI_GPT4O_INPUT / "results" / "gpt-4o",
-            "output": output_dir / "gpt-4o",
-            "func": process_gpt_4o,
+        "gpt-4-1": {
+            "input": llm_results_dir / OPENAI_GPT4_1_INPUT / "results" / "gpt-4-1",
+            "output": output_dir / "gpt-4-1",
+            "func": process_gpt_4_1,
         },
     }
 

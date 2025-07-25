@@ -372,11 +372,11 @@ def main():
             "error_log": agg_data_dir / "logs" / "o4-mini_schema_validation_errors.log",
             "func": process_o4_mini,
         },
-        "gpt-4o": {
-            "name": "gpt-4o",
-            "data_dir": agg_data_dir / "gpt-4o",
-            "error_log": agg_data_dir / "logs" / "gpt-4o_schema_validation_errors.log",
-            "func": process_gpt_4o,
+        "gpt-4-1": {
+            "name": "gpt-4-1",
+            "data_dir": agg_data_dir / "gpt-4-1",
+            "error_log": agg_data_dir / "logs" / "gpt-4-1_schema_validation_errors.log",
+            "func": process_gpt_4_1,
         },
     }
     for k, v in model_configs.items():

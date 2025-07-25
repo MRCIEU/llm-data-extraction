@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=extract-data-gp4-4o
+#SBATCH --job-name=extract-data-gpt-4-1
 #SBATCH --account=SSCM013902
 #SBATCH --partition=mrcieu
 #SBATCH --nodes=1
@@ -31,7 +31,7 @@ fi
 
 micromamba run -n data-extraction-non-gpu \
   python scripts/python/extract-data-openai.py \
-  --model gpt-4o \
+  --model gpt-4-1 \
   --array-length 30 \
   --array-id "${SLURM_ARRAY_TASK_ID}" \
   --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \

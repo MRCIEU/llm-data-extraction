@@ -111,8 +111,8 @@ devel-openai-extract-data-o4-mini:
     sbatch scripts/bc4/extract-data-o4-mini.sbatch
 
 [group('openai'), group('devel'), group('bc4')]
-devel-openai-extract-data-gpt-4o:
-    sbatch scripts/bc4/extract-data-gpt-4o.sbatch
+devel-openai-extract-data-gpt-4-1:
+    sbatch scripts/bc4/extract-data-gpt-4-1.sbatch
 
 # ==== post-batch processing ====
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=extract-data-gpt-4o-lite
+#SBATCH --job-name=extract-data-gpt-4-1-lite
 #SBATCH --account=SSCM013902
 #SBATCH --partition=mrcieu
 #SBATCH --nodes=1
@@ -31,7 +31,7 @@ fi
 
 micromamba run -n data-extraction-non-gpu \
   python scripts/python/extract-data-openai.py \
-  --model gpt-4o \
+  --model gpt-4-1 \
   --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
   --output_dir "${output_results_dir}" \
   > "${output_log_file}" 2>&1
