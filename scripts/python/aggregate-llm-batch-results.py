@@ -21,7 +21,7 @@ DEEPSEEK_R1_DISTILLED_INPUT = "isb-ai-117256"
 LLAMA3_2_INPUT = "isb-ai-117535"
 LLAMA3_INPUT = "isb-ai-116732"
 OPENAI_O4MINI_INPUT = "bc4-12398167"
-OPENAI_GPT4_1_INPUT = "bc4-12411151"
+OPENAI_GPT4_1_INPUT = "bc4-12414116"
 
 
 def process_deepseek_r1_distilled(model_config):
