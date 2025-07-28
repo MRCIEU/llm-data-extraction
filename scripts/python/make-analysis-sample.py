@@ -19,12 +19,14 @@ def parse_args():
     parser = argparse.ArgumentParser(
         description="Aggregate processed LLM results and produce a sample."
     )
+    # ---- --size ----
     parser.add_argument(
         "--size",
         type=int,
         default=20,
         help="Number of samples to produce (default: 20)",
     )
+    # ---- --seed ----
     parser.add_argument(
         "--seed", type=int, default=42, help="Random seed (default: 42)"
     )

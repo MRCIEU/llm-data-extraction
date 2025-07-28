@@ -253,6 +253,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="Render analysis sample HTML from JSON data."
     )
+    # ---- --file ----
     parser.add_argument(
         "-f",
         "--file",

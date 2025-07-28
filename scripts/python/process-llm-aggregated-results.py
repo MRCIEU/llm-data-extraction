@@ -309,16 +309,22 @@ def process_gpt_4_1(model_config, global_config):
     validate_schema(model_config, results_df, meta_schema, results_schema)
 
 
-def main():
+def make_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Process and validate LLM aggregated results."
     )
+    # ---- --models ----
     parser.add_argument(
         "--models",
         nargs="+",
         choices=["deepseek-r1-distilled", "llama3", "llama3-2", "o4-mini", "gpt-4-1"],
         help="Specify one or more models to process. If not supplied, all models will be processed.",
     )
+    return parser
+
+
+def main():
+    parser = make_parser()
     args = parser.parse_args()
 
     proj_root = find_project_root("justfile")

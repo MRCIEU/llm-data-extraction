@@ -168,17 +168,24 @@ def process_gpt_4_1(model_config):
         raw_results_df.to_json(f, orient="records", indent=2)
 
 
-def main():
+def make_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Aggregate LLM batch results for selected models."
     )
+    # ---- --models ----
     parser.add_argument(
         "--models",
         nargs="+",
         choices=["deepseek-r1-distilled", "llama3", "llama3-2", "o4-mini", "gpt-4-1"],
         help="List of models to process (space separated).",
     )
+    # ---- --all ----
     parser.add_argument("--all", action="store_true", help="Process all models.")
+    return parser
+
+
+def main():
+    parser = make_parser()
     args = parser.parse_args()
 
     proj_root = find_project_root("justfile")
