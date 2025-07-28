@@ -1,6 +1,7 @@
 """
 Single case extraction by openai models
 """
+
 import marimo
 
 __generated_with = "0.14.12"
@@ -185,6 +186,7 @@ def prompt_results(article_data, pprint, prompt_funcs, schema_data):
     pprint(input_prompt_results)
 
     return (input_prompt_results,)
+
 
 @app.cell
 def _(mo):

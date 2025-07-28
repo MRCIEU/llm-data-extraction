@@ -1,6 +1,7 @@
 """
 Check openai API interaction
 """
+
 import marimo
 
 __generated_with = "0.14.10"
@@ -10,13 +11,10 @@ app = marimo.App(width="medium")
 @app.cell
 def init():
     import json
-    from pprint import pprint
 
     from environs import env
     from openai import OpenAI
-    from tqdm import tqdm
 
-    from local_funcs import prompt_templates, openai_funcs
     from yiutils.project_utils import find_project_root
 
     proj_root = find_project_root(anchor_file="justfile")
@@ -60,10 +58,7 @@ def _(client):
     response = client.responses.create(
         model="o4-mini",
         input="What is the capital of France?",
-        reasoning={
-            "effort": "low",
-            "summary": "auto"
-        }
+        reasoning={"effort": "low", "summary": "auto"},
     )
 
     print(response.output)

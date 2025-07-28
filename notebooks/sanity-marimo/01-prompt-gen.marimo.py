@@ -1,6 +1,7 @@
 """
 Check generated prompt message
 """
+
 import marimo
 
 __generated_with = "0.14.12"
@@ -9,8 +10,6 @@ app = marimo.App(width="full")
 
 @app.cell
 def _():
-    import marimo as mo
-
     return
 
 
@@ -30,7 +29,9 @@ def init():
 def load_abstract(find_project_root, json, load_schema_data):
     project_root = find_project_root("justfile")
     data_dir = project_root / "data"
-    path_to_pubmed = data_dir / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data-sample.json"
+    path_to_pubmed = (
+        data_dir / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data-sample.json"
+    )
     assert path_to_pubmed.exists(), f"File not found: {path_to_pubmed}"
 
     with path_to_pubmed.open("r") as f:

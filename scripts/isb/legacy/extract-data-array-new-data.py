@@ -94,8 +94,8 @@ def extract(messages):
     response = outputs[0][input_ids.shape[-1] :]
     return tokenizer.decode(response, skip_special_tokens=True)
 
-def main():
 
+def main():
     fulldata = []
 
     # Loop over all specified abstracts in the dataset
@@ -147,9 +147,12 @@ def main():
             output = dict(abstract, **result1, **result2)
             fulldata.append(output)
 
-    out_file = output_path / f"mr_extract_llama3_sample_array_new_data_{array_task_id}.json"
+    out_file = (
+        output_path / f"mr_extract_llama3_sample_array_new_data_{array_task_id}.json"
+    )
     with out_file.open("w") as f:
         json.dump(fulldata, f, indent=4)
+
 
 if __name__ == "__main__":
     main()

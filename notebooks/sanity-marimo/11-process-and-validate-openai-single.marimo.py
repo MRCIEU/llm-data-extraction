@@ -1,6 +1,7 @@
 """
 Validate output with schema passing, single case
 """
+
 import marimo
 
 __generated_with = "0.14.12"
