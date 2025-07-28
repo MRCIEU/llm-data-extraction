@@ -131,3 +131,9 @@ process-llm-batch-results:
 analysis-sample-trial:
     python scripts/python/make-analysis-sample.py --size 20 --seed 42
     python scripts/python/render-analysis-sample.py --file sample-42-20.json
+
+# analysis sample: formal
+[group('data-processing')]
+analysis-sample-formal:
+    python scripts/python/make-analysis-sample.py --size 100 --seed 42
+    python scripts/python/render-analysis-sample.py --file sample-42-100.json
