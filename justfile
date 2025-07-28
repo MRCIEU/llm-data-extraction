@@ -1,5 +1,5 @@
 # Variables
-# nothings atm
+py_files := `fd -e py --exclude "*legacy*" --exclude "*tom*" --exclude "*yiutils*"`
 
 # list recipes
 default:
@@ -15,6 +15,20 @@ check-health:
     pip list | grep local_funcs
     pip list | grep yiutils
     python scripts/python/check-health.py
+
+# format codebase, need to have ruff in path
+[group('codebase')]
+format:
+    echo "{{py_files}}" | xargs ruff format
+
+# check codebase using ruff check, need to have ruff in path
+[group('codebase')]
+ruff-check:
+    echo "{{py_files}}" | xargs ruff check --fix
+
+[group('codebase')]
+ty-check:
+    echo "{{py_files}}" | xargs ty check
 
 # test
 [group('codebase')]
