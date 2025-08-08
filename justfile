@@ -1,5 +1,5 @@
 # Variables
-py_files := `fd -e py --exclude "*legacy*" --exclude "*tom*" --exclude "*yiutils*"`
+PY_FILES := `fd -e py --exclude "*legacy*" --exclude "*tom*" --exclude "*yiutils*"`
 
 # list recipes
 default:
@@ -11,6 +11,7 @@ default:
 [group('codebase')]
 check-health:
     #!/bin/bash
+    echo {{PY_FILES}}
     micromamba env list | grep data-extraction
     pip list | grep local_funcs
     pip list | grep yiutils
@@ -19,16 +20,16 @@ check-health:
 # format codebase, need to have ruff in path
 [group('codebase')]
 format:
-    echo "{{py_files}}" | xargs ruff format
+    echo "{{PY_FILES}}" | tr '\n' ' ' | xargs ruff format
 
 # check codebase using ruff check, need to have ruff in path
 [group('codebase')]
 ruff-check:
-    echo "{{py_files}}" | xargs ruff check --fix
+    echo "{{PY_FILES}}" | tr '\n' ' ' | xargs ruff check --fix
 
 [group('codebase')]
 ty-check:
-    echo "{{py_files}}" | xargs ty check
+    echo "{{PY_FILES}}" | tr '\n' ' ' | xargs ty check
 
 # test
 [group('codebase')]
