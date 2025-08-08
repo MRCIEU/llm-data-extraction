@@ -22,6 +22,8 @@ LLAMA3_2_INPUT = "isb-ai-117535"
 LLAMA3_INPUT = "isb-ai-116732"
 OPENAI_O4MINI_INPUT = "bc4-12398167"
 OPENAI_GPT4_1_INPUT = "bc4-12414116"
+# TODO: update when finished
+OPENAI_GPT5_INPUT = "TODO"
 
 
 def process_deepseek_r1_distilled(model_config):
@@ -168,6 +170,36 @@ def process_gpt_4_1(model_config):
         raw_results_df.to_json(f, orient="records", indent=2)
 
 
+def process_gpt_5(model_config):
+    path_to_result_dir = model_config["input"]
+    assert path_to_result_dir.exists()
+
+    json_files = list(path_to_result_dir.glob("*.json"))
+    print(f"gpt-5: {len(json_files)} files")
+
+    # ---- load data ----
+    json_data = []
+    for json_file in json_files:
+        with open(json_file, "r") as f:
+            data = {"data": json.load(f), "filename": str(json_file.name)}
+            json_data.append(data)
+
+    # ---- raw results ----
+    raw_results_df = pd.concat(
+        [
+            pd.DataFrame(data["data"]).assign(filename=data["filename"])
+            for data in json_data
+        ],
+    ).reset_index(drop=True)
+    print("gpt-5 raw_results_df:")
+    raw_results_df.info()
+
+    output_path = model_config["output"] / "raw_results.json"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w") as f:
+        raw_results_df.to_json(f, orient="records", indent=2)
+
+
 def make_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Aggregate LLM batch results for selected models."
@@ -224,6 +256,11 @@ def main():
             "input": llm_results_dir / OPENAI_GPT4_1_INPUT / "results" / "gpt-4-1",
             "output": output_dir / "gpt-4-1",
             "func": process_gpt_4_1,
+        },
+        "gpt-5": {
+            "input": llm_results_dir / OPENAI_GPT5_INPUT / "results" / "gpt-5",
+            "output": output_dir / "gpt-5",
+            "func": process_gpt_5,
         },
     }
 

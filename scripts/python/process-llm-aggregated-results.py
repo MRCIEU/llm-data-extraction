@@ -315,6 +315,39 @@ def process_gpt_4_1(model_config, global_config):
     validate_schema(model_config, results_df, meta_schema, results_schema)
 
 
+def process_gpt_5(model_config, global_config):
+    # ---- init ----
+    logger.info(f"{model_config['name']}")
+
+    raw_results_df = load_raw_results(model_config)
+    logger.info(f"{model_config['name']}: raw_results_df info")
+    raw_results_df.info()
+
+    meta_schema, results_schema = load_schema_files(global_config)
+
+    # ---- process results ----
+    logger.info(f"{model_config['name']}: parsing metadata and results")
+    results_df = raw_results_df.assign(
+        metadata=lambda df: df["completion_metadata"].apply(parsers.parse_json),
+        results=lambda df: df["completion_results"].apply(parsers.parse_json),
+    )
+    logger.info(f"{model_config['name']}: parsing metadata and results, done")
+
+    results_df = results_df[["pmid", "metadata", "results"]]
+    results_df = results_df.dropna(subset=["metadata", "results"]).assign(
+        metadata=lambda df: df["metadata"].apply(process_metadata),
+        results=lambda df: df["results"].apply(process_results),
+    )
+    results_df.info()
+
+    output_path = model_config["data_dir"] / "processed_results.json"
+    with open(output_path, "w") as f:
+        results_df.to_json(f, orient="records", indent=2)
+
+    # ---- Schema validation ----
+    validate_schema(model_config, results_df, meta_schema, results_schema)
+
+
 def make_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Process and validate LLM aggregated results."
@@ -389,6 +422,12 @@ def main():
             "data_dir": agg_data_dir / "gpt-4-1",
             "error_log": agg_data_dir / "logs" / "gpt-4-1_schema_validation_errors.log",
             "func": process_gpt_4_1,
+        },
+        "gpt-5": {
+            "name": "gpt-5",
+            "data_dir": agg_data_dir / "gpt-5",
+            "error_log": agg_data_dir / "logs" / "gpt-5_schema_validation_errors.log",
+            "func": process_gpt_5,
         },
     }
     for k, v in model_configs.items():
