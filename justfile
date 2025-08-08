@@ -135,6 +135,10 @@ devel-openai-extract-data-gpt-4-1-full:
     sbatch scripts/bc4/extract-data-gpt-4-1-full.sbatch
 
 [group('openai'), group('devel'), group('bc4')]
+devel-openai-extract-data-gpt-5-lite:
+    sbatch scripts/bc4/extract-data-gpt-5-lite.sbatch
+
+[group('openai'), group('devel'), group('bc4')]
 devel-openai-extract-data-gpt-5-full:
     sbatch scripts/bc4/extract-data-gpt-5-full.sbatch
 
