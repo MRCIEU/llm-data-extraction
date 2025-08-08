@@ -16,13 +16,6 @@ def make_message_metadata(abstract: str):
 def make_message_results(abstract: str):
     res = [
         prompt_templates.system_prompt,
-        {
-            "role": "user",
-            "content": f"""
-                This is an abstract from a Mendelian randomization study.
-                    "{abstract}"
-                    """,
-        },
         prompt_templates.make_abstract_input_prompt(abstract),
         prompt_templates.results_example,
         prompt_templates.results_prompt,
