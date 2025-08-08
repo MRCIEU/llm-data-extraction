@@ -130,6 +130,14 @@ devel-openai-extract-data-o4-mini:
 devel-openai-extract-data-gpt-4-1:
     sbatch scripts/bc4/extract-data-gpt-4-1.sbatch
 
+[group('openai'), group('devel'), group('bc4')]
+devel-openai-extract-data-gpt-4-1-full:
+    sbatch scripts/bc4/extract-data-gpt-4-1-full.sbatch
+
+[group('openai'), group('devel'), group('bc4')]
+devel-openai-extract-data-gpt-5-full:
+    sbatch scripts/bc4/extract-data-gpt-5-full.sbatch
+
 # ==== post-batch processing ====
 
 # Aggregate LLM batch results
