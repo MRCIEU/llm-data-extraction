@@ -24,3 +24,12 @@ def get_gpt_4_1_result(client, input_prompt):
     )
     output_text = response.output_text
     return output_text
+
+
+def get_gpt_5_result(client, input_prompt):
+    response = client.responses.create(
+        model="gpt-5",
+        input=input_prompt,
+    )
+    output_text = response.output_text
+    return output_text

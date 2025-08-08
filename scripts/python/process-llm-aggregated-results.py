@@ -10,6 +10,7 @@ data / intermediate / <MODEL-NAME> / processed_results.json.
 
 import argparse
 import json
+from typing import Optional
 
 import jsonschema
 import pandas as pd
@@ -29,14 +30,19 @@ RESULT_REMAPS = {
 }
 
 
-def validate_item_with_schema(item, schema, log_file) -> bool:
+def validate_item_with_schema(item, schema, log_file: Optional[str] = None) -> bool:
     try:
         jsonschema.validate(instance=item, schema=schema)
         return True
     except jsonschema.ValidationError as e:
-        with open(log_file, "a") as errfile:
-            instance = json.dumps(item, ensure_ascii=False, indent=2)
-            errfile.write(f"Validation error: {e.message}\nInstance: \n{instance}\n\n")
+        if log_file is not None:
+            with open(log_file, "a") as errfile:
+                instance = json.dumps(item, ensure_ascii=False, indent=2)
+                errfile.write(
+                    f"Validation error: {e.message}\nInstance: \n{instance}\n\n"
+                )
+        else:
+            logger.info(f"Validation error: {e.message}\nInstance: \n{instance}\n\n")
         return False
 
 
