@@ -1,0 +1,93 @@
+# list recipes
+default:
+    @just --list --unsorted
+
+# ==== local llm batch processing ====
+
+# Perform data extraction, isb, llama3, pilot
+[group('isb'), group('devel')]
+devel-isb-extract-data-llama3-pilot:
+    sbatch scripts/isb/extract-data-llama3-pilot.sbatch
+
+# Perform data extraction, isb, llama3
+[group('isb'), group('devel')]
+devel-isb-extract-data-llama3:
+    sbatch scripts/isb/extract-data-llama3.sbatch
+
+# Perform data extraction, isb, deepseek, pilot
+[group('isb'), group('devel')]
+devel-isb-extract-data-ds-pilot:
+    sbatch scripts/isb/extract-data-ds-pilot.sbatch
+
+# Perform data extraction, isb, deepseek
+[group('isb'), group('devel')]
+devel-isb-extract-data-ds:
+    sbatch scripts/isb/extract-data-ds.sbatch
+
+# Perform data extraction, isb, deepseek-prover, pilot
+[group('isb'), group('devel')]
+devel-isb-extract-data-ds-prover-pilot:
+    sbatch scripts/isb/extract-data-ds-prover-pilot.sbatch
+
+# Perform data extraction, isb, deepseek-prover
+[group('isb'), group('devel')]
+devel-isb-extract-data-ds-prover:
+    sbatch scripts/isb/extract-data-ds-prover.sbatch
+
+# Perform data extraction, isb, llama3.2, pilot
+[group('isb'), group('devel')]
+devel-isb-extract-data-llama3-2-pilot:
+    sbatch scripts/isb/extract-data-llama3-2-pilot.sbatch
+
+# Perform data extraction, isb, llama3.2
+[group('isb'), group('devel')]
+devel-isb-extract-data-llama3-2:
+    sbatch scripts/isb/extract-data-llama3-2.sbatch
+
+
+# ==== openai model batch processing ====
+[group('openai'), group('devel')]
+devel-openai-extract-data-o4-mini-pilot:
+    python scripts/python/extract-data-openai.py \
+        --model o4-mini \
+        --pilot \
+        --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
+        --output_dir data/intermediate/openai-batch-results/
+
+[group('openai'), group('devel')]
+devel-openai-extract-data-gpt-4o-pilot:
+    python scripts/python/extract-data-openai.py \
+        --model gpt-4o \
+        --pilot \
+        --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
+        --output_dir data/intermediate/openai-batch-results/
+
+[group('openai'), group('devel'), group('bc4')]
+devel-openai-extract-data-o4-mini-lite:
+    sbatch scripts/bc4/extract-data-o4-mini-lite.sbatch
+
+[group('openai'), group('devel'), group('bc4')]
+devel-openai-extract-data-gpt-4o-lite:
+    sbatch scripts/bc4/extract-data-gpt-4o-lite.sbatch
+
+[group('openai'), group('devel'), group('bc4')]
+devel-openai-extract-data-o4-mini:
+    sbatch scripts/bc4/extract-data-o4-mini.sbatch
+
+[group('openai'), group('devel'), group('bc4')]
+devel-openai-extract-data-gpt-4-1:
+    sbatch scripts/bc4/extract-data-gpt-4-1.sbatch
+
+[group('openai'), group('devel'), group('bc4')]
+devel-openai-extract-data-gpt-4-1-full:
+    sbatch scripts/bc4/extract-data-gpt-4-1-full.sbatch
+
+[group('openai'), group('devel'), group('bc4')]
+devel-openai-extract-data-gpt-5-lite:
+    sbatch scripts/bc4/extract-data-gpt-5-lite.sbatch
+
+[group('openai'), group('devel'), group('bc4')]
+devel-openai-extract-data-gpt-5-full:
+    sbatch scripts/bc4/extract-data-gpt-5-full.sbatch
+
+# vim: filetype=just
