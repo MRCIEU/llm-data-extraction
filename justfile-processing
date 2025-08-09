@@ -1,6 +1,6 @@
 # list recipes
 default:
-    @just --list --unsorted
+    @just -f justfile-processing --list --unsorted
 
 # ==== data preprocessing ====
 
