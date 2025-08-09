@@ -23,7 +23,7 @@ LLAMA3_INPUT = "isb-ai-116732"
 OPENAI_O4MINI_INPUT = "bc4-12398167"
 OPENAI_GPT4_1_INPUT = "bc4-12459870"
 # TODO: update when finished
-# OPENAI_GPT5_INPUT = "TODO"
+OPENAI_GPT5_INPUT = "TODO"
 
 
 def process_deepseek_r1_distilled(model_config):
