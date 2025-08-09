@@ -30,7 +30,7 @@ if [ "${SLURM_ARRAY_TASK_ID}" -eq 0 ]; then
 fi
 
 micromamba run -n data-extraction-non-gpu \
-  python scripts/python/extract-data-openai.py \
+  python scripts/python/batch/extract-data-openai.py \
   --model gpt-5 \
   --array-length 100 \
   --array-id "${SLURM_ARRAY_TASK_ID}" \

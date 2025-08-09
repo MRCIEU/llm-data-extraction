@@ -19,6 +19,6 @@ scontrol write batch_script "${SLURM_JOB_ID}" "${SLURM_SUBMIT_DIR}"/slurm-script
 
 module load cuda/12.4.1-ebv6
 module load gcc/12.3.0-sknc
-micromamba run -n data-extraction-bp1 python scripts/extract-data-pilot-bp1.py
+micromamba run -n data-extraction-bp1 python scripts/bp1/extract-data-pilot-bp1.py
 
 echo $(date)

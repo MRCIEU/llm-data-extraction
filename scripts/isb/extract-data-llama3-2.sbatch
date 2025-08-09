@@ -32,7 +32,7 @@ fi
 module load cuda/12.2
 module load cudatoolkit/23.9_12.2
 micromamba run -n data-extraction \
-    python scripts/python/extract-data.py \
+    python scripts/python/batch/extract-data.py \
     --output_dir "${output_results_dir}" \
     --array-id "${SLURM_ARRAY_TASK_ID}" \
     --model llama-3.2 \

@@ -7,30 +7,30 @@ default:
 # data preprocessing: mr-pubmed-data.json
 [group('data-prep')]
 data-prep-mr-pubmed:
-    python scripts/python/mr-pubmed-data-prep.py
+    python scripts/python/preprocessing/mr-pubmed-data-prep.py
 
 # ==== post-batch processing ====
 
 # Aggregate LLM batch results
 [group('data-processing')]
 aggregate-llm-batch-results:
-    python scripts/python/aggregate-llm-batch-results.py --all
+    python scripts/python/postprocessing/aggregate-llm-batch-results.py --all
 
 # Process LLM batch results
 [group('data-processing')]
 process-llm-batch-results:
-    python scripts/python/process-llm-aggregated-results.py
+    python scripts/python/postprocessing/process-llm-aggregated-results.py
 
 # analysis sample: trial
 [group('data-processing')]
 analysis-sample-trial:
-    python scripts/python/make-analysis-sample.py --size 20 --seed 42
-    python scripts/python/render-analysis-sample.py --file sample-42-20.json
+    python scripts/python/postprocessing/make-analysis-sample.py --size 20 --seed 42
+    python scripts/python/postprocessing/render-analysis-sample.py --file sample-42-20.json
 
 # analysis sample: formal
 [group('data-processing')]
 analysis-sample-formal:
-    python scripts/python/make-analysis-sample.py --size 100 --seed 42
-    python scripts/python/render-analysis-sample.py --file sample-42-100.json
+    python scripts/python/postprocessing/make-analysis-sample.py --size 100 --seed 42
+    python scripts/python/postprocessing/render-analysis-sample.py --file sample-42-100.json
 
 # vim: filetype=just

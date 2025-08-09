@@ -1,100 +1,183 @@
 # Analysis steps
 
 Overarching principles:
-- Unless otherwise specified, run things at repo root
+
+- Unless otherwise specified, run commands at the repo root, with the conda environment activated
+- Use justfiles as task runners:
+  - Codebase/dev tasks: `justfile`
+  - Data prep and post-processing: `justfile-processing`
+    - List processing recipes: `just -f justfile-processing`
+  - Batch runs (local LLM + OpenAI): `justfile-batch`
+    - List batch recipes: `just -f justfile-batch`
 
 ---
-# data preprocessing / preparation stage
 
-## main preprocessing
+## Data preprocessing / preparation
 
-convert Gib's raw data into preprocessed data for extraction processing
+### Main preprocessing
 
+Convert Gib's raw data into preprocessed data for extraction processing.
+
+```bash
+just -f justfile-processing data-prep-mr-pubmed
 ```
-just data-prep-mr-pubmed
+
+- Raw data: `data/raw/mr-pubmed-abstracts`
+- Output: `data/intermediate/mr-pubmed-data`
+
+### Diagnostics (post-processing)
+
+Notebook: `notebooks/analysis-data-prep/mr-data.ipynb`
+
+---
+
+## Extraction processing
+
+### Initial exploration
+
+Notebooks: `notebooks/models`
+
+### Data extraction with local LLM (ISB Slurm)
+
+Run on isambard-ai via Slurm job arrays. Use the batch justfile to submit jobs:
+
+- LLaMA 3 (pilot):
+
+  ```bash
+  just -f justfile-batch devel-isb-extract-data-llama3-pilot
+  ```
+
+- LLaMA 3 (full):
+
+  ```bash
+  just -f justfile-batch devel-isb-extract-data-llama3
+  ```
+
+- LLaMA 3.2 (pilot):
+
+  ```bash
+  just -f justfile-batch devel-isb-extract-data-llama3-2-pilot
+  ```
+
+- LLaMA 3.2 (full):
+
+  ```bash
+  just -f justfile-batch devel-isb-extract-data-llama3-2
+  ```
+
+- DeepSeek-R1 (pilot):
+
+  ```bash
+  just -f justfile-batch devel-isb-extract-data-ds-pilot
+  ```
+
+- DeepSeek-R1 (full):
+
+  ```bash
+  just -f justfile-batch devel-isb-extract-data-ds
+  ```
+
+- DeepSeek Prover (pilot):
+
+  ```bash
+  just -f justfile-batch devel-isb-extract-data-ds-prover-pilot
+  ```
+
+- DeepSeek Prover (full):
+
+  ```bash
+  just -f justfile-batch devel-isb-extract-data-ds-prover
+  ```
+
+Output logic:
+
+- Initial outputs: `output/isb-ai-{SLURM_ARRAY_JOB_ID}`
+- Then moved to: `data/intermediate/llm-results/isb-ai-{SLURM_ARRAY_JOB_ID}`
+
+### Data extraction with OpenAI models
+
+Two ways to run:
+
+1. Pilot runs (small sample, no Slurm):
+
+   - o4-mini pilot:
+
+     ```bash
+     just -f justfile-batch devel-openai-extract-data-o4-mini-pilot
+     ```
+
+   - gpt-4o pilot:
+
+     ```bash
+     just -f justfile-batch devel-openai-extract-data-gpt-4o-pilot
+     ```
+
+   These write pilot outputs under: `data/intermediate/openai-batch-results/`
+
+2. BC4 cluster (Slurm):
+
+   - o4-mini (lite/full):
+
+     ```bash
+     just -f justfile-batch devel-openai-extract-data-o4-mini-lite
+     just -f justfile-batch devel-openai-extract-data-o4-mini
+     ```
+
+   - gpt-4-1 (lite/full):
+
+     ```bash
+     just -f justfile-batch devel-openai-extract-data-gpt-4-1
+     just -f justfile-batch devel-openai-extract-data-gpt-4-1-full
+     ```
+
+   - gpt-5 (lite/full):
+
+     ```bash
+     just -f justfile-batch devel-openai-extract-data-gpt-5-lite
+     just -f justfile-batch devel-openai-extract-data-gpt-5-full
+     ```
+
+BC4 job outputs are organized under: `data/intermediate/llm-results/<BC4-JOB-ID>/results/<model>`
+
+---
+
+## Post-processing
+
+### Aggregate and process
+
+Aggregate model-specific batch raw results into aggregated raw results:
+
+```bash
+just -f justfile-processing aggregate-llm-batch-results
 ```
 
-- raw data: `data/raw/mr-pubmed-abstracts`
-- output: `data/intermediate/mr-pubmed-data`
+- Input: `data/intermediate/llm-results/<EXPERIMENT-ID>/results/*.json`
+- Output: `data/intermediate/llm-results-aggregated/<MODEL-NAME>/raw_results.json`
 
-## diagnostics, etc
+Process aggregated results (global + model-specific processing and schema validation):
 
-`notebooks/analysis-data-prep/mr-data.ipynb`
+```bash
+just -f justfile-processing process-llm-batch-results
+```
 
-# Extraction processing
+- Input: `data/intermediate/llm-results-aggregated/<MODEL-NAME>/raw_results.json`
+- Output: `data/intermediate/llm-results-aggregated/<MODEL-NAME>/processed_results.json` plus
+  `processed_results_valid.json` and `processed_results_invalid.json` (schema validation splits)
 
-## initial exploration
+### Diagnostics
 
-`notebooks/models`
+Notebook: `notebooks/analysis-extraction/diagnostics-data-processing.ipynb`
 
-## data extraction with local LLM
+### Produce analysis samples
 
-Run on isambard-ai in slurm job arrays
+Trial (size 20, seed 42):
 
-Output logic
-- Output is initially stored in `output/isb-ai-{SLURM_ARRAY_JOB_ID}`
-- then moved to `data/intermediate/llm-results/isb-ai-{SLURM_ARRAY_JOB_ID}`
+```bash
+just -f justfile-processing analysis-sample-trial
+```
 
-### llama3
+Formal (size 100, seed 42):
 
-pilot
-
-> just devel-isb-extract-data-llama3-pilot
-
-full
-
-> just devel-isb-extract-data-llama3
-
-### llama3.2
-
-pilot
-
-> just devel-isb-extract-data-llama3-2-pilot
-
-full
-
-> just devel-isb-extract-data-llama3-2
-
-### deepseek-r1
-
-pilot
-
-> just devel-isb-extract-data-ds-pilot
-
-full
-
-> just devel-isb-extract-data-ds
-
-## data extraction with openai models
-
-TODO: update this
-
-# Post processing
-
-## aggregate and process
-
-> just aggregate-llm-batch-results
-
-aggregate model-specific batch raw results into aggregated raw results
-- input: `data / intermediate / llm-results / <EXPERIMENT-ID> / results / *.json`
-- output: `data / intermediate / llm-results-aggregated / <MODEL-NAME> / raw_results.json`
-
-> just process-llm-batch-results
-
-Process raw results with global and model-specific processing
-
-- input: `data / intermediate / <MODEL-NAME> / raw_results.json`.
-
-- output: `data / intermediate / <MODEL-NAME> / processed_results.json`
-
-## Diagnostics
-
-`notebooks/analysis-extraction/diagnostics-data-processing.ipynb`
-
-## produce analysis samples
-
-> just analysis-sample-trial
-
-generate analysis sample for size 20 and seed 42
-
-TODO: full analysis just steps
+```bash
+just -f justfile-processing analysis-sample-formal
+```

@@ -42,6 +42,7 @@ def validate_item_with_schema(item, schema, log_file: Optional[str] = None) -> b
                     f"Validation error: {e.message}\nInstance: \n{instance}\n\n"
                 )
         else:
+            instance = json.dumps(item, ensure_ascii=False, indent=2)
             logger.info(f"Validation error: {e.message}\nInstance: \n{instance}\n\n")
         return False
 
