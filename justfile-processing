@@ -21,16 +21,18 @@ aggregate-llm-batch-results:
 process-llm-batch-results:
     python scripts/python/postprocessing/process-llm-aggregated-results.py
 
+# ==== analysis ====
+
 # analysis sample: trial
 [group('data-processing')]
 analysis-sample-trial:
-    python scripts/python/postprocessing/make-analysis-sample.py --size 20 --seed 42
-    python scripts/python/postprocessing/render-analysis-sample.py --file sample-42-20.json
+    python scripts/python/analysis/make-analysis-sample.py --size 20 --seed 42
+    python scripts/python/analysis/render-analysis-sample.py --file sample-42-20.json
 
 # analysis sample: formal
 [group('data-processing')]
 analysis-sample-formal:
-    python scripts/python/postprocessing/make-analysis-sample.py --size 100 --seed 42
-    python scripts/python/postprocessing/render-analysis-sample.py --file sample-42-100.json
+    python scripts/python/analysis/make-analysis-sample.py --size 100 --seed 42
+    python scripts/python/analysis/render-analysis-sample.py --file sample-42-100.json
 
 # vim: filetype=just

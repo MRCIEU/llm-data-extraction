@@ -168,6 +168,10 @@ just -f justfile-processing process-llm-batch-results
 
 Notebook: `notebooks/analysis-extraction/diagnostics-data-processing.ipynb`
 
+---
+
+## Analysis
+
 ### Produce analysis samples
 
 Trial (size 20, seed 42):
