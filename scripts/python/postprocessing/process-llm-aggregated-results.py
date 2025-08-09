@@ -431,17 +431,19 @@ def main():
             "func": process_gpt_5,
         },
     }
-    for k, v in model_configs.items():
-        assert v["data_dir"].exists(), (
-            f"Input path for {k} does not exist: {v['data_dir']}"
-        )
 
     if not args.models:
         for model, model_config in model_configs.items():
+            assert model_config["data_dir"].exists(), (
+                f"Input path for {model} does not exist: {model_config['data_dir']}"
+            )
             model_config["func"](model_config, global_config)
     else:
         for model in args.models:
             model_config = model_configs[model]
+            assert model_config["data_dir"].exists(), (
+                f"Input path for {model} does not exist: {model_config['data_dir']}"
+            )
             model_config["func"](model_config, global_config)
 
 
