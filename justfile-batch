@@ -1,3 +1,5 @@
+set dotenv-load
+
 # list recipes
 default:
     @just -f justfile-batch --list --unsorted
@@ -65,30 +67,31 @@ openai-extract-data-gpt-4o-pilot:
 
 [group('openai'), group('bc4')]
 openai-extract-data-o4-mini-lite:
-    sbatch scripts/bc4/extract-data-o4-mini-lite.sbatch
+    sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-o4-mini-lite.sbatch
 
 [group('openai'), group('bc4')]
 openai-extract-data-gpt-4o-lite:
-    sbatch scripts/bc4/extract-data-gpt-4o-lite.sbatch
+    sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-4o-lite.sbatch
 
 [group('openai'), group('bc4')]
 openai-extract-data-o4-mini:
-    sbatch scripts/bc4/extract-data-o4-mini.sbatch
+    sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-o4-mini.sbatch
 
 [group('openai'), group('bc4')]
 openai-extract-data-gpt-4-1:
-    sbatch scripts/bc4/extract-data-gpt-4-1.sbatch
+    sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-4-1.sbatch
 
 [group('openai'), group('bc4')]
 openai-extract-data-gpt-4-1-full:
-    sbatch scripts/bc4/extract-data-gpt-4-1-full.sbatch
+    sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-4-1-full.sbatch
 
 [group('openai'), group('bc4')]
 openai-extract-data-gpt-5-lite:
-    sbatch scripts/bc4/extract-data-gpt-5-lite.sbatch
+    sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-5-lite.sbatch
 
-[group('openai'), group('bc4')]
-openai-extract-data-gpt-5-full:
-    sbatch scripts/bc4/extract-data-gpt-5-full.sbatch
+# NOTE: thou shall not run this yet
+# [group('openai'), group('bc4')]
+# openai-extract-data-gpt-5-full:
+#     sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-5-full.sbatch
 
 # vim: filetype=just

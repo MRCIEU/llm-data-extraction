@@ -1,3 +1,5 @@
+set dotenv-load
+
 # ==== Variables ====
 # py files flatten and delimited by space
 PY_FILES := `fd -e py --exclude "*legacy*" --exclude "*tom*" --exclude "*yiutils*"  | tr '\n' ' '`
@@ -13,6 +15,9 @@ default:
 sanity:
     #!/bin/bash
     echo {{PY_FILES}}
+    echo "\$ACCOUNT_CODE: ${ACCOUNT_CODE}"
+    echo "\$PROJECT_OPENAI_API_KEY: ${PROJECT_OPENAI_API_KEY}"
+    echo "\$HUGGINGFACE_TOKEN: ${HUGGINGFACE_TOKEN}"
     micromamba env list | grep data-extraction
     pip list | grep local_funcs
     pip list | grep yiutils

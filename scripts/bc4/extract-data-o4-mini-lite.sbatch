@@ -1,7 +1,6 @@
 #!/bin/bash
 
 #SBATCH --job-name=extract-data-o4-mini-lite
-#SBATCH --account=SSCM013902
 #SBATCH --partition=mrcieu
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1

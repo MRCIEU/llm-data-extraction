@@ -7,7 +7,6 @@
 #SBATCH --time=36:00:00
 #SBATCH --gpus=1
 #SBATCH --mem=14G
-#SBATCH --account=SSCM013902
 
 echo $(date)
 
