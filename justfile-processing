@@ -26,6 +26,16 @@ aggregate-llm-batch-results:
 process-llm-batch-results:
     python scripts/python/postprocessing/process-llm-aggregated-results.py
 
+# Aggregate OpenAI SP batch results
+[group('data-processing')]
+aggregate-llm-batch-results-sp:
+    python scripts/python/postprocessing/aggregate-llm-batch-results-sp.py --all
+
+# Process OpenAI SP batch results
+[group('data-processing')]
+process-llm-batch-results-sp:
+    python scripts/python/postprocessing/process-llm-aggregated-results-sp.py
+
 # ==== analysis ====
 
 # analysis sample: trial
