@@ -50,4 +50,10 @@ analysis-sample-formal:
     python scripts/python/analysis/make-analysis-sample.py --size 100 --seed 42
     python scripts/python/analysis/render-analysis-sample.py --file sample-42-100.json
 
+# OpenAI SP analysis: all results
+[group('data-processing')]
+analysis-sample-sp:
+    python scripts/python/analysis/make-analysis-sample-sp.py
+    python scripts/python/analysis/render-analysis-sample-sp.py --file all-results.json
+
 # vim: filetype=just
