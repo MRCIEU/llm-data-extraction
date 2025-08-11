@@ -43,40 +43,47 @@ def parse_args():
     parser = argparse.ArgumentParser(
         description=__doc__,
     )
+    # ---- --output_dir ----
     parser.add_argument(
         "--output_dir",
         type=str,
         default=proj_root / "output",
         help="Directory to save the output JSON file. Defaults to 'output' in the project root.",
     )
+    # ---- --path_data ----
     parser.add_argument(
         "--path_data",
         type=str,
         default=str(PATH_DATA),
         help="Path to mr pubmed abstracts data",
     )
+    # ---- --array-id ----
     parser.add_argument(
         "--array-id",
         type=int,
         default=0,
         help="Array ID",
     )
+    # ---- --array-id ----
     parser.add_argument(
         "--array-length",
         type=int,
         default=ARRAY_LENGTH,
         help=f"Number of chunks to split the data into (default: {ARRAY_LENGTH})",
     )
+    # ---- --pilot ----
     parser.add_argument(
         "--pilot",
         action="store_true",
         help="Enable pilot mode. Defaults to False.",
     )
+    # ---- --model ----
     parser.add_argument(
         "--model",
         type=str,
         help="Which model to use. Must not be empty",
     )
+    # ---- --dry-run ----
     parser.add_argument(
         "--dry-run",
         action="store_true",
