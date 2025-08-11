@@ -7,7 +7,7 @@ default:
 # ==== local llm batch processing ====
 
 # Perform data extraction, isb, llama3, pilot
-[group('isb')]
+[group('isb'), group('pilot')]
 isb-extract-data-llama3-pilot:
     sbatch scripts/isb/extract-data-llama3-pilot.sbatch
 
@@ -17,7 +17,7 @@ isb-extract-data-llama3:
     sbatch scripts/isb/extract-data-llama3.sbatch
 
 # Perform data extraction, isb, deepseek, pilot
-[group('isb')]
+[group('isb'), group('pilot')]
 isb-extract-data-ds-pilot:
     sbatch scripts/isb/extract-data-ds-pilot.sbatch
 
@@ -27,7 +27,7 @@ isb-extract-data-ds:
     sbatch scripts/isb/extract-data-ds.sbatch
 
 # Perform data extraction, isb, deepseek-prover, pilot
-[group('isb')]
+[group('isb'), group('pilot')]
 isb-extract-data-ds-prover-pilot:
     sbatch scripts/isb/extract-data-ds-prover-pilot.sbatch
 
@@ -37,7 +37,7 @@ isb-extract-data-ds-prover:
     sbatch scripts/isb/extract-data-ds-prover.sbatch
 
 # Perform data extraction, isb, llama3.2, pilot
-[group('isb')]
+[group('isb'), group('pilot')]
 isb-extract-data-llama3-2-pilot:
     sbatch scripts/isb/extract-data-llama3-2-pilot.sbatch
 
@@ -49,7 +49,7 @@ isb-extract-data-llama3-2:
 
 # ==== openai model batch processing ====
 
-[group('openai')]
+[group('openai'), group('pilot')]
 openai-extract-data-o4-mini-pilot:
     python scripts/python/batch/extract-data-openai.py \
         --model o4-mini \
@@ -57,7 +57,7 @@ openai-extract-data-o4-mini-pilot:
         --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
         --output_dir data/intermediate/openai-batch-results/
 
-[group('openai')]
+[group('openai'), group('pilot')]
 openai-extract-data-gpt-4o-pilot:
     python scripts/python/batch/extract-data-openai.py \
         --model gpt-4o \
@@ -65,11 +65,11 @@ openai-extract-data-gpt-4o-pilot:
         --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json \
         --output_dir data/intermediate/openai-batch-results/
 
-[group('openai'), group('bc4')]
+[group('openai'), group('bc4'), group('pilot')]
 openai-extract-data-o4-mini-lite:
     sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-o4-mini-lite.sbatch
 
-[group('openai'), group('bc4')]
+[group('openai'), group('bc4'), group('pilot')]
 openai-extract-data-gpt-4o-lite:
     sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-4o-lite.sbatch
 
@@ -85,7 +85,7 @@ openai-extract-data-gpt-4-1:
 openai-extract-data-gpt-4-1-full:
     sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-4-1-full.sbatch
 
-[group('openai'), group('bc4')]
+[group('openai'), group('bc4'), group('pilot')]
 openai-extract-data-gpt-5-lite:
     sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-5-lite.sbatch
 
@@ -93,5 +93,33 @@ openai-extract-data-gpt-5-lite:
 # [group('openai'), group('bc4')]
 # openai-extract-data-gpt-5-full:
 #     sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-5-full.sbatch
+
+# ==== openai sp batch processing ====
+
+[group('openai'), group('local'), group('pilot')]
+openai-sp-extract-pilot:
+    #!/bin/bash
+    mkdir -p data/intermediate/openai-sp-batch-results
+    python scripts/python/batch/extract-data-openai-sp.py \
+        --output_dir data/intermediate/openai-sp-batch-results \
+        --model gpt-5 \
+        --pilot
+
+[group('openai'), group('local')]
+openai-sp-extract-batch:
+    #!/bin/bash
+    mkdir -p data/intermediate/openai-sp-batch-results
+    python scripts/python/batch/extract-data-openai-sp.py \
+        --output_dir data/intermediate/openai-sp-batch-results \
+        --model gpt-5
+    python scripts/python/batch/extract-data-openai-sp.py \
+        --output_dir data/intermediate/openai-sp-batch-results \
+        --model o4-mini
+    python scripts/python/batch/extract-data-openai-sp.py \
+        --output_dir data/intermediate/openai-sp-batch-results \
+        --model gpt-4o
+    python scripts/python/batch/extract-data-openai-sp.py \
+        --output_dir data/intermediate/openai-sp-batch-results \
+        --model gpt-4-1
 
 # vim: filetype=just
