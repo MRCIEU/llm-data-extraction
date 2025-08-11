@@ -148,7 +148,6 @@ HTML_TEMPLATE = """
 	<div class="container">
 		{toc_html}
 		<div class="content">
-			{stats_html}
 			{records_html}
 		</div>
 	</div>
@@ -178,27 +177,6 @@ def escape_html(text):
     return html.escape(str(text))
 
 
-def render_stats(records):
-    # records is a list if multiple, or dict if single
-    if isinstance(records, dict):
-        records = [records]
-    
-    total_records = len(records)
-    model_counts = {}
-    
-    for rec in records:
-        for model_name in rec["model_results"].keys():
-            model_counts[model_name] = model_counts.get(model_name, 0) + 1
-    
-    stats_lines = [f"<strong>Total Records:</strong> {total_records}"]
-    stats_lines.append("<strong>Model Coverage:</strong>")
-    for model_name, count in sorted(model_counts.items()):
-        percentage = (count / total_records) * 100 if total_records > 0 else 0
-        stats_lines.append(f"• {model_name}: {count}/{total_records} ({percentage:.1f}%)")
-    
-    return f'<div class="stats">{"<br>".join(stats_lines)}</div>'
-
-
 def render_table_of_contents(records):
     # records is a list if multiple, or dict if single
     if isinstance(records, dict):
@@ -206,9 +184,7 @@ def render_table_of_contents(records):
     toc = ['<div class="toc"><h3>PMIDs</h3><ul>']
     for rec in records:
         pmid = escape_html(rec["pubmed_data"]["pmid"])
-        models = list(rec["model_results"].keys())
-        model_list = ", ".join(models) if models else "No models"
-        toc.append(f'<li><a href="#pmid-{pmid}">{pmid}</a><br><small>({model_list})</small></li>')
+        toc.append(f'<li><a href="#pmid-{pmid}">{pmid}</a><br><small></small></li>')
     toc.append("</ul></div>")
     return "\n".join(toc)
 
@@ -272,11 +248,9 @@ def render_record(rec):
 def render_html(data):
     # If data is a dict, wrap in a list for uniformity
     records = data if isinstance(data, list) else [data]
-    stats_html = render_stats(records)
     toc_html = render_table_of_contents(records)
     records_html = [render_record(rec) for rec in records]
     html = HTML_TEMPLATE.format(
-        stats_html=stats_html,
         toc_html=toc_html, 
         records_html="".join(records_html)
     )
