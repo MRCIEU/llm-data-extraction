@@ -102,7 +102,7 @@ openai-sp-extract-pilot:
     mkdir -p data/intermediate/openai-sp-batch-results
     python scripts/python/batch/extract-data-openai-sp.py \
         --output_dir data/intermediate/openai-sp-batch-results \
-        --model gpt-5 \
+        --model gpt-5-mini \
         --pilot
 
 [group('openai'), group('local')]
@@ -112,6 +112,9 @@ openai-sp-extract-batch:
     python scripts/python/batch/extract-data-openai-sp.py \
         --output_dir data/intermediate/openai-sp-batch-results \
         --model gpt-5
+    python scripts/python/batch/extract-data-openai-sp.py \
+        --output_dir data/intermediate/openai-sp-batch-results \
+        --model gpt-5-mini
     python scripts/python/batch/extract-data-openai-sp.py \
         --output_dir data/intermediate/openai-sp-batch-results \
         --model o4-mini

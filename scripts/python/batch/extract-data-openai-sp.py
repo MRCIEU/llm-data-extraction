@@ -30,6 +30,7 @@ MODEL_CONFIGS = {
     "gpt-4o": {"model_id": "gpt-4o", "chat_func": openai_funcs.get_gpt_4o_result},
     "gpt-4-1": {"model_id": "gpt-4-1", "chat_func": openai_funcs.get_gpt_4_1_result},
     "gpt-5": {"model_id": "gpt-5", "chat_func": openai_funcs.get_gpt_5_result},
+    "gpt-5-mini": {"model_id": "gpt-5-mini", "chat_func": openai_funcs.get_gpt_5_mini_result},
 }
 PILOT_NUM_DOCS = 5
 
