@@ -130,7 +130,7 @@ def validate(meta_schema, proc, results_df):
 @app.cell
 def _(meta_schema, results_df, validate_item_with_schema):
     metadata_s = results_df["metadata"]
-    valid_s = metadata_s.apply(
+    metadata_s.apply(
         validate_item_with_schema, schema=meta_schema, log_file="/dev/null"
     )
     return
@@ -149,7 +149,7 @@ def _(jsonschema, results_df, results_schema, validate_item_with_schema):
 @app.cell
 def _(results_df, results_schema, validate_item_with_schema):
     results_s = results_df["results"]
-    valid_results_s = results_s.apply(
+    results_s.apply(
         validate_item_with_schema, schema=results_schema, log_file="/dev/null"
     )
     return
