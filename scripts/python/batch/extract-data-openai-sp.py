@@ -22,7 +22,7 @@ from yiutils.project_utils import find_project_root
 # ==== params ====
 PROJECT_ROOT = find_project_root("justfile")
 DATA_DIR = PROJECT_ROOT / "data"
-PATH_DATA = DATA_DIR / "intermediate" / "mr-pubmed-data" / "mr-pubmed-data-sample.json"
+PATH_DATA = DATA_DIR / "intermediate" / "mr-pubmed-data" / "special-sample.json"
 PATH_SCHEMA_DIR = DATA_DIR / "assets" / "data-schema" / "example-data"
 
 MODEL_CONFIGS = {
