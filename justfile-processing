@@ -9,6 +9,11 @@ default:
 data-prep-mr-pubmed:
     python scripts/python/preprocessing/mr-pubmed-data-prep.py
 
+# special sample involved in the review analysis
+[group('data-prep')]
+prep-special-sample:
+    python scripts/python/preprocessing/prep-special-sample.py
+
 # ==== post-batch processing ====
 
 # Aggregate LLM batch results
