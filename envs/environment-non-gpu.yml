@@ -12,10 +12,10 @@ dependencies:
   - environs
   - just
   - loguru
+  - ruff
+  - ty
   - pip
   - pip:
     - openai
     - jsonschema
-    - marimo
-    - watchdog
 

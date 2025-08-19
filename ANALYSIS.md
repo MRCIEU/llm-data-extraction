@@ -1,20 +1,8 @@
 # Analysis steps
 
-Overarching principles:
+## Data preprocessing / preparation
 
-- Unless otherwise specified, run commands at the repo root, with the conda environment activated
-- Use justfiles as task runners:
-  - Codebase/dev tasks: `justfile`
-  - Data prep and post-processing: `justfile-processing`
-    - List processing recipes: `just -f justfile-processing`
-  - Batch runs (local LLM + OpenAI): `justfile-batch`
-    - List batch recipes: `just -f justfile-batch`
-
----
-
-# Data preprocessing / preparation
-
-## Main preprocessing
+### Main preprocessing
 
 Convert Gib's raw data into preprocessed data for extraction processing.
 
@@ -25,19 +13,19 @@ just -f justfile-processing data-prep-mr-pubmed
 - Raw data: `data/raw/mr-pubmed-abstracts`
 - Output: `data/intermediate/mr-pubmed-data`
 
-## Diagnostics (post-processing)
+### Diagnostics (post-processing)
 
 Notebook: `notebooks/analysis-data-prep/mr-data.ipynb`
 
----
+______________________________________________________________________
 
-# Extraction processing
+## Extraction processing
 
-## Initial exploration
+### Initial exploration
 
 Notebooks: `notebooks/models`
 
-## Data extraction with local LLM (ISB Slurm)
+### Data extraction with local LLM (ISB Slurm)
 
 Run on isambard-ai via Slurm job arrays. Use the batch justfile to submit jobs:
 
@@ -94,7 +82,7 @@ Output logic:
 - Initial outputs: `output/isb-ai-{SLURM_ARRAY_JOB_ID}`
 - Then moved to: `data/intermediate/llm-results/isb-ai-{SLURM_ARRAY_JOB_ID}`
 
-## Data extraction with OpenAI models
+### Data extraction with OpenAI models
 
 Two ways to run:
 
@@ -139,11 +127,11 @@ Two ways to run:
 
 BC4 job outputs are organized under: `data/intermediate/llm-results/<BC4-JOB-ID>/results/<model>`
 
----
+______________________________________________________________________
 
-# Post-processing
+## Post-processing
 
-## Aggregate and process
+### Aggregate and process
 
 Aggregate model-specific batch raw results into aggregated raw results:
 
@@ -164,15 +152,15 @@ just -f justfile-processing process-llm-batch-results
 - Output: `data/intermediate/llm-results-aggregated/<MODEL-NAME>/processed_results.json` plus
   `processed_results_valid.json` and `processed_results_invalid.json` (schema validation splits)
 
-## Diagnostics
+### Diagnostics
 
 Notebook: `notebooks/analysis-extraction/diagnostics-data-processing.ipynb`
 
----
+______________________________________________________________________
 
-# Analysis
+## Analysis
 
-## Produce analysis samples
+### Produce analysis samples
 
 Trial (size 20, seed 42):
 

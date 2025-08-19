@@ -9,11 +9,11 @@ This document describes how data is organized and produced in this repository ba
 Data flows through these stages:
 
 1. Raw inputs: MR PubMed abstracts and reference data
-2. Preprocessing: curate and structure MR abstracts for extraction
-3. Extraction: batch LLM runs (ISB for local models, BC4 for OpenAI models)
-4. Aggregation: combine raw JSON outputs per model
-5. Processing: parse, validate against schema, and split valid/invalid
-6. Analysis: produce cross-model samples for inspection and downstream analysis
+1. Preprocessing: curate and structure MR abstracts for extraction
+1. Extraction: batch LLM runs (ISB for local models, BC4 for OpenAI models)
+1. Aggregation: combine raw JSON outputs per model
+1. Processing: parse, validate against schema, and split valid/invalid
+1. Analysis: produce cross-model samples for inspection and downstream analysis
 
 High-level flow:
 
@@ -34,7 +34,7 @@ Notes:
 - Some runs briefly write under `output/` and then move into `data/intermediate/llm-results/<JOB-ID>`.
 - JSON Schemas for processed outputs are in `data/assets/data-schema/`.
 
----
+______________________________________________________________________
 
 ## Raw data (data/raw)
 
@@ -44,7 +44,7 @@ Source: [MRCIEU/mr-pubmed-abstracts](https://github.com/MRCIEU/mr-pubmed-abstrac
 
 Contains PubMed abstracts and reference tables used during preprocessing.
 
----
+______________________________________________________________________
 
 ## Intermediate (data/intermediate)
 
@@ -119,7 +119,7 @@ Outputs from small pilot runs executed locally (primarily OpenAI models before c
 
 - `o4-mini/mr_extract_openai_array_0_pilot.json`
 
----
+______________________________________________________________________
 
 ## Assets (data/assets)
 
@@ -131,13 +131,13 @@ Schemas and example data for validating processed results.
 - `processed_results/results.schema.json`
 - `example-data/` — Example payloads and schemas (`metadata.json`, `results.json`, etc.)
 
----
+______________________________________________________________________
 
 ## Artifacts (data/artifacts)
 
 Reserved for publication-ready exports and derived artifacts.
 
----
+______________________________________________________________________
 
 ## Operational notes
 
@@ -145,7 +145,7 @@ Reserved for publication-ready exports and derived artifacts.
 - Post-processing lives in `justfile-processing` (aggregation, processing, sampling). See `ANALYSIS.md` for step-by-step I/O mappings.
 - Transient outputs may appear under `output/` during runs before being moved to `data/intermediate/llm-results/<JOB-ID>`.
 
----
+______________________________________________________________________
 
 ## Tree snapshot
 
@@ -155,7 +155,7 @@ Regenerate a tree of the current data directory when needed:
 eza -T ./data
 ```
 
-Full tree snapshot at time of writing:
+Full tree snapshot at the time of writing:
 
 ```text
 ./data
