@@ -52,7 +52,7 @@ ______________________________________________________________________
 - `src/`: local packages
   - `src/local_funcs`: `local_funcs` package
   - `src/yiutils`: `yiutils` package
-- `justfile`: task runner for codebase maintenannce and utilities
+- `justfile`: task runner for codebase maintenance and utilities
 - `justfile-batch`: task runner for batch experiments
 - `justfile-processing`: task runner for pre- and post-processing
 
