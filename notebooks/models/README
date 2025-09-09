@@ -1,1 +1,205 @@
+# Gemma3 270M Fine-tuning for MR Abstract Data Extraction
+
+This directory contains tools to fine-tune a Gemma3 270M model using Unsloth to replicate the OpenAI-based extraction logic for Mendelian randomization abstracts.
+
+## Files
+
+- `gemma3-270m-mr-extraction.ipynb` - Jupyter notebook with complete fine-tuning workflow
+- `finetune-gemma3-270m.py` - Python script version (located in `scripts/python/batch/`)
+- `run_finetune.py` - Simple runner script for command-line execution
+- `README` - This documentation file
+
+## Prerequisites
+
+1. **GPU Requirements**: NVIDIA GPU with at least 8GB VRAM recommended
+2. **CUDA**: CUDA 11.8+ or 12.x installed
+3. **Python**: Python 3.8+ with conda/pip
+4. **Training Data**: Existing OpenAI extraction results in `data/intermediate/`
+
+## Installation
+
+### Option 1: Using the runner script
+```bash
+python run_finetune.py --install-deps
+```
+
+### Option 2: Manual installation
+```bash
+# Install Unsloth
+pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+
+# Install dependencies
+pip install --no-deps "xformers<0.0.27" trl peft accelerate bitsandbytes
+
+# Install PyTorch with CUDA support (if not already installed)
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
+
+## Usage
+
+### Option 1: Jupyter Notebook (Recommended)
+```bash
+# Start Jupyter
+jupyter notebook
+
+# Open gemma3-270m-mr-extraction.ipynb and run cells
+```
+
+### Option 2: Python Script
+```bash
+# Run from project root
+python scripts/python/batch/finetune-gemma3-270m.py --data-dir data/intermediate --max-steps 60
+```
+
+### Option 3: Runner Script
+```bash
+# Check GPU and run everything
+python notebooks/models/run_finetune.py --all
+
+# Or step by step
+python notebooks/models/run_finetune.py --check-gpu
+python notebooks/models/run_finetune.py --run-training
+```
+
+## Configuration
+
+Key parameters you can adjust:
+
+### Model Configuration
+- `model_name`: "unsloth/Gemma-2-2b" (will use 270M when available)
+- `max_seq_length`: 2048
+- `load_in_4bit`: True (for memory efficiency)
+
+### LoRA Configuration
+- `r`: 16 (LoRA rank)
+- `lora_alpha`: 16
+- `target_modules`: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+### Training Configuration
+- `max_steps`: 60 (adjust based on data size)
+- `learning_rate`: 2e-4
+- `per_device_train_batch_size`: 2
+- `gradient_accumulation_steps`: 4
+
+## Data Requirements
+
+The fine-tuning expects training data from your existing OpenAI extraction results. The script looks for files matching `**/*results*.json` in the data directory with this structure:
+
+```json
+[
+  {
+    "abstract": "Background: ...",
+    "extracted_metadata": {
+      "title": "...",
+      "authors": [...],
+      "journal": "...",
+      "year": 2023,
+      "pmid": "...",
+      "doi": "...",
+      "abstract": "..."
+    },
+    "extracted_results": {
+      "exposures": [...],
+      "outcomes": [...],
+      "mr_methods": [...],
+      "effect_estimates": [...],
+      "pvalues": [...],
+      "confidence_intervals": [...],
+      "sample_sizes": [...],
+      "populations": [...],
+      "study_design": "..."
+    }
+  }
+]
+```
+
+## Output
+
+The fine-tuning process creates:
+
+1. **Fine-tuned model**: Saved in `./gemma3-270m-mr-extraction/`
+2. **GGUF format**: Quantized model for inference in `./gemma3-270m-mr-extraction/gguf/`
+3. **Evaluation results**: Sample extractions in `evaluation_results.json`
+
+## Inference
+
+After fine-tuning, use the model for inference:
+
+```python
+from unsloth import FastLanguageModel
+
+# Load fine-tuned model
+model, tokenizer = FastLanguageModel.from_pretrained(
+    model_name="./gemma3-270m-mr-extraction",
+    max_seq_length=2048,
+    dtype="bfloat16",
+    load_in_4bit=True,
+)
+
+FastLanguageModel.for_inference(model)
+
+# Format instruction
+instruction = '''Extract metadata from the following Mendelian randomization abstract.
+Return valid JSON with fields: title, authors, journal, year, pmid, doi, abstract.
+
+Abstract: [YOUR_ABSTRACT_HERE]
+
+Metadata JSON:'''
+
+# Generate
+inputs = tokenizer([f"<bos><start_of_turn>user\n{instruction}<end_of_turn>\n<start_of_turn>model\n"], 
+                  return_tensors="pt").to("cuda")
+
+outputs = model.generate(**inputs, max_new_tokens=512, temperature=0.1)
+result = tokenizer.decode(outputs[0], skip_special_tokens=True)
+```
+
+## Troubleshooting
+
+### Memory Issues
+- Reduce `per_device_train_batch_size` to 1
+- Increase `gradient_accumulation_steps` to maintain effective batch size
+- Enable `load_in_4bit=True`
+
+### CUDA Issues
+- Ensure CUDA version compatibility
+- Update GPU drivers
+- Check `torch.cuda.is_available()`
+
+### Training Data Issues
+- Ensure OpenAI extraction results are available in `data/intermediate/`
+- Check data format matches expected structure
+- Verify JSON files are valid
+
+### Unsloth Installation Issues
+- Use the exact installation command: `pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"`
+- Install compatible xformers version: `pip install --no-deps "xformers<0.0.27"`
+
+## Integration with Existing Workflow
+
+This fine-tuning setup integrates with your existing codebase:
+
+1. **Data Source**: Uses results from `extract-data-openai.py`
+2. **Prompt Templates**: Follows same format as `prompt_funcs.py`
+3. **Schema**: Compatible with your existing JSON schemas
+4. **Evaluation**: Uses same validation logic as OpenAI workflow
+
+## Performance Tips
+
+1. **Start Small**: Begin with `max_steps=30` for initial testing
+2. **Monitor Loss**: Check training logs for convergence
+3. **Validate Early**: Test inference after 20-30 steps
+4. **Adjust Learning Rate**: Lower to 1e-4 if loss unstable
+5. **Use Validation Set**: Hold out 10-20% of data for validation
+
+## Model Comparison
+
+Compare fine-tuned results with OpenAI extractions to evaluate:
+- **Accuracy**: How well does it extract correct information?
+- **Format**: Does it follow JSON schema correctly?
+- **Completeness**: Does it extract all relevant fields?
+- **Consistency**: Are results consistent across similar abstracts?
+
+## Previous Notes
+
 Testing model suitability; need to run with GPUs
