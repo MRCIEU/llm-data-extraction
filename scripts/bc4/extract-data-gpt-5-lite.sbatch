@@ -31,7 +31,7 @@ fi
 micromamba run -n data-extraction-non-gpu \
   python scripts/python/batch/extract-data-openai.py \
   --model gpt-5 \
-  --array-length 100 \
+  --array-length 500 \
   --array-id "${SLURM_ARRAY_TASK_ID}" \
   --path_data data/intermediate/mr-pubmed-data/mr-pubmed-data.json \
   --output_dir "${output_results_dir}" \
