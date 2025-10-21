@@ -9,11 +9,11 @@ This document describes how data is organized and produced in this repository ba
 Data flows through these stages:
 
 1. Raw inputs: MR PubMed abstracts and reference data
-1. Preprocessing: curate and structure MR abstracts for extraction
-1. Extraction: batch LLM runs (ISB for local models, BC4 for OpenAI models)
-1. Aggregation: combine raw JSON outputs per model
-1. Processing: parse, validate against schema, and split valid/invalid
-1. Analysis: produce cross-model samples for inspection and downstream analysis
+2. Preprocessing: curate and structure MR abstracts for extraction
+3. Extraction: batch LLM runs (ISB for local models, BC4 for OpenAI models)
+4. Aggregation: combine raw JSON outputs per model
+5. Processing: parse, validate against schema, and split valid/invalid
+6. Analysis: produce cross-model samples for inspection and downstream analysis
 
 High-level flow:
 

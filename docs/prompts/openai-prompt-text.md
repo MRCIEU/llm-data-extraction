@@ -16,7 +16,7 @@ You are a data scientist responsible for extracting accurate information from re
 
 This is an abstract from a Mendelian randomization study.
 
-"Alcohol consumption significantly impacts disease burden and has been linked to various diseases in observational studies. However, comprehensive meta-analyses using Mendelian randomization (MR) to examine drinking patterns are limited. We aimed to evaluate the health risks of alcohol use by integrating findings from MR studies. A thorough search was conducted for MR studies focused on alcohol exposure. We utilized two sets of instrumental variables-alcohol consumption and problematic alcohol use-and summary statistics from the FinnGen consortium R9 release to perform de novo MR analyses. Our meta-analysis encompassed 64 published and 151 de novo MR analyses across 76 distinct primary outcomes. Results show that a genetic predisposition to alcohol consumption, independent of smoking, significantly correlates with a decreased risk of Parkinson\'s disease, prostate hyperplasia, and rheumatoid arthritis. It was also associated with an increased risk of chronic pancreatitis, colorectal cancer, and head and neck cancers. Additionally, a genetic predisposition to problematic alcohol use is strongly associated with increased risks of alcoholic liver disease, cirrhosis, both acute and chronic pancreatitis, and pneumonia. Evidence from our MR study supports the notion that alcohol consumption and problematic alcohol use are causally associated with a range of diseases, predominantly by increasing the risk."
+"Alcohol consumption significantly impacts disease burden and has been linked to various diseases in observational studies. However, comprehensive meta-analyses using Mendelian randomization (MR) to examine drinking patterns are limited. We aimed to evaluate the health risks of alcohol use by integrating findings from MR studies. A thorough search was conducted for MR studies focused on alcohol exposure. We utilized two sets of instrumental variables-alcohol consumption and problematic alcohol use-and summary statistics from the FinnGen consortium R9 release to perform de novo MR analyses. Our meta-analysis encompassed 64 published and 151 de novo MR analyses across 76 distinct primary outcomes. Results show that a genetic predisposition to alcohol consumption, independent of smoking, significantly correlates with a decreased risk of Parkinson's disease, prostate hyperplasia, and rheumatoid arthritis. It was also associated with an increased risk of chronic pancreatitis, colorectal cancer, and head and neck cancers. Additionally, a genetic predisposition to problematic alcohol use is strongly associated with increased risks of alcoholic liver disease, cirrhosis, both acute and chronic pancreatitis, and pneumonia. Evidence from our MR study supports the notion that alcohol consumption and problematic alcohol use are causally associated with a range of diseases, predominantly by increasing the risk."
 
 ## example
 
@@ -25,6 +25,7 @@ This is an abstract from a Mendelian randomization study.
 **message**
 
 This is an example output in JSON format:
+
 ```json
 {
   "metadata": {
@@ -87,6 +88,7 @@ This is an example output in JSON format:
 ```
 
 and this is the JSON schema
+
 ```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -151,6 +153,7 @@ and this is the JSON schema
 **message**
 
 What are the exposures, outcomes in this abstract? If there are multiple exposures or outcomes, provide them all. If there are no exposures or outcomes, provide an empty list. Also categorize the exposures and outcomes into the following groups using the exact category names provided:
+
 - molecular
 - socioeconomic
 - environmental
@@ -170,9 +173,10 @@ What are the exposures, outcomes in this abstract? If there are multiple exposur
 - disease of the skin and subcutaneous tissue
 - disease of the musculoskeletal system and connective tissue
 - disease of the genitourinary system
-If an exposure or outcome does not fit into any of these groups, specify "Other".
+  If an exposure or outcome does not fit into any of these groups, specify "Other".
 
 List the analytical methods used in the abstract. Match the methods to the following list of exact method names. If a method is used that is not in the list, specify "Other" and also provide the name of the method. The list of methods is as follows:
+
 - two-sample mendelian randomization
 - multivariable mendelian randomization
 - colocalization

@@ -102,7 +102,7 @@ Two ways to run:
 
    These write pilot outputs under: `data/intermediate/openai-batch-results/`
 
-1. BC4 cluster (Slurm):
+2. BC4 cluster (Slurm):
 
    - o4-mini (lite/full):
 
@@ -154,7 +154,9 @@ just -f justfile-processing process-llm-batch-results
 
 ### Diagnostics
 
-Notebook: `notebooks/analysis-extraction/diagnostics-data-processing.ipynb`
+Optional diagnostic notebook
+
+`notebooks/analysis-extraction/diagnostics-data-processing.ipynb`
 
 ______________________________________________________________________
 

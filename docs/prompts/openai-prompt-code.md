@@ -1,6 +1,6 @@
 # metadata
 
-```
+```python
 from openai import OpenAI
 client = OpenAI()
 
