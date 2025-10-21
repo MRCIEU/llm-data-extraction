@@ -1,8 +1,9 @@
 # Data organization
 
-Last updated: 2025-08-10
+Last updated: 2025-10-21
 
 This document describes how data is organized and produced in this repository based on the current filesystem and workflow recipes.
+It covers both the standard batch extraction workflow and the special sample (SP) workflow for targeted re-extraction.
 
 ## Overview
 
@@ -15,13 +16,15 @@ Data flows through these stages:
 5. Processing: parse, validate against schema, and split valid/invalid
 6. Analysis: produce cross-model samples for inspection and downstream analysis
 
+### Standard workflow
+
 High-level flow:
 
 ```text
 data/raw/mr-pubmed-abstracts
   ↓ preprocessing
 data/intermediate/mr-pubmed-data
-  ↓ batch extraction
+  ↓ batch extraction (chunked)
 data/intermediate/llm-results/<JOB-ID>/results
   ↓ aggregation
 data/intermediate/llm-results-aggregated/<MODEL>
@@ -29,10 +32,27 @@ data/intermediate/llm-results-aggregated/<MODEL>
 data/intermediate/analysis-sample
 ```
 
+### Special sample (SP) workflow
+
+The SP workflow processes a targeted subset for detailed review:
+
+```text
+data/intermediate/analysis-sample/sample-42-100.json
+  ↓ filter PMIDs
+data/intermediate/mr-pubmed-data/special-sample.json
+  ↓ SP extraction (full dataset, no chunking)
+data/intermediate/openai-sp-batch-results/<MODEL>
+  ↓ SP aggregation
+data/intermediate/llm-results-aggregated-sp/<MODEL>
+  ↓ SP analysis (all results, no sampling)
+data/intermediate/analysis-sample-sp
+```
+
 Notes:
 
 - Some runs briefly write under `output/` and then move into `data/intermediate/llm-results/<JOB-ID>`.
 - JSON Schemas for processed outputs are in `data/assets/data-schema/`.
+- The SP workflow uses legacy prompts without schema during extraction but applies schema validation during processing.
 
 ______________________________________________________________________
 
@@ -59,6 +79,7 @@ Files:
 - `mr-pubmed-data.json` — Full preprocessed dataset
 - `mr-pubmed-data-sample.json` — Sample for pilots
 - `mr-pubmed-data-sample-lite.json` — Smaller sample for quick checks
+- `special-sample.json` — Filtered dataset containing only PMIDs from sample-42-100.json (for SP workflow)
 - `backups/<YYYY-MM-DD>/mr-pubmed-data.json` — Dated backups of full dataset
 
 ### llm-results/{JOB_ID}/
@@ -76,7 +97,7 @@ Inside each job directory:
 
 ### llm-results-aggregated/{MODEL}/
 
-Aggregated and processed outputs per model.
+Aggregated and processed outputs per model from standard batch extraction.
 
 Produced by post-processing recipes (see `ANALYSIS.md`; `aggregate-llm-batch-results` then `process-llm-batch-results`).
 
@@ -102,22 +123,76 @@ Validation logs:
 
 Backups of earlier aggregations are under `intermediate/_backup/llm-results-aggregated-<DATE>/`.
 
+### llm-results-aggregated-sp/{MODEL}/
+
+Aggregated and processed outputs per model from special sample (SP) extraction.
+
+Produced by SP post-processing recipes (see `ANALYSIS.md`; `aggregate-llm-batch-results-sp` then `process-llm-batch-results-sp`).
+
+Per model, you will find:
+
+- `raw_results.json` — Aggregated SP extraction results
+- `processed_results.json` — Parsed, normalized results
+- `processed_results_valid.json` — Subset passing schema validation
+- `processed_results_invalid.json` — Subset failing schema validation
+
+Available model directories (when processed):
+
+- `o4-mini/`
+- `gpt-4o/`
+- `gpt-4-1/`
+- `gpt-5/`
+- `gpt-5-mini/`
+
+Validation logs:
+
+- `logs/*_schema_validation_errors.log` — Per-model schema error summaries
+
 ### analysis-sample/
 
-Model-comparison samples for analysis and visual inspection.
+Model-comparison samples for analysis and visual inspection from standard batch extraction.
 
 Produced by `analysis-sample-trial` (e.g., 20 items) and `analysis-sample-formal` (e.g., 100 items).
 
 Files:
 
-- `sample-42-20.json/.html` — Trial sample (seed 42)
-- `sample-42-100.json/.html` — Formal sample (seed 42)
+- `sample-42-20.json/.html` — Trial sample (seed 42, 20 PMIDs)
+- `sample-42-100.json/.html` — Formal sample (seed 42, 100 PMIDs)
+
+### analysis-sample-sp/
+
+Model-comparison data for the special sample (SP) workflow.
+
+Produced by `analysis-sample-sp` recipe.
+
+Files:
+
+- `all-results.json/.html` — All SP results without sampling (includes all PMIDs from special-sample.json that have valid results across available models)
 
 ### openai-batch-results/
 
 Outputs from small pilot runs executed locally (primarily OpenAI models before cluster jobs), for example:
 
 - `o4-mini/mr_extract_openai_array_0_pilot.json`
+
+### openai-sp-batch-results/
+
+Outputs from special sample (SP) extraction using OpenAI models.
+
+Produced by `openai-sp-extract-pilot` and `openai-sp-extract-batch` recipes.
+
+Structure:
+
+- `<MODEL-NAME>/mr_extract_openai_sp.json` — Full SP extraction results
+- `<MODEL-NAME>/mr_extract_openai_sp_pilot.json` — Pilot SP extraction results (5 documents)
+
+Available model directories (when processed):
+
+- `o4-mini/`
+- `gpt-4o/`
+- `gpt-4-1/`
+- `gpt-5/`
+- `gpt-5-mini/`
 
 ______________________________________________________________________
 
@@ -141,9 +216,22 @@ ______________________________________________________________________
 
 ## Operational notes
 
-- Extraction orchestration lives in `justfile-batch` (ISB local and BC4 OpenAI jobs).
+- Extraction orchestration lives in `justfile-batch` (ISB local and BC4 OpenAI jobs, plus SP extraction).
 - Post-processing lives in `justfile-processing` (aggregation, processing, sampling). See `ANALYSIS.md` for step-by-step I/O mappings.
 - Transient outputs may appear under `output/` during runs before being moved to `data/intermediate/llm-results/<JOB-ID>`.
+
+### Workflow comparison
+
+| Feature             | Standard Workflow                 | SP Workflow                          |
+| ------------------- | --------------------------------- | ------------------------------------ |
+| Input data          | Full mr-pubmed-data.json          | special-sample.json (filtered)       |
+| Processing          | Chunked (array jobs)              | Full dataset, no chunking            |
+| Prompt strategy     | Schema-based prompts              | Legacy prompts (no schema)           |
+| Extraction location | ISB (local models), BC4 (OpenAI)  | Local (OpenAI only)                  |
+| Raw output location | `llm-results/<JOB-ID>/`           | `openai-sp-batch-results/<MODEL>/`   |
+| Aggregated location | `llm-results-aggregated/<MODEL>/` | `llm-results-aggregated-sp/<MODEL>/` |
+| Analysis output     | `analysis-sample/` (sampled)      | `analysis-sample-sp/` (all results)  |
+| Purpose             | Broad model comparison            | Detailed review of specific PMIDs    |
 
 ______________________________________________________________________
 
