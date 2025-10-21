@@ -67,32 +67,32 @@ openai-extract-data-gpt-4o-pilot:
 
 [group('openai'), group('bc4'), group('pilot')]
 openai-extract-data-o4-mini-lite:
-    sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-o4-mini-lite.sbatch
+    sbatch --account=${ACCOUNT_CODE} scripts/bc4/extract-data-o4-mini-lite.sbatch
 
 [group('openai'), group('bc4'), group('pilot')]
 openai-extract-data-gpt-4o-lite:
-    sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-4o-lite.sbatch
+    sbatch --account=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-4o-lite.sbatch
 
 [group('openai'), group('bc4')]
 openai-extract-data-o4-mini:
-    sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-o4-mini.sbatch
+    sbatch --account=${ACCOUNT_CODE} scripts/bc4/extract-data-o4-mini.sbatch
 
 [group('openai'), group('bc4')]
 openai-extract-data-gpt-4-1:
-    sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-4-1.sbatch
+    sbatch --account=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-4-1.sbatch
 
 [group('openai'), group('bc4')]
 openai-extract-data-gpt-4-1-full:
-    sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-4-1-full.sbatch
+    sbatch --account=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-4-1-full.sbatch
 
 [group('openai'), group('bc4'), group('pilot')]
 openai-extract-data-gpt-5-lite:
-    sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-5-lite.sbatch
+    sbatch --account=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-5-lite.sbatch
 
 # NOTE: thou shall not run this yet
-# [group('openai'), group('bc4')]
-# openai-extract-data-gpt-5-full:
-#     sbatch --acount=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-5-full.sbatch
+[group('openai'), group('bc4')]
+openai-extract-data-gpt-5-full:
+    sbatch --account=${ACCOUNT_CODE} scripts/bc4/extract-data-gpt-5-full.sbatch
 
 # ==== openai sp batch processing ====
 
