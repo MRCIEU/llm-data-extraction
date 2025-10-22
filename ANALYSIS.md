@@ -64,6 +64,9 @@ Convert Gib's raw data into preprocessed data for extraction processing.
 just -f justfile-processing data-prep-mr-pubmed
 ```
 
+Script: `scripts/python/preprocessing/mr-pubmed-data-prep.py`
+
+- No command-line flags
 - Raw data: `data/raw/mr-pubmed-abstracts`
 - Output: `data/intermediate/mr-pubmed-data`
 
@@ -82,6 +85,9 @@ Create a special sample for review analysis by filtering the full dataset to inc
 just -f justfile-processing prep-special-sample
 ```
 
+Script: `scripts/python/preprocessing/prep-special-sample.py`
+
+- No command-line flags
 - Input: `data/intermediate/analysis-sample/sample-42-100.json`
 - Base data: `data/intermediate/mr-pubmed-data/mr-pubmed-data.json`
 - Output: `data/intermediate/mr-pubmed-data/special-sample.json`
@@ -161,6 +167,18 @@ Output logic:
 
 #### Standard batch extraction (chunked processing)
 
+Script: `scripts/python/batch/extract-data-openai.py`
+
+Available flags:
+
+- `--output_dir`: Directory to save output JSON (default: `output` in project root)
+- `--path_data`: Path to MR PubMed abstracts data (default: `data/intermediate/mr-pubmed-data/mr-pubmed-data-sample.json`)
+- `--array-id`: Array ID for chunking (default: 0)
+- `--array-length`: Number of chunks to split data into (default: 30)
+- `--pilot`: Enable pilot mode (processes 5 documents)
+- `--model`: Model to use (required, choices: o4-mini, gpt-4o, gpt-4-1, gpt-5)
+- `--dry-run`: Print config and schema data then exit without processing
+
 Two ways to run:
 
 1. Pilot runs (small sample, no Slurm):
@@ -206,6 +224,16 @@ BC4 job outputs are organized under: `data/intermediate/llm-results/<BC4-JOB-ID>
 
 #### Special sample extraction (SP workflow)
 
+Script: `scripts/python/batch/extract-data-openai-sp.py`
+
+Available flags:
+
+- `--output_dir`: Directory to save output JSON (default: `output` in project root)
+- `--path_data`: Path to MR PubMed abstracts data (default: `data/intermediate/mr-pubmed-data/special-sample.json`)
+- `--pilot`: Enable pilot mode (processes 5 documents)
+- `--model`: Model to use (required, choices: o4-mini, gpt-4o, gpt-4-1, gpt-5, gpt-5-mini)
+- `--dry-run`: Print config and schema data then exit without processing
+
 The SP workflow processes the entire special sample in one go without chunking, using legacy prompts without schema in the extraction phase.
 
 1. Pilot run (local, gpt-5-mini, 5 documents):
@@ -224,7 +252,6 @@ The SP workflow processes the entire special sample in one go without chunking, 
 
 Output structure:
 
-- Script: `scripts/python/batch/extract-data-openai-sp.py`
 - Input: `data/intermediate/mr-pubmed-data/special-sample.json`
 - Output directory: `data/intermediate/openai-sp-batch-results/<model>/`
 - Output file per model: `mr_extract_openai_sp.json` or `mr_extract_openai_sp_pilot.json`
@@ -258,6 +285,13 @@ ______________________________________________________________________
 
 #### Aggregate results
 
+Script: `scripts/python/postprocessing/aggregate-llm-batch-results.py`
+
+Available flags:
+
+- `--models`: List of models to process (space separated, choices: deepseek-r1-distilled, llama3, llama3-2, o4-mini, gpt-4-1)
+- `--all`: Process all models
+
 Aggregate model-specific batch raw results into aggregated raw results:
 
 ```bash
@@ -266,6 +300,14 @@ just -f justfile-processing aggregate-llm-batch-results
 
 - Input: `data/intermediate/llm-results/<EXPERIMENT-ID>/results/*.json`
 - Output: `data/intermediate/llm-results-aggregated/<MODEL-NAME>/raw_results.json`
+
+Supported models and their experiment IDs (hardcoded in script):
+
+- deepseek-r1-distilled: isb-ai-117256
+- llama3-2: isb-ai-117535
+- llama3: isb-ai-116732
+- o4-mini: bc4-12398167
+- gpt-4-1: bc4-12459870
 
 Data flow:
 
@@ -277,6 +319,12 @@ flowchart TD
 ```
 
 #### Process and validate results
+
+Script: `scripts/python/postprocessing/process-llm-aggregated-results.py`
+
+Available flags:
+
+- No command-line flags (processes all available models)
 
 Process aggregated results (global + model-specific processing and schema validation):
 
@@ -299,6 +347,15 @@ Processing steps:
 4. Validate against JSON schemas
 5. Split into valid and invalid subsets
 
+Key remappings applied:
+
+- "95% confidence interval" → "95% CI"
+- `"95%_CI"` → "95% CI"
+- "standard error" → "SE"
+- "odds_ratio" → "odds ratio"
+- "hazard_ratio" → "hazard ratio"
+- "Direction" → "direction"
+
 ```mermaid
 flowchart TD
     A[raw_results.json] --> B[Parse JSON]
@@ -315,6 +372,13 @@ flowchart TD
 
 #### Aggregate SP results
 
+Script: `scripts/python/postprocessing/aggregate-llm-batch-results-sp.py`
+
+Available flags:
+
+- `--models`: List of models to process (space separated, choices: o4-mini, gpt-4o, gpt-4-1, gpt-5, gpt-5-mini)
+- `--all`: Process all models
+
 Aggregate OpenAI SP batch results:
 
 ```bash
@@ -327,6 +391,12 @@ just -f justfile-processing aggregate-llm-batch-results-sp
 Supported models: o4-mini, gpt-4o, gpt-4-1, gpt-5, gpt-5-mini
 
 #### Process and validate SP results
+
+Script: `scripts/python/postprocessing/process-llm-aggregated-results-sp.py`
+
+Available flags:
+
+- No command-line flags (processes all available models)
 
 Process and validate SP results:
 
@@ -349,6 +419,15 @@ Processing steps:
 4. Validate against JSON schemas
 5. Split into valid and invalid subsets
 
+Key remappings applied (same as standard workflow):
+
+- "95% confidence interval" → "95% CI"
+- `"95%_CI"` → "95% CI"
+- "standard error" → "SE"
+- "odds_ratio" → "odds ratio"
+- "hazard_ratio" → "hazard ratio"
+- "Direction" → "direction"
+
 ### Diagnostics
 
 Optional diagnostic notebook
@@ -360,6 +439,17 @@ ______________________________________________________________________
 ## Analysis
 
 ### Standard analysis samples
+
+#### Sample generation
+
+Script: `scripts/python/analysis/make-analysis-sample.py`
+
+Available flags:
+
+- `--size`: Number of samples to produce (default: 20)
+- `--seed`: Random seed (default: 42)
+
+Supported models (hardcoded): llama3, llama3-2, deepseek-r1-distilled, o4-mini, gpt-4-1
 
 Trial sample (size 20, seed 42):
 
@@ -373,14 +463,34 @@ Formal sample (size 100, seed 42):
 just -f justfile-processing analysis-sample-formal
 ```
 
+These samples select PMIDs that are commonly available across all models and randomly sample from them.
+
+#### HTML rendering
+
+Script: `scripts/python/analysis/render-analysis-sample.py`
+
+Available flags:
+
+- `-f, --file`: Path to input JSON file, relative to `data/intermediate/analysis-sample/` (required)
+
 Output:
 
 - JSON: `data/intermediate/analysis-sample/sample-42-{20,100}.json`
 - HTML: `data/intermediate/analysis-sample/sample-42-{20,100}.html`
 
-These samples select PMIDs that are commonly available across all models and randomly sample from them, then produce both JSON and HTML renderings for review.
+The HTML rendering produces an interactive visualization with tabbed model results for review.
 
 ### Special sample (SP) analysis
+
+#### Sample generation
+
+Script: `scripts/python/analysis/make-analysis-sample-sp.py`
+
+Available flags:
+
+- No command-line flags
+
+Supported models (hardcoded): o4-mini, gpt-4o, gpt-4-1, gpt-5, gpt-5-mini
 
 Process all SP results without sampling:
 
@@ -388,12 +498,22 @@ Process all SP results without sampling:
 just -f justfile-processing analysis-sample-sp
 ```
 
+This aggregates all processed valid results from the SP workflow across available models for the special sample PMIDs.
+
+#### HTML rendering
+
+Script: `scripts/python/analysis/render-analysis-sample-sp.py`
+
+Available flags:
+
+- `-f, --file`: Path to input JSON file, relative to `data/intermediate/analysis-sample-sp/` (required)
+
 Output:
 
 - JSON: `data/intermediate/analysis-sample-sp/all-results.json`
 - HTML: `data/intermediate/analysis-sample-sp/all-results.html`
 
-This aggregates all processed valid results from the SP workflow across available models for the special sample PMIDs.
+The HTML rendering produces an interactive visualization with tabbed model results for review.
 
 Analysis data structure:
 
