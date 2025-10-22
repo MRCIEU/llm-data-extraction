@@ -13,7 +13,6 @@ import json
 import sys
 
 import pandas as pd
-
 from yiutils.project_utils import find_project_root
 
 # experiment ID directories for model results
@@ -23,7 +22,7 @@ LLAMA3_INPUT = "isb-ai-116732"
 OPENAI_O4MINI_INPUT = "bc4-12398167"
 OPENAI_GPT4_1_INPUT = "bc4-12459870"
 # TODO: update when finished
-OPENAI_GPT5_INPUT = "TODO"
+OPENAI_GPT5_INPUT = "bc4-12786822"
 
 
 def process_deepseek_r1_distilled(model_config):
@@ -208,7 +207,14 @@ def make_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--models",
         nargs="+",
-        choices=["deepseek-r1-distilled", "llama3", "llama3-2", "o4-mini", "gpt-4-1"],
+        choices=[
+            "deepseek-r1-distilled",
+            "llama3",
+            "llama3-2",
+            "o4-mini",
+            "gpt-4-1",
+            "gpt-5",
+        ],
         help="List of models to process (space separated).",
     )
     # ---- --all ----

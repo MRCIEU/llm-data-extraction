@@ -357,7 +357,14 @@ def make_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--models",
         nargs="+",
-        choices=["deepseek-r1-distilled", "llama3", "llama3-2", "o4-mini", "gpt-4-1"],
+        choices=[
+            "deepseek-r1-distilled",
+            "llama3",
+            "llama3-2",
+            "o4-mini",
+            "gpt-4-1",
+            "gpt-5",
+        ],
         help="Specify one or more models to process. If not supplied, all models will be processed.",
     )
     return parser
