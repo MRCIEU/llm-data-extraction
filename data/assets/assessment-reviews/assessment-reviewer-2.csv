@@ -1,0 +1,801 @@
+﻿Column1,Q-1-a-1,Q-1-a-2,Q-1-a-3,Q-1-b-1,Q-1-b-2,Q-1-b-3,Q-1-c-1,Q-1-c-2,Q-1-c-3,Q-2-a-1,Q-2-a-2,Q-2-a-3,Q-2-b-1,Q-2-b-2,Q-2-b-3,Q-2-c-1,Q-2-c-2,Q-2-c-3,Q-3-a-1,Q-3-a-2,Q-3-a-3,Q-3-b-1,Q-3-b-2,Q-3-b-3,Q-3-c-1,Q-3-c-2,Q-3-c-3,Q-4-a-1,Q-4-a-2,Q-4-a-3,Q-4-b-1,Q-4-b-2,Q-4-b-3,Q-4-c-1,Q-4-c-2,Q-4-c-3,Q-5-a-1,Q-5-a-2,Q-5-a-3,Q-5-b-1,Q-5-b-2,Q-5-b-3,Q-5-c-1,Q-5-c-2,Q-5-c-3,Other,Column2
+30167974,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,0,1,1,0,1,Did not report population,1,10,Did not report back population,6,3,8,6,10,direction of effect for one outcome is wrong,0,1,None,incapable of interpriting does not to mean null effect,llama3
+30167974,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,3,8,6,10,direction of effect for one outcome is wrong,0,1,None,incapable of interpriting does not to mean null effect,llama3-2
+30167974,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,4,1,8,3,10,None,0,1,None,1,0,10,1,10,Returns not explicitly mentioned,0,1,None,6,0,10,6,10,None,0,1,None,"outcome is systemic hence the category circulatory disease, separates two sample MR and IVW, MR Egger and weighted median",deepseek
+30167974,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,4,1,8,3,10,None,0,1,None,1,0,10,1,10,Returns empty dict because population is not explicitly mentioned,0,1,None,6,3,8,6,10,direction of effect for one outcome is wrong,0,1,None,"separates two sample MR and IVW, MR Egger and weighted median, ",o4-mini
+30167974,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,4,1,8,3,10,None,0,1,None,1,0,10,1,10,Returns empty dict because population is not explicitly mentioned,0,1,None,7,1,9,6,9,duplicates one result and meddled direction of effect,0,1,None,"separates two sample MR and IVW, MR Egger and weighted median, duplicated one of the result",gpt4-1
+30167974,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,1,8,1,10,Broad method,0,1,None,1,0,10,1,10,Returns empty dict because population is not explicitly mentioned,0,1,None,6,3,8,6,10,None,0,1,None,,gpt_4o
+30167974,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,5,0,10,5,10,Broad method and sensitivity,0,1,None,1,0,10,1,10,GWAS characteristics no ancestries,0,1,None,6,3,8,6,10,direction of effect for one outcome is wrong,0,1,None,,gpt_5
+30167974,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,5,0,10,5,10,Broad method and sensitivity,0,1,none,1,0,10,1,10,GWAS characteristics no ancestries,0,1,None,6,4,7,6,10,Direction of effect is wrong for 3 results,0,1,None,,gpt_5mini
+38179043,2,0,10,1,10,None,0,1,None,1,1,9,1,10,Wrong disease category (digestive system),0,1,None,11,0,10,11,10,None,0,1,None,3,0,10,3,10,None,0,1,None,14,0,10,14,10,None,3,3,None,,llama3
+38179043,2,0,10,2,10,None,0,1,None,1,1,9,1,10,Wrong disease category(disease of nervous system),0,1,None,11,0,10,11,10,None,0,1,None,3,0,10,3,10,None,0,1,None,17,0,10,17,10,None,0,1,None,,llama3-2
+38179043,2,1,10,2,10,Category of gut microbiome is not molecular,0,1,None,1,1,9,1,10,Wrong disease category(disease of nervous system),0,1,None,0,11,1,0,1,Methods are missing,11,10,None,0,3,1,0,1,No population reported,3,10,None,14,0,10,14,10,None,3,3,None,"The thinking has information on methods but the output has no methods, thinking includes a bit of breakdown but the output has no population",deepseek
+38179043,14,14,10,14,10,Broke down the trait into specific subca,0,1,None,5,5,1,0,0,Wrong disease outocme and categories,1,10,Did not report MG as outcome,12,0,10,12,10,Includes sensitivity analysis as a method,0,1,None,3,0,10,3,10,None,0,1,None,17,0,10,17,10,None,0,1,None,,o4-mini
+38179043,2,0,10,2,10,None,0,1,None,1,1,9,1,10,Wrong disease category (digestive system),0,1,None,13,0,10,13,10,Includes sensitivity analysis as a method,0,1,None,3,0,10,3,10,None,0,1,None,17,0,10,17,10,None,0,1,None,,gpt4-1
+38179043,2,0,10,2,10,None,0,1,None,1,1,9,1,10,Wrong disease category (digestive system),0,1,None,13,1,9,12,10,Includes sensitivity analysis as a method and other,0,1,None,3,0,10,3,10,None,0,1,None,14,0,10,14,10,None,3,3,None,,gpt_4o
+38179043,14,14,10,14,10,Broke down the trait into specific subca,0,1,None,5,5,1,0,0,Wrong disease outocme and categories,1,10,Did not report MG as outcome,12,0,10,12,10,Includes sensitivity analysis as a method,0,1,None,3,0,10,3,10,None,0,1,None,17,0,10,17,10,None,0,1,None,,gpt_5
+38179043,14,14,10,14,10,Broke down the trait into specific subca,0,1,None,5,5,1,0,0,Wrong disease outocme and categories,1,10,Did not report MG as outcome,13,0,10,13,10,Includes sensitivity analysis as a method,0,1,None,3,0,10,3,10,None,0,1,None,17,0,10,17,10,None,0,1,None,,gpt_5mini
+36104772,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,4,0,10,4,10,None,1,3,Missing effect on fibrinogen,,llama3
+36104772,1,0,10,1,10,None,0,1,None,3,0,10,3,10,Broke inflammation to CRP and fibrinogen,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,Includes more details of specific GPs,llama3-2
+36104772,1,0,10,1,10,None,0,1,None,3,0,10,3,10,Broke inflammation to CRP and fibrinogen,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,Includes more details of specific GPs,deepseek
+36104772,3,0,10,3,10,Broke down the exposure to subcategories,0,1,None,3,0,10,3,10,Broke inflammation to CRP and fibrinogen,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,2,4,Missing effect on CRP and Fibrinogen,,o4-mini
+36104772,1,0,10,1,10,None,0,1,None,3,0,10,3,10,Broke inflammation to CRP and fibrinogen,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,2,4,Missing effect on CRP and Fibrinogen,Includes more details of specific GPs,gpt4-1
+36104772,1,0,10,1,10,None,0,1,None,3,0,10,3,10,Broke inflammation to CRP and fibrinogen,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,2,4,Missing effect on CRP and Fibrinogen,,gpt_4o
+36104772,4,0,10,4,10,Includes exposure broad category,0,1,None,3,0,10,3,10,Broke inflammation to CRP and fibrinogen,0,1,None,2,0,10,2,10,Includes sensitivity analysis,0,1,None,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5
+36104772,4,0,10,4,10,Includes exposure broad category,0,1,None,3,0,10,3,10,Broke inflammation to CRP and fibrinogen,0,1,None,2,0,10,2,10,Includes sensitivity analysis,0,1,None,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5mini
+36305497,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,1,3,Missing effect of NAFLD on Hcy,,llama3
+36305497,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,1,3,Missing effect of NAFLD on Hcy,,llama3-2
+36305497,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,1,3,Missing effect of NAFLD on Hcy,,deepseek
+36305497,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,Split the European ancestry per GWAS used,o4-mini
+36305497,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,Bidirectional MR used exposure and outcome in both scenarios,gpt4-1
+36305497,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,3,1,10,2,9,Other,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_4o
+36305497,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Detailed account fo each GWAS,0,1,None,5,0,10,5,10,None,0,1,None,Bidirectional MR used exposure and outcome in both scenarios,gpt_5
+36305497,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Detailed account fo each GWAS,0,1,None,5,0,10,5,10,None,0,1,None,Bidirectional MR used exposure and outcome in both scenarios,gpt_5mini
+38365715,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,2,2,None,1,0,10,1,10,No specific ancestry was mentioned,0,1,None,9,1,9,8,10,None,0,1,None,Duplicated one result,llama3
+38365715,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,No specific ancestry was mentioned,0,1,None,8,1,9,7,10,None,1,2,None,sample characteristics instead is provided individuals with endometriosis,llama3-2
+38365715,1,0,10,1,10,None,0,1,None,1,0,10,1,10,category of exposure and outcome is wrong,0,1,None,8,0,10,8,10,None,1,2,Missing IVW and leave one out,1,0,10,1,10,No specific ancestry was mentioned,0,1,None,7,0,10,7,10,None,1,2,None,"the category of exposure and outcome is wrong, empty population dictionary",deepseek
+38365715,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,No specific ancestry was mentioned,0,1,None,7,0,10,7,10,None,1,2,None,"Split the exposure into individual reported taxas, empty population dictionary",o4-mini
+38365715,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No specific ancestry was mentioned,0,1,None,7,0,10,7,10,None,1,2,None,Empty population dictionary,gpt4-1
+38365715,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,1,9,2,10,Includes other category,0,1,None,1,0,10,1,10,No specific ancestry was mentioned,0,1,None,7,0,10,7,10,None,1,2,None,,gpt_4o
+38365715,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,11,0,10,11,10,Includes LOO sensitivity analysis,0,1,None,1,0,10,1,10,No specific ancestry was mentioned,0,1,None,8,0,10,8,10,None,0,1,None,,gpt_5
+38365715,8,0,10,8,10,Includes exposure broad category,0,1,None,1,0,10,1,10,None,0,1,None,12,0,10,12,10,Includes broad categories,0,1,None,1,0,10,1,10,No specific ancestry was mentioned,0,1,None,8,0,10,8,10,None,0,1,None,,gpt_5mini
+34088753,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,llama3
+34088753,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,"details on PUFAS and PUFA, includes keratinocyte as an outcome",llama3-2
+34088753,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,deepseek
+34088753,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,details on PUFAs,o4-mini
+34088753,5,0,10,5,10,Includes exposure broad category,0,1,None,3,0,10,3,10,includes outcome broad  category,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,"details on PUFAs, includes keratinocyte as an outcome",gpt4-1
+34088753,1,0,10,1,10,Provides broad exposure category only,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_4o
+34088753,5,0,10,5,10,Includes exposure broad category,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,More details on GWAs,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5
+34088753,5,0,10,5,10,Includes exposure broad category,0,1,None,3,0,10,3,10,includes outcome broad  category,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5mini
+36773317,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,3,4,Did not report the CI range and missing other outcomes,European ancestry from Exposure GWAS,llama3
+36773317,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,8,1,10,8,10,None,0,1,None,"European ancestry from Exposure GWAS, replicated Covid19",llama3-2
+36773317,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,European ancestry from Exposure GWAS,deepseek
+36773317,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,0,0,1,0,1,None,7,10,Did not report any results other than an empty dictionary,European ancestry from Exposure GWAS,o4-mini
+36773317,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,European ancestry from Exposure GWAS,gpt4-1
+36773317,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,3,4,Did not report the CI range and missing other outcomes,,gpt_4o
+36773317,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,More details on GWAs,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5
+36773317,2,0,10,2,10,Mentions iron supplements as a proxy for exposure,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,More details on GWAs,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5mini
+33408737,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,1,2,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,1,2,Missing result of MR-egger,,llama3
+33408737,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,report vascular as outcome,llama3-2
+33408737,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,1,2,Missing cancer outcome,6,0,10,6,10,None,0,1,None,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,Includes 2SMR,deepseek
+33408737,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,1,2,Missing cancer outcome,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,8,8,Missing significant results,category of exposure is molecular and not metabolic,o4-mini
+33408737,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,"reports vascular as outcome, includes sensitivity analysis",gpt4-1
+33408737,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,gpt_4o
+33408737,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,gpt_5
+33408737,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,gpt_5mini
+36980988,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,2,4,Missing non-main analysis,,llama3
+36980988,1,0,10,1,10,None,0,1,None,3,2,8,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,,llama3-2
+36980988,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+36980988,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,Provides more details on ancestry GWAS,o4-mini
+36980988,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,Provides more details on ancestry GWAS,gpt4-1
+36980988,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,gpt_4o
+36980988,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,gpt_5
+36980988,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,gpt_5mini
+36895273,7,0,10,7,10,None,1,2,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,llama3
+36895273,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,Includes the no-causal with no stats,llama3-2
+36895273,4,0,10,4,10,None,4,5,None,1,0,10,1,10,None,0,1,None,0,0,1,0,1,None,6,10,None,0,0,1,0,1,None,0,10,No population reported and datafield missing,4,0,10,4,10,None,0,1,None,,deepseek
+36895273,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,o4-mini
+36895273,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,gpt4-1
+36895273,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_4o
+36895273,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,More details on GWAs,0,1,None,10,0,10,10,10,None,0,1,None,Robust at extracting  evidence from text,gpt_5
+36895273,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,More details on GWAs,0,1,None,10,0,10,10,10,None,0,1,None,Robust at extracting  evidence from text,gpt_5mini
+38298515,2,0,10,2,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,1,2,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,5,5,None,"Disease category is wrong (metabolic instead of digestive system), excludes IVW",llama3
+38298515,2,0,10,2,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,1,2,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,5,5,None,"Disease category is wrong (metabolic instead of digestive system), excludes IVW",llama3-2
+38298515,2,0,10,2,10,None,0,1,None,7,0,10,7,10,None,0,1,None,2,1,9,1,10,None,1,2,None,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,"Excludes mentioning IVW, detailed breakdown of the results to tell apart the negative statements",deepseek
+38298515,2,0,10,2,10,None,0,1,None,8,0,10,8,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,4,4,None,"Includes CRP a positive control outcome,excludes IVW, more detailed population description, struggling with negative sentences for result reporting",o4-mini
+38298515,2,0,10,2,10,None,0,1,None,7,0,10,7,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,Robust in handpicking netaive sentences for result reporting,gpt4-1
+38298515,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,reports only broad outcome categories,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,4,4,None,,gpt_4o
+38298515,2,0,10,2,10,None,0,1,None,9,0,10,9,10,includes CRP a positive control outcome,0,1,None,3,1,9,2,10,Reports positive control outcome as a method,0,1,None,1,0,10,1,10,More details on GWAs,0,1,None,10,0,10,10,10,None,0,1,None,Robust in handpicking netaive sentences for result reporting,gpt_5
+38298515,2,0,10,2,10,None,0,1,None,9,0,10,9,10,includes CRP positive control outcome,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on GWAs,0,1,None,10,0,10,10,10,None,0,1,None,Robust in handpicking netaive sentences for result reporting,gpt_5mini
+37933065,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,2,5,Missing ORs for two methods,Population not provided,llama3
+37933065,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,Population not provided,llama3-2
+37933065,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,3,9,3,10,Egger regression intercept defined as a beta value reported in every result,0,1,None,"Population not provided, struggled with MR EGGER intercept reporting",deepseek
+37933065,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,Returns an empty dictionary because population is not metioned,o4-mini
+37933065,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,Returns an empty dictionary because population is not metioned,gpt4-1
+37933065,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,Reports broad categories only,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_4o
+37933065,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_5
+37933065,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,Provides details on subcategories,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_5mini
+36333784,1,0,10,1,10,None,0,1,None,6,0,10,6,10,Includes the broad outcome category,0,1,None,1,0,10,1,10,None,1,2,missing Supplementary methods,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,Extracts GWAS characteristics,llama3
+36333784,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,Extracts GWAS characteristics,llama3-2
+36333784,2,1,9,1,10,Duplication of the same exposure using a different prefix,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,1,2,missing Supplementary methods,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,Population not provided,deepseek
+36333784,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,Empty list for population,o4-mini
+36333784,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,MR mentioned,1,2,missing Sensitivity analysis methods,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,Empty list for population,gpt4-1
+36333784,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_4o
+36333784,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,MR mentioned,1,2,missing Sensitivity analysis methods,1,0,10,1,10,More details on GWAs,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5
+36333784,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5mini
+38378549,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,,llama3
+38378549,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,,llama3-2
+38378549,2,0,10,2,10,None,0,1,None,4,0,10,4,10,Includes the broad outcome category,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,,deepseek
+38378549,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,,o4-mini
+38378549,7,0,10,7,10,includes exposure subcategories,0,1,None,4,0,10,4,10,includes broad outcome category,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,,gpt4-1
+38378549,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_4o
+38378549,7,0,10,7,10,includes exposure subcategories ,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,More detailed on GWAS,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5
+38378549,7,0,10,7,10,includes exposure subcategories,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,More detailed on GWAS,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5mini
+38179450,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,1,9,6,10,None,2,4,Missing two methods (metaanalysis and LOO),1,0,10,1,10,Dataset characteristics,0,1,None,4,0,10,4,10,None,0,1,None,,llama3
+38179450,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,1,9,6,10,None,2,4,Missing two methods (metaanalysis and LOO),1,0,10,1,10,Dataset characteristics,0,1,None,4,0,10,4,10,None,0,1,None,,llama3-2
+38179450,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,8,1,9,7,10,Added external validation dataset as a method,1,2,Missing LOO,1,0,10,1,10,Not provided population in abstract,0,1,None,4,0,10,4,10,None,0,1,None,,deepseek
+38179450,4,0,10,4,10,Breaks down the trait to specific microbiome,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,2,4,Missing LOO,1,0,10,1,10,Empty list for population because its absent,0,1,None,4,0,10,4,10,None,0,1,None,,o4-mini
+38179450,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,2,4,Missing LOO,1,0,10,1,10,Empty list for population because its absent,0,1,None,4,0,10,4,10,None,0,1,None,,gpt4-1
+38179450,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,5,7,Missing details on methodssubcategories ,1,0,10,1,10,Patient description,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_4o
+38179450,5,0,10,5,10,Breaks down the trait to specific microbiome and broad category,0,1,None,1,0,10,1,10,None,0,1,None,10,1,9,9,10,A validation dataset,0,1,None,1,0,10,1,10,More details on GWAs,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5
+38179450,5,0,10,5,10,Breaks down the trait to specific microbiome and broad category,0,1,None,1,0,10,1,10,None,0,1,None,10,1,9,9,10,A validation dataset,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5mini
+30707692,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,1,3,Missing one trivial trait,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,1,2,None,,llama3
+30707692,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,1,3,Missing one trivial trait,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,llama3-2
+30707692,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,1,9,1,10,None,0,1,None,3,0,10,3,10,None,1,2,None,,deepseek
+30707692,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,1,2,None,,o4-mini
+30707692,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,3,1,9,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,gpt4-1
+30707692,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,1,3,Missing one trivial trait,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_4o
+30707692,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5
+30707692,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5mini
+35992145,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,3,5,Missing null results,Bidirectional MR considered the outcome as an exposure,llama3
+35992145,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,Bidirectional MR considered the outcome as an exposure,llama3-2
+35992145,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,3,5,Missing null results,Did not consider outcome as exposure despite the use of Bidirectional MR,deepseek
+35992145,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,3,5,Missing null results,Bidirectional MR well handled,o4-mini
+35992145,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,2,3,reports one blacket null result,Bidirectional MR well handled,gpt4-1
+35992145,2,0,10,2,10,None,2,5,Collapsed the exposures to broad categories,2,0,10,2,10,None,2,5,Collapsed into broad categories,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,3,5,Missing null results,"Collapsed exposures and outcomes into broad categories, retructing to just title onle",gpt_4o
+35992145,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,Bidirectional MR well handled,gpt_5
+35992145,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,5,0,10,5,10,None,0,1,None,Bidirectional MR well handled,gpt_5mini
+38622701,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,5,7,missing sensitivity analyses methods,1,0,10,1,10,No ancestry mentioned but dataset characteristics,0,1,None,10,0,10,10,10,None,0,1,None,Extracted only three specific exposures,llama3
+38622701,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,5,7,missing sensitivity analyses methods,1,0,10,1,10,No ancestry mentioned but dataset characteristics,0,1,None,13,0,10,13,10,None,0,1,None,Extracted only three specific exposures,llama3-2
+38622701,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,5,7,missing sensitivity analyses methods,1,0,10,1,10,No population mentioned,0,1,None,10,0,10,10,10,None,0,1,None,Extracted the general exposure of lipidomes,deepseek
+38622701,10,0,10,10,10,Includes subcategories,0,1,None,3,0,10,3,10,Includes subcategories ER+ and ER-,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No population mentioned,0,1,None,8,0,10,8,10,None,0,1,None,,o4-mini
+38622701,9,0,10,9,10,None,0,1,None,3,0,10,3,10,Includes subcategories ER+ and ER-,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No ancestry mentioned but dataset characteristics,0,1,None,10,0,10,10,10,None,0,1,None,,gpt4-1
+38622701,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,4,6,Missing specific sensitivity and Bayesian method,0,0,1,1,1,Did not extract,1,10,Missing to report population as an output,8,0,10,8,10,None,0,1,None,,gpt_4o
+38622701,10,0,10,10,10,Includes subcategories,0,1,None,3,0,10,3,10,Includes subcategories ER+ and ER-,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No ancestry mentioned but dataset characteristics,0,1,None,14,0,10,14,10,None,0,1,None,,gpt_5
+38622701,10,0,10,10,10,Includes subcategories,0,1,None,3,0,10,3,10,Includes subcategories ER+ and ER-,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No ancestry mentioned but dataset characteristics,0,1,None,15,0,10,15,10,None,0,1,None,,gpt_5mini
+31661179,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No ancestry mentioned but dataset characteristics,0,1,None,6,0,10,6,10,None,0,1,None,,llama3
+31661179,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,6,0,10,6,10,None,0,1,None,,llama3-2
+31661179,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,1,2,None,1,0,10,1,10,No population mentioned,0,1,None,4,0,10,4,10,None,2,4,None,,deepseek
+31661179,3,0,10,3,10,includes subcategories of migraine,0,1,None,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,6,0,10,6,10,None,0,1,None,,o4-mini
+31661179,3,0,10,3,10,includes subcategories of migraine,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,6,0,10,6,10,None,0,1,None,,gpt4-1
+31661179,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,GWAS datasets,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_4o
+31661179,3,0,10,3,10,includes subcategories of migraine,0,1,None,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5
+31661179,3,0,10,3,10,includes subcategories of migraine,0,1,None,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5mini
+36789917,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,GWAS datasets,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+36789917,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,GWAS datasets,0,1,None,7,0,10,7,10,None,0,1,None,Outcome from post hoc analysis is included,llama3-2
+36789917,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No information on population,0,1,None,4,0,10,4,10,None,0,1,None,Missed out on reporting one exposure,deepseek
+36789917,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Empty list,0,1,None,4,0,10,4,10,None,0,1,None,,o4-mini
+36789917,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,No information on population,0,1,None,3,0,10,3,10,None,0,1,None,,gpt4-1
+36789917,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Empty list,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_4o
+36789917,4,0,10,4,10,None,0,1,None,4,0,10,4,10,includes CAD part of post hoc analysis,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5
+36789917,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5mini
+38672162,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,UKB and Biobank Japan,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+38672162,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,UKB and Biobank Japan,0,1,None,3,0,10,3,10,None,0,1,None,,llama3-2
+38672162,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,4,8,missing sensitivity analyses methods,0,0,1,0,1,No population was extracted,2,10,Missing to extract two ancestries,3,0,10,3,10,None,0,1,None,,deepseek
+38672162,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,2,0,10,2,10,UKB and Biobank Japan,0,1,None,3,0,10,3,10,None,0,1,None,,o4-mini
+38672162,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,2,0,10,2,10,UKB and Biobank Japan,0,1,None,3,0,10,3,10,None,0,1,None,,gpt4-1
+38672162,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,3,5,Missing sensitivity methods,2,0,10,2,10,UKB and Biobank Japan,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_4o
+38672162,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,2,0,10,2,10,UKB and Biobank Japan and more details,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_5
+38672162,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,2,0,10,2,10,UKB and Biobank Japan and more details,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_5mini
+35957835,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,,llama3
+35957835,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,6,0,10,6,10,None,0,1,None,,llama3-2
+35957835,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,6,0,10,6,10,None,0,1,None,this model is struggling with categories of exposure and outcome,deepseek
+35957835,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,8,0,10,8,10,None,0,1,None,,o4-mini
+35957835,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,1,9,2,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,8,0,10,8,10,None,0,1,None,,gpt4-1
+35957835,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,2,7,2,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_4o
+35957835,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,1,9,2,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,8,0,10,8,10,None,0,1,None,Extracted glucose traitsalthough not really outcomes but mentioned as being associated ,gpt_5
+35957835,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,4,2,7,2,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,9,0,10,9,10,None,0,1,None,Extracted glucose traitsalthough not really outcomes but mentioned as being associated ,gpt_5mini
+37495778,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,4,0,10,4,10,None,0,1,None,,llama3
+37495778,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,4,0,10,4,10,None,0,1,None,,llama3-2
+37495778,1,0,10,1,10,None,3,7,Missing the subtypes of exposure,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,8,9,Missing methods,0,0,1,0,1,DId not extract the population,1,10,Missing European descent,4,0,10,4,10,None,0,1,None,Does not extract specific exposures besides the blacket term,deepseek
+37495778,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,4,0,10,4,10,None,0,1,None,,o4-mini
+37495778,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,gpt4-1
+37495778,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,7,1,None,1,0,10,1,10,More details on GWAS,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_4o
+37495778,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,11,0,10,11,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5
+37495778,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,11,0,10,11,10,None,0,1,None,1,0,10,1,10,More details on GWAS,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5mini
+32062614,1,0,10,1,10,None,2,5,Missing subtypes of exposure,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+32062614,1,0,10,1,10,None,2,5,Missing subtypes of exposure,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,llama3-2
+32062614,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,1,3,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+32062614,3,0,10,3,10,None,1,1,missing subcategories,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,o4-mini
+32062614,3,0,10,3,10,None,1,1,missing subcategories,2,0,10,2,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,gpt4-1
+32062614,3,0,10,3,10,None,1,1,missing subcategories,3,0,10,3,10,None,0,1,None,5,2,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_4o
+32062614,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5
+32062614,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5mini
+34227468,2,0,10,2,10,None,1,3,Did not break down smoking to two subcategories,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,No mention of population,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+34227468,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,No mention of population,0,1,None,7,0,10,7,10,None,0,1,None,Includes the broad exposure category,llama3-2
+34227468,2,0,10,2,10,None,1,3,Did not break down smoking to two subcategories,1,0,10,1,10,None,2,5,Missing out ACE and covid19 subcategories,6,0,10,5,10,Includes Other category,0,1,None,1,0,10,1,10,No mention of population,0,1,None,7,0,10,7,10,None,0,1,None,,deepseek
+34227468,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,No mention of population,0,1,None,6,0,10,6,10,None,0,1,None,,o4-mini
+34227468,2,0,10,2,10,None,1,3,Did not break down smoking to two subcategories,2,0,10,2,10,None,1,3,"broad categories are reported, missing COVID severity",6,0,10,6,10,None,0,1,None,1,0,10,1,10,No mention of population,0,1,None,7,0,10,7,10,None,0,1,None,,gpt4-1
+34227468,2,0,10,2,10,None,1,3,Did not break down smoking to two subcategories,3,0,10,3,10,None,0,1,None,3,0,10,2,10,None,0,1,None,1,0,10,1,10,No mention of population,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_4o
+34227468,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5
+34227468,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5mini
+37271768,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,llama3
+37271768,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,,llama3-2
+37271768,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,2,5,Missing the no causal outcomes,1,0,10,1,10,None,3,9,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,,deepseek
+37271768,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,More details about the dataset,0,1,None,6,0,10,6,10,None,0,1,None,,o4-mini
+37271768,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,,gpt4-1
+37271768,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,Presents the broad categories only,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_4o
+37271768,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,More details about the dataset,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5
+37271768,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,More details about the dataset,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5mini
+38643889,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,No data on population,0,1,None,4,0,10,4,10,None,0,1,None,,llama3
+38643889,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,No data on population,0,1,None,4,0,10,4,10,None,0,1,None,,llama3-2
+38643889,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,No data on population,0,1,None,6,0,10,6,10,None,0,1,None,,deepseek
+38643889,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,No data on population,0,1,None,4,0,10,4,10,None,0,1,None,,o4-mini
+38643889,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No data on population,0,1,None,4,0,10,4,10,None,0,1,None,Efficient with Bidirectional MR,gpt4-1
+38643889,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,3,2,Missing subcategories,1,0,10,1,10,No data on population,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_4o
+38643889,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No data on population,0,1,None,4,0,10,4,10,None,0,1,None,Efficient with Bidirectional MR,gpt_5
+38643889,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,No data on population,0,1,None,4,0,10,4,10,None,0,1,None,Efficient with Bidirectional MR,gpt_5mini
+38625888,6,0,10,6,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,1,2,None,1,0,10,1,10,More details about the dataset,0,1,None,6,0,10,6,10,None,0,1,None,Challenging to know exposure and outcomes,llama3
+38625888,7,1,10,6,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details about the dataset,0,1,None,6,0,10,6,10,None,0,1,None,Challenging to know exposure and outcomes,llama3-2
+38625888,1,0,10,1,10,None,3,4,Extracted SNPs in general and does not include the variables,1,3,6,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details about the dataset,0,1,None,6,0,10,6,10,None,0,1,None,Challenging to know exposure and outcomes,deepseek
+38625888,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,o4-mini
+38625888,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,gpt4-1
+38625888,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,gpt_4o
+38625888,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,gpt_5
+38625888,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,gpt_5mini
+38156559,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,None,1,2,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+38156559,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,,llama3-2
+38156559,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,2,5,Missing two of the 5 outcomes,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+38156559,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,,o4-mini
+38156559,2,0,10,2,10,Captures broad categories,0,1,None,6,0,10,6,10,Bidirectional MR,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,,gpt4-1
+38156559,6,0,10,6,10,Captures all outcomes bidirectional MR,0,1,None,5,0,10,5,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_4o
+38156559,6,0,10,6,10,Captures all outcomes bidirectional MR,0,1,None,6,0,10,6,10,Bidirectional MR,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_5
+38156559,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_5mini
+37675772,1,0,10,1,10,None,0,1,None,12,0,10,12,10,None,0,1,None,1,0,10,1,10,None,0,1,None,0,0,1,0,1,Did not extract population,1,10,missing the population data,12,0,10,12,10,None,0,1,None,,llama3
+37675772,1,0,10,1,10,None,0,1,None,12,0,10,12,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,12,0,10,12,10,None,0,1,None,,llama3-2
+37675772,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,5,3,Missing 5 outcomes,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,12,0,10,12,10,None,0,1,None,,deepseek
+37675772,1,0,10,1,10,None,0,1,None,12,0,10,12,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details about the dataset,0,1,None,12,0,10,12,10,None,0,1,None,,o4-mini
+37675772,1,0,10,1,10,None,0,1,None,12,0,10,12,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,More details about the dataset,0,1,None,12,0,10,12,10,None,0,1,None,,gpt4-1
+37675772,1,0,10,1,10,None,0,1,None,12,0,10,12,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,More details about the dataset,0,1,None,12,0,10,12,10,None,0,1,None,,gpt_4o
+37675772,1,0,10,1,10,None,0,1,None,12,0,10,12,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details about the dataset,0,1,None,12,0,10,12,10,None,0,1,None,,gpt_5
+37675772,1,0,10,1,10,None,0,1,None,12,0,10,12,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details about the dataset,0,1,None,12,0,10,12,10,None,0,1,None,,gpt_5mini
+34727949,1,0,10,1,10,None,1,2,Did not break down th exposure into constituents,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,More details about the dataset,0,1,None,5,0,10,5,10,None,0,1,None,,llama3
+34727949,3,0,10,3,10,None,0,1,Reports both overall and subcategories of exposure,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,More details about the dataset,0,1,None,6,0,10,6,10,None,0,1,None,,llama3-2
+34727949,2,0,10,2,10,None,0,1,None,2,1,9,1,10,None,0,1,None,2,1,9,1,10,Includes metabolic profiling,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,4,0,10,4,10,None,0,1,None,,deepseek
+34727949,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,4,0,10,4,10,None,0,1,None,,o4-mini
+34727949,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,2,0,10,2,10,None,0,1,None,,gpt4-1
+34727949,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,1,9,1,10,None,1,2,"Includes other category, missing MVR",1,0,10,1,10,more details about the dataset,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_4o
+34727949,2,0,10,2,10,None,0,1,None,5,0,10,5,10,includes subcategories,0,1,None,5,3,7,2,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,10,0,10,10,10,None,0,1,None,,gpt_5
+34727949,3,0,10,3,10,None,0,1,None,4,0,10,4,10,includes subcategories,0,1,None,5,3,7,2,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5mini
+38242214,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,2,0,10,2,10,None,0,1,None,,llama3
+38242214,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,2,0,10,2,10,None,0,1,None,,llama3-2
+38242214,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,4,8,None,1,0,10,1,10,more details about the dataset,0,1,None,2,0,10,2,10,None,0,1,None,,deepseek
+38242214,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,4,0,10,4,10,None,0,1,None,,o4-mini
+38242214,3,0,10,3,10,bidirectional MR,0,1,None,3,0,10,3,10,bidirectional MR,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,4,0,10,4,10,None,0,1,None,,gpt4-1
+38242214,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_4o
+38242214,3,0,10,3,10,bidirectional MR,0,1,None,3,0,10,3,10,bidirectional MR,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5
+38242214,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5mini
+38699385,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+38699385,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,9,0,10,9,10,None,0,1,None,,llama3-2
+38699385,1,1,1,0,1,Extracted SNPs and not exposure,1,10,None,4,1,9,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+38699385,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,3,0,10,3,10,None,0,1,None,,o4-mini
+38699385,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,3,0,10,3,10,None,0,1,None,,gpt4-1
+38699385,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_4o
+38699385,4,3,9,1,10,None,0,1,None,4,1,9,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5
+38699385,1,0,10,1,10,None,0,1,none,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,more details about the dataset,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5mini
+37693321,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,No specific ancestry,0,1,None,3,0,10,3,10,None,0,1,None,includes exposure super category,llama3
+37693321,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No specific ancestry,0,1,None,7,0,10,7,10,None,0,1,None,includes exposure super category,llama3-2
+37693321,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,No specific ancestry,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+37693321,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,No specific ancestry,0,1,None,3,0,10,3,10,None,0,1,None,,o4-mini
+37693321,4,0,10,4,10,bidirectional,0,1,None,4,0,10,4,10,bidirectional,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,No specific ancestry,0,1,None,6,0,10,6,10,None,0,1,None,,gpt4-1
+37693321,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,5,6,Missing subcategories,1,0,10,1,10,No specific ancestry,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_4o
+37693321,4,0,10,4,10,bidirectional,0,1,None,4,0,10,4,10,bidirectional,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,No specific ancestry,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5
+37693321,4,0,10,4,10,bidirectional,0,1,None,4,0,10,4,10,None,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,No specific ancestry,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5mini
+35656325,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,UKB,0,1,None,4,0,10,4,10,None,0,1,None,,llama3
+35656325,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,UKB,0,1,None,6,0,10,6,10,None,0,1,None,,llama3-2
+35656325,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,1,3,None,1,0,10,1,10,UKB,0,1,None,2,0,10,2,10,None,0,1,None,,deepseek
+35656325,8,0,10,8,10,bidirectional,0,1,None,8,0,10,8,10,bidirectional,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,UKB and more details,0,1,None,4,0,10,4,10,None,0,1,None,,o4-mini
+35656325,8,0,10,8,10,bidirectional,0,1,None,8,0,10,8,10,bidirectional,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,UKB and more details,0,1,None,4,0,10,4,10,None,0,1,None,,gpt4-1
+35656325,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,2,8,Missing details for sensitivity analysis,0,1,None,1,0,10,1,10,UKB,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_4o
+35656325,8,0,10,8,10,bidirectional,0,1,None,8,0,10,8,10,bidirectional,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,UKB and more details,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5
+35656325,8,0,10,8,10,bidirectional,0,1,None,8,0,10,8,10,bidirectional,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,UKB and more details,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5mini
+37432894,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Finngen cohort,0,1,None,6,0,10,6,10,None,0,1,None,,llama3
+37432894,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Finngen cohort,0,1,None,6,0,10,6,10,None,0,1,None,,llama3-2
+37432894,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Finngen cohort,0,1,None,7,0,10,7,10,None,0,1,None,,deepseek
+37432894,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Finngen cohort,0,1,None,6,0,10,6,10,None,0,1,None,,o4-mini
+37432894,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Finngen cohort,0,1,None,6,0,10,6,10,None,0,1,None,,gpt4-1
+37432894,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Finngen cohort,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_4o
+37432894,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Finngen cohort and more details,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5
+37432894,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Finngen cohort and more details,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5mini
+38409624,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,No specific ancestry,0,1,None,4,0,10,4,10,None,0,1,None,,llama3
+38409624,4,0,10,4,10,None,3,4,,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,No specific ancestry,0,1,None,7,0,10,7,10,None,0,1,None,,llama3-2
+38409624,2,0,10,2,10,None,5,7,missing exposure subcategories ,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,No specific ancestry,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+38409624,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,No specific ancestry,0,1,None,2,0,10,2,10,None,0,1,None,,o4-mini
+38409624,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,No specific ancestry,0,1,None,7,0,10,7,10,None,0,1,None,,gpt4-1
+38409624,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,1,3,None,1,0,10,1,10,No specific ancestry,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_4o
+38409624,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5
+38409624,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5mini
+38504987,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,1,3,Missing one outcome,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+38504987,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,3,0,10,3,10,None,0,1,None,,llama3-2
+38504987,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,4,0,10,4,10,None,0,1,None,,deepseek
+38504987,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,4,0,10,4,10,None,0,1,None,,o4-mini
+38504987,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,4,0,10,4,10,None,0,1,None,,gpt4-1
+38504987,3,0,10,3,10,None,0,1,None,2,0,10,2,10,broad categories of mortality,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_4o
+38504987,3,0,10,3,10,None,0,1,None,4,0,10,4,10,sub categories of mortality,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5
+38504987,3,0,10,3,10,None,0,1,None,4,0,10,4,10,sub categories of mortality,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5mini
+35703944,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,,llama3
+35703944,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,1,2,Missing sensitivity analysis methods,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,None,0,10,None,,llama3-2
+35703944,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,1,2,Missing sensitivity methods,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,None,0,10,None,,deepseek
+35703944,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,1,9,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,5,0,10,5,10,None,0,10,None,,o4-mini
+35703944,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,1,9,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,5,0,10,5,10,None,0,10,None,,gpt4-1
+35703944,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,None,0,10,None,,gpt_4o
+35703944,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,5,0,10,5,10,None,0,10,None,,gpt_5
+35703944,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,1,9,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,5,0,10,5,10,None,0,10,None,,gpt_5mini
+38584824,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,2,0,10,2,10,None,0,10,None,,llama3
+38584824,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,2,0,10,2,10,None,0,10,None,,llama3-2
+38584824,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,2,0,10,2,10,None,0,10,None,,deepseek
+38584824,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,2,0,10,2,10,None,0,10,None,,o4-mini
+38584824,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,2,0,10,2,10,None,0,10,None,,gpt4-1
+38584824,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,2,0,10,2,10,None,0,10,None,,gpt_4o
+38584824,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,2,0,10,2,10,None,0,10,None,,gpt_5
+38584824,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,provides more details on methods,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,2,0,10,2,10,None,0,10,None,,gpt_5mini
+37925898,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,1,0,10,1,10,None,0,10,None,,llama3
+37925898,1,0,10,1,10,None,0,1,None,2,0,10,2,10,provides subcategories of main outcome,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,3,0,10,3,10,None,0,1,None,,llama3-2
+37925898,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,1,0,10,1,10,None,0,10,None,,deepseek
+37925898,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,2,0,10,2,10,None,0,10,None,,o4-mini
+37925898,1,0,10,1,10,Broad COVID19 category,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,1,0,10,1,10,None,0,10,None,,gpt4-1
+37925898,1,0,10,1,10,None,0,1,None,2,0,10,2,10,provides subcategories of main outcome,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,0,0,1,0,1,None,2,10,Did not extract any result,,gpt_4o
+37925898,2,0,10,2,10,None,0,1,None,3,0,10,3,10,provides subcategories of main outcome,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,2,0,10,2,10,None,0,10,None,,gpt_5
+37925898,2,0,10,2,10,None,0,1,None,2,0,10,2,10,provides subcategories of main outcome,0,1,None,4,0,10,4,10,Includes replication analysis,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,2,0,10,2,10,None,0,10,None,,gpt_5mini
+35726641,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,6,0,10,6,10,None,0,1,None,,llama3
+35726641,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,6,0,10,6,10,None,0,1,None,,llama3-2
+35726641,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,deepseek
+35726641,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,9,0,10,9,10,None,0,1,None,,o4-mini
+35726641,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,9,0,10,9,10,None,0,1,None,,gpt4-1
+35726641,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,4,0,10,4,10,Includes other category,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_4o
+35726641,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_5
+35726641,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,10,0,10,10,10,None,0,1,None,,gpt_5mini
+35594314,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,1,0,10,1,10,None,0,1,None,,llama3
+35594314,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,3,0,10,3,10,None,0,1,None,,llama3-2
+35594314,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+35594314,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,3,0,10,3,10,None,0,1,None,,o4-mini
+35594314,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,1,0,10,1,10,None,0,1,None,,gpt4-1
+35594314,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_4o
+35594314,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_5
+35594314,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_5mini
+38030236,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,2,0,10,2,10,None,0,1,None,,llama3
+38030236,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,4,0,10,4,10,None,0,1,None,,llama3-2
+38030236,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+38030236,2,0,10,2,10,Includes subcategories,0,1,None,3,0,10,3,10,None,0,1,None,2,1,9,1,10,includes other event mining ,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,0,0,1,0,1,None,4,10,Did not extract anay result,,o4-mini
+38030236,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,1,9,1,10,includes other event mining ,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,5,0,10,5,10,None,0,1,None,,gpt4-1
+38030236,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_4o
+38030236,2,0,10,2,10,Includes subcategories,0,1,None,3,0,10,3,10,None,0,1,None,2,1,9,1,10,includes other event mining ,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,8,0,10,8,10,None,0,1,None,,gpt_5
+38030236,3,0,10,3,10,Includes subcategories,,,,3,0,10,3,10,None,0,1,None,2,1,9,1,10,includes other event mining ,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5mini
+37718242,2,0,10,2,10,Includes subcategories,0,1,None,2,0,10,2,10,Includes the subcategories,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,2,0,10,2,10,None,0,1,None,,llama3
+37718242,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,2,0,10,2,10,None,0,1,None,,llama3-2
+37718242,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,0,0,1,0,1,Did not extract at all,9,10,Missing all methods,0,0,1,0,1,No specific population and characetristics of dataset are limited,1,10,Did not extract population results,2,0,10,2,10,None,0,1,None,,deepseek
+37718242,2,0,10,2,10,Includes subcategories,0,1,None,2,0,10,2,10,Includes the subcategories,0,1,None,11,0,10,11,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,2,0,10,2,10,None,0,1,None,,o4-mini
+37718242,2,0,10,2,10,Includes subcategories,0,1,None,2,0,10,2,10,Includes the subcategories,0,1,None,6,0,10,6,10,None,4,5,Missing a few sensitivity methods,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,2,0,10,2,10,None,0,1,None,,gpt4-1
+37718242,2,0,10,2,10,Includes subcategories,0,1,None,2,0,10,2,10,Includes the subcategories,0,1,None,3,0,10,3,10,None,7,8,Missing subcategories,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_4o
+37718242,2,0,10,2,10,Includes subcategories,0,1,None,2,0,10,2,10,Includes the subcategories,0,1,None,11,0,10,11,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_5
+37718242,3,0,10,3,10,Includes subcategories,0,1,None,3,0,10,3,10,Includes the subcategories,0,1,None,11,0,10,11,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_5mini
+32714368,3,0,10,3,10,None,0,1,None,7,0,10,7,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,8,0,10,8,10,None,0,1,None,,llama3
+32714368,3,0,10,3,10,None,0,1,None,7,0,10,7,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,10,0,10,10,10,None,0,1,None,,llama3-2
+32714368,2,0,10,2,10,None,3,8,Just presents the blanket exposure from title,2,0,10,2,10,None,7,8,extracted the blanket outcome in title,4,0,10,4,10,None,3,4,missing sensitivity methods,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,10,0,10,10,10,None,0,1,None,,deepseek
+32714368,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,10,0,10,10,10,None,0,1,None,,o4-mini
+32714368,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,10,0,10,10,10,None,0,1,None,,gpt4-1
+32714368,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,4,0,10,4,10,None,3,4,missing sensitivity methods,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,10,0,10,10,10,None,0,1,None,,gpt_4o
+32714368,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,10,0,10,10,10,None,0,1,None,,gpt_5
+32714368,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,No specific population and characetristics of dataset are limited,0,1,None,10,0,10,10,10,None,0,1,None,,gpt_5mini
+35011056,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,llama3
+35011056,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,llama3-2
+35011056,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,deepseek
+35011056,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,o4-mini
+35011056,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,gpt4-1
+35011056,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_4o
+35011056,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5
+35011056,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5mini
+34023889,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,,llama3
+34023889,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,llama3-2
+34023889,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,1,5,Missing one outcome,3,1,9,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,2,0,10,2,10,None,0,1,None,,deepseek
+34023889,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,o4-mini
+34023889,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,gpt4-1
+34023889,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,2,10,No details on other category,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_4o
+34023889,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5
+34023889,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5mini
+36936171,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,,llama3
+36936171,4,0,10,4,10,Includes exposure supercategory,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,,llama3-2
+36936171,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+36936171,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,2,0,10,2,10,None,0,1,None,,o4-mini
+36936171,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,2,0,10,2,10,None,0,1,None,,gpt4-1
+36936171,1,0,10,1,10,None,2,3,Missing subcategories,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,1,0,10,1,10,None,0,1,None,,gpt_4o
+36936171,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_5
+36936171,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_5mini
+36738839,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,,llama3
+36738839,5,1,10,4,10,Includes mediators,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No specific ancestry but some general dataset charecteristics,0,1,None,8,0,10,8,10,None,0,1,None,,llama3-2
+36738839,7,3,10,4,10,includes mediators,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No specific ancestry but some general dataset charecteristics,0,1,None,7,0,10,7,10,None,0,1,None,,deepseek
+36738839,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,o4-mini
+36738839,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt4-1
+36738839,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_4o
+36738839,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_5
+36738839,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_5mini
+37822602,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No specific ancestry but some general dataset charecteristics,0,1,None,2,0,10,2,10,None,0,1,None,,llama3
+37822602,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,No specific ancestry but some general dataset charecteristics,0,1,None,4,0,10,4,10,None,0,1,None,,llama3-2
+37822602,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,2,5,Missing some two outcomes,6,0,10,6,10,None,0,1,None,1,0,10,1,10,No specific ancestry but some general dataset charecteristics,0,1,None,2,0,10,2,10,None,0,1,None,,deepseek
+37822602,2,0,10,2,10,includes subcategories,0,1,None,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,2,0,10,2,10,None,0,1,None,,o4-mini
+37822602,3,0,10,3,10,includes subcategories,0,1,None,4,0,10,4,10,None,0,1,None,11,0,10,11,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,2,0,10,2,10,None,0,1,None,,gpt4-1
+37822602,1,0,10,1,10,None,0,1,None,5,0,10,5,10,includes broad category,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No specific ancestry but some general dataset charecteristics,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_4o
+37822602,3,0,10,3,10,includes subcategories,0,1,None,4,0,10,4,10,None,0,1,None,12,0,10,12,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_5
+37822602,3,0,10,3,10,includes subcategories,0,1,None,4,0,10,4,10,None,0,1,None,12,0,10,12,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_5mini
+32529581,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific ancestry but some general dataset charecteristics,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+32529581,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific ancestry but some general dataset charecteristics,0,1,None,4,0,10,4,10,None,0,1,None,,llama3-2
+32529581,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific ancestry but some general dataset charecteristics,0,1,None,2,0,10,2,10,None,0,1,None,,deepseek
+32529581,4,0,10,4,10,includes subcategories,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,2,0,10,2,10,None,0,1,None,,o4-mini
+32529581,2,0,10,2,10,Broad categories,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,2,0,10,2,10,None,0,1,None,,gpt4-1
+32529581,2,0,10,2,10,Broad categories,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific ancestry but some general dataset charecteristics,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_4o
+32529581,4,0,10,4,10,includes subcategories,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5
+32529581,4,0,10,4,10,includes subcategories,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_5mini
+36793015,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,4,6,Does not report outcome subcategories,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific ancestry but some general dataset charecteristics,0,1,None,4,0,10,4,10,None,0,1,None,,llama3
+36793015,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,1,3,None,1,0,10,1,10,No specific ancestry but some general dataset charecteristics,0,1,None,3,0,10,3,10,None,0,1,None,,llama3-2
+36793015,2,1,10,1,10,None,0,1,None,0,0,1,0,1,None,1,10,Did not extract instead the outcome is classified under exposure,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No specific ancestry but some general dataset charecteristics,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+36793015,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,3,0,10,3,10,None,0,1,None,Bidirectional MR,o4-mini
+36793015,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,3,0,10,3,10,None,0,1,None,Bidirectional MR,gpt4-1
+36793015,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,Does not extract subcategories of the outcome,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No specific ancestry and empty list,0,1,None,3,0,10,3,10,None,0,1,None,Extracted exposure and outcome for forward MR only,gpt_4o
+36793015,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,Includes subcategories,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,3,0,10,3,10,None,0,1,None,Bidirectional MR,gpt_5
+36793015,4,0,10,4,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,3,0,10,3,10,None,0,1,None,Bidirectional MR,gpt_5mini
+36909950,1,0,10,1,10,Reports the exposure super category,6,8,missing exposure subcategories,1,0,10,1,10,None,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,No specific ancestry and empty list,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+36909950,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,8,0,10,8,10,None,0,1,None,,llama3-2
+36909950,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,7,0,10,7,10,None,0,1,None,,deepseek
+36909950,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,o4-mini
+36909950,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt4-1
+36909950,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_4o
+36909950,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_5
+36909950,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_5mini
+36514134,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,European and East Asian ,0,1,None,7,0,10,7,10,None,0,1,None,,llama3
+36514134,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,European and East Asian ,0,1,None,7,0,10,7,10,None,0,1,None,,llama3-2
+36514134,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,1,3,missing overall cancer outcome,2,1,9,1,10,None,0,1,None,2,0,10,2,10,European and East Asian ,0,1,None,7,0,10,7,10,None,0,1,None,,deepseek
+36514134,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,European and East Asian and more details,0,1,None,7,0,10,7,10,None,0,1,None,,o4-mini
+36514134,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,2,1,9,1,10,None,0,1,None,2,0,10,2,10,European and East Asian and more details,0,1,None,7,0,10,7,10,None,0,1,None,,gpt4-1
+36514134,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,1,3,missing overall cancer outcome,2,1,9,1,10,None,0,1,None,2,0,10,2,10,European and East Asian ,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_4o
+36514134,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,2,1,9,1,10,None,0,1,None,2,0,10,2,10,European and East Asian and more details,0,1,None,10,0,10,10,10,None,0,1,None,,gpt_5
+36514134,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,2,1,9,1,10,None,0,1,None,2,0,10,2,10,European and East Asian and more details,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5mini
+37829610,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,none,0,1,None,,llama3
+37829610,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,none,0,1,None,,llama3-2
+37829610,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,0,0,1,0,1,Did not extract at all,7,10,None,0,0,1,0,1,None,1,10,Did not extract population,3,0,10,3,10,none,0,1,None,,deepseek
+37829610,2,0,10,2,10,None,0,1,None,4,0,10,4,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,1,0,10,1,10,None,0,1,None,,o4-mini
+37829610,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,1,0,10,1,10,None,0,1,None,,gpt4-1
+37829610,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,Empty list,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_4o
+37829610,2,0,10,2,10,None,0,1,None,4,0,10,4,10,None,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,1,0,10,1,10,None,0,1,None,,gpt_5
+37829610,2,0,10,2,10,None,0,1,None,4,0,10,4,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5mini
+38782862,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,,llama3
+38782862,1,0,10,1,10,None,0,1,None,4,0,10,4,10,includes outcome supercategory,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,10,0,10,10,10,None,0,1,None,,llama3-2
+38782862,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,1,2,Missing out one outcome ,3,1,9,2,10,None,3,5,Missing sensitivity methods,1,0,10,1,10,No information provided,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+38782862,2,1,9,1,10,BMI is a mediator,0,1,None,3,0,10,3,10,None,1,2,Missing out one outcome ,5,0,10,5,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,9,0,10,9,10,None,0,1,None,,o4-mini
+38782862,1,0,10,1,10,None,0,1,None,4,0,10,4,10,includes outcome supercategory,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,11,0,10,11,10,None,0,1,None,,gpt4-1
+38782862,1,0,10,1,10,None,0,1,None,4,0,10,4,10,includes outcome supercategory,0,1,None,4,2,8,2,10,None,3,1,None,1,0,10,1,10,Details on dataset,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_4o
+38782862,2,1,9,1,10,BMI is a mediator,0,1,None,4,0,10,4,10,includes outcome supercategory,0,1,None,5,0,10,5,10,None,0,1,none,1,0,10,1,10,Details on dataset,0,1,None,14,0,10,14,10,None,0,1,None,,gpt_5
+38782862,2,1,9,1,10,BMI is a mediator,0,1,None,4,0,10,4,10,includes outcome supercategory,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,13,0,10,13,10,None,0,1,None,,gpt_5mini
+35761866,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,East Asian,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+35761866,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,East Asian,0,1,None,4,0,10,4,10,None,0,1,None,,llama3-2
+35761866,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,East Asian,0,1,None,1,0,10,1,10,None,0,1,None,,deepseek
+35761866,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,East Asian,0,1,None,4,0,10,4,10,None,0,1,None,Bidirectional MR,o4-mini
+35761866,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,East Asian,0,1,None,3,0,10,3,10,None,0,1,None,Bidirectional MR,gpt4-1
+35761866,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,East Asian,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_4o
+35761866,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,East Asian,0,1,None,4,0,10,4,10,None,0,1,None,Bidirectional MR,gpt_5
+35761866,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,East Asian,0,1,None,4,0,10,4,10,None,0,1,None,Bidirectional MR,gpt_5mini
+37409643,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,1,2,None,1,0,10,1,10,European,0,1,None,8,0,10,8,10,None,0,1,None,,llama3
+37409643,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,1,2,None,1,0,10,1,10,European,0,1,None,8,0,10,8,10,None,0,1,None,,llama3-2
+37409643,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,European,0,1,None,8,0,10,8,10,None,0,1,None,,deepseek
+37409643,5,0,10,5,10,Broad and subcategories only with regard to bidirectional MR,0,1,None,5,0,10,5,10,Broad and subcategories only with regard to bidirectional MR,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,European,0,1,None,8,0,10,8,10,None,0,1,None,,o4-mini
+37409643,2,0,10,2,10,Broad categories only with regard to bidirectional MR,0,1,None,2,0,10,2,10,Broad categories only with regard to bidirectional MR,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,European,0,1,None,8,0,10,8,10,None,0,1,None,,gpt4-1
+37409643,2,0,10,2,10,Broad categories only with regard to bidirectional MR,0,1,None,2,0,10,2,10,Broad categories only with regard to bidirectional MR,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,European,0,1,None,8,0,10,8,10,None,0,1,None,,gpt_4o
+37409643,5,0,10,5,10,Broad and subcategories only with regard to bidirectional MR,0,1,None,6,0,10,6,10,Broad and subcategories only with regard to bidirectional MR,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,European,0,1,None,8,0,10,8,10,None,0,1,None,,gpt_5
+37409643,5,0,10,5,10,Broad and subcategories only with regard to bidirectional MR,0,1,None,5,0,10,5,10,Broad and subcategories only with regard to bidirectional MR,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,European,0,1,None,8,0,10,8,10,None,0,1,None,,gpt_5mini
+32433745,4,0,10,4,10,None,1,3,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,4,0,10,4,10,None,0,1,None,,llama3
+32433745,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,llama3-2
+32433745,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,1,9,2,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,deepseek
+32433745,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,o4-mini
+32433745,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,gpt4-1
+32433745,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,1,9,1,10,None,1,2,None,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_4o
+32433745,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5
+32433745,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5mini
+33657885,1,1,1,0,1,No abstract but responde1d with incorrect information,1,10,No proper data for this paper,2,2,1,0,1,No proper details,1,10,Hallucinated results,1,1,1,0,1,No proper details,1,10,Hallucinated results,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,No abstract,0,10,None,Hallucinated on the same content,llama3
+33657885,3,3,1,0,1,No abstract but responde1d with incorrect information,1,10,No proper data for this paper,4,4,1,0,1,No proper details,1,10,Hallucinated results,4,4,1,0,1,No proper details,1,10,Hallucinated results,1,1,1,0,1,No proper details,1,10,Hallucinated results,0,0,1,0,1,No abstract,0,10,Hallucinated results,Hallucinated on the same content,llama3-2
+33657885,0,0,1,0,1,No abstract,1,10,No proper data for this paper,0,0,1,0,1,No proper details,1,10,Hallucinated results,0,0,1,0,1,No proper details,1,10,Hallucinated results,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,No abstract,0,10,Hallucinated results,Hallucinated on the same content,deepseek
+33657885,0,0,1,0,1,No abstract,1,10,Missing abstract,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,,o4-mini
+33657885,0,0,1,0,1,No abstract,1,10,Missing abstract,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,,gpt4-1
+33657885,0,0,1,0,1,No abstract,1,10,Missing abstract,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,,gpt_4o
+33657885,0,0,1,0,1,No abstract,1,10,Missing abstract,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,,gpt_5
+33657885,0,0,1,0,1,No abstract,1,10,Missing abstract,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,0,0,1,0,1,missing abstract,0,1,No abstarct and returned empty lists,,gpt_5mini
+38746746,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,7,0,10,7,10,None,0,1,None,,llama3
+38746746,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,7,0,10,7,10,None,0,1,None,,llama3-2
+38746746,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,7,0,10,7,10,None,0,1,None,,deepseek
+38746746,7,0,10,7,10,Subcategories of gut microbiota,0,1,None,2,0,10,2,10,None,0,1,None,11,0,10,11,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,7,0,10,7,10,None,0,1,None,,o4-mini
+38746746,1,0,10,1,10,None,0,1,None,1,0,10,1,10,combines the two outcomes,0,1,None,11,0,10,11,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,7,0,10,7,10,None,0,1,None,,gpt4-1
+38746746,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,7,8,None,1,0,10,1,10,Not known ancestry,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_4o
+38746746,7,0,10,7,10,Subcategories of gut microbiota,0,1,None,1,0,10,1,10,combines the two outcomes,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5
+38746746,7,0,10,7,10,Subcategories of gut microbiota,0,1,None,1,0,10,1,10,combines the two outcomes,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5mini
+36247759,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,European,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+36247759,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,European,0,1,None,4,0,10,4,10,None,0,1,None,,llama3-2
+36247759,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,European,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+36247759,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,European,0,1,None,3,0,10,3,10,None,0,1,None,,o4-mini
+36247759,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,European,0,1,None,3,0,10,3,10,None,0,1,None,,gpt4-1
+36247759,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,4,6,Missing sensitivity analysis methods,1,0,10,1,10,European,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_4o
+36247759,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,European,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_5
+36247759,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,European,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_5mini
+37422736,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+37422736,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,European,0,1,None,9,0,10,9,10,None,0,1,None,,llama3-2
+37422736,2,1,9,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,2,5,Missing sensitivity methods,1,0,10,1,10,European,0,1,None,2,0,10,2,10,None,0,1,None,,deepseek
+37422736,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,2,5,Missing sensitivity methods,1,0,10,1,10,European,0,1,None,2,0,10,2,10,None,0,1,None,,o4-mini
+37422736,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,European,0,1,None,5,0,10,5,10,None,0,1,None,,gpt4-1
+37422736,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,European,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_4o
+37422736,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,European,0,1,None,8,0,10,8,10,None,0,1,None,,gpt_5
+37422736,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,European,0,1,None,8,0,10,8,10,None,0,1,None,,gpt_5mini
+36924037,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,4,8,Missing sensitivity methods,1,0,10,1,10,European,0,1,None,5,0,10,5,10,None,0,1,None,,llama3
+36924037,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,4,8,Missing sensitivity methods,1,0,10,1,10,European,0,1,None,7,0,10,7,10,None,0,1,None,,llama3-2
+36924037,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,5,0,10,4,9,None,0,1,None,1,0,10,1,10,European,0,1,None,7,0,10,7,10,None,0,1,None,,deepseek
+36924037,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,European,0,1,None,5,0,10,5,10,None,0,1,None,,o4-mini
+36924037,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,European,0,1,None,8,0,10,8,10,None,0,1,None,,gpt4-1
+36924037,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,2,0,10,2,10,None,3,5,Missing subcategories,1,0,10,1,10,European,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_4o
+36924037,8,0,10,8,10,None,0,1,None,8,0,10,8,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,European,0,1,None,7,0,10,7,10,None,0,1,None,Bidirectional MR,gpt_5
+36924037,9,0,10,9,10,None,0,1,None,9,0,10,9,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,European,0,1,None,5,0,10,5,10,None,0,1,None,Bidirectional MR,gpt_5mini
+37916108,1,0,10,1,10,None,0,1,None,5,0,10,5,10,Includes outcome supercategory,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific ancestry and empty list,0,1,None,2,0,10,2,10,None,0,1,None,,llama3
+37916108,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,5,0,10,5,10,None,0,1,None,,llama3-2
+37916108,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No specific ancestry but more details on general dataset charecteristics,0,1,None,5,0,10,5,10,None,0,1,None,,deepseek
+37916108,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,o4-mini
+37916108,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt4-1
+37916108,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_4o
+37916108,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_5
+37916108,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_5mini
+38716647,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,9,0,10,9,10,None,0,1,None,,llama3
+38716647,7,0,10,7,10,None,1,2,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,9,0,10,9,10,None,0,1,None,,llama3-2
+38716647,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,11,9,7,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,9,0,10,9,10,None,0,1,None,,deepseek
+38716647,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,9,0,10,9,10,None,0,1,None,,o4-mini
+38716647,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,European,0,1,None,9,0,10,9,10,None,0,1,None,,gpt4-1
+38716647,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,European,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_4o
+38716647,8,0,10,8,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,European,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_5
+38716647,9,0,10,9,10,Includes genetic liability,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,European,0,1,None,11,0,10,11,10,None,0,1,None,,gpt_5mini
+37565992,1,0,10,1,10,Provides details on specific amino acids,0,1,None,1,0,10,1,10,Provides details on specific neurodegenerative diseases,0,1,None,2,0,10,2,10,None,1,3,Missing one method,1,0,10,1,10,Not known ancestry,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+37565992,9,0,10,9,10,Provides all the amino acids under study,0,1,None,6,0,10,6,10,Provides details on specific neurodegenerative diseases,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,3,0,10,3,10,None,0,1,None,,llama3-2
+37565992,1,0,10,1,10,Provides details on specific amino acids,0,1,None,7,0,10,1,10,Provides details on specific neurodegenerative diseases sub and superegory,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+37565992,9,0,10,9,10,Provides all the amino acids under study,0,1,None,6,0,10,6,10,Provides details on specific neurodegenerative diseases,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,3,0,10,3,10,None,0,1,None,,o4-mini
+37565992,9,0,10,9,10,Provides all the amino acids under study,0,1,None,6,0,10,6,10,Provides details on specific neurodegenerative diseases,0,1,None,2,0,10,2,10,None,1,2,Missing sensitivity analysis,1,0,10,1,10,Not known ancestry,0,1,None,3,0,10,3,10,None,0,1,None,,gpt4-1
+37565992,9,0,10,9,10,Provides all the amino acids under study,0,1,None,6,0,10,6,10,Provides details on specific neurodegenerative diseases,0,1,None,2,0,10,2,10,None,1,2,Missing sensitivity analysis,1,0,10,1,10,Not known ancestry,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_4o
+37565992,9,0,10,9,10,Provides all the amino acids under study,0,1,None,6,0,10,6,10,Provides details on specific neurodegenerative diseases,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_5
+37565992,9,0,10,9,10,Provides all the amino acids under study,0,1,None,6,0,10,6,10,Provides details on specific neurodegenerative diseases,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_5mini
+38263277,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,1,0,10,1,10,None,0,1,None,Very good at categorising cancers as neoplasm,llama3
+38263277,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,4,0,10,4,10,None,0,1,None,Very good at categorising cancers as neoplasm,llama3-2
+38263277,2,1,9,1,10,Includes SNPs as exposure,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,1,0,10,1,10,None,0,1,None,Very good at categorising cancers as neoplasm,deepseek
+38263277,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,1,0,10,1,10,None,0,1,None,,o4-mini
+38263277,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,1,0,10,1,10,None,0,1,None,,gpt4-1
+38263277,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,3,5,None,1,0,10,1,10,Not known ancestry,0,1,None,1,0,10,1,10,None,0,1,None,,gpt_4o
+38263277,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,1,0,10,1,10,None,0,1,None,,gpt_5
+38263277,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,8,0,10,8,10,None,0,1,None,,gpt_5mini
+35615025,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,methods review paper,llama3
+35615025,1,1,1,1,1,"methods review paper, model hallucinated",0,1,None,1,1,1,1,1,Hallucinated,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,methods review paper,llama3-2
+35615025,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,methods review paper,deepseek
+35615025,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,methods review paper,o4-mini
+35615025,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,methods review paper,gpt4-1
+35615025,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,methods review paper,gpt_4o
+35615025,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,methods review paper,gpt_5
+35615025,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,methods review paper,gpt_5mini
+38280379,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,European,0,1,None,1,0,10,1,10,None,0,1,None,,llama3
+38280379,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,European,0,1,None,2,0,10,2,10,None,0,1,None,,llama3-2
+38280379,1,0,10,1,10,None,0,1,None,2,1,9,1,10,Keeps extracting SNPs as exposure,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,European,0,1,None,2,0,10,2,10,None,0,1,None,,deepseek
+38280379,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,2,0,10,2,10,None,0,1,None,,o4-mini
+38280379,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,2,0,10,2,10,None,0,1,None,,gpt4-1
+38280379,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_4o
+38280379,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_5
+38280379,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,European,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_5mini
+23900446,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,2,0,10,2,10,None,0,1,None,,llama3
+23900446,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,4,0,10,4,10,None,0,1,None,,llama3-2
+23900446,1,1,3,0,1,Extracted SNPs as exposure,1,9,Missing out the exposure,1,0,10,1,10,None,2,5,Missing two outcomes,2,0,10,2,10,None,0,1,None,0,0,1,0,1,Did not extract at all,1,10,Did not extract any data,3,0,10,3,10,None,0,1,None,,deepseek
+23900446,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,1,3,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,4,0,10,4,10,None,0,1,None,,o4-mini
+23900446,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,1,3,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,4,0,10,4,10,None,0,1,None,,gpt4-1
+23900446,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,0,10,Other category with no details,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_4o
+23900446,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5
+23900446,2,0,10,2,10,Extracts SNPs as exposure,0,1,None,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5mini
+38264282,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,4,0,10,4,10,None,0,1,None,,llama3
+38264282,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,10,0,10,10,10,None,0,1,None,,llama3-2
+38264282,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,14,0,10,14,10,None,0,1,None,,deepseek
+38264282,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,4,0,10,4,10,None,0,1,None,,o4-mini
+38264282,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,16,0,10,16,10,None,0,1,None,,gpt4-1
+38264282,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,7,0,10,5,10,Other category with no details,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_4o
+38264282,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,16,0,10,16,10,None,0,1,None,,gpt_5
+38264282,4,0,10,4,10,None,0,1,None,4,0,10,4,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,16,0,10,16,10,None,0,1,None,,gpt_5mini
+37158995,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Reports the supercategory of outcome Epilepsy,2,2,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,1,0,10,1,10,None,0,1,None,,llama3
+37158995,1,0,10,1,10,None,0,1,None,3,0,10,3,10,Reports outcome subtypes,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,3,0,10,3,10,None,0,1,None,,llama3-2
+37158995,1,0,10,1,10,None,0,1,None,3,0,10,3,10,Reports outcome subtypes,0,1,None,2,0,10,2,10,missing specific methods,5,7,Missing subcategories of methods,1,0,10,1,10,Not known ancestry,0,1,None,2,0,10,2,10,None,0,1,None,,deepseek
+37158995,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Reports the supercategory of outcome Epilepsy,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,1,0,10,1,10,None,0,1,None,,o4-mini
+37158995,1,0,10,1,10,None,0,1,None,2,0,10,2,10,Reports the supercategory  and broad category of outcome Epilepsy,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,2,0,10,2,10,None,0,1,None,,gpt4-1
+37158995,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Reports the supercategory of outcome Epilepsy,0,1,None,3,0,10,3,10,None,6,5,Missing subcategories,1,0,10,1,10,Not known ancestry,0,1,None,1,0,10,1,10,None,0,1,None,,gpt_4o
+37158995,1,0,10,1,10,None,0,1,None,2,0,10,2,10,Reports the supercategory  and broad category of outcome Epilepsy,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_5
+37158995,1,0,10,1,10,None,0,1,None,3,0,10,3,10,Reports the supercategory  and broad category of outcome Epilepsy,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,Not known ancestry,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_5mini
+37668928,1,0,10,1,10,None,0,1,None,11,0,10,11,10,Includes the PCOS supercategory,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,European and East Asian ,0,1,None,1,0,10,1,10,None,0,1,None,,llama3
+37668928,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,European and East Asian ,0,1,None,13,0,10,13,10,None,0,1,None,,llama3-2
+37668928,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,European and East Asian ,0,1,None,10,0,10,10,10,None,0,1,None,,deepseek
+37668928,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,European and East Asian and more details,0,1,None,10,0,10,10,10,None,0,1,None,,o4-mini
+37668928,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,European and East Asian and more details,0,1,None,10,0,10,10,10,None,0,1,None,,gpt4-1
+37668928,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,European and East Asian ,0,1,None,1,0,10,1,10,None,0,1,None,,gpt_4o
+37668928,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,European and East Asian and more details,0,1,None,10,0,10,10,10,None,0,1,None,,gpt_5
+37668928,1,0,10,1,10,None,0,1,None,10,0,10,10,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,European and East Asian and more details,0,1,None,10,0,10,10,10,None,0,1,None,,gpt_5mini
+21282362,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,4,0,10,4,10,None,0,1,None,,llama3
+21282362,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,4,0,10,4,10,None,0,1,None,,llama3-2
+21282362,2,1,9,1,10,Extracts SNPs as exposure,0,1,None,4,0,10,4,10,None,0,1,None,0,0,1,0,1,Method not extracted,0,1,None,0,0,1,0,1,Details on dataset,1,10,Did not extract the population,4,0,10,4,10,None,0,1,None,,deepseek
+21282362,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,o4-mini
+21282362,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,gpt4-1
+21282362,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_4o
+21282362,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5
+21282362,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5mini
+32309857,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Mexican individuals,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+32309857,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Mexican individuals,0,1,None,4,0,10,4,10,None,0,1,None,,llama3-2
+32309857,2,1,9,1,10,Extracts SNPs as exposure,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,Mexican individuals,0,1,None,4,0,10,4,10,None,0,1,None,,deepseek
+32309857,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,o4-mini
+32309857,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt4-1
+32309857,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_4o
+32309857,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_5
+32309857,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_5mini
+32493397,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,5,0,10,5,10,None,0,1,None,,llama3
+32493397,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,11,0,10,11,10,None,0,1,None,,llama3-2
+32493397,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,4,8,Missing 4 outcomes,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,6,0,10,6,10,None,0,1,None,,deepseek
+32493397,2,0,10,2,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,2,0,10,2,10,None,0,1,None,,o4-mini
+32493397,2,0,10,2,10,None,0,1,None,6,0,10,6,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,5,0,10,5,10,None,0,1,None,,gpt4-1
+32493397,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,European,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_4o
+32493397,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,European,0,1,None,10,0,10,10,10,None,0,1,None,,gpt_5
+32493397,4,0,10,4,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,11,0,10,11,10,None,0,1,None,,gpt_5mini
+31733098,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,6,0,10,6,10,None,0,1,None,,llama3
+31733098,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,9,0,10,9,10,None,0,1,None,,llama3-2
+31733098,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,7,0,10,7,10,None,0,1,None,,deepseek
+31733098,10,0,10,10,10,None,0,1,None,10,0,10,10,10,None,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,Details on dataset,0,1,None,6,0,10,6,10,None,0,1,None,Bidirectional MR,o4-mini
+31733098,5,0,10,5,10,None,0,1,None,5,0,10,5,10,None,0,1,None,2,0,10,2,10,None,5,7,missing subcategories,1,0,10,1,10,Details on dataset,0,1,None,10,0,10,10,10,None,0,1,None,Bidirectional MR,gpt4-1
+31733098,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,3,0,10,3,10,None,6,5,Missing subcategories,1,0,10,1,10,Details on dataset,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_4o
+31733098,10,0,10,10,10,None,0,1,None,10,0,10,10,10,None,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,10,0,10,10,10,None,0,1,None,Bidirectional MR,gpt_5
+31733098,10,0,10,10,10,None,0,1,None,10,0,10,10,10,None,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,10,0,10,10,10,None,0,1,None,Bidirectional MR,gpt_5mini
+37789337,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,No specific population mentioned,0,1,None,4,0,10,4,10,None,0,1,None,,llama3
+37789337,1,0,10,1,10,None,0,1,None,3,0,10,,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,No specific population mentioned,0,1,None,5,0,10,5,10,None,0,1,None,,llama3-2
+37789337,1,0,10,1,10,Genetic variants of gut microbiome,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific population mentioned,0,1,None,5,0,10,5,10,None,0,1,None,,deepseek
+37789337,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific population mentioned,0,1,None,2,0,10,2,10,None,0,1,None,,o4-mini
+37789337,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific population mentioned,0,1,None,2,0,10,2,10,None,0,1,None,,gpt4-1
+37789337,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific population mentioned,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_4o
+37789337,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,8,0,10,8,10,None,0,1,None,,gpt_5
+37789337,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_5mini
+37904919,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific population mentioned,0,1,None,9,0,10,9,10,None,0,1,None,provides details of maternal and featal proteome,llama3
+37904919,7,0,10,7,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific population mentioned,0,1,None,11,0,10,11,10,None,0,1,None,provides details of maternal and featal proteome,llama3-2
+37904919,9,0,10,9,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,1,9,2,10,None,0,1,None,1,0,10,1,10,No specific population mentioned,0,1,None,9,0,10,9,10,None,0,1,None,provides details of maternal and featal proteome,deepseek
+37904919,9,0,10,9,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific population mentioned,0,1,None,9,0,10,9,10,None,0,1,None,,o4-mini
+37904919,1,0,10,1,10,subcategories reported together,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No specific population mentioned,0,1,None,9,0,10,9,10,None,0,1,None,,gpt4-1
+37904919,9,0,10,9,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Empty list,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_4o
+37904919,9,0,10,9,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_5
+37904919,9,0,10,9,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,More details on dataset,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_5mini
+38725159,3,2,7,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,5,0,10,5,10,None,0,1,None,,llama3
+38725159,1,0,10,1,9,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,7,0,10,7,10,None,0,1,None,,llama3-2
+38725159,3,0,10,3,10,Includes broad category,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,5,0,10,5,10,None,0,1,None,,deepseek
+38725159,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,o4-mini
+38725159,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt4-1
+38725159,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_4o
+38725159,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_5
+38725159,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_5mini
+38053214,3,0,10,3,10,None,2,5,Missing two exposures,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No specific population mentioned with more detauils,0,1,None,8,0,10,8,10,None,0,1,None,,llama3
+38053214,6,0,10,6,10,Includes broad category,0,1,None,2,0,10,2,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,No specific population mentioned with more detauils,0,1,None,7,0,10,7,10,None,0,1,None,,llama3-2
+38053214,3,0,10,3,10,None,2,5,Missing two exposures,2,0,10,2,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,No specific population mentioned with more detauils,0,1,None,7,0,10,7,10,None,0,1,None,,deepseek
+38053214,6,0,10,6,10,Includes broad category,0,1,None,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,No specific population mentioned with more detauils,0,1,None,7,0,10,7,10,None,0,1,None,,o4-mini
+38053214,6,0,10,6,10,Includes broad category,0,1,None,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,No specific population mentioned with more detauils,0,1,None,9,0,10,9,10,None,0,1,None,,gpt4-1
+38053214,4,0,10,4,10,Includes broad category,2,5,Missing two exposures,3,0,10,3,10,None,0,1,None,4,0,10,2,8,Missing details for other category,0,1,None,1,0,10,1,10,No specific population mentioned,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_4o
+38053214,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,No specific population mentioned with more detauils,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5
+38053214,7,0,10,7,10,Includes Broad category,0,1,None,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,No specific population mentioned with more detauils,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_5mini
+33125193,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,UKB,0,1,None,2,0,10,2,10,None,0,1,None,,llama3
+33125193,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,UKB,0,1,None,5,0,10,5,10,None,0,1,None,,llama3-2
+33125193,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,UKB,0,1,None,2,0,10,2,10,None,0,1,None,,deepseek
+33125193,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,UKB,0,1,None,2,0,10,2,10,None,0,1,None,,o4-mini
+33125193,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,UKB,0,1,None,2,0,10,2,10,None,0,1,None,,gpt4-1
+33125193,3,0,10,3,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,UKB,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_4o
+33125193,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,UKB,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_5
+33125193,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,UKB,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5mini
+38246357,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Chinese,0,1,None,2,0,10,2,10,None,0,1,None,,llama3
+38246357,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Chinese,0,1,None,3,0,10,3,10,None,0,1,None,,llama3-2
+38246357,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Chinese,0,1,None,2,0,10,2,10,None,0,1,None,,deepseek
+38246357,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Chinese,0,1,None,2,0,10,2,10,None,0,1,None,,o4-mini
+38246357,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Chinese,0,1,None,2,0,10,2,10,None,0,1,None,,gpt4-1
+38246357,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Chinese,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_4o
+38246357,2,1,10,1,10,Includes genetic liability,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,Chinese,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_5
+38246357,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,Chinese,0,1,None,3,0,10,3,10,None,0,1,None,,gpt_5mini
+37787818,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,UKB,0,1,None,5,0,10,5,10,None,0,1,None,,llama3
+37787818,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,UKB,0,1,None,6,0,10,6,10,None,0,1,None,,llama3-2
+37787818,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,UKB,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+37787818,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,o4-mini
+37787818,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt4-1
+37787818,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_4o
+37787818,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_5
+37787818,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_5mini
+38765751,9,0,10,9,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No specific population mentioned with more detauils,0,1,None,9,0,10,9,10,None,0,1,None,,llama3
+38765751,9,0,10,9,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,No specific population mentioned with more detauils,0,1,None,9,0,10,9,10,None,0,1,None,,llama3-2
+38765751,8,0,10,8,10,None,1,2,Missing coffee intake,2,1,9,1,10,included coffee intake which is wrong,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No specific population mentioned with more detauils,0,1,None,9,0,10,9,10,None,0,1,None,,deepseek
+38765751,9,0,10,9,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,No specific population mentioned with more detauils,0,1,None,9,0,10,9,10,None,0,1,None,,o4-mini
+38765751,9,0,10,9,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,No specific population mentioned with more detauils,0,1,None,9,0,10,9,10,None,0,1,None,,gpt4-1
+38765751,9,0,10,9,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,No specific population mentioned,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_4o
+38765751,9,0,10,9,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,No specific population mentioned with more detauils,0,1,None,18,0,10,18,10,None,0,1,None,,gpt_5
+38765751,10,0,10,10,10,Includes broad category,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,No specific population mentioned with more detauils,0,1,None,18,0,10,18,10,None,0,1,None,,gpt_5mini
+31908803,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,None,3,5,None,1,0,10,1,10,European,0,1,None,6,0,10,6,10,None,0,1,None,,llama3
+31908803,5,1,9,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,5,1,9,4,10,None,0,1,None,1,0,10,1,10,European,0,1,None,8,0,10,8,10,None,0,1,None,,llama3-2
+31908803,5,1,9,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,European,0,1,None,6,0,10,6,10,None,0,1,None,,deepseek
+31908803,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,7,1,9,6,10,None,0,1,None,1,0,10,1,10,European,0,1,None,6,0,10,6,10,None,0,1,None,,o4-mini
+31908803,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,European,0,1,None,6,0,10,6,10,None,0,1,None,,gpt4-1
+31908803,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,5,1,10,4,10,None,0,1,None,1,0,10,1,10,European,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_4o
+31908803,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,7,1,9,6,10,None,0,1,None,1,0,10,1,10,European,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5
+31908803,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,7,1,9,6,10,None,0,1,None,1,0,10,1,10,European,0,1,None,7,0,10,7,10,None,0,1,None,,gpt_5mini
+37638499,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,0,0,1,0,1,None,3,10,empty list,,llama3
+37638499,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,8,0,10,8,10,None,0,1,None,,llama3-2
+37638499,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,9,0,10,9,10,None,0,1,None,,deepseek
+37638499,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,11,0,10,11,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,0,0,1,0,1,None,3,10,empty list,,o4-mini
+37638499,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,7,6,Missing sesitivity methods,1,0,10,1,10,No mention of a specific population,0,1,None,3,0,10,3,10,None,0,1,None,,gpt4-1
+37638499,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,8,7,Missing subcategories,1,0,10,1,10,No mention of a specific population,0,1,None,0,0,1,0,1,None,3,10,empty list,,gpt_4o
+37638499,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,11,0,10,11,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_5
+37638499,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,11,0,10,11,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_5mini
+38516009,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,1,0,10,1,10,None,0,1,None,,llama3
+38516009,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,1,0,10,1,10,None,0,1,None,,llama3-2
+38516009,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,3,6,None,1,0,10,1,10,No mention of a specific population,0,1,None,1,0,10,1,10,None,0,1,None,,deepseek
+38516009,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,3,6,None,1,0,10,1,10,No mention of a specific population,0,1,None,1,0,10,1,10,None,0,1,None,,o4-mini
+38516009,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,1,0,10,1,10,None,0,1,None,,gpt4-1
+38516009,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,3,6,None,1,0,10,1,10,No mention of a specific population,0,1,None,1,0,10,1,10,None,0,1,None,,gpt_4o
+38516009,2,0,10,2,10,Includes subcategories,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,1,0,10,1,10,None,0,1,None,,gpt_5
+38516009,2,0,10,2,10,Includes subcategories,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,1,0,10,1,10,None,0,1,None,,gpt_5mini
+38576413,2,0,10,2,10,None,0,1,None,6,0,10,6,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,European,0,1,None,3,0,10,3,10,None,0,1,None,,llama3
+38576413,2,0,10,2,10,None,0,1,None,8,0,10,8,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,European,0,1,None,4,0,10,4,10,None,0,1,None,,llama3-2
+38576413,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,3,3,Missing 3 cancers noot in results,5,0,10,5,10,None,0,1,None,1,0,10,1,10,European,0,1,None,3,0,10,3,10,None,0,1,None,,deepseek
+38576413,3,0,10,3,10,Includes broad category,0,1,None,8,0,10,8,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,European,0,1,None,4,0,10,4,10,None,0,1,None,,o4-mini
+38576413,2,0,10,2,10,None,0,1,None,9,0,10,9,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,European,0,1,None,4,0,10,4,10,None,0,1,None,,gpt4-1
+38576413,1,0,10,1,10,Broad category,0,1,None,4,0,10,4,10,None,4,5,Missing four outcomes,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_4o
+38576413,3,0,10,3,10,Includes broad category,0,1,None,8,0,10,8,10,None,0,1,None,10,0,10,10,10,None,0,1,None,1,0,10,1,10,European,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5
+38576413,3,0,10,3,10,Includes broad category,0,1,None,7,0,10,7,10,None,1,2,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,European,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5mini
+35575213,6,0,10,6,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,6,0,10,6,10,None,0,1,None,,llama3
+35575213,6,0,10,6,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,6,0,10,6,10,None,0,1,None,,llama3-2
+35575213,5,0,10,5,10,None,1,2,Missing height as exposure,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,6,0,10,6,10,None,0,1,None,,deepseek
+35575213,9,0,10,9,10,Includes subcategories,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,12,0,10,12,10,None,0,1,None,,o4-mini
+35575213,6,0,10,6,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,12,0,10,12,10,None,0,1,None,,gpt4-1
+35575213,6,0,10,6,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,12,0,10,12,10,None,0,1,None,,gpt_4o
+35575213,16,0,10,16,10,includes subcategories and bidirectional MR,0,1,None,17,0,10,17,10,Includes exposures bcz bidirectional MR,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,12,0,10,12,10,None,0,1,None,,gpt_5
+35575213,12,0,10,12,10,includes subcategories,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,12,0,10,12,10,None,0,1,None,,gpt_5mini
+38646850,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,Finngen,0,1,None,1,0,10,1,10,None,0,1,None,,llama3
+38646850,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,Finngen,0,1,None,1,0,10,1,10,None,0,1,None,,llama3-2
+38646850,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,4,9,Does not recognise methods,1,0,10,1,10,Finngen,0,1,None,1,0,10,1,10,None,0,1,None,,deepseek
+38646850,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,Finngen,0,1,None,2,0,10,2,10,None,0,1,None,,o4-mini
+38646850,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,Finngen,0,1,None,2,0,10,2,10,None,0,1,None,,gpt4-1
+38646850,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,2,4,Missing subcategories,1,0,10,1,10,Finngen,0,1,None,1,0,10,1,10,None,0,1,None,,gpt_4o
+38646850,2,0,10,2,10,Bidirectional MR,0,1,None,2,0,10,2,10,Bidirectional MR,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,Finngen,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_5
+38646850,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,Finngen,0,1,None,2,0,10,2,10,None,0,1,None,,gpt_5mini
+38511766,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,1,2,Missing one sensitivity analysis,1,0,10,1,10,No mention of a specific population,0,1,None,8,0,10,8,10,None,0,1,None,,llama3
+38511766,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,8,0,10,8,10,None,0,1,None,,llama3-2
+38511766,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,Detailed description of subcategories,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,8,0,10,8,10,None,0,1,None,,deepseek
+38511766,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,6,0,10,6,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,8,0,10,8,10,None,0,1,None,,o4-mini
+38511766,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,8,0,10,8,10,None,0,1,None,,gpt4-1
+38511766,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,High level categories only,4,7,Missing specific methods,1,0,10,1,10,No mention of a specific population,0,1,None,8,0,10,8,10,None,0,1,None,,gpt_4o
+38511766,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,12,0,10,12,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,8,0,10,8,10,None,0,1,None,,gpt_5
+38511766,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,12,0,10,12,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,8,0,10,8,10,None,0,1,None,,gpt_5mini
+37052410,0,1,1,0,1,No data,1,10,No data,0,0,1,0,1,No data,2,10,No data,0,0,1,0,1,No data,2,10,No data,0,0,1,0,1,No data,2,10,No data,0,0,1,0,1,No data,2,10,No data,,llama3
+37052410,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No mention of a specific population but with more details,0,1,None,5,0,10,5,10,None,0,1,None,,llama3-2
+37052410,2,1,9,1,10,Duplicates the exposure,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,5,0,10,5,10,None,0,1,None,,deepseek
+37052410,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,4,0,10,4,10,None,0,1,None,,o4-mini
+37052410,1,0,10,1,10,Broad category and subcategories together,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population but with more details,0,1,None,5,0,10,5,10,None,0,1,None,,gpt4-1
+37052410,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,2,1,10,1,10,None,1,3,Missing main method IVW,1,0,10,1,10,No mention of a specific population,0,1,None,4,0,10,4,10,None,0,1,None,,gpt_4o
+37052410,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population but with more details,0,1,None,5,0,10,5,10,None,0,1,None,,gpt_5
+37052410,4,0,10,4,10,None,0,1,None,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population but with more details,0,1,None,8,0,10,8,10,None,0,1,None,,gpt_5mini
+29232439,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,2,0,10,2,10,None,0,1,None,,llama3
+29232439,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,European,0,1,None,2,0,10,2,10,None,0,1,None,,llama3-2
+29232439,1,0,10,1,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,1,10,3,10,Other category is included,0,1,None,1,0,10,1,10,European,0,1,None,2,0,10,2,10,None,0,1,None,,deepseek
+29232439,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,o4-mini
+29232439,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt4-1
+29232439,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_4o
+29232439,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_5
+29232439,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,,gpt_5mini
+34184784,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,European,0,1,None,6,0,10,6,10,None,0,1,None,,llama3
+34184784,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,European,0,1,None,11,0,10,11,10,None,0,1,None,,llama3-2
+34184784,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,European,0,1,None,5,0,10,5,10,None,0,1,None,,deepseek
+34184784,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,European,0,1,None,6,0,10,6,10,None,0,1,None,,o4-mini
+34184784,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,European,0,1,None,6,0,10,6,10,None,0,1,None,,gpt4-1
+34184784,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,European,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_4o
+34184784,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,European,0,1,None,21,0,10,21,10,None,0,1,None,,gpt_5
+34184784,4,0,10,4,10,None,0,1,None,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,1,0,10,1,10,European,0,1,None,6,0,10,6,10,None,0,1,None,,gpt_5mini
+38007229,3,0,10,3,10,Includes broad exposure category,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No mention of a specific population but with more details,0,1,None,5,0,10,5,10,None,0,1,None,,llama3
+38007229,3,0,10,3,10,Includes broad exposure category,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,8,0,10,8,10,None,0,1,None,,llama3-2
+38007229,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,5,0,10,5,10,None,0,1,None,,deepseek
+38007229,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No mention of a specific population but with more details,0,1,None,19,0,10,19,10,None,0,1,None,,o4-mini
+38007229,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,7,0,10,7,10,None,0,1,None,,gpt4-1
+38007229,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,Empty list,0,1,None,9,0,10,9,10,None,0,1,None,,gpt_4o
+38007229,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,4,0,10,4,10,None,0,1,None,1,0,10,1,10,No mention of a specific population but with more details,0,1,None,16,0,10,16,10,None,0,1,None,,gpt_5
+38007229,2,0,10,2,10,None,0,1,None,3,0,10,3,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population but with more details,0,1,None,16,0,10,16,10,None,0,1,None,,gpt_5mini
+38293563,1,0,10,1,10,None,0,1,None,6,0,10,6,10,includes broad outcome category,0,1,None,2,0,10,2,10,None,0,1,None,1,0,10,1,10,No mention of a specific population but with more details,0,1,None,5,0,10,5,11,None,0,1,None,,llama3
+38293563,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,8,0,10,8,12,None,0,1,None,,llama3-2
+38293563,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,5,0,10,5,13,None,0,1,None,,deepseek
+38293563,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Empty list,0,1,None,9,0,10,9,14,None,0,1,None,,o4-mini
+38293563,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Empty list,0,1,None,9,0,10,9,15,None,0,1,None,,gpt4-1
+38293563,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,Empty list,0,1,None,5,0,10,5,16,None,0,1,None,,gpt_4o
+38293563,1,0,10,1,10,None,0,1,None,5,0,10,5,10,None,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population but with more details,0,1,None,14,0,10,14,17,None,0,1,None,,gpt_5
+38293563,1,0,10,1,10,None,0,1,None,6,0,10,6,10,Includes broad category,0,1,None,3,0,10,3,10,None,0,1,None,1,0,10,1,10,No mention of a specific population but with more details,0,1,None,14,0,10,14,18,None,0,1,None,,gpt_5mini
+34025845,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No mention of a specific population but with more details,0,1,None,5,0,10,5,19,None,0,1,None,,llama3
+34025845,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,7,0,10,7,20,None,0,1,None,,llama3-2
+34025845,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,No mention of a specific population,0,1,None,5,0,10,5,21,None,0,1,None,,deepseek
+34025845,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,7,0,10,7,10,None,0,1,None,1,0,10,1,10,Empty list,0,1,None,5,0,10,5,22,None,0,1,None,,o4-mini
+34025845,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,8,0,10,8,10,None,0,1,None,1,0,10,1,10,Empty list,0,1,None,5,0,10,5,23,None,0,1,None,,gpt4-1
+34025845,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,3,0,10,3,10,Broad categories,0,1,None,1,0,10,1,10,Empty list,0,1,None,5,0,10,5,24,None,0,1,None,,gpt_4o
+34025845,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,No mention of a specific population but with more details,0,1,None,5,0,10,5,25,None,0,1,None,,gpt_5
+34025845,5,0,10,5,10,None,0,1,None,1,0,10,1,10,None,0,1,None,9,0,10,9,10,None,0,1,None,1,0,10,1,10,No mention of a specific population but with more details,0,1,None,5,0,10,5,26,None,0,1,None,,gpt_5mini
