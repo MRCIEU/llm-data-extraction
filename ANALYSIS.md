@@ -438,6 +438,54 @@ ______________________________________________________________________
 
 ## Analysis
 
+### Assessment data processing
+
+Process reviewer assessment data from independent evaluations of LLM extraction performance.
+
+Script: `scripts/python/analysis/process-assessment-data.py`
+
+Available flags:
+
+- `--reviewer-1-xlsx`: Path to reviewer 1 Excel file (default: `data/assets/assessment-reviews/assessment-reviewer-1.xlsx`)
+- `--reviewer-1-sheets`: Path to file containing reviewer 1 sheet names (default: `data/assets/assessment-reviews/reviewer-1-sheets.txt`)
+- `--reviewer-1-columns`: Path to file containing reviewer 1 column names (default: `data/assets/assessment-reviews/reviewer-1-columns.txt`)
+- `--reviewer-2-csv`: Path to reviewer 2 CSV file (default: `data/assets/assessment-reviews/assessment-reviewer-2.csv`)
+- `--output-dir`: Directory for output files (default: `data/artifacts/assessment-results`)
+- `--dry-run`: Show what would be done without executing
+
+Run with justfile:
+
+```bash
+just -f justfile-processing process-assessment-data
+```
+
+Or run directly:
+
+```bash
+python scripts/python/analysis/process-assessment-data.py
+```
+
+Processing steps:
+
+1. Load reviewer 1 data from Excel file (multiple sheets, one per model)
+2. Load reviewer 2 data from CSV file (all models in one file)
+3. Harmonize model names across both reviewers (e.g., "deepseek-r1-distilled" to "deepseek-r1", "gpt4-1" to "gpt-4-1")
+4. Set appropriate data types (string vs numeric columns)
+5. Split into numeric and string datasets for separate analysis
+
+Input files:
+
+- `data/assets/assessment-reviews/assessment-reviewer-1.xlsx` (multiple sheets)
+- `data/assets/assessment-reviews/assessment-reviewer-2.csv` (single file)
+
+Output files:
+
+- `data/artifacts/assessment-results/assessment-results-numeric.csv` (numeric columns + pmid + model)
+- `data/artifacts/assessment-results/assessment-results-strings.csv` (string columns: pmid, model, comment, Q-*-b-3, Q-*-c-3)
+
+The script consolidates assessment results from two independent reviewers who evaluated LLM extraction performance across multiple models.
+String columns include free-text responses from specific question categories.
+
 ### Standard analysis samples
 
 #### Sample generation

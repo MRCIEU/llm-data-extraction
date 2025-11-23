@@ -198,6 +198,19 @@ ______________________________________________________________________
 
 ## Assets (data/assets)
 
+### assessment-reviews/
+
+Raw assessment data from independent reviewers evaluating LLM extraction performance.
+
+Files:
+
+- `assessment-reviewer-1.xlsx` — Reviewer 1 assessments (multi-sheet Excel file, one sheet per model)
+- `assessment-reviewer-2.csv` — Reviewer 2 assessments (single CSV file with all models)
+- `reviewer-1-sheets.txt` — List of sheet names in reviewer 1 Excel file
+- `reviewer-1-columns.txt` — Column names for reviewer 1 data
+
+These raw assessment files are processed by `process-assessment-data.py` to produce consolidated results.
+
 ### data-schema/
 
 Schemas and example data for validating processed results.
@@ -211,6 +224,17 @@ ______________________________________________________________________
 ## Artifacts (data/artifacts)
 
 Reserved for publication-ready exports and derived artifacts.
+
+### assessment-results/
+
+Processed assessment data from independent reviewer evaluations of LLM extraction performance.
+
+Produced by: `scripts/python/analysis/process-assessment-data.py` (see `ANALYSIS.md`)
+
+Files:
+
+- `assessment-results-numeric.csv` — Numeric assessment scores with pmid and model identifiers
+- `assessment-results-strings.csv` — String assessment data including free-text comments and question responses (Q-*-b-3, Q-*-c-3 columns)
 
 ______________________________________________________________________
 

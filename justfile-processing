@@ -38,6 +38,11 @@ process-llm-batch-results-sp:
 
 # ==== analysis ====
 
+# Process reviewer assessment data
+[group('analysis')]
+process-assessment-data:
+    python scripts/python/analysis/process-assessment-data.py
+
 # analysis sample: trial
 [group('data-processing')]
 analysis-sample-trial:

@@ -1,0 +1,1601 @@
+pmid,model,comment,Q-1-b-3,Q-1-c-3,Q-2-b-3,Q-2-c-3,Q-3-b-3,Q-3-c-3,Q-4-b-3,Q-4-c-3,Q-5-b-3,Q-5-c-3
+30167974,llama3,,-,-,-,-,-,-,-,-,The model added on additional decimal places to the Egger results ,The model has missed the bonferroni corrected result
+38179043,llama3,,could detail microbiome taxa,missed the reverse MR,-,missed cholesterol and reverse MR,-,-,-,-,-,Reverse MR results not reported
+36104772,llama3,,-,-,-,-,-,-,no details on numbers,-,repeated result and lacks info on exposure type,-
+36305497,llama3,,-,-,-,-,-,reverse MR missing,no details on numbers,-,-,-
+38365715,llama3,,-,-,-,-,-,-,-,-,-,-
+34088753,llama3,,-,-,-,-,-,-,no details on numbers,-,-,-
+36773317,llama3,,-,-,-,-,missing MR type,-,no details on numbers,-,-,Missing some results 
+33408737,llama3,,-,-,-,-,-,-,-,-,needed info on method used per result,-
+36980988,llama3,,-,-,-,-,-,missed other methods used,Picked up wrong text from abstract,-,-,missed other method results
+36895273,llama3,,-,missing exposure,-,-,-,-,no details on numbers,-,-,missing multivariable
+38298515,llama3,,-,-,-,missing positive control,not info method info,-,-,-,-,missing multiple results
+37933065,llama3,,-,-,-,-,-,missing method,-,-,-,missing sensitivity results
+36333784,llama3,,-,-,-,-,-, missing method,-,-,-,-
+38378549,llama3,,-,-,-,-,-,-,-,-,-,-
+38179450,llama3,,-,-,-,-,-,-,-,-,-,-
+30707692,llama3,,-,-,phewas but only a few traits listed,-,-,-,no details on numbers,-,-,-
+35992145,llama3,,-,-,-,missing bidirectional outcomes ,-,-,missing detail,missing most numbers,-,missing null results and confirming analyses
+38622701,llama3,,-,-,-,-,-,missing sensitivity,-,-,-,-
+31661179,llama3,,-,missing exposure subtypes,-,-,-,-,no info output,missing all information needed,-,-
+36789917,llama3,,-,-,-,-,-,-,-,-,-, missing result
+38672162,llama3,,-,-,-,-,-,-,-,missing a pop,missing info on method per result,-
+35957835,llama3,,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output
+37495778,llama3,,-,-,-,-,-,-,no details on numbers,-,-,missing sensitivity results
+32062614,llama3,,-,missing other exposure in bidirectional,-,missing other outcome in bidirectional,-,-,-,-,-,missing reverse
+34227468,llama3,,-,-,need info on pheWAS,-,needs info about phewas,-,tissue information not population,wrong result,-,missing results
+37271768,llama3,,-,-,-,-,-,missing LOO,missing sample size,-,-,missing sensiticity
+38643889,llama3,,-,-,-,-,-,-,-,-,-,-
+38625888,llama3,,-,-,-,-,-,-,-,-,-,-
+38156559,llama3,,-,-,-,-,-,missing bidirectional,-,-,-,missing sensitivity results
+37675772,llama3,,-,-,-,-,-,-,missing output,missing output,-,-
+34727949,llama3,,no detail on what consistutes thyroid status,-,missing the metabolic markers that explain the outcome,-,missing the multivariable regression,-,-,-,missing info on the outcomes,-
+38242214,llama3,,-,-,-,-,-,missed reverse MR,missing sample size,-,-,missing reverse
+38699385,llama3,,-,-,-,-,-,missed FUMA,missing sample size,-,-,missing reverse and in detail
+37693321,llama3,,-,-,-,-,-,missing reverse,-,-,missing infor on SMI for each result,-
+35656325,llama3,,-,-,-,missing reverse,-,missing reverse,missing sample size,-,-,missing results
+37432894,llama3,,-,-,-,-,-,-,-,-,-,-
+38409624,llama3,,-,-,-,-,-,-,-,-,-,missing null results 
+38504987,llama3,,-,-,-,-,-,-,missing sample size,-,-,-
+35703944,llama3,,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output
+38584824,llama3,,-,-,-,-,10,missing MR,-,-,-,missing negative results
+37925898,llama3,,-,-,-,-,-,replication analysis missing,missing numbers,-,-,-
+35726641,llama3,,-,-,-,-,-,-,missing numbers,-,-,missing key results
+35594314,llama3,,-,-,-,-,missing details on PRS,-,missing numbers and details,-,-, missing negative reaults
+38030236,llama3,,-,-,-,-,-,-,missing numbers and details,-,missing detailed results on the number of genes in results,-
+37718242,llama3,,-,-,-,-,-,missing MR method,-,-,-,-
+32714368,llama3,,-,-,-,-,-,-,-,-,-,missing null results
+35011056,llama3,,-,-,-,-,-,missing univariable MR,-,-,-,missing null and multivariant results
+34023889,llama3,,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output
+36936171,llama3,,-,-,-,-,-,missing bidirectional,-,-,-,missing reverse result
+36738839,llama3,,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output
+37822602,llama3,,-,-,-,-,-,missing some sensitivity,missing info on the sample size,missing secondary populations,-,missing null result
+32529581,llama3,,-,-,-,-,-,-,missing sample size,-,-,-
+36793015,llama3,,-,-,-,-,-,missing reverse MR,missing info on the origin of samples,missing other population info,-,-
+36909950,llama3,,-,-,-,-,-,-,-,-,-,missing main and null results
+36514134,llama3,,-,-,-,-,-,-,-,-,-,missing suggestive results
+37829610,llama3,,-,-,-,-,-,-,-,-,no info on fdr corrected or not,-
+38782862,llama3,,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output,missing output
+35761866,llama3,,-,-,-,-,-,-,missing sample size,-,-,missing reverse results
+37409643,llama3,,-,-,-,-,-,-,-,-,-,-
+32433745,llama3,,missing info on vitamin b6 ,missing suggestive exposure,-,-,-,-,-,-,-,only output listed results and not the 28 mentioned
+33657885,llama3,,,,,,,,,,,
+38746746,llama3,,-,-,-,-,-,-,-,-,-,-
+36247759,llama3,,-,-,-,-,-,-,-,missing outcome population,-,missing null results
+37422736,llama3,,-,-,-,-,-,-,-,-,-,-
+36924037,llama3,,-,-,-,-,-,-,-,-,-,missing null results
+37916108,llama3,,-,-,-,-,-,-,-,-,-,missing null results
+38716647,llama3,,-,-,-,-,missing type of MR,-,missing sample size,-,-,missing null results
+37565992,llama3,,-,-,-,-,-,missing sensitivity test,-,-,-,-
+38263277,llama3,,-,-,-,-,-,-,-,-,-,missing sensitivity results
+35615025,llama3,,-,-,-,-,-,-,-,-,-,-
+38280379,llama3,,-,-,-,-,no info on type of MR study,-,-,-,-,-
+23900446,llama3,,-,-,-,-,-,missing MR method,missing sample size,-,-,missing MR result
+38264282,llama3,,-,-,-,-,-,-,-,-,-,missing null results
+37158995,llama3,,-,-,-,-,-,-,-,-,-,missing secondary result
+37668928,llama3,,-,-,-,-,-,missing sensitivity test,-,-,-,-
+21282362,llama3,,-,-,-,-,-,-,-,missing outcome population,-,missing null results
+32309857,llama3,,-,-,-,-,type of MR missing,-,missing sample size,-,-,-
+32493397,llama3,,-,-,-,-,-,-,missing sample size,-,-,missing in text and null results
+31733098,llama3,,-,-,-,missing bidirectional outcomes,-,-,-,-,-,missing null result
+37789337,llama3,,-,-,-,-,-,-,-,-,-,-
+37904919,llama3,,-,-,-,-,-,missing replication,-,-,-,-
+38725159,llama3,,-,missing primary exposures,-,-,-,-,-,-,-,-
+38053214,llama3,,-,missing some exposures ,-,-,-,-,-,-,-,-
+33125193,llama3,,-,-,-,-,-,missing reverse mr,-,-,-,missing null result
+38246357,llama3,,-,-,-,-,-,missing method,missing sample size,-,-,missing null results and written out results
+37787818,llama3,,-,-,-,-,-,-,missing sample size,-,-,missing some main results
+38765751,llama3,,-,-,-,-,-,-,-,-,-,missing multivariate results
+31908803,llama3,,-,-,-,-,-,missing sensitivity test and validation,missing sample size,-,-,missing null result
+37638499,llama3,,-,-,-,-,-,-,-,-,missing output,missing output
+38516009,llama3,,-,-,-,-,-,-,-,-,-,-
+38576413,llama3,,-,-,-,-,-,-,missing sample size,-,-,missing overall result
+35575213,llama3,,missing details on exposures,-,-,-,-,-,-,-,-,-
+38646850,llama3,,-,-,-,-,-,missing mr method,missing sample size,-,-,missing reverse
+38511766,llama3,,-,-,-,-,-,-,-,-,missing info on the origin of each result,-
+37052410,llama3,,missing output,missing output,missing output,missing output,missing output,-,missing output,missing output,missing output,missing output
+29232439,llama3,,-,-,-,-,-,missing method,-,-,-,-
+34184784,llama3,,-,-,-,-,type of MR missing,-,missing sample size,-,-, missing null MR result
+38007229,llama3,,-,-,-,-,-,missing reverse MR,no detail,-,missing details about the origin of the results,missing primary results
+38293563,llama3,,-,-,-,-,-,-,-,-,-,missing primary results
+34025845,llama3,,-,-,-,-,-,-,-,-,-,missing primary results
+30167974,llama3-2,,-,-,-,-,-,-,"the model hasnt listed a population, just a data source",-,The model added on additional decimal places to the Egger results ,The model has missed the bonferroni corrected result
+38179043,llama3-2,,could detail microbiome taxa,missed the reverse MR,-,missed cholesterol and reverse MR,-,-,-,-,-,Missed the reverse MR
+36104772,llama3-2,,-,-,-,-,-,-,no details on numbers,-,No info on ancestry in results,-
+36305497,llama3-2,,-,-,-,-,-,reverse MR missing,no details on numbers,-,-,-
+38365715,llama3-2,,-,-,-,-,-,-,-,-,-,-
+34088753,llama3-2,,-,-,-,-,-,-,no details on numbers,-,-,-
+36773317,llama3-2,,-,-,-,-,missing MR type,-,no details on numbers,-,-,-
+33408737,llama3-2,,-,-,-,-,-,-,-,-,needed info on method used per result,-
+36980988,llama3-2,,-,-,-,-,-,missed other methods used,Picked up wrong text from abstract,-,-,-
+36895273,llama3-2,,-,-,-,-,-,-,no details on numbers,-,-,missing multivariable
+38298515,llama3-2,,-,-,-,missing positive control,not info method info,-,-,-,-,missing multiple results
+37933065,llama3-2,,-,-,-,-,-,-,-,-,-,missing sensitivity results
+36333784,llama3-2,,-,-,-,missing outcomes,-, missing method,-,-,-,-
+38378549,llama3-2,,-,-,-,-,-,-,-,-,-,-
+38179450,llama3-2,,-,-,-,-,-,-,-,-,-,-
+30707692,llama3-2,,-,-,phewas but only a few traits listed,-,-,-,-,-,-,-
+35992145,llama3-2,,-,-,-,missing bidirectional outcomes ,-,missing bidirectional MR,missing detail,missing most numbers,missing details on confirming results ,-
+38622701,llama3-2,,-,-,-,-,-,missing sensitivity,-,-,-,-
+31661179,llama3-2,,-,missing exposure subtypes,-,-,-,-,-,-,-,-
+36789917,llama3-2,,-,-,-,-,-,-,-,-,-, missing info in results
+38672162,llama3-2,,-,-,-,-,-,-,-,missing a pop,missing info on method per result,-
+35957835,llama3-2,,-,-,-,-,-,-,-,-,-,-
+37495778,llama3-2,,-,-,-,-,-,-,no details on numbers,-,-,missing sensitivity results
+32062614,llama3-2,,-,missing other exposures in bidirectional,-,missing other outcomes in bidirectional,-,-,-,-,-,missing reverse
+34227468,llama3-2,,-,-,need info on pheWAS,-,needs info about phewas,-,tissue information not population,wrong result,-,-
+37271768,llama3-2,,-,-,-,-,-,missing LOO,missing sample size,-,-,-
+38643889,llama3-2,,-,-,-,-,-,-,-,-,-,-
+38625888,llama3-2,,-,-,-,-,-,-,missing numbers,-,-,-
+38156559,llama3-2,,-,-,-,-,-,missing bidirectional,-,-,-,-
+37675772,llama3-2,,-,-,-,-,-,-,-,-,-,-
+34727949,llama3-2,,-,-,missing the metabolic markers that explain the outcome,-,missing the multivariable regression,-,-,-,missing info on the outcomes,-
+38242214,llama3-2,,-,-,-,-,-,missed reverse MR,missing sample size,-,-,missing reverse
+38699385,llama3-2,,-,-,-,-,-,missed FUMA,-,-,-,-
+37693321,llama3-2,,-,-,-,-,-,-,-,-,-,-
+35656325,llama3-2,,-,-,-,missing reverse,-,-,-,-,-,-
+37432894,llama3-2,,-,-,-,-,-,-,-,-,-,-
+38409624,llama3-2,,-,-,-,-,-,-,-,-,-,-
+38504987,llama3-2,,-,-,missing sepsis link on other outcomes,-,-,-,missing sample size,-,-,-
+35703944,llama3-2,,-,-,-,-,-,missing sensitivity,no details on numbers,-,-,-
+38584824,llama3-2,,-,-,-,-,-,-,-,-,-,missing negative results
+37925898,llama3-2,,-,-,-,-,-,replication analysis missing,missing numbers,-,-,-
+35726641,llama3-2,,-,-,-,-,-,-,-,-,-,missing key results
+35594314,llama3-2,,-,-,-,-,-,-,-,-,-,-
+38030236,llama3-2,,-,-,-,-,-,-,missing numbers and details,-,-,-
+37718242,llama3-2,,-,-,-,-,-,missing MR method,-,-,-,-
+32714368,llama3-2,,-,-,-,-,-,-,-,-,-,-
+35011056,llama3-2,,-,-,-,-,-,missing univariable MR,missing sample size,-,-,missing null and multivariant results
+34023889,llama3-2,,-,-,-,-,-,missing bidirectional methods,missing sample size,-,-,-
+36936171,llama3-2,,-,-,-,-,-,missing bidirectional,-,missing case numbers,-,-
+36738839,llama3-2,,-,-,-,-,-,-,-,-,-,-
+37822602,llama3-2,,-,-,-,-,-,-,missing info on the sample size,missing secondary populations,-,-
+32529581,llama3-2,,-,-,-,-,-,-,missing sample size,-,-,-
+36793015,llama3-2,,-,-,-,-,-,missing reverse MR,missing info on the origin of samples,missing other population info,-,missing main results
+36909950,llama3-2,,-,-,-,-,-,-,-,-,-,-
+36514134,llama3-2,,-,-,-,-,-,-,missing sample size,-,-,missing suggestive results
+37829610,llama3-2,,-,-,-,-,-,-,-,-,no info on fdr corrected or not,-
+38782862,llama3-2,,-,-,-,-,-,-,-,-,-,-
+35761866,llama3-2,,-,-,-,-,-,-,missing sample size,-,-,-
+37409643,llama3-2,,-,-,-,-,-,-,-,-,-,-
+32433745,llama3-2,,-,-,-,-,-,-,-,-,-,only output listed results and not the 28 mentioned
+33657885,llama3-2,,,,,,,,,,,
+38746746,llama3-2,,-,-,-,-,-,-,-,-,-,-
+36247759,llama3-2,,-,-,-,-,-,missing MR method,-,missing outcome population,-,-
+37422736,llama3-2,,-,-,-,-,-,-,-,-,-,-
+36924037,llama3-2,,-,-,-,-,-,-,-,-,-,-
+37916108,llama3-2,,-,-,-,-,-,-,-,-,-,-
+38716647,llama3-2,,-,missing bmi exposure,-,-,-,-,missing sample size,-,-,missing null results
+37565992,llama3-2,,-,-,-,-,-,-,-,-,-,-
+38263277,llama3-2,,-,-,-,-,-,-,-,-,-,-
+35615025,llama3-2,,-,-,-,-,-,-,-,-,-,-
+38280379,llama3-2,,-,-,-,-,-,-,-,-,-,-
+23900446,llama3-2,,-,-,-,-,-,missing MR method,missing sample size,-,-,missing MR result
+38264282,llama3-2,,-,-,-,-,-,missing reverse MR,-,-,-,-
+37158995,llama3-2,,-,-,-,-,-,-,-,-,-,-
+37668928,llama3-2,,-,-,-,-,-,missing sensitivity test,-,-,-,-
+21282362,llama3-2,,-,-,-,-,-,-,-,missing outcome population,-,missing null results
+32309857,llama3-2,,-,-,-,-,type of MR missing,-,missing sample size,-,-,-
+32493397,llama3-2,,-,-,-,-,-,-,-,-,-,-
+31733098,llama3-2,,-,-,-,missing bi directional outcomes,-,-,-,-,-,-
+37789337,llama3-2,,-,-,-,-,-,-,-,-,-,-
+37904919,llama3-2,,no info on source of protein,-,-,-,-,missing replication,-,-,-,-
+38725159,llama3-2,,no info on the medications targeted,-,-,-,-,-,-,-,-,-
+38053214,llama3-2,,-,-,-,-,-,-,-,-,-,-
+33125193,llama3-2,,-,-,-,-,-,-,-,-,-,-
+38246357,llama3-2,,-,-,-,-,-,-,missing sample size,-,-,missing null results and written out results
+37787818,llama3-2,,-,-,-,-,-,-,-,-,-,missing some main results
+38765751,llama3-2,,-,-,-,-,-,-,-,-,-,missing multivariate results
+31908803,llama3-2,,-,-,-,-,-,-,missing sample size,-,-,-
+37638499,llama3-2,,-,-,-,-,-,-,-,-,-,-
+38516009,llama3-2,,-,-,-,-,-,-,-,-,missing exposure info,-
+38576413,llama3-2,,-,-,-,-,-,-,-,-,-,-
+35575213,llama3-2,,missing details on exposures,-,-,-,-,-,-,-,-,-
+38646850,llama3-2,,-,-,-,-,-,missing mr method,-,-,-,missing reverse
+38511766,llama3-2,,-,-,-,-,-,-,-,-,missing info on the origin of each result,-
+37052410,llama3-2,,missing info about sites,-,-,-,missing sensitivity method types,-,-,-,-,-
+29232439,llama3-2,,-,-,-,-,-,-,-,-,-,-
+34184784,llama3-2,,-,-,-,-,type of MR missing,-,missing sample size,-,-, missing null MR result
+38007229,llama3-2,,-,-,-,-,-,missing reverse MR,no detail,-,missing details about the origin of the results,missing primary results
+38293563,llama3-2,,-,-,-,-,-,-,-,-,-,-
+34025845,llama3-2,,-,-,-,-,-,-,-,-,-,-
+30167974,deepseek-r1,,-,-,-,-,-,-,-,-,The model added on additional decimal places to the Egger results ,The model has missed the bonferroni corrected result
+38179043,deepseek-r1,,could detail microbiome taxa,missed the reverse MR,-,missed cholesterol and reverse MR,-,missing methods section,-,missing population section,10,missed the reverse and some of the other family results
+36104772,deepseek-r1,,-,-,-,-,-,-,no details on numbers,-,No info on ancestry in results,-
+36305497,deepseek-r1,,-,-,-,-,-,reverse MR missing,no details on numbers,-,-,-
+38365715,deepseek-r1,,-,-,-,-,-,-,-,-,-,-
+34088753,deepseek-r1,,-,-,-,-,-,-,no details on numbers,-,-,-
+36773317,deepseek-r1,,-,-,-,-,-,-,no details on numbers,-,-,-
+33408737,deepseek-r1,,-,-,-,,-,-,no details on numbers,-,needed info on method used per result,-
+36980988,deepseek-r1,,-,-,-,-,-,-,Picked up wrong text from abstract,-,-,-
+36895273,deepseek-r1,,-,missing exposure,-,-,missing methods,missing methods,no population,no population info,-,missing multivariable
+38298515,deepseek-r1,,-,-,-,missing positive control,not info method info,-,-,-,-,-
+37933065,deepseek-r1,,-,-,methods in the outcomes section,-,-,missing method,-,-,-,missing sensitivity results
+36333784,deepseek-r1,,-,-,-,missing outcomes,-, missing method,no population info,no population info,-,-
+38378549,deepseek-r1,,-,-,-,-,-,-,-,-,-,-
+38179450,deepseek-r1,,-,-,-,-,-,-,-,-,-,-
+30707692,deepseek-r1,,-,-,phewas but only a few traits listed,-,-,-,lacks numbers,-,-,-
+35992145,deepseek-r1,,-,missing exposure,-,missing bidirectional outcomes ,-,missing bidirectional MR,missing detail,missing most numbers,-,missing null results and confirming analyses
+38622701,deepseek-r1,,-,-,-,-,-,missing sensitivity,-,-,-,-
+31661179,deepseek-r1,,-,missing exposure subtypes,-,-,-,missing sensitivity analyses,no info output,missing all information needed,-,missing results
+36789917,deepseek-r1,,-,missing exposure,-,-,-,-,-,-,-, missing result
+38672162,deepseek-r1,,-,-,-,-,-,missing methods,no population,no population info,missing info on method per result,-
+35957835,deepseek-r1,,-,-,-,-,missing output,missing output,missing output,missing output,-,-
+37495778,deepseek-r1,,-,-,-,-,missing further info,missing other methods,no population info,no population info,-,missing sensitivity results
+32062614,deepseek-r1,,-,missing other exposures in bidirectional,-,missing other outcomes in bidirectional,missing info on MR and sensitivity,missing sensitivity,-,-,-,missing reverse
+34227468,deepseek-r1,,-,-,needs info on PheWAS,-,needs info about phewas,-,-,-,-,-
+37271768,deepseek-r1,,-,-,-,missing some outcomes,-,missing LOO,missing sample size,-,-,missing sensiticity
+38643889,deepseek-r1,,-,-,-,-,-,-,-,-,-,-
+38625888,deepseek-r1,,-,-,-,-,-,-,-,-,-,-
+38156559,deepseek-r1,,-,-,-,missing outcomes,-,missing bidirectional,-,-,-,missing sensitivity results
+37675772,deepseek-r1,,-,-,-,missing outcomes,-,-,-,-,-,-
+34727949,deepseek-r1,,-,-,missing the metabolic markers that explain the outcome,-,missing the multivariable regression,-,missing numbers,-,missing info on the outcomes,-
+38242214,deepseek-r1,,-,-,-,-,-,missed reverse MR and sensitvity,-,missing neuro sample size,-,missing reverse
+38699385,deepseek-r1,,-,-,-,-,-,missed FUMA,missing sample size,-,-,missing reverse and in detail
+37693321,deepseek-r1,,-,-,-,-,-,-,-,-,-,missing reverse
+35656325,deepseek-r1,,-,-,-,missing reverse,-,missing reverse,-,-,-,missing main results
+37432894,deepseek-r1,,-,-,-,-,-,-,-,-,-,missing results
+38409624,deepseek-r1,,-,-,-,-,-,-,-,-,-,missing null results 
+38504987,deepseek-r1,,-,-,-,-,-,-,missing sample size,-,-,-
+35703944,deepseek-r1,,-,-,-,-,-,missing sensitivity,no details on numbers,-,-,-
+38584824,deepseek-r1,,-,-,-,-,10,missing MR,-,-,-,missing negative results
+37925898,deepseek-r1,,-,-,-,-,-,replication analysis missing,missing numbers,-,-,-
+35726641,deepseek-r1,,-,-,-,-,-,-,missing numbers,-,-,missing key results
+35594314,deepseek-r1,,-,-,-,-,-,-,missing numbers,-,-,-
+38030236,deepseek-r1,,-,-,-,-,-,-,missing numbers and details,-,-,missing gene target result
+37718242,deepseek-r1,,-,-,-,-,missing output,missing output,missing output,missing output,-,-
+32714368,deepseek-r1,,-,missing exposure,-,missing outcomes,-,missing specific methods,-,-,-,-
+35011056,deepseek-r1,,-,-,-,-,-,missing univariable MR,missing sample size,-,-,missing null and multivariant results
+34023889,deepseek-r1,,-,-,-,missing second outcome,-,missing bidirectional methods,missing sample size,-,-,missing primary results
+36936171,deepseek-r1,,-,-,-,-,-,missing bidirectional,missing sample size,-,-,-
+36738839,deepseek-r1,,-,-,-,-,-,-,-,-,-,missing one primary result
+37822602,deepseek-r1,,-,-,-,missing some outcomes,-,missing some sensitivity,missing info on the sample size,missing secondary populations,-,missing main results
+32529581,deepseek-r1,,-,-,-,-,-,-,missing any info,missing population info,-,-
+36793015,deepseek-r1,,-,-,missing output,missing output,-,-,missing info on the sample size,missing population info,-,missing main results
+36909950,deepseek-r1,,-,-,-,-,-,-,-,-,-,-
+36514134,deepseek-r1,,-,-,-,missing overall cancer,-,-,missing sample size,-,-,missing suggestive results
+37829610,deepseek-r1,,-,-,-,-,missing output,missing output,missing output,missing output,-,missing multiple testing corrected
+38782862,deepseek-r1,,-,-,-,-,-,-,-,-,-,-
+35761866,deepseek-r1,,-,-,-,-,missing info on other methods,-,missing sample size,-,-,missing main results and reverse
+37409643,deepseek-r1,,-,-,-,-,-,-,missing sample size,-,-,-
+32433745,deepseek-r1,,-,-,-,-,-,-,-,-,-,only output listed results and not the 28 mentioned
+33657885,deepseek-r1,,,,,,,,,,,
+38746746,deepseek-r1,,-,-,-,-,-,-,-,-,-,-
+36247759,deepseek-r1,,-,-,-,-,-,missing MR method,missing sample size,-,-,missing null results
+37422736,deepseek-r1,,-,-,-,-,-,-,missing sample size,-,-,-
+36924037,deepseek-r1,,-,-,-,-,-,-,-,-,-,-
+37916108,deepseek-r1,,-,-,-,-,-,-,-,-,-,-
+38716647,deepseek-r1,,-,-,-,-,-,-,missing sample size,-,-,missing null results
+37565992,deepseek-r1,,-,-,-,-,-,-,-,-,-,-
+38263277,deepseek-r1,,-,-,-,-,-,-,-,-,-,missing sensitivity results
+35615025,deepseek-r1,,-,-,-,-,-,-,-,-,-,-
+38280379,deepseek-r1,,-,-,-,-,-,-,missing sample size,-,-,-
+23900446,deepseek-r1,,-,-,-,-,missing output,missing output,missing output,missing output,-,missing MR result
+38264282,deepseek-r1,,-,-,-,-,-,missing reverse MR,-,-,-,-
+37158995,deepseek-r1,,-,-,-,-,missing details on sensitivity,-,-,-,-,-
+37668928,deepseek-r1,,-,-,-,-,-,missing sensitivity test,-,-,-,-
+21282362,deepseek-r1,,-,-,-,-,missing output,missing output,missing output,missing output,-,missing null results
+32309857,deepseek-r1,,-,-,-,-,-,-,missing sample size,-,-,-
+32493397,deepseek-r1,,-,-,-,missing other outcomes,-,-,missing sample size,-,-,missing in text and null results
+31733098,deepseek-r1,,-,-,-,-,-,-,-,-,-,-
+37789337,deepseek-r1,,no numbers for the traits,-,-,-,-,-,missing output,missing output,missing result values and bacteria specification,-
+37904919,deepseek-r1,,-,-,-,-,-,missing replication,missing sample size,-,-,-
+38725159,deepseek-r1,,-,-,-,-,-,-,missing sample size,-,-,-
+38053214,deepseek-r1,,-,missing some exposures ,-,-,-,-,missing sample size,-,-,-
+33125193,deepseek-r1,,-,-,-,-,-,-,-,-,-,missing null result
+38246357,deepseek-r1,,-,-,-,-,-,-,missing sample size,-,-,missing null results and written out results
+37787818,deepseek-r1,,-,-,-,-,missing sensitivity details,-,missing sample size,-,-,missing some main results
+38765751,deepseek-r1,,-,missing an exposure,-,-,-,missing sensitivity test,-,-,-,missing multivariate results
+31908803,deepseek-r1,,-,-,-,-,-,-,missing sample size,-,-,missing null result
+37638499,deepseek-r1,,-,-,-,-,missing sensitivity details,-,-,-,-,-
+38516009,deepseek-r1,,-,-,-,-,missing details on sensitivity,-,-,-,missing exposure info,-
+38576413,deepseek-r1,,-,-,-,missing primary outcomes,-,-,missing sample size,-,-,missing overall result
+35575213,deepseek-r1,,missing details on exposures,-,-,-,-,-,-,-,-,-
+38646850,deepseek-r1,,-,-,-,-,-,missing sensitivity test,missing sample size,-,-,missing reverse
+38511766,deepseek-r1,,-,-,-,-,-,-,-,-,missing info on the origin of each result,-
+37052410,deepseek-r1,,missing info about sites,-,-,-,-,-,-,-,-,-
+29232439,deepseek-r1,,-,-,-,-,-,-,missing sample size,-,-,-
+34184784,deepseek-r1,,-,-,-,-,-,-,missing sample size,-,-, missing null MR result
+38007229,deepseek-r1,,-,-,-,-,-,missing reverse MR,no detail,-,-,-
+38293563,deepseek-r1,,-,-,-,-,-,-,-,-,-,missing primary results
+34025845,deepseek-r1,,-,-,-,-,-,-,missing output,missing output,-,missing primary results
+30167974,o4-mini,,-,-,-,-,-,-,-,-,-,The model missed out the bonferroni corrected result
+38179043,o4-mini,,-,-,-,misses the key outcome,-,missing for forward MR from results,-,-,-,-
+36104772,o4-mini,,-,-,-,-,-,-,-,-,no info on ancestry ,Missing results from different ancestries and null
+36305497,o4-mini,,-,-,-,-,-,-,no details on numbers,-,-,-
+38365715,o4-mini,,-,-,-,-,-,-,-,-,-,-
+34088753,o4-mini,,-,-,-,-,-,-,-,-,-,-
+36773317,o4-mini,,-,-,-,-,-,-,-,-,missing results,missing results 
+33408737,o4-mini,,-,-,-,,-,-,-,-,-,missing sensitivity tests
+36980988,o4-mini,,-,-,-,-,-,-,-,-,-,-
+36895273,o4-mini,,-,-,-,-,-,missing methods,-,-,-,missing multivariable
+38298515,o4-mini,,-,-,-,-,not info method info,-,-,-,-, missing multiple results
+37933065,o4-mini,,-,-,-,-,-,-,-,-,-,missing sensitivity results
+36333784,o4-mini,,-,-,-,missing outcomes,-,-,no population,no population info,-,-
+38378549,o4-mini,,-,-,-,-,-,-,-,-,-,-
+38179450,o4-mini,,-,-,-,-,-,-,-,-,-,-
+30707692,o4-mini,,-,-,phewas but only a few traits listed,-,-,-,-,-,no results,no results
+35992145,o4-mini,,-,-,-,-,-,-,-,,-,missing null results and confirming analyses
+38622701,o4-mini,,-,-,-,-,-,-,-,-,-,missing some results
+31661179,o4-mini,,-,-,-,-,-,-,-,-,-,-
+36789917,o4-mini,,-,-,-,-,-,-,-,-,-, missing result
+38672162,o4-mini,,-,-,-,-,-,-,-,-,missing info on method per result,-
+35957835,o4-mini,,-,-,-,-,-,-,-,-,-,-
+37495778,o4-mini,,-,-,-,-,-,-,-,-,-,missing sensitivity results
+32062614,o4-mini,,-,-,-,-,-,-,-,-,-,missing reverse
+34227468,o4-mini,,-,-,need info on pheWAS,-,needs info about phewas,-,-,-,-,missing results
+37271768,o4-mini,,-,-,-,-,missing details on sensitivity,missing LOO,-,-,-,missing sensiticity
+38643889,o4-mini,,-,-,-,-,-,-,-,-,-,-
+38625888,o4-mini,,-,-,-,-,-,-,-,-,-,-
+38156559,o4-mini,,-,-,-,-,-,-,-,-,-,-
+37675772,o4-mini,,-,-,-,-,-,-,-,-,-,-
+34727949,o4-mini,,-,-,-,-,-,-,-,-,missing info on the outcomes,-
+38242214,o4-mini,,-,-,-,-,-,-,-,-,-,-
+38699385,o4-mini,,-,-,-,-,-,-,-,-,-,missing reverse and in detail
+37693321,o4-mini,,-,-,-,-,-,-,-,-,-,-
+35656325,o4-mini,,-,-,-,-,-,missing reverse,-,-,-,-
+37432894,o4-mini,,-,-,-,-,-,-,-,-,-,-
+38409624,o4-mini,,-,-,-,-,-,-,-,-,-,missing null results 
+38504987,o4-mini,,-,-,-,-,-,-,-,-,-,-
+35703944,o4-mini,,-,-,-,-,-,-,-,-,-,-
+38584824,o4-mini,,-,-,-,-,-,-,-,-,-,missing negative results
+37925898,o4-mini,,-,-,-,-,-,replication analysis missing,-,-,-,-
+35726641,o4-mini,,-,-,-,-,-,-,-,-,-,missing key results
+35594314,o4-mini,,-,-,-,-,-,-,-,-,-,-
+38030236,o4-mini,,-,-,-,-,-,-,missing numbers and details,-,missing output,missing output
+37718242,o4-mini,,-,-,-,-,-,-,-,-,-,-
+32714368,o4-mini,,-,-,-,-,-,-,missing output,missing output,-,-
+35011056,o4-mini,,-,-,-,-,-,missing univariable MR,-,-,-,missing null and multivariant results
+34023889,o4-mini,,-,missing third bidirectional exposure,-,-,-,-,-,-,-,-
+36936171,o4-mini,,-,-,-,-,-,-,-,-,-,-
+36738839,o4-mini,,-,-,-,-,-,-,missing output,missing output,-,missing secondary results
+37822602,o4-mini,,-,missing overall exposure,-,-,missing details on sensitivity,-,missing sample size info and second population,-,-,missing null result
+32529581,o4-mini,,-,-,-,-,-,-,missing output,missing output,-,-
+36793015,o4-mini,,-,-,-,-,-,-,-,-,-,missing main results
+36909950,o4-mini,,-,-,-,-,-,-,-,-,-,-
+36514134,o4-mini,,-,-,-,-,-,-,-,-,-,missing suggestive results
+37829610,o4-mini,,-,-,-,-,-,-,-,-,-,missing main results
+38782862,o4-mini,,-,-,-,-,-,-,-,-,-,-
+35761866,o4-mini,,-,-,-,-,-,-,-,-,-,-
+37409643,o4-mini,,-,-,-,-,-,-,-,-,-,-
+32433745,o4-mini,,-,-,-,-,-,-,-,-,-,only output listed results and not the 28 mentioned
+33657885,o4-mini,,,,,,,,,,,
+38746746,o4-mini,,-,-,-,-,-,-,missing output,missing output,-,-
+36247759,o4-mini,,-,-,-,-,-,missing MR method,-,-,-,missing null results
+37422736,o4-mini,,-,-,-,-,-,-,-,-,-,-
+36924037,o4-mini,,-,-,-,-,-,-,-,-,-,missing null results
+37916108,o4-mini,,-,-,-,-,-,-,missing output,missing output,-,missing null results
+38716647,o4-mini,,-,-,-,-,-,-,-,-,-,missing null results
+37565992,o4-mini,,-,-,-,-,-,-,missing output,missing output,-,-
+38263277,o4-mini,,-,-,-,-,-,-,-,-,-,missing sensitivity results
+35615025,o4-mini,,-,-,-,-,-,-,-,-,-,-
+38280379,o4-mini,,-,-,-,-,-,-,-,-,-,-
+23900446,o4-mini,,-,-,-,-,-,-,-,-,-,missing MR result
+38264282,o4-mini,,-,-,-,-,-,-,missing output,missing output,-,missing null results
+37158995,o4-mini,,-,-,-,missing outcome subtype,-,-,-,-,-,missing secondary result
+37668928,o4-mini,,-,-,-,-,-,-,-,-,-,-
+21282362,o4-mini,,-,-,-,-,-,-,-,-,-,-
+32309857,o4-mini,,-,-,-,-,-,-,-,-,-,-
+32493397,o4-mini,,-,-,-,-,-,-,-,-,-,missing in text and null results
+31733098,o4-mini,,-,missing bi directional exposures,-,-,-,-,missing output,missing output,-,missing null result
+37789337,o4-mini,,-,-,-,-,-,-,missing output,missing output,-,missing results
+37904919,o4-mini,,-,-,-,-,-,missing replication,-,-,-,-
+38725159,o4-mini,,-,-,-,-,-,-,-,-,-,-
+38053214,o4-mini,,-,missing some exposures ,-,missing other bidirectional outcomes,-,-,-,-,-,-
+33125193,o4-mini,,-,-,-,-,-,-,-,-,-,missing null result
+38246357,o4-mini,,-,-,-,-,-,-,missing sample size,-,-,missing null results and written out results
+37787818,o4-mini,,-,-,-,-,-,-,-,-,-,missing some main results
+38765751,o4-mini,,-,-,-,-,-,-,missing output,missing output,-,missing multivariate results
+31908803,o4-mini,,-,-,-,-,-,-,-,-,-,missing null result
+37638499,o4-mini,,-,-,-,-,-,-,missing output,missing output,missing output,missing output
+38516009,o4-mini,,-,-,-,-,missing details on sensitivity,-,missing output,missing output,-,-
+38576413,o4-mini,,-,-,-,-,-,-,-,-,-,-
+35575213,o4-mini,,-,-,-,-,-,-,missing output,missing output,-,-
+38646850,o4-mini,,-,-,-,-,-,-,-,-,-,-
+38511766,o4-mini,,-,-,-,-,-,-,missing output,missing output,missing info on the origin of each result,-
+37052410,o4-mini,,-,-,-,-,-,-,missing output,missing output,-,-
+29232439,o4-mini,,-,-,-,-,-,missing methods,-,-,-,-
+34184784,o4-mini,,-,-,-,-,-,-,-,-,-, missing null MR result
+38007229,o4-mini,,-,-,-,-,-,missing reverse MR,-,-,missing details about the origin of each result,-
+38293563,o4-mini,,-,-,-,-,-,-,missing output,missing output,-,-
+34025845,o4-mini,,-,-,-,-,-,-,missing output,missing output,-,missing primary results
+30167974,gpt-4o,,-,-,-,-,-,The model misses the other methods,-,-,The model adds extra decimals to the SE values,The model missed out the bonferroni corrected result and lists the direction as null for some results
+38179043,gpt-4o,,-,missed the reverse MR,-,missed cholesterol and reverse MR,-,-,-,-,-,-
+36104772,gpt-4o,,-,-,-,-,-,-,no details on numbers,-,no info on ancestry ,Missing results from different ancestries and null
+36305497,gpt-4o,,-,-,-,-,-,-,no details on numbers,-,-,-
+38365715,gpt-4o,,-,-,-,-,Not enough details on sensitivity tests,Missing other tests,-,-,-,-
+34088753,gpt-4o,,-,-,-,-,-,-,-,-,-,-
+36773317,gpt-4o,,-,-,-,-,missing MR type,-,no details on numbers,-,-,Missing some results 
+33408737,gpt-4o,,,,,,,,,,,
+36980988,gpt-4o,,,,,,,,,,,
+36895273,gpt-4o,,-,-,-,-,-,missing methods,no details on numbers,-,-,missing multivariable
+38298515,gpt-4o,,,,,,,,,,,
+37933065,gpt-4o,,-,-,-,-,-,missing methods,-,-,-,missing sensitivity results
+36333784,gpt-4o,,,,,,,,,,,
+38378549,gpt-4o,,-,-,-,-,-,-,-,-,-,-
+38179450,gpt-4o,,,,,,,,,,,
+30707692,gpt-4o,,,,,,,,,,,
+35992145,gpt-4o,,-,missing exposure,-,-,-,-,missing detail,missing most numbers,-,missing null results and confirming analyses
+38622701,gpt-4o,,-,-,-,-,-,missing sensitivity,result missing,result missing,-,missing some results
+31661179,gpt-4o,,-,missing exposure subtypes,-,-,-,-,no info output,missing all information needed,-,-
+36789917,gpt-4o,,,,,,,,,,,
+38672162,gpt-4o,,-,-,-,-,-,missing sensitivity analyses,-,-,missing info on method per result,-
+35957835,gpt-4o,,,,,,,,,,,
+37495778,gpt-4o,,-,-,-,-,missing info on tests,-,no population info,no population info,-,missing sensitivity results
+32062614,gpt-4o,,,,,,,,,,,
+34227468,gpt-4o,,-,-,need info on pheWAS,-,needs info about phewas,-,tissue information not population,wrong result,-,missing results
+37271768,gpt-4o,,,,,,,,,,,
+38643889,gpt-4o,,,,,,,,,,,
+38625888,gpt-4o,,,,,,,,,,,
+38156559,gpt-4o,,,,,,,,,,,
+37675772,gpt-4o,,-,-,-,-,-,-,-,-,-,-
+34727949,gpt-4o,,-,-,-,-,-,missing multivariable regression,missing detail on numbers ,-,missing info on the outcomes,missing key results 
+38242214,gpt-4o,,-,-,-,-,-,-,missing detail on numbers ,-,-,missing reverse
+38699385,gpt-4o,,-,-,-,-,-,missed methods,no details on numbers,-,-,-
+37693321,gpt-4o,,,,,,,,,,,
+35656325,gpt-4o,,-,-,-,missing reverse,-,missing reverse,missing sample size,-,-,missing results
+37432894,gpt-4o,,-,-,-,-,-,-,-,-,-,-
+38409624,gpt-4o,,,,,,,,,,,
+38504987,gpt-4o,,-,-,-,-,-,-,missing sample size ,-,-,-
+35703944,gpt-4o,,-,-,-,-,-,-,no details on numbers,-,-,-
+38584824,gpt-4o,,-,-,-,-,-,-,-,-,-,missing negative results
+37925898,gpt-4o,,-,-,-,-,-,replication analysis missing,missing numbers,-,missing output,missing output
+35726641,gpt-4o,,-,-,-,-,-,-,missing numbers,-,-,missing key results
+35594314,gpt-4o,,-,-,-,-,-,-,missing numbers ,-,-,-
+38030236,gpt-4o,,-,-,-,-,-,-,missing numbers and details,missing output,-,missing gene target result
+37718242,gpt-4o,,-,-,-,-,missing info on sensitivity,-,missing output,missing output,-,-
+32714368,gpt-4o,,-,-,-,-,-,missing sensitivity analyses,missing output,missing output,-,-
+35011056,gpt-4o,,-,-,-,-,-,missing univariable MR,-,-,-,missing null and multivariant results
+34023889,gpt-4o,,-,-,-,-,-,missing bidirectional methods,missing sample size ,-,-,-
+36936171,gpt-4o,,-,missing primary exposures,-,-,missing info on sensitivity,-,-,-,-,missing reverse result
+36738839,gpt-4o,,,,,,,,,,,
+37822602,gpt-4o,,-,-,-,-,missing details on sensitivity,-,missing sample size info and second population,-,-,missing null result
+32529581,gpt-4o,,-,-,-,-,-,-,missing output,missing output,-,-
+36793015,gpt-4o,,-,-,-,-,-,-,missing output,missing output,-,missing main results
+36909950,gpt-4o,,,,,,,,,,,
+36514134,gpt-4o,,-,-,-,missing overall cancer,-,-,missing sample size,-,-,missing suggestive results
+37829610,gpt-4o,,-,-,-,-,missing sensitivity info,-,missing output,missing output,-,missing main results
+38782862,gpt-4o,,-,-,-,-,-,-,-,-,-,-
+35761866,gpt-4o,,-,-,-,-,missing outpu,missing output,missing sample size,-,-,missing reverse results
+37409643,gpt-4o,,-,-,-,-,-,-,-,-,-,-
+32433745,gpt-4o,,-,-,-,-,-,-,-,-,-,only output listed results and not the 28 mentioned
+33657885,gpt-4o,,,,,,,,,,,
+38746746,gpt-4o,,-,-,-,-,missing info on sensitivity analyses,-,missing output,missing output,-,-
+36247759,gpt-4o,,-,-,-,-,-,missing sensitivity analysis,-,missing outcome population,-,missing null results
+37422736,gpt-4o,,-,-,-,-,-,-,missing sample size,-,-,-
+36924037,gpt-4o,,,,,,,,,,,
+37916108,gpt-4o,,,,,,,,,,,
+38716647,gpt-4o,,-,-,-,-,-,-,missing sample size,-,-,missing null results
+37565992,gpt-4o,,,,,,,,,,,
+38263277,gpt-4o,,-,-,-,-,-,missing main methods and sensitivity,missing output,missing output,-,missing sensitivity results
+35615025,gpt-4o,,-,-,-,-,-,-,-,-,-,-
+38280379,gpt-4o,,-,-,-,-,-,-,-,-,-,-
+23900446,gpt-4o,,,,,,,,,,,
+38264282,gpt-4o,,,,,,,,,,,
+37158995,gpt-4o,,,,,,,,,,,
+37668928,gpt-4o,,-,-,-,-,-,-,-,-,-,-
+21282362,gpt-4o,,-,-,-,-,-,-,-,-,-,-
+32309857,gpt-4o,,,,,,,,,,,
+32493397,gpt-4o,,,,,,,,,,,
+31733098,gpt-4o,,,,,,,,,,,
+37789337,gpt-4o,,no numbers for the traits,-,-,-,-,-,missing output,missing output,-,missing results
+37904919,gpt-4o,,-,-,-,-,-,missing replication,missing output,missing output,-,-
+38725159,gpt-4o,,,,,,,,,,,
+38053214,gpt-4o,,,,,,,,,,,
+33125193,gpt-4o,,-,-,-,-,-,missing reverse mr,missing sample size,-,-,missing null result
+38246357,gpt-4o,,-,-,-,-,-,-,missing sample size,-,-,missing null results and written out results
+37787818,gpt-4o,,,,,,,,,,,
+38765751,gpt-4o,,-,-,-,-,-,-,missing output,missing output,-,missing multivariate results
+31908803,gpt-4o,,-,-,-,-,-,missing main methods and sensitivity,missing sample size,-,-,missing null result
+37638499,gpt-4o,,-,-,-,-,missing sensitivity details,-,missing output,missing output,missing output,missing output
+38516009,gpt-4o,,-,-,-,-,missing details on sensitivity,-,missing output,missing output,-,-
+38576413,gpt-4o,,-,-,-,missing primary outcomes,-,missing main methods and sensitivity,missing sample size,-,-,-
+35575213,gpt-4o,,missing details on exposures,-,-,-,-,-,missing output,missing output,-,-
+38646850,gpt-4o,,-,-,-,-,missing details on sensitivity,-,missing sample size,-,-,missing reverse
+38511766,gpt-4o,,,,,,,,,,,
+37052410,gpt-4o,,-,-,-,-,-,-,missing output,missing output,-,missing primary result
+29232439,gpt-4o,,,,,,,,,,,
+34184784,gpt-4o,,,,,,,,,,,
+38007229,gpt-4o,,-,-,-,-,-,missing reverse MR,no detail,-,-,missing primary results
+38293563,gpt-4o,,-,-,-,-,-,-,missing output,missing output,-,missing primary results
+34025845,gpt-4o,,-,-,-,-,missing details on sensitivity,-,missing output,missing output,-,missing primary results
+30167974,gpt-4-1,,-,-,-,-,-,-,-,-,The model adds extra decimals to the SE values,The model missed out the bonferroni corrected result and lists the direction as null for some results
+38179043,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+36104772,gpt-4-1,,-,-,-,-,-,-,no details on numbers,-,-,-
+36305497,gpt-4-1,,-,-,-,-,-,-,no details on numbers,-,-,-
+38365715,gpt-4-1,,-,-,-,-,- ,-,-,-,-,-
+34088753,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+36773317,gpt-4-1,,-,-,-,-,-,-,-,-,grouped together results ,-
+33408737,gpt-4-1,,-,-,-,-,-,-,-,-,needed info on method used per result,-
+36980988,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+36895273,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing multivariable
+38298515,gpt-4-1,,-,-,-,missing positive control,-,-,-,-,-,-
+37933065,gpt-4-1,,-,-,-,-,-,missing methods,-,-,-,missing sensitivity results
+36333784,gpt-4-1,,-,-,-,missing outcomes,-,-,no population,no population info,-,-
+38378549,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+38179450,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+30707692,gpt-4-1,,-,-,phewas but only a few traits listed,-,-,-,-,-,-,-
+35992145,gpt-4-1,,-,-,-,-,-,-,missing detail,missing most numbers,-,missing null results and confirming analyses
+38622701,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+31661179,gpt-4-1,,-,-,-,-,-,-,lacking more info,missing some information on numbers,-,-
+36789917,gpt-4-1,,-,-,-,-,-,-,-,-,-, missing result
+38672162,gpt-4-1,,-,-,-,-,-,-,-,-,missing info on method per result,-
+35957835,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+37495778,gpt-4-1,,-,-,-,-,-,missing methods,-,-,-,missing sensitivity results
+32062614,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing reverse
+34227468,gpt-4-1,,-,-,need info on pheWAS,-,needs info about phewas,-,-,-,-,-
+37271768,gpt-4-1,,-,-,-,-,-,-,missing sample size,-,-,missing sensiticity
+38643889,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+38625888,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing result
+38156559,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+37675772,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+34727949,gpt-4-1,,-,-,-,-,-,-,-,-,missing info on the outcomes,missing key results 
+38242214,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+38699385,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing reverse and in detail
+37693321,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing reverse
+35656325,gpt-4-1,,-,-,-,missing some reverse,-,missing reverse,missing sample size,-,-,missing results
+37432894,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+38409624,gpt-4-1,,-,-,-,-,missing info on sensitivity,-,-,-,-,-
+38504987,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+35703944,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+38584824,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing negative results
+37925898,gpt-4-1,,-,-,-,-,-,replication analysis missing,-,missing numbers and replication,-,-
+35726641,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing key results
+35594314,gpt-4-1,,-,-,-,-,-,-,-,-,-, missing null results
+38030236,gpt-4-1,,-,-,-,-,-,-,missing numbers and details,missing output,-,-
+37718242,gpt-4-1,,-,-,-,-,-,missing MR method,missing output,missing output,-,-
+32714368,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+35011056,gpt-4-1,,-,-,-,-,-,missing univariable MR,-,-,-,missing null and multivariant results
+34023889,gpt-4-1,,-,missing third bidirectional exposure,-,-,-,-,-,-,-,-
+36936171,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+36738839,gpt-4-1,,-,-,-,-,-,-,missing output,missing output,-,missing secondary results
+37822602,gpt-4-1,,-,missing overall exposure,-,-,-,-,-,-,-,missing null result
+32529581,gpt-4-1,,-,-,-,-,-,-,missing any info,missing population info,-,-
+36793015,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing main results
+36909950,gpt-4-1,,-,-,-,-,missing info on sensitivity,-,-,-,-,-
+36514134,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing suggestive results
+37829610,gpt-4-1,,-,-,-,-,missing sensitivity info,-,-,-,-,missing main results
+38782862,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+35761866,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing reverse results
+37409643,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+32433745,gpt-4-1,,-,-,-,-,-,-,-,-,-,only output listed results and not the 28 mentioned
+33657885,gpt-4-1,,,,,,,,,,,
+38746746,gpt-4-1,,-,-,-,-,-,-,missing output,missing output,-,-
+36247759,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing null results
+37422736,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+36924037,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing null results
+37916108,gpt-4-1,,-,-,-,-,-,-,missing output,missing output,-,-
+38716647,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing null results
+37565992,gpt-4-1,,-,-,-,-,-,missing replication,missing output,missing output,10,10
+38263277,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing sensitivity results
+35615025,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+38280379,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+23900446,gpt-4-1,,-,-,-,-,-,-,missing sample size,-,-,missing MR result
+38264282,gpt-4-1,,-,-,-,-,missing details on sensitivity,-,missing output,missing output,-,missing null results
+37158995,gpt-4-1,,-,-,-,-,missing details on sensitivity,-,-,-,-,missing secondary result
+37668928,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+21282362,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+32309857,gpt-4-1,,-,-,-,-,-,-,missing sample size,-,-,-
+32493397,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing in text and null results
+31733098,gpt-4-1,,-,-,-,-,-,-,missing output,missing output,-,-
+37789337,gpt-4-1,,-,-,-,-,-,-,missing output,missing output,-,missing results
+37904919,gpt-4-1,,-,-,-,-,-,missing replication,-,-,-,-
+38725159,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+38053214,gpt-4-1,,-,-,-,missing other bidirectional outcomes,-,-,-,-,-,-
+33125193,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing null result
+38246357,gpt-4-1,,-,-,-,-,-,-,missing sample size,-,-,missing null results and written out results
+37787818,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing some main results
+38765751,gpt-4-1,,-,-,-,-,-,-,missing output,missing output,-,missing multivariate results
+31908803,gpt-4-1,,-,-,-,-,-,missing validation,-,-,-,-
+37638499,gpt-4-1,,-,-,-,-,missing sensitivity details,-,-,-,-,-
+38516009,gpt-4-1,,-,-,-,-,-,-,missing output,missing output,-,-
+38576413,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+35575213,gpt-4-1,,missing details on exposures,-,-,-,-,-,missing output,missing output,-,-
+38646850,gpt-4-1,,-,-,-,-,-,-,-,-,-,-
+38511766,gpt-4-1,,-,-,-,-,-,-,missing output,missing output,missing info on the origin of each result,-
+37052410,gpt-4-1,,-,-,-,-,-,-,-,-,-,missing primary result
+29232439,gpt-4-1,,-,-,-,-,-,-,missing sample size,-,-,-
+34184784,gpt-4-1,,-,-,-,-,-,missing reverse MR,-,-,-, missing null MR result
+38007229,gpt-4-1,,-,-,-,-,-,missing reverse MR,-,-,-,missing primary results
+38293563,gpt-4-1,,-,-,-,-,-,-,missing output,missing output,-,-
+34025845,gpt-4-1,,-,-,-,-,-,-,missing output,missing output,-,missing primary results
+30167974,gpt-5,,-,-,-,-,-,-,-,-,Decimal place issues,Missing bonferroni result
+38179043,gpt-5,,-,-,-,-,-,-,-,-,-,-
+36104772,gpt-5,,-,-,-,-,-,-,-,-,No info on ancestry in results,-
+36305497,gpt-5,,-,-,-,-,-,-,-,-,-,-
+38365715,gpt-5,,-,-,-,-,-,-,-,-,-,-
+34088753,gpt-5,,-,-,-,-,-,-,-,-,-,-
+36773317,gpt-5,,-,-,-,-,-,-,-,-,-,-
+33408737,gpt-5,,,,,,,,,,,
+36980988,gpt-5,,,,,,,,,,,
+36895273,gpt-5,,-,-,-,-,-,-,-,-,-,missing information from multivariable
+38298515,gpt-5,,,,,,,,,,,
+37933065,gpt-5,,-,-,-,-,-,-,-,-,-,missing sensitivity results
+36333784,gpt-5,,,,,,,,,,,
+38378549,gpt-5,,-,-,-,-,-,-,-,-,-,-
+38179450,gpt-5,,,,,,,,,,,
+30707692,gpt-5,,,,,,,,,,,
+35992145,gpt-5,,-,-,-,-,-,-,missing detail,missing most numbers,missing details on confirming results ,-
+38622701,gpt-5,,-,-,-,-,-,-,-,-,-,-
+31661179,gpt-5,,-,-,-,-,-,-,-,-,-,-
+36789917,gpt-5,,,,,,,,,,,
+38672162,gpt-5,,-,-,-,-,-,-,-,-,missing info on method per result,-
+35957835,gpt-5,,,,,,,,,,,
+37495778,gpt-5,,-,-,-,-,-,-,-,-,-,missing sensitivity results
+32062614,gpt-5,,,,,,,,,,,
+34227468,gpt-5,,-,-,need info on pheWAS,-,-,-,-,-,-,missing results
+37271768,gpt-5,,,,,,,,,,,
+38643889,gpt-5,,,,,,,,,,,
+38625888,gpt-5,,,,,,,,,,,
+38156559,gpt-5,,,,,,,,,,,
+37675772,gpt-5,,-,-,-,-,-,-,-,-,-,-
+34727949,gpt-5,,-,-,-,-,-,-,-,-,missing the values from some key results,-
+38242214,gpt-5,,-,-,-,-,-,-,-,-,-,-
+38699385,gpt-5,,-,-,-,-,-,-,-,-,-,-
+37693321,gpt-5,,,,,,,,,,,
+35656325,gpt-5,,-,-,-,-,-,-,-,-,-,missing results
+37432894,gpt-5,,-,-,-,-,-,-,-,-,-,-
+38409624,gpt-5,,,,,,,,,,,
+38504987,gpt-5,,-,-,-,-,-,-,-,-,-,-
+35703944,gpt-5,,-,-,-,-,-,-,-,-,-,-
+38584824,gpt-5,,-,-,-,-,-,-,-,-,-,missing negative results
+37925898,gpt-5,,-,-,-,-,-,-,-,-,-,-
+35726641,gpt-5,,-,-,-,-,-,-,-,-,-,missing key results
+35594314,gpt-5,,-,-,-,-,-,-,-,-,-,-
+38030236,gpt-5,,-,-,-,-,-,-,missing numbers and details,missing output,-,-
+37718242,gpt-5,,-,-,-,-,-,missing MR method,-,-,-,-
+32714368,gpt-5,,-,-,-,-,-,-,-,-,-,-
+35011056,gpt-5,,-,-,-,-,-,-,-,-,-,missing null and multivariant results
+34023889,gpt-5,,-,missing third bidirectional exposure,-,-,-,-,-,-,-,-
+36936171,gpt-5,,-,-,-,-,-,-,-,-,-,-
+36738839,gpt-5,,,,,,,,,,,
+37822602,gpt-5,,-,-,-,-,-,-,-,-,-,missing null result
+32529581,gpt-5,,-,-,-,-,-,-,missing sample size,-,-,-
+36793015,gpt-5,,-,-,-,-,-,-,-,-,-,missing main results
+36909950,gpt-5,,,,,,,,,,,
+36514134,gpt-5,,-,-,-,-,-,-,-,-,-,-
+37829610,gpt-5,,-,-,-,-,-,-,-,-,-,missing main results
+38782862,gpt-5,,-,-,-,-,-,-,-,-,-,-
+35761866,gpt-5,,-,-,-,-,-,-,-,-,-,-
+37409643,gpt-5,,-,-,-,-,-,-,-,-,-,-
+32433745,gpt-5,,-,-,-,-,-,-,-,-,-,only output listed results and not the 28 mentioned
+33657885,gpt-5,,,,,,,,,,,
+38746746,gpt-5,,-,-,-,-,-,-,missing output,missing output,-,-
+36247759,gpt-5,,-,-,-,-,-,-,-,-,-,missing null results
+37422736,gpt-5,,-,-,-,-,-,-,-,-,-,-
+36924037,gpt-5,,,,,,,,,,,
+37916108,gpt-5,,,,,,,,,,,
+38716647,gpt-5,,-,-,-,-,-,-,-,-,-,missing null results
+37565992,gpt-5,,,,,,,,,,,
+38263277,gpt-5,,-,-,-,-,-,-,missing output,missing output,-,missing sensitivity results
+35615025,gpt-5,,-,-,-,-,-,-,-,-,-,-
+38280379,gpt-5,,-,-,-,-,-,-,-,-,-,-
+23900446,gpt-5,,,,,,,,,,,
+38264282,gpt-5,,,,,,,,,,,
+37158995,gpt-5,,,,,,,,,,,
+37668928,gpt-5,,-,-,-,-,-,-,-,-,-,-
+21282362,gpt-5,,-,-,-,-,-,-,-,-,-,-
+32309857,gpt-5,,,,,,,,,,,
+32493397,gpt-5,,,,,,,,,,,
+31733098,gpt-5,,,,,,,,,,,
+37789337,gpt-5,,-,-,-,-,-,-,-,-,missing result values and bacteria specification,-
+37904919,gpt-5,,-,-,-,-,-,-,-,-,-,-
+38725159,gpt-5,,,,,,,,,,,
+38053214,gpt-5,,,,,,,,,,,
+33125193,gpt-5,,-,-,-,-,-,-,-,-,-,-
+38246357,gpt-5,,-,-,-,-,-,-,-,-,-,missing null results and written out results
+37787818,gpt-5,,,,,,,,,,,
+38765751,gpt-5,,-,-,-,-,-,-,-,-,-,-
+31908803,gpt-5,,-,-,-,-,-,-,-,-,-,-
+37638499,gpt-5,,-,-,-,-,-,-,missing output,missing output,-,-
+38516009,gpt-5,,-,-,-,-,-,-,-,-,-,-
+38576413,gpt-5,,-,-,-,-,-,-,-,-,-,-
+35575213,gpt-5,,-,-,-,-,-,-,missing output,missing output,-,-
+38646850,gpt-5,,-,-,-,-,-,-,-,-,-,-
+38511766,gpt-5,,,,,,,,,,,
+37052410,gpt-5,,-,-,-,-,-,-,-,-,-,-
+29232439,gpt-5,,,,,,,,,,,
+34184784,gpt-5,,,,,,,,,,,
+38007229,gpt-5,,-,-,-,-,-,-,-,-,-,-
+38293563,gpt-5,,-,-,-,-,-,-,-,-,-,-
+34025845,gpt-5,,-,-,-,-,-,-,missing output,missing output,missing info on the origin of each results,-
+30167974,gpt-5-mini,,-,-,-,-,-,-,-,-,Decimal place issues,Missing bonferroni result
+38179043,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+36104772,gpt-5-mini,,-,-,-,-,-,-,-,-,No info on ancestry in results,-
+36305497,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38365715,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+34088753,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+36773317,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+33408737,gpt-5-mini,,,,,,,,,,,
+36980988,gpt-5-mini,,,,,,,,,,,
+36895273,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38298515,gpt-5-mini,,,,,,,,,,,
+37933065,gpt-5-mini,,-,-,-,-,-,-,-,-,-,missing sensitivity results
+36333784,gpt-5-mini,,,,,,,,,,,
+38378549,gpt-5-mini,,-,-,-,-,-,missing info on the other analysis,-,-,-,-
+38179450,gpt-5-mini,,,,,,,,,,,
+30707692,gpt-5-mini,,,,,,,,,,,
+35992145,gpt-5-mini,,-,-,-,-,-,-,-,-,missing details on confirming results ,-
+38622701,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+31661179,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+36789917,gpt-5-mini,,,,,,,,,,,
+38672162,gpt-5-mini,,-,-,-,-,-,-,-,-,missing info on method per result,-
+35957835,gpt-5-mini,,,,,,,,,,,
+37495778,gpt-5-mini,,-,-,-,-,-,-,-,-,-,missing sensitivity results
+32062614,gpt-5-mini,,,,,,,,,,,
+34227468,gpt-5-mini,,-,-,need info on pheWAS,-,-,-,-,-,-,-
+37271768,gpt-5-mini,,,,,,,,,,,
+38643889,gpt-5-mini,,,,,,,,,,,
+38625888,gpt-5-mini,,,,,,,,,,,
+38156559,gpt-5-mini,,,,,,,,,,,
+37675772,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+34727949,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38242214,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38699385,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+37693321,gpt-5-mini,,,,,,,,,,,
+35656325,gpt-5-mini,,-,-,-,-,-,-,-,-,-,missing results
+37432894,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38409624,gpt-5-mini,,,,,,,,,,,
+38504987,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+35703944,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38584824,gpt-5-mini,,-,-,-,-,-,-,-,-,-,missing negative results
+37925898,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+35726641,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+35594314,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38030236,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+37718242,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+32714368,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+35011056,gpt-5-mini,,-,-,-,-,-,-,-,-,-,missing null and multivariant results
+34023889,gpt-5-mini,,-,missing third bidirectional exposure,-,-,-,-,-,-,-,-
+36936171,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+36738839,gpt-5-mini,,,,,,,,,,,
+37822602,gpt-5-mini,,-,-,-,-,-,-,-,-,-,missing null result
+32529581,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+36793015,gpt-5-mini,,-,-,-,-,-,-,-,-,-,missing main results
+36909950,gpt-5-mini,,,,,,,,,,,
+36514134,gpt-5-mini,,-,-,-,-,-,-,-,-,-,missing suggestive results
+37829610,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38782862,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+35761866,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+37409643,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+32433745,gpt-5-mini,,-,-,-,-,-,-,-,-,-,only output listed results and not the 28 mentioned
+33657885,gpt-5-mini,,,,,,,,,,,
+38746746,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+36247759,gpt-5-mini,,-,-,-,-,-,-,-,-,-,missing null results
+37422736,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+36924037,gpt-5-mini,,,,,,,,,,,
+37916108,gpt-5-mini,,,,,,,,,,,
+38716647,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+37565992,gpt-5-mini,,,,,,,,,,,
+38263277,gpt-5-mini,,-,-,-,-,-,-,-,-,many results missing description,-
+35615025,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38280379,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+23900446,gpt-5-mini,,,,,,,,,,,
+38264282,gpt-5-mini,,,,,,,,,,,
+37158995,gpt-5-mini,,,,,,,,,,,
+37668928,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+21282362,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+32309857,gpt-5-mini,,,,,,,,,,,
+32493397,gpt-5-mini,,,,,,,,,,,
+31733098,gpt-5-mini,,,,,,,,,,,
+37789337,gpt-5-mini,,-,-,-,-,-,-,-,-,-,missing results
+37904919,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38725159,gpt-5-mini,,,,,,,,,,,
+38053214,gpt-5-mini,,,,,,,,,,,
+33125193,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38246357,gpt-5-mini,,-,-,-,-,-,-,-,-,-,missing null results and written out results
+37787818,gpt-5-mini,,,,,,,,,,,
+38765751,gpt-5-mini,,-,-,-,-,missing info on sensitivity,-,-,-,-,missing multivariate results
+31908803,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+37638499,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38516009,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38576413,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+35575213,gpt-5-mini,,-,-,-,-,-,-,missing output,missing output,-,-
+38646850,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38511766,gpt-5-mini,,,,,,,,,,,
+37052410,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+29232439,gpt-5-mini,,,,,,,,,,,
+34184784,gpt-5-mini,,,,,,,,,,,
+38007229,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+38293563,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+34025845,gpt-5-mini,,-,-,-,-,-,-,-,-,-,-
+30167974,llama3,incapable of interpriting does not to mean null effect,,,,,,,Did not report population,Did not report back population,direction of effect for one outcome is wrong,
+30167974,llama3-2,incapable of interpriting does not to mean null effect,,,,,,,,,direction of effect for one outcome is wrong,
+30167974,deepseek-r1,"outcome is systemic hence the category circulatory disease, separates two sample MR and IVW, MR Egger and weighted median",,,,,,,Returns not explicitly mentioned,,,
+30167974,o4-mini,"separates two sample MR and IVW, MR Egger and weighted median, ",,,,,,,Returns empty dict because population is not explicitly mentioned,,direction of effect for one outcome is wrong,
+30167974,gpt-4-1,"separates two sample MR and IVW, MR Egger and weighted median, duplicated one of the result",,,,,,,Returns empty dict because population is not explicitly mentioned,,duplicates one result and meddled direction of effect,
+30167974,gpt-4o,,,,,,Broad method,,Returns empty dict because population is not explicitly mentioned,,,
+30167974,gpt-5,,,,,,Broad method and sensitivity,,GWAS characteristics no ancestries,,direction of effect for one outcome is wrong,
+30167974,gpt-5-mini,,,,,,Broad method and sensitivity,none,GWAS characteristics no ancestries,,Direction of effect is wrong for 3 results,
+38179043,llama3,,,,Wrong disease category (digestive system),,,,,,,
+38179043,llama3-2,,,,Wrong disease category(disease of nervous system),,,,,,,
+38179043,deepseek-r1,"The thinking has information on methods but the output has no methods, thinking includes a bit of breakdown but the output has no population",Category of gut microbiome is not molecular,,Wrong disease category(disease of nervous system),,Methods are missing,,No population reported,,,
+38179043,o4-mini,,Broke down the trait into specific subca,,Wrong disease outocme and categories,Did not report MG as outcome,Includes sensitivity analysis as a method,,,,,
+38179043,gpt-4-1,,,,Wrong disease category (digestive system),,Includes sensitivity analysis as a method,,,,,
+38179043,gpt-4o,,,,Wrong disease category (digestive system),,Includes sensitivity analysis as a method and other,,,,,
+38179043,gpt-5,,Broke down the trait into specific subca,,Wrong disease outocme and categories,Did not report MG as outcome,Includes sensitivity analysis as a method,,,,,
+38179043,gpt-5-mini,,Broke down the trait into specific subca,,Wrong disease outocme and categories,Did not report MG as outcome,Includes sensitivity analysis as a method,,,,,
+36104772,llama3,,,,,,,,,,,Missing effect on fibrinogen
+36104772,llama3-2,Includes more details of specific GPs,,,Broke inflammation to CRP and fibrinogen,,,,,,,
+36104772,deepseek-r1,Includes more details of specific GPs,,,Broke inflammation to CRP and fibrinogen,,,,,,,
+36104772,o4-mini,,Broke down the exposure to subcategories,,Broke inflammation to CRP and fibrinogen,,,,,,,Missing effect on CRP and Fibrinogen
+36104772,gpt-4-1,Includes more details of specific GPs,,,Broke inflammation to CRP and fibrinogen,,,,,,,Missing effect on CRP and Fibrinogen
+36104772,gpt-4o,,,,Broke inflammation to CRP and fibrinogen,,,,,,,Missing effect on CRP and Fibrinogen
+36104772,gpt-5,,Includes exposure broad category,,Broke inflammation to CRP and fibrinogen,,Includes sensitivity analysis,,,,,
+36104772,gpt-5-mini,,Includes exposure broad category,,Broke inflammation to CRP and fibrinogen,,Includes sensitivity analysis,,,,,
+36305497,llama3,,,,,,,,,,,Missing effect of NAFLD on Hcy
+36305497,llama3-2,,,,,,,,,,,Missing effect of NAFLD on Hcy
+36305497,deepseek-r1,,,,,,,,,,,Missing effect of NAFLD on Hcy
+36305497,o4-mini,Split the European ancestry per GWAS used,,,,,,,,,,
+36305497,gpt-4-1,Bidirectional MR used exposure and outcome in both scenarios,,,,,,,,,,
+36305497,gpt-4o,,,,,,Other,,,,,
+36305497,gpt-5,Bidirectional MR used exposure and outcome in both scenarios,,,,,,,Detailed account fo each GWAS,,,
+36305497,gpt-5-mini,Bidirectional MR used exposure and outcome in both scenarios,,,,,,,Detailed account fo each GWAS,,,
+38365715,llama3,Duplicated one result,,,,,,,No specific ancestry was mentioned,,,
+38365715,llama3-2,sample characteristics instead is provided individuals with endometriosis,,,,,,,No specific ancestry was mentioned,,,
+38365715,deepseek-r1,"the category of exposure and outcome is wrong, empty population dictionary",,,category of exposure and outcome is wrong,,,Missing IVW and leave one out,No specific ancestry was mentioned,,,
+38365715,o4-mini,"Split the exposure into individual reported taxas, empty population dictionary",,,,,,,No specific ancestry was mentioned,,,
+38365715,gpt-4-1,Empty population dictionary,,,,,,,No specific ancestry was mentioned,,,
+38365715,gpt-4o,,,,,,Includes other category,,No specific ancestry was mentioned,,,
+38365715,gpt-5,,,,,,Includes LOO sensitivity analysis,,No specific ancestry was mentioned,,,
+38365715,gpt-5-mini,,Includes exposure broad category,,,,Includes broad categories,,No specific ancestry was mentioned,,,
+34088753,llama3,,,,,,,,,,,
+34088753,llama3-2,"details on PUFAS and PUFA, includes keratinocyte as an outcome",,,,,,,,,,
+34088753,deepseek-r1,,,,,,,,,,,
+34088753,o4-mini,details on PUFAs,,,,,,,,,,
+34088753,gpt-4-1,"details on PUFAs, includes keratinocyte as an outcome",Includes exposure broad category,,includes outcome broad  category,,,,,,,
+34088753,gpt-4o,,Provides broad exposure category only,,,,,,,,,
+34088753,gpt-5,,Includes exposure broad category,,,,,,More details on GWAs,,,
+34088753,gpt-5-mini,,Includes exposure broad category,,includes outcome broad  category,,,,More details on GWAS,,,
+36773317,llama3,European ancestry from Exposure GWAS,,,,,,,,,,Did not report the CI range and missing other outcomes
+36773317,llama3-2,"European ancestry from Exposure GWAS, replicated Covid19",,,,,,,,,,
+36773317,deepseek-r1,European ancestry from Exposure GWAS,,,,,,,,,,
+36773317,o4-mini,European ancestry from Exposure GWAS,,,,,,,,,,Did not report any results other than an empty dictionary
+36773317,gpt-4-1,European ancestry from Exposure GWAS,,,,,,,,,,
+36773317,gpt-4o,,,,,,,,,,,Did not report the CI range and missing other outcomes
+36773317,gpt-5,,,,,,,,More details on GWAs,,,
+36773317,gpt-5-mini,,Mentions iron supplements as a proxy for exposure,,,,,,More details on GWAs,,,
+33408737,llama3,,,,,,,,,,,Missing result of MR-egger
+33408737,llama3-2,report vascular as outcome,,,,,,,,,,
+33408737,deepseek-r1,Includes 2SMR,,,,Missing cancer outcome,,,,,,
+33408737,o4-mini,category of exposure is molecular and not metabolic,,,,Missing cancer outcome,,,,,,Missing significant results
+33408737,gpt-4-1,"reports vascular as outcome, includes sensitivity analysis",,,,,,,,,,
+33408737,gpt-4o,,,,,,,,,,,
+33408737,gpt-5,,,,,,,,,,,
+33408737,gpt-5-mini,,,,,,,,,,,
+36980988,llama3,,,,,,,,,,,Missing non-main analysis
+36980988,llama3-2,,,,,,,,,,,
+36980988,deepseek-r1,,,,,,,,,,,
+36980988,o4-mini,Provides more details on ancestry GWAS,,,,,,,,,,
+36980988,gpt-4-1,Provides more details on ancestry GWAS,,,,,,,,,,
+36980988,gpt-4o,,,,,,,,,,,
+36980988,gpt-5,,,,,,,,,,,
+36980988,gpt-5-mini,,,,,,,,,,,
+36895273,llama3,,,,,,,,,,,
+36895273,llama3-2,Includes the no-causal with no stats,,,,,,,,,,
+36895273,deepseek-r1,,,,,,,,,No population reported and datafield missing,,
+36895273,o4-mini,,,,,,,,,,,
+36895273,gpt-4-1,,,,,,,,,,,
+36895273,gpt-4o,,,,,,,,,,,
+36895273,gpt-5,Robust at extracting  evidence from text,,,,,,,More details on GWAs,,,
+36895273,gpt-5-mini,Robust at extracting  evidence from text,,,,,,,More details on GWAs,,,
+38298515,llama3,"Disease category is wrong (metabolic instead of digestive system), excludes IVW",,,,,,,,,,
+38298515,llama3-2,"Disease category is wrong (metabolic instead of digestive system), excludes IVW",,,,,,,,,,
+38298515,deepseek-r1,"Excludes mentioning IVW, detailed breakdown of the results to tell apart the negative statements",,,,,,,,,,
+38298515,o4-mini,"Includes CRP a positive control outcome,excludes IVW, more detailed population description, struggling with negative sentences for result reporting",,,,,,,,,,
+38298515,gpt-4-1,Robust in handpicking netaive sentences for result reporting,,,,,,,,,,
+38298515,gpt-4o,,,,,reports only broad outcome categories,,,,,,
+38298515,gpt-5,Robust in handpicking netaive sentences for result reporting,,,includes CRP a positive control outcome,,Reports positive control outcome as a method,,More details on GWAs,,,
+38298515,gpt-5-mini,Robust in handpicking netaive sentences for result reporting,,,includes CRP positive control outcome,,,,More details on GWAs,,,
+37933065,llama3,Population not provided,,,,,,,,,,Missing ORs for two methods
+37933065,llama3-2,Population not provided,,,,,,,,,,
+37933065,deepseek-r1,"Population not provided, struggled with MR EGGER intercept reporting",,,,,,,,,Egger regression intercept defined as a beta value reported in every result,
+37933065,o4-mini,Returns an empty dictionary because population is not metioned,,,,,,,,,,
+37933065,gpt-4-1,Returns an empty dictionary because population is not metioned,,,,,,,,,,
+37933065,gpt-4o,,,,,,Reports broad categories only,,,,,
+37933065,gpt-5,,,,,,,,,,,
+37933065,gpt-5-mini,,,,,,Provides details on subcategories,,,,,
+36333784,llama3,Extracts GWAS characteristics,,,Includes the broad outcome category,,,missing Supplementary methods,,,,
+36333784,llama3-2,Extracts GWAS characteristics,,,,,,,,,,
+36333784,deepseek-r1,Population not provided,Duplication of the same exposure using a different prefix,,,,,missing Supplementary methods,,,,
+36333784,o4-mini,Empty list for population,,,,,,,,,,
+36333784,gpt-4-1,Empty list for population,,,,,MR mentioned,missing Sensitivity analysis methods,,,,
+36333784,gpt-4o,,,,,,,,,,,
+36333784,gpt-5,,,,,,MR mentioned,missing Sensitivity analysis methods,More details on GWAs,,,
+36333784,gpt-5-mini,,,,,,,,More details on GWAS,,,
+38378549,llama3,,,,,,,,,,,
+38378549,llama3-2,,,,,,,,,,,
+38378549,deepseek-r1,,,,Includes the broad outcome category,,,,,,,
+38378549,o4-mini,,,,,,,,,,,
+38378549,gpt-4-1,,includes exposure subcategories,,includes broad outcome category,,,,,,,
+38378549,gpt-4o,,,,,,,,,,,
+38378549,gpt-5,,includes exposure subcategories ,,,,,,More detailed on GWAS,,,
+38378549,gpt-5-mini,,includes exposure subcategories,,,,,,More detailed on GWAS,,,
+38179450,llama3,,,,,,,Missing two methods (metaanalysis and LOO),Dataset characteristics,,,
+38179450,llama3-2,,,,,,,Missing two methods (metaanalysis and LOO),Dataset characteristics,,,
+38179450,deepseek-r1,,,,,,Added external validation dataset as a method,Missing LOO,Not provided population in abstract,,,
+38179450,o4-mini,,Breaks down the trait to specific microbiome,,,,,Missing LOO,Empty list for population because its absent,,,
+38179450,gpt-4-1,,,,,,,Missing LOO,Empty list for population because its absent,,,
+38179450,gpt-4o,,,,,,,Missing details on methodssubcategories ,Patient description,,,
+38179450,gpt-5,,Breaks down the trait to specific microbiome and broad category,,,,A validation dataset,,More details on GWAs,,,
+38179450,gpt-5-mini,,Breaks down the trait to specific microbiome and broad category,,,,A validation dataset,,More details on GWAS,,,
+30707692,llama3,,,,,Missing one trivial trait,,,,,,
+30707692,llama3-2,,,,,Missing one trivial trait,,,,,,
+30707692,deepseek-r1,,,,,,,,,,,
+30707692,o4-mini,,,,,,,,,,,
+30707692,gpt-4-1,,,,,,,,,,,
+30707692,gpt-4o,,,,,Missing one trivial trait,,,,,,
+30707692,gpt-5,,,,,,,,,,,
+30707692,gpt-5-mini,,,,,,,,,,,
+35992145,llama3,Bidirectional MR considered the outcome as an exposure,,,,,,,,,,Missing null results
+35992145,llama3-2,Bidirectional MR considered the outcome as an exposure,,,,,,,,,,
+35992145,deepseek-r1,Did not consider outcome as exposure despite the use of Bidirectional MR,,,,,,,,,,Missing null results
+35992145,o4-mini,Bidirectional MR well handled,,,,,,,,,,Missing null results
+35992145,gpt-4-1,Bidirectional MR well handled,,,,,,,,,,reports one blacket null result
+35992145,gpt-4o,"Collapsed exposures and outcomes into broad categories, retructing to just title onle",,Collapsed the exposures to broad categories,,Collapsed into broad categories,,,,,,Missing null results
+35992145,gpt-5,Bidirectional MR well handled,,,,,,,,,,
+35992145,gpt-5-mini,Bidirectional MR well handled,,,,,,,More details on GWAS,,,
+38622701,llama3,Extracted only three specific exposures,,,,,,missing sensitivity analyses methods,No ancestry mentioned but dataset characteristics,,,
+38622701,llama3-2,Extracted only three specific exposures,,,,,,missing sensitivity analyses methods,No ancestry mentioned but dataset characteristics,,,
+38622701,deepseek-r1,Extracted the general exposure of lipidomes,,,,,,missing sensitivity analyses methods,No population mentioned,,,
+38622701,o4-mini,,Includes subcategories,,Includes subcategories ER+ and ER-,,,,No population mentioned,,,
+38622701,gpt-4-1,,,,Includes subcategories ER+ and ER-,,,,No ancestry mentioned but dataset characteristics,,,
+38622701,gpt-4o,,,,,,,Missing specific sensitivity and Bayesian method,Did not extract,Missing to report population as an output,,
+38622701,gpt-5,,Includes subcategories,,Includes subcategories ER+ and ER-,,,,No ancestry mentioned but dataset characteristics,,,
+38622701,gpt-5-mini,,Includes subcategories,,Includes subcategories ER+ and ER-,,,,No ancestry mentioned but dataset characteristics,,,
+31661179,llama3,,,,,,,,No ancestry mentioned but dataset characteristics,,,
+31661179,llama3-2,,,,,,,,More details on GWAS,,,
+31661179,deepseek-r1,,,,,,,,No population mentioned,,,
+31661179,o4-mini,,includes subcategories of migraine,,,,,,More details on GWAS,,,
+31661179,gpt-4-1,,includes subcategories of migraine,,,,,,More details on GWAS,,,
+31661179,gpt-4o,,,,,,,,GWAS datasets,,,
+31661179,gpt-5,,includes subcategories of migraine,,,,,,More details on GWAS,,,
+31661179,gpt-5-mini,,includes subcategories of migraine,,,,,,More details on GWAS,,,
+36789917,llama3,,,,,,,,GWAS datasets,,,
+36789917,llama3-2,Outcome from post hoc analysis is included,,,,,,,GWAS datasets,,,
+36789917,deepseek-r1,Missed out on reporting one exposure,,,,,,,No information on population,,,
+36789917,o4-mini,,,,,,,,Empty list,,,
+36789917,gpt-4-1,,,,,,,,No information on population,,,
+36789917,gpt-4o,,,,,,,,Empty list,,,
+36789917,gpt-5,,,,includes CAD part of post hoc analysis,,,,More details on GWAS,,,
+36789917,gpt-5-mini,,,,,,,,More details on GWAS,,,
+38672162,llama3,,,,,,,,UKB and Biobank Japan,,,
+38672162,llama3-2,,,,,,,,UKB and Biobank Japan,,,
+38672162,deepseek-r1,,,,,,,missing sensitivity analyses methods,No population was extracted,Missing to extract two ancestries,,
+38672162,o4-mini,,,,,,,,UKB and Biobank Japan,,,
+38672162,gpt-4-1,,,,,,,,UKB and Biobank Japan,,,
+38672162,gpt-4o,,,,,,,Missing sensitivity methods,UKB and Biobank Japan,,,
+38672162,gpt-5,,,,,,,,UKB and Biobank Japan and more details,,,
+38672162,gpt-5-mini,,,,,,,,UKB and Biobank Japan and more details,,,
+35957835,llama3,,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data
+35957835,llama3-2,,,,,,,,More details on GWAS,,,
+35957835,deepseek-r1,this model is struggling with categories of exposure and outcome,,,,,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,,
+35957835,o4-mini,,,,,,,,More details on GWAS,,,
+35957835,gpt-4-1,,,,,,,,More details on GWAS,,,
+35957835,gpt-4o,,,,,,,,More details on GWAS,,,
+35957835,gpt-5,Extracted glucose traitsalthough not really outcomes but mentioned as being associated ,,,,,,,More details on GWAS,,,
+35957835,gpt-5-mini,Extracted glucose traitsalthough not really outcomes but mentioned as being associated ,,,,,,,More details on GWAS,,,
+37495778,llama3,,,,,,,,More details on GWAS,,,
+37495778,llama3-2,,,,,,,,More details on GWAS,,,
+37495778,deepseek-r1,Does not extract specific exposures besides the blacket term,,Missing the subtypes of exposure,,,,Missing methods,DId not extract the population,Missing European descent,,
+37495778,o4-mini,,,,,,,,More details on GWAS,,,
+37495778,gpt-4-1,,,,,,,,,,,
+37495778,gpt-4o,,,,,,,,More details on GWAS,,,
+37495778,gpt-5,,,,,,,,More details on GWAS,,,
+37495778,gpt-5-mini,,,,,,,,More details on GWAS,,,
+32062614,llama3,,,Missing subtypes of exposure,,,,,,,,
+32062614,llama3-2,,,Missing subtypes of exposure,,,,,,,,
+32062614,deepseek-r1,,,,,,,,,,,
+32062614,o4-mini,,,missing subcategories,,,,,,,,
+32062614,gpt-4-1,,,missing subcategories,,,,,,,,
+32062614,gpt-4o,,,missing subcategories,,,,,,,,
+32062614,gpt-5,,,,,,,,,,,
+32062614,gpt-5-mini,,,,,,,,,,,
+34227468,llama3,,,Did not break down smoking to two subcategories,,,,,No mention of population,,,
+34227468,llama3-2,Includes the broad exposure category,,,,,,,No mention of population,,,
+34227468,deepseek-r1,,,Did not break down smoking to two subcategories,,Missing out ACE and covid19 subcategories,Includes Other category,,No mention of population,,,
+34227468,o4-mini,,,,,,,,No mention of population,,,
+34227468,gpt-4-1,,,Did not break down smoking to two subcategories,,"broad categories are reported, missing COVID severity",,,No mention of population,,,
+34227468,gpt-4o,,,Did not break down smoking to two subcategories,,,,,No mention of population,,,
+34227468,gpt-5,,,,,,,,More details on dataset,,,
+34227468,gpt-5-mini,,,,,,,,More details on dataset,,,
+37271768,llama3,,,,,,,,,,,
+37271768,llama3-2,,,,,,,,,,,
+37271768,deepseek-r1,,,,,Missing the no causal outcomes,,,,,,
+37271768,o4-mini,,,,,,,,More details about the dataset,,,
+37271768,gpt-4-1,,,,,,,,,,,
+37271768,gpt-4o,,,,,,Presents the broad categories only,,,,,
+37271768,gpt-5,,,,,,,,More details about the dataset,,,
+37271768,gpt-5-mini,,,,,,,,More details about the dataset,,,
+38643889,llama3,,,,,,,,No data on population,,,
+38643889,llama3-2,,,,,,,,No data on population,,,
+38643889,deepseek-r1,,,,,,,,No data on population,,,
+38643889,o4-mini,,,,,,,,No data on population,,,
+38643889,gpt-4-1,Efficient with Bidirectional MR,,,,,,,No data on population,,,
+38643889,gpt-4o,,,,,,,Missing subcategories,No data on population,,,
+38643889,gpt-5,Efficient with Bidirectional MR,,,,,,,No data on population,,,
+38643889,gpt-5-mini,Efficient with Bidirectional MR,,,,,,,No data on population,,,
+38625888,llama3,Challenging to know exposure and outcomes,,,,,,,More details about the dataset,,,
+38625888,llama3-2,Challenging to know exposure and outcomes,,,,,,,More details about the dataset,,,
+38625888,deepseek-r1,Challenging to know exposure and outcomes,,Extracted SNPs in general and does not include the variables,,,,,More details about the dataset,,,
+38625888,o4-mini,,,,,,,,,,,
+38625888,gpt-4-1,,,,,,,,,,,
+38625888,gpt-4o,,,,,,,,,,,
+38625888,gpt-5,,,,,,,,,,,
+38625888,gpt-5-mini,,,,,,,,,,,
+38156559,llama3,,,,,,,,,,,
+38156559,llama3-2,,,,,,,,,,,
+38156559,deepseek-r1,,,,,Missing two of the 5 outcomes,,,,,,
+38156559,o4-mini,,,,,,,,,,,
+38156559,gpt-4-1,,Captures broad categories,,Bidirectional MR,,,,,,,
+38156559,gpt-4o,,Captures all outcomes bidirectional MR,,,,,,,,,
+38156559,gpt-5,,Captures all outcomes bidirectional MR,,Bidirectional MR,,,,,,,
+38156559,gpt-5-mini,,,,,,,,,,,
+37675772,llama3,,,,,,,,Did not extract population,missing the population data,,
+37675772,llama3-2,,,,,,,,,,,
+37675772,deepseek-r1,,,,,Missing 5 outcomes,,,,,,
+37675772,o4-mini,,,,,,,,More details about the dataset,,,
+37675772,gpt-4-1,,,,,,,,More details about the dataset,,,
+37675772,gpt-4o,,,,,,,,More details about the dataset,,,
+37675772,gpt-5,,,,,,,,More details about the dataset,,,
+37675772,gpt-5-mini,,,,,,,,More details about the dataset,,,
+34727949,llama3,,,Did not break down th exposure into constituents,,,,,More details about the dataset,,,
+34727949,llama3-2,,,Reports both overall and subcategories of exposure,,,,,More details about the dataset,,,
+34727949,deepseek-r1,,,,,,Includes metabolic profiling,,more details about the dataset,,,
+34727949,o4-mini,,,,,,,,more details about the dataset,,,
+34727949,gpt-4-1,,,,,,,,more details about the dataset,,,
+34727949,gpt-4o,,,,,,,"Includes other category, missing MVR",more details about the dataset,,,
+34727949,gpt-5,,,,includes subcategories,,,,more details about the dataset,,,
+34727949,gpt-5-mini,,,,includes subcategories,,,,more details about the dataset,,,
+38242214,llama3,,,,,,,,more details about the dataset,,,
+38242214,llama3-2,,,,,,,,more details about the dataset,,,
+38242214,deepseek-r1,,,,,,,,more details about the dataset,,,
+38242214,o4-mini,,,,,,,,more details about the dataset,,,
+38242214,gpt-4-1,,bidirectional MR,,bidirectional MR,,,,more details about the dataset,,,
+38242214,gpt-4o,,,,,,,,more details about the dataset,,,
+38242214,gpt-5,,bidirectional MR,,bidirectional MR,,,,more details about the dataset,,,
+38242214,gpt-5-mini,,,,,,,,more details about the dataset,,,
+38699385,llama3,,,,,,,,more details about the dataset,,,
+38699385,llama3-2,,,,,,,,more details about the dataset,,,
+38699385,deepseek-r1,,Extracted SNPs and not exposure,,,,,,more details about the dataset,,,
+38699385,o4-mini,,,,,,,,more details about the dataset,,,
+38699385,gpt-4-1,,,,,,,,more details about the dataset,,,
+38699385,gpt-4o,,,,,,,,more details about the dataset,,,
+38699385,gpt-5,,,,,,,,more details about the dataset,,,
+38699385,gpt-5-mini,,,none,,,,,more details about the dataset,,,
+37693321,llama3,includes exposure super category,,,,,,,No specific ancestry,,,
+37693321,llama3-2,includes exposure super category,,,,,,,No specific ancestry,,,
+37693321,deepseek-r1,,,,,,,,No specific ancestry,,,
+37693321,o4-mini,,,,,,,,No specific ancestry,,,
+37693321,gpt-4-1,,bidirectional,,bidirectional,,,,No specific ancestry,,,
+37693321,gpt-4o,,,,,,,Missing subcategories,No specific ancestry,,,
+37693321,gpt-5,,bidirectional,,bidirectional,,,,No specific ancestry,,,
+37693321,gpt-5-mini,,bidirectional,,,,,,No specific ancestry,,,
+35656325,llama3,,,,,,,,UKB,,,
+35656325,llama3-2,,,,,,,,UKB,,,
+35656325,deepseek-r1,,,,,,,,UKB,,,
+35656325,o4-mini,,bidirectional,,bidirectional,,,,UKB and more details,,,
+35656325,gpt-4-1,,bidirectional,,bidirectional,,,,UKB and more details,,,
+35656325,gpt-4o,,,,,,Missing details for sensitivity analysis,,UKB,,,
+35656325,gpt-5,,bidirectional,,bidirectional,,,,UKB and more details,,,
+35656325,gpt-5-mini,,bidirectional,,bidirectional,,,,UKB and more details,,,
+37432894,llama3,,,,,,,,Finngen cohort,,,
+37432894,llama3-2,,,,,,,,Finngen cohort,,,
+37432894,deepseek-r1,,,,,,,,Finngen cohort,,,
+37432894,o4-mini,,,,,,,,Finngen cohort,,,
+37432894,gpt-4-1,,,,,,,,Finngen cohort,,,
+37432894,gpt-4o,,,,,,,,Finngen cohort,,,
+37432894,gpt-5,,,,,,,,Finngen cohort and more details,,,
+37432894,gpt-5-mini,,,,,,,,Finngen cohort and more details,,,
+38409624,llama3,,,,,,,,No specific ancestry,,,
+38409624,llama3-2,,,,,,,,No specific ancestry,,,
+38409624,deepseek-r1,,,missing exposure subcategories ,,,,,No specific ancestry,,,
+38409624,o4-mini,,,,,,,,No specific ancestry,,,
+38409624,gpt-4-1,,,,,,,,No specific ancestry,,,
+38409624,gpt-4o,,,,,,,,No specific ancestry,,,
+38409624,gpt-5,,,,,,,,Details on dataset,,,
+38409624,gpt-5-mini,,,,,,,,Details on dataset,,,
+38504987,llama3,,,,,Missing one outcome,,,Details on dataset,,,
+38504987,llama3-2,,,,,,,,Details on dataset,,,
+38504987,deepseek-r1,,,,,,,,Details on dataset,,,
+38504987,o4-mini,,,,,,,,Details on dataset,,,
+38504987,gpt-4-1,,,,,,,,Details on dataset,,,
+38504987,gpt-4o,,,,broad categories of mortality,,,,Details on dataset,,,
+38504987,gpt-5,,,,sub categories of mortality,,,,Details on dataset,,,
+38504987,gpt-5-mini,,,,sub categories of mortality,,,,Details on dataset,,,
+35703944,llama3,,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data
+35703944,llama3-2,,,,,,,Missing sensitivity analysis methods,Details on dataset,,,
+35703944,deepseek-r1,,,,,,,Missing sensitivity methods,Details on dataset,,,
+35703944,o4-mini,,,,,,,,More details on dataset,,,
+35703944,gpt-4-1,,,,,,,,More details on dataset,,,
+35703944,gpt-4o,,,,,,,,Details on dataset,,,
+35703944,gpt-5,,,,,,,,More details on dataset,,,
+35703944,gpt-5-mini,,,,,,,,More details on dataset,,,
+38584824,llama3,,,,,,,,Details on dataset,,,
+38584824,llama3-2,,,,,,,,Details on dataset,,,
+38584824,deepseek-r1,,,,,,,,Details on dataset,,,
+38584824,o4-mini,,,,,,,,Details on dataset,,,
+38584824,gpt-4-1,,,,,,,,Details on dataset,,,
+38584824,gpt-4o,,,,,,,,Details on dataset,,,
+38584824,gpt-5,,,,,,,,Details on dataset,,,
+38584824,gpt-5-mini,,,,,,provides more details on methods,,Details on dataset,,,
+37925898,llama3,,,,,,,,Details on dataset,,,
+37925898,llama3-2,,,,provides subcategories of main outcome,,,,Details on dataset,,,
+37925898,deepseek-r1,,,,,,,,Details on dataset,,,
+37925898,o4-mini,,,,,,,,More details on dataset,,,
+37925898,gpt-4-1,,Broad COVID19 category,,,,,,More details on dataset,,,
+37925898,gpt-4o,,,,provides subcategories of main outcome,,,,More details on dataset,,,Did not extract any result
+37925898,gpt-5,,,,provides subcategories of main outcome,,,,More details on dataset,,,
+37925898,gpt-5-mini,,,,provides subcategories of main outcome,,Includes replication analysis,,More details on dataset,,,
+35726641,llama3,,,,,,,,Details on dataset,,,
+35726641,llama3-2,,,,,,,,Details on dataset,,,
+35726641,deepseek-r1,,,,,,,,Details on dataset,,,
+35726641,o4-mini,,,,,,,,More details on dataset,,,
+35726641,gpt-4-1,,,,,,,,More details on dataset,,,
+35726641,gpt-4o,,,,,,Includes other category,,More details on dataset,,,
+35726641,gpt-5,,,,,,,,More details on dataset,,,
+35726641,gpt-5-mini,,,,,,,,More details on dataset,,,
+35594314,llama3,,,,,,,,More details on dataset,,,
+35594314,llama3-2,,,,,,,,More details on dataset,,,
+35594314,deepseek-r1,,,,,,,,More details on dataset,,,
+35594314,o4-mini,,,,,,,,More details on dataset,,,
+35594314,gpt-4-1,,,,,,,,More details on dataset,,,
+35594314,gpt-4o,,,,,,,,More details on dataset,,,
+35594314,gpt-5,,,,,,,,More details on dataset,,,
+35594314,gpt-5-mini,,,,,,,,More details on dataset,,,
+38030236,llama3,,,,,,,,No specific population and characetristics of dataset are limited,,,
+38030236,llama3-2,,,,,,,,No specific population and characetristics of dataset are limited,,,
+38030236,deepseek-r1,,,,,,,,No specific population and characetristics of dataset are limited,,,
+38030236,o4-mini,,Includes subcategories,,,,includes other event mining ,,No specific population and characetristics of dataset are limited,,,Did not extract anay result
+38030236,gpt-4-1,,,,,,includes other event mining ,,No specific population and characetristics of dataset are limited,,,
+38030236,gpt-4o,,,,,,,,No specific population and characetristics of dataset are limited,,,
+38030236,gpt-5,,Includes subcategories,,,,includes other event mining ,,No specific population and characetristics of dataset are limited,,,
+38030236,gpt-5-mini,,Includes subcategories,,,,includes other event mining ,,No specific population and characetristics of dataset are limited,,,
+37718242,llama3,,Includes subcategories,,Includes the subcategories,,,,No specific population and characetristics of dataset are limited,,,
+37718242,llama3-2,,,,,,,,No specific population and characetristics of dataset are limited,,,
+37718242,deepseek-r1,,,,,,Did not extract at all,Missing all methods,No specific population and characetristics of dataset are limited,Did not extract population results,,
+37718242,o4-mini,,Includes subcategories,,Includes the subcategories,,,,No specific population and characetristics of dataset are limited,,,
+37718242,gpt-4-1,,Includes subcategories,,Includes the subcategories,,,Missing a few sensitivity methods,No specific population and characetristics of dataset are limited,,,
+37718242,gpt-4o,,Includes subcategories,,Includes the subcategories,,,Missing subcategories,No specific population and characetristics of dataset are limited,,,
+37718242,gpt-5,,Includes subcategories,,Includes the subcategories,,,,No specific population and characetristics of dataset are limited,,,
+37718242,gpt-5-mini,,Includes subcategories,,Includes the subcategories,,,,No specific population and characetristics of dataset are limited,,,
+32714368,llama3,,,,,,,,No specific population and characetristics of dataset are limited,,,
+32714368,llama3-2,,,,,,,,No specific population and characetristics of dataset are limited,,,
+32714368,deepseek-r1,,,Just presents the blanket exposure from title,,extracted the blanket outcome in title,,missing sensitivity methods,No specific population and characetristics of dataset are limited,,,
+32714368,o4-mini,,,,,,,,No specific population and characetristics of dataset are limited,,,
+32714368,gpt-4-1,,,,,,,,No specific population and characetristics of dataset are limited,,,
+32714368,gpt-4o,,,,,,,missing sensitivity methods,No specific population and characetristics of dataset are limited,,,
+32714368,gpt-5,,,,,,,,No specific population and characetristics of dataset are limited,,,
+32714368,gpt-5-mini,,,,,,,,No specific population and characetristics of dataset are limited,,,
+35011056,llama3,,,,,,,,More details on dataset,,,
+35011056,llama3-2,,,,,,,,More details on dataset,,,
+35011056,deepseek-r1,,,,,,,,More details on dataset,,,
+35011056,o4-mini,,,,,,,,More details on dataset,,,
+35011056,gpt-4-1,,,,,,,,More details on dataset,,,
+35011056,gpt-4o,,,,,,,,More details on dataset,,,
+35011056,gpt-5,,,,,,,,More details on dataset,,,
+35011056,gpt-5-mini,,,,,,,,More details on dataset,,,
+34023889,llama3,,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data
+34023889,llama3-2,,,,,,,,More details on dataset,,,
+34023889,deepseek-r1,,,,,Missing one outcome,,,More details on dataset,,,
+34023889,o4-mini,,,,,,,,More details on dataset,,,
+34023889,gpt-4-1,,,,,,,,More details on dataset,,,
+34023889,gpt-4o,,,,,,No details on other category,,More details on dataset,,,
+34023889,gpt-5,,,,,,,,More details on dataset,,,
+34023889,gpt-5-mini,,,,,,,,More details on dataset,,,
+36936171,llama3,,,,,,,,,,,
+36936171,llama3-2,,Includes exposure supercategory,,,,,,,,,
+36936171,deepseek-r1,,,,,,,,,,,
+36936171,o4-mini,,,,,,,,More details on dataset,,,
+36936171,gpt-4-1,,,,,,,,More details on dataset,,,
+36936171,gpt-4o,,,Missing subcategories,,,,,More details on dataset,,,
+36936171,gpt-5,,,,,,,,More details on dataset,,,
+36936171,gpt-5-mini,,,,,,,,More details on dataset,,,
+36738839,llama3,,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data
+36738839,llama3-2,,Includes mediators,,,,,,No specific ancestry but some general dataset charecteristics,,,
+36738839,deepseek-r1,,includes mediators,,,,,,No specific ancestry but some general dataset charecteristics,,,
+36738839,o4-mini,,,,,,,,,,,
+36738839,gpt-4-1,,,,,,,,,,,
+36738839,gpt-4o,,,,,,,,,,,
+36738839,gpt-5,,,,,,,,,,,
+36738839,gpt-5-mini,,,,,,,,,,,
+37822602,llama3,,,,,,,,No specific ancestry but some general dataset charecteristics,,,
+37822602,llama3-2,,,,,,,,No specific ancestry but some general dataset charecteristics,,,
+37822602,deepseek-r1,,,,,Missing some two outcomes,,,No specific ancestry but some general dataset charecteristics,,,
+37822602,o4-mini,,includes subcategories,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+37822602,gpt-4-1,,includes subcategories,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+37822602,gpt-4o,,,,includes broad category,,,,No specific ancestry but some general dataset charecteristics,,,
+37822602,gpt-5,,includes subcategories,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+37822602,gpt-5-mini,,includes subcategories,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+32529581,llama3,,,,,,,,No specific ancestry but some general dataset charecteristics,,,
+32529581,llama3-2,,,,,,,,No specific ancestry but some general dataset charecteristics,,,
+32529581,deepseek-r1,,,,,,,,No specific ancestry but some general dataset charecteristics,,,
+32529581,o4-mini,,includes subcategories,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+32529581,gpt-4-1,,Broad categories,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+32529581,gpt-4o,,Broad categories,,,,,,No specific ancestry but some general dataset charecteristics,,,
+32529581,gpt-5,,includes subcategories,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+32529581,gpt-5-mini,,includes subcategories,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+36793015,llama3,,,,,Does not report outcome subcategories,,,No specific ancestry but some general dataset charecteristics,,,
+36793015,llama3-2,,,,,,,,No specific ancestry but some general dataset charecteristics,,,
+36793015,deepseek-r1,,,,,Did not extract instead the outcome is classified under exposure,,,No specific ancestry but some general dataset charecteristics,,,
+36793015,o4-mini,Bidirectional MR,,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+36793015,gpt-4-1,Bidirectional MR,,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+36793015,gpt-4o,Extracted exposure and outcome for forward MR only,,,,Does not extract subcategories of the outcome,,,No specific ancestry and empty list,,,
+36793015,gpt-5,Bidirectional MR,,,,Includes subcategories,,,No specific ancestry but more details on general dataset charecteristics,,,
+36793015,gpt-5-mini,Bidirectional MR,,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+36909950,llama3,,Reports the exposure super category,missing exposure subcategories,,,,,No specific ancestry and empty list,,,
+36909950,llama3-2,,,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+36909950,deepseek-r1,,,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+36909950,o4-mini,,,,,,,,,,,
+36909950,gpt-4-1,,,,,,,,,,,
+36909950,gpt-4o,,,,,,,,,,,
+36909950,gpt-5,,,,,,,,,,,
+36909950,gpt-5-mini,,,,,,,,,,,
+36514134,llama3,,,,,,,,European and East Asian ,,,
+36514134,llama3-2,,,,,,,,European and East Asian ,,,
+36514134,deepseek-r1,,,,,missing overall cancer outcome,,,European and East Asian ,,,
+36514134,o4-mini,,,,,,,,European and East Asian and more details,,,
+36514134,gpt-4-1,,,,,,,,European and East Asian and more details,,,
+36514134,gpt-4o,,,,,missing overall cancer outcome,,,European and East Asian ,,,
+36514134,gpt-5,,,,,,,,European and East Asian and more details,,,
+36514134,gpt-5-mini,,,,,,,,European and East Asian and more details,,,
+37829610,llama3,,,,,,,,Details on dataset,,none,
+37829610,llama3-2,,,,,,,,Details on dataset,,none,
+37829610,deepseek-r1,,,,,,Did not extract at all,,,Did not extract population,none,
+37829610,o4-mini,,,,,,,,Details on dataset,,,
+37829610,gpt-4-1,,,,,,,,Details on dataset,,,
+37829610,gpt-4o,,,,,,,,Empty list,,,
+37829610,gpt-5,,,,,,,,Details on dataset,,,
+37829610,gpt-5-mini,,,,,,,,Details on dataset,,,
+38782862,llama3,,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data
+38782862,llama3-2,,,,includes outcome supercategory,,,,Details on dataset,,,
+38782862,deepseek-r1,,,,,Missing out one outcome ,,Missing sensitivity methods,No information provided,,,
+38782862,o4-mini,,BMI is a mediator,,,Missing out one outcome ,,,Details on dataset,,,
+38782862,gpt-4-1,,,,includes outcome supercategory,,,,Details on dataset,,,
+38782862,gpt-4o,,,,includes outcome supercategory,,,,Details on dataset,,,
+38782862,gpt-5,,BMI is a mediator,,includes outcome supercategory,,,none,Details on dataset,,,
+38782862,gpt-5-mini,,BMI is a mediator,,includes outcome supercategory,,,,Details on dataset,,,
+35761866,llama3,,,,,,,,East Asian,,,
+35761866,llama3-2,,,,,,,,East Asian,,,
+35761866,deepseek-r1,,,,,,,,East Asian,,,
+35761866,o4-mini,Bidirectional MR,,,,,,,East Asian,,,
+35761866,gpt-4-1,Bidirectional MR,,,,,,,East Asian,,,
+35761866,gpt-4o,,,,,,,,East Asian,,,
+35761866,gpt-5,Bidirectional MR,,,,,,,East Asian,,,
+35761866,gpt-5-mini,Bidirectional MR,,,,,,,East Asian,,,
+37409643,llama3,,,,,,,,European,,,
+37409643,llama3-2,,,,,,,,European,,,
+37409643,deepseek-r1,,,,,,,,European,,,
+37409643,o4-mini,,Broad and subcategories only with regard to bidirectional MR,,Broad and subcategories only with regard to bidirectional MR,,,,European,,,
+37409643,gpt-4-1,,Broad categories only with regard to bidirectional MR,,Broad categories only with regard to bidirectional MR,,,,European,,,
+37409643,gpt-4o,,Broad categories only with regard to bidirectional MR,,Broad categories only with regard to bidirectional MR,,,,European,,,
+37409643,gpt-5,,Broad and subcategories only with regard to bidirectional MR,,Broad and subcategories only with regard to bidirectional MR,,,,European,,,
+37409643,gpt-5-mini,,Broad and subcategories only with regard to bidirectional MR,,Broad and subcategories only with regard to bidirectional MR,,,,European,,,
+32433745,llama3,,,,,,,,Details on dataset,,,
+32433745,llama3-2,,,,,,,,Details on dataset,,,
+32433745,deepseek-r1,,,,,,,,Details on dataset,,,
+32433745,o4-mini,,,,,,,,Details on dataset,,,
+32433745,gpt-4-1,,,,,,,,Details on dataset,,,
+32433745,gpt-4o,,,,,,,,Details on dataset,,,
+32433745,gpt-5,,,,,,,,More details on dataset,,,
+32433745,gpt-5-mini,,,,,,,,More details on dataset,,,
+33657885,llama3,Hallucinated on the same content,No abstract but responde1d with incorrect information,No proper data for this paper,No proper details,Hallucinated results,No proper details,Hallucinated results,missing abstract,No abstarct and returned empty lists,No abstract,
+33657885,llama3-2,Hallucinated on the same content,No abstract but responde1d with incorrect information,No proper data for this paper,No proper details,Hallucinated results,No proper details,Hallucinated results,No proper details,Hallucinated results,No abstract,Hallucinated results
+33657885,deepseek-r1,Hallucinated on the same content,No abstract,No proper data for this paper,No proper details,Hallucinated results,No proper details,Hallucinated results,missing abstract,No abstarct and returned empty lists,No abstract,Hallucinated results
+33657885,o4-mini,,No abstract,Missing abstract,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists
+33657885,gpt-4-1,,No abstract,Missing abstract,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists
+33657885,gpt-4o,,No abstract,Missing abstract,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists
+33657885,gpt-5,,No abstract,Missing abstract,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists
+33657885,gpt-5-mini,,No abstract,Missing abstract,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists,missing abstract,No abstarct and returned empty lists
+38746746,llama3,,,,,,,,Not known ancestry,,,
+38746746,llama3-2,,,,,,,,Not known ancestry,,,
+38746746,deepseek-r1,,,,,,,,Not known ancestry,,,
+38746746,o4-mini,,Subcategories of gut microbiota,,,,,,Not known ancestry,,,
+38746746,gpt-4-1,,,,combines the two outcomes,,,,Not known ancestry,,,
+38746746,gpt-4o,,,,,,,,Not known ancestry,,,
+38746746,gpt-5,,Subcategories of gut microbiota,,combines the two outcomes,,,,Not known ancestry,,,
+38746746,gpt-5-mini,,Subcategories of gut microbiota,,combines the two outcomes,,,,Not known ancestry,,,
+36247759,llama3,,,,,,,,European,,,
+36247759,llama3-2,,,,,,,,European,,,
+36247759,deepseek-r1,,,,,,,,European,,,
+36247759,o4-mini,,,,,,,,European,,,
+36247759,gpt-4-1,,,,,,,,European,,,
+36247759,gpt-4o,,,,,,,Missing sensitivity analysis methods,European,,,
+36247759,gpt-5,,,,,,,,European,,,
+36247759,gpt-5-mini,,,,,,,,European,,,
+37422736,llama3,,,,,,,,European,,,
+37422736,llama3-2,,,,,,,,European,,,
+37422736,deepseek-r1,,,,,,,Missing sensitivity methods,European,,,
+37422736,o4-mini,,,,,,,Missing sensitivity methods,European,,,
+37422736,gpt-4-1,,,,,,,,European,,,
+37422736,gpt-4o,,,,,,,,European,,,
+37422736,gpt-5,,,,,,,,European,,,
+37422736,gpt-5-mini,,,,,,,,European,,,
+36924037,llama3,,,,,,,Missing sensitivity methods,European,,,
+36924037,llama3-2,,,,,,,Missing sensitivity methods,European,,,
+36924037,deepseek-r1,,,,,,,,European,,,
+36924037,o4-mini,,,,,,,,European,,,
+36924037,gpt-4-1,,,,,,,,European,,,
+36924037,gpt-4o,,,,,,,Missing subcategories,European,,,
+36924037,gpt-5,Bidirectional MR,,,,,,,European,,,
+36924037,gpt-5-mini,Bidirectional MR,,,,,,,European,,,
+37916108,llama3,,,,Includes outcome supercategory,,,,No specific ancestry and empty list,,,
+37916108,llama3-2,,,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+37916108,deepseek-r1,,,,,,,,No specific ancestry but more details on general dataset charecteristics,,,
+37916108,o4-mini,,,,,,,,,,,
+37916108,gpt-4-1,,,,,,,,,,,
+37916108,gpt-4o,,,,,,,,,,,
+37916108,gpt-5,,,,,,,,,,,
+37916108,gpt-5-mini,,,,,,,,,,,
+38716647,llama3,,,,,,,,European,,,
+38716647,llama3-2,,,,,,,,European,,,
+38716647,deepseek-r1,,,,,,,,European,,,
+38716647,o4-mini,,,,,,,,European,,,
+38716647,gpt-4-1,,,,,,,,European,,,
+38716647,gpt-4o,,,,,,,,European,,,
+38716647,gpt-5,,,,,,,,European,,,
+38716647,gpt-5-mini,,Includes genetic liability,,,,,,European,,,
+37565992,llama3,,Provides details on specific amino acids,,Provides details on specific neurodegenerative diseases,,,Missing one method,Not known ancestry,,,
+37565992,llama3-2,,Provides all the amino acids under study,,Provides details on specific neurodegenerative diseases,,,,Not known ancestry,,,
+37565992,deepseek-r1,,Provides details on specific amino acids,,Provides details on specific neurodegenerative diseases sub and superegory,,,,Not known ancestry,,,
+37565992,o4-mini,,Provides all the amino acids under study,,Provides details on specific neurodegenerative diseases,,,,Not known ancestry,,,
+37565992,gpt-4-1,,Provides all the amino acids under study,,Provides details on specific neurodegenerative diseases,,,Missing sensitivity analysis,Not known ancestry,,,
+37565992,gpt-4o,,Provides all the amino acids under study,,Provides details on specific neurodegenerative diseases,,,Missing sensitivity analysis,Not known ancestry,,,
+37565992,gpt-5,,Provides all the amino acids under study,,Provides details on specific neurodegenerative diseases,,,,Not known ancestry,,,
+37565992,gpt-5-mini,,Provides all the amino acids under study,,Provides details on specific neurodegenerative diseases,,,,Not known ancestry,,,
+38263277,llama3,Very good at categorising cancers as neoplasm,,,,,,,Not known ancestry,,,
+38263277,llama3-2,Very good at categorising cancers as neoplasm,,,,,,,Not known ancestry,,,
+38263277,deepseek-r1,Very good at categorising cancers as neoplasm,Includes SNPs as exposure,,,,,,Not known ancestry,,,
+38263277,o4-mini,,,,,,,,Not known ancestry,,,
+38263277,gpt-4-1,,,,,,,,Not known ancestry,,,
+38263277,gpt-4o,,,,,,,,Not known ancestry,,,
+38263277,gpt-5,,,,,,,,Not known ancestry,,,
+38263277,gpt-5-mini,,,,,,,,Not known ancestry,,,
+35615025,llama3,methods review paper,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data
+35615025,llama3-2,methods review paper,"methods review paper, model hallucinated",,Hallucinated,,,,Not known ancestry,,Did not extract at all,Did not extract any data
+35615025,deepseek-r1,methods review paper,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data
+35615025,o4-mini,methods review paper,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data
+35615025,gpt-4-1,methods review paper,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data
+35615025,gpt-4o,methods review paper,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data
+35615025,gpt-5,methods review paper,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data
+35615025,gpt-5-mini,methods review paper,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data,Did not extract at all,Did not extract any data
+38280379,llama3,,,,,,,,European,,,
+38280379,llama3-2,,,,,,,,European,,,
+38280379,deepseek-r1,,,,Keeps extracting SNPs as exposure,,,,European,,,
+38280379,o4-mini,,,,,,,,European,,,
+38280379,gpt-4-1,,,,,,,,European,,,
+38280379,gpt-4o,,,,,,,,European,,,
+38280379,gpt-5,,,,,,,,European,,,
+38280379,gpt-5-mini,,,,,,,,European,,,
+23900446,llama3,,,,,,,,Details on dataset,,,
+23900446,llama3-2,,,,,,,,Details on dataset,,,
+23900446,deepseek-r1,,Extracted SNPs as exposure,Missing out the exposure,,Missing two outcomes,,,Did not extract at all,Did not extract any data,,
+23900446,o4-mini,,,,,,,,Details on dataset,,,
+23900446,gpt-4-1,,,,,,,,Details on dataset,,,
+23900446,gpt-4o,,,,,,Other category with no details,,Details on dataset,,,
+23900446,gpt-5,,,,,,,,Details on dataset,,,
+23900446,gpt-5-mini,,Extracts SNPs as exposure,,,,,,Details on dataset,,,
+38264282,llama3,,,,,,,,Not known ancestry,,,
+38264282,llama3-2,,,,,,,,Not known ancestry,,,
+38264282,deepseek-r1,,,,,,,,Not known ancestry,,,
+38264282,o4-mini,,,,,,,,Not known ancestry,,,
+38264282,gpt-4-1,,,,,,,,Not known ancestry,,,
+38264282,gpt-4o,,,,,,Other category with no details,,Not known ancestry,,,
+38264282,gpt-5,,,,,,,,Not known ancestry,,,
+38264282,gpt-5-mini,,,,,,,,Not known ancestry,,,
+37158995,llama3,,,,Reports the supercategory of outcome Epilepsy,,,,Not known ancestry,,,
+37158995,llama3-2,,,,Reports outcome subtypes,,,,Not known ancestry,,,
+37158995,deepseek-r1,,,,Reports outcome subtypes,,missing specific methods,Missing subcategories of methods,Not known ancestry,,,
+37158995,o4-mini,,,,Reports the supercategory of outcome Epilepsy,,,,Not known ancestry,,,
+37158995,gpt-4-1,,,,Reports the supercategory  and broad category of outcome Epilepsy,,,,Not known ancestry,,,
+37158995,gpt-4o,,,,Reports the supercategory of outcome Epilepsy,,,Missing subcategories,Not known ancestry,,,
+37158995,gpt-5,,,,Reports the supercategory  and broad category of outcome Epilepsy,,,,Not known ancestry,,,
+37158995,gpt-5-mini,,,,Reports the supercategory  and broad category of outcome Epilepsy,,,,Not known ancestry,,,
+37668928,llama3,,,,Includes the PCOS supercategory,,,,European and East Asian ,,,
+37668928,llama3-2,,,,,,,,European and East Asian ,,,
+37668928,deepseek-r1,,,,,,,,European and East Asian ,,,
+37668928,o4-mini,,,,,,,,European and East Asian and more details,,,
+37668928,gpt-4-1,,,,,,,,European and East Asian and more details,,,
+37668928,gpt-4o,,,,,,,,European and East Asian ,,,
+37668928,gpt-5,,,,,,,,European and East Asian and more details,,,
+37668928,gpt-5-mini,,,,,,,,European and East Asian and more details,,,
+21282362,llama3,,,,,,,,Details on dataset,,,
+21282362,llama3-2,,,,,,,,Details on dataset,,,
+21282362,deepseek-r1,,Extracts SNPs as exposure,,,,Method not extracted,,Details on dataset,Did not extract the population,,
+21282362,o4-mini,,,,,,,,Details on dataset,,,
+21282362,gpt-4-1,,,,,,,,Details on dataset,,,
+21282362,gpt-4o,,,,,,,,Details on dataset,,,
+21282362,gpt-5,,,,,,,,Details on dataset,,,
+21282362,gpt-5-mini,,,,,,,,Details on dataset,,,
+32309857,llama3,,,,,,,,Mexican individuals,,,
+32309857,llama3-2,,,,,,,,Mexican individuals,,,
+32309857,deepseek-r1,,Extracts SNPs as exposure,,,,,,Mexican individuals,,,
+32309857,o4-mini,,,,,,,,,,,
+32309857,gpt-4-1,,,,,,,,,,,
+32309857,gpt-4o,,,,,,,,,,,
+32309857,gpt-5,,,,,,,,,,,
+32309857,gpt-5-mini,,,,,,,,,,,
+32493397,llama3,,,,,,,,European,,,
+32493397,llama3-2,,,,,,,,European,,,
+32493397,deepseek-r1,,,,,Missing 4 outcomes,,,European,,,
+32493397,o4-mini,,,,,,,,European,,,
+32493397,gpt-4-1,,,,,,,,European,,,
+32493397,gpt-4o,,,,,,,,European,,,
+32493397,gpt-5,,,,,,,,European,,,
+32493397,gpt-5-mini,,,,,,,,European,,,
+31733098,llama3,,,,,,,,Details on dataset,,,
+31733098,llama3-2,,,,,,,,Details on dataset,,,
+31733098,deepseek-r1,,,,,,,,Details on dataset,,,
+31733098,o4-mini,Bidirectional MR,,,,,,,Details on dataset,,,
+31733098,gpt-4-1,Bidirectional MR,,,,,,missing subcategories,Details on dataset,,,
+31733098,gpt-4o,,,,,,,Missing subcategories,Details on dataset,,,
+31733098,gpt-5,Bidirectional MR,,,,,,,More details on dataset,,,
+31733098,gpt-5-mini,Bidirectional MR,,,,,,,More details on dataset,,,
+37789337,llama3,,,,,,,,No specific population mentioned,,,
+37789337,llama3-2,,,,,,,,No specific population mentioned,,,
+37789337,deepseek-r1,,Genetic variants of gut microbiome,,,,,,No specific population mentioned,,,
+37789337,o4-mini,,,,,,,,No specific population mentioned,,,
+37789337,gpt-4-1,,,,,,,,No specific population mentioned,,,
+37789337,gpt-4o,,,,,,,,No specific population mentioned,,,
+37789337,gpt-5,,,,,,,,More details on dataset,,,
+37789337,gpt-5-mini,,,,,,,,More details on dataset,,,
+37904919,llama3,provides details of maternal and featal proteome,,,,,,,No specific population mentioned,,,
+37904919,llama3-2,provides details of maternal and featal proteome,,,,,,,No specific population mentioned,,,
+37904919,deepseek-r1,provides details of maternal and featal proteome,,,,,,,No specific population mentioned,,,
+37904919,o4-mini,,,,,,,,No specific population mentioned,,,
+37904919,gpt-4-1,,subcategories reported together,,,,,,No specific population mentioned,,,
+37904919,gpt-4o,,,,,,,,Empty list,,,
+37904919,gpt-5,,,,,,,,More details on dataset,,,
+37904919,gpt-5-mini,,,,,,,,More details on dataset,,,
+38725159,llama3,,,,,,,,European,,,
+38725159,llama3-2,,,,,,,,European,,,
+38725159,deepseek-r1,,Includes broad category,,,,,,European,,,
+38725159,o4-mini,,,,,,,,,,,
+38725159,gpt-4-1,,,,,,,,,,,
+38725159,gpt-4o,,,,,,,,,,,
+38725159,gpt-5,,,,,,,,,,,
+38725159,gpt-5-mini,,,,,,,,,,,
+38053214,llama3,,,Missing two exposures,,,,,No specific population mentioned with more detauils,,,
+38053214,llama3-2,,Includes broad category,,,,,,No specific population mentioned with more detauils,,,
+38053214,deepseek-r1,,,Missing two exposures,,,,,No specific population mentioned with more detauils,,,
+38053214,o4-mini,,Includes broad category,,,,,,No specific population mentioned with more detauils,,,
+38053214,gpt-4-1,,Includes broad category,,,,,,No specific population mentioned with more detauils,,,
+38053214,gpt-4o,,Includes broad category,Missing two exposures,,,Missing details for other category,,No specific population mentioned,,,
+38053214,gpt-5,,,,,,,,No specific population mentioned with more detauils,,,
+38053214,gpt-5-mini,,Includes Broad category,,,,,,No specific population mentioned with more detauils,,,
+33125193,llama3,,,,,,,,UKB,,,
+33125193,llama3-2,,,,,,,,UKB,,,
+33125193,deepseek-r1,,,,,,,,UKB,,,
+33125193,o4-mini,,,,,,,,UKB,,,
+33125193,gpt-4-1,,,,,,,,UKB,,,
+33125193,gpt-4o,,,,,,,,UKB,,,
+33125193,gpt-5,,,,,,,,UKB,,,
+33125193,gpt-5-mini,,,,,,,,UKB,,,
+38246357,llama3,,,,,,,,Chinese,,,
+38246357,llama3-2,,,,,,,,Chinese,,,
+38246357,deepseek-r1,,,,,,,,Chinese,,,
+38246357,o4-mini,,,,,,,,Chinese,,,
+38246357,gpt-4-1,,,,,,,,Chinese,,,
+38246357,gpt-4o,,,,,,,,Chinese,,,
+38246357,gpt-5,,Includes genetic liability,,,,,,Chinese,,,
+38246357,gpt-5-mini,,,,,,,,Chinese,,,
+37787818,llama3,,,,,,,,UKB,,,
+37787818,llama3-2,,,,,,,,UKB,,,
+37787818,deepseek-r1,,,,,,,,UKB,,,
+37787818,o4-mini,,,,,,,,,,,
+37787818,gpt-4-1,,,,,,,,,,,
+37787818,gpt-4o,,,,,,,,,,,
+37787818,gpt-5,,,,,,,,,,,
+37787818,gpt-5-mini,,,,,,,,,,,
+38765751,llama3,,,,,,,,No specific population mentioned with more detauils,,,
+38765751,llama3-2,,,,,,,,No specific population mentioned with more detauils,,,
+38765751,deepseek-r1,,,Missing coffee intake,included coffee intake which is wrong,,,,No specific population mentioned with more detauils,,,
+38765751,o4-mini,,,,,,,,No specific population mentioned with more detauils,,,
+38765751,gpt-4-1,,,,,,,,No specific population mentioned with more detauils,,,
+38765751,gpt-4o,,,,,,,,No specific population mentioned,,,
+38765751,gpt-5,,,,,,,,No specific population mentioned with more detauils,,,
+38765751,gpt-5-mini,,Includes broad category,,,,,,No specific population mentioned with more detauils,,,
+31908803,llama3,,,,,,,,European,,,
+31908803,llama3-2,,,,,,,,European,,,
+31908803,deepseek-r1,,,,,,,,European,,,
+31908803,o4-mini,,,,,,,,European,,,
+31908803,gpt-4-1,,,,,,,,European,,,
+31908803,gpt-4o,,,,,,,,European,,,
+31908803,gpt-5,,,,,,,,European,,,
+31908803,gpt-5-mini,,,,,,,,European,,,
+37638499,llama3,,,,,,,,No mention of a specific population,,,empty list
+37638499,llama3-2,,,,,,,,No mention of a specific population,,,
+37638499,deepseek-r1,,,,,,,,No mention of a specific population,,,
+37638499,o4-mini,,,,,,,,No mention of a specific population,,,empty list
+37638499,gpt-4-1,,,,,,,Missing sesitivity methods,No mention of a specific population,,,
+37638499,gpt-4o,,,,,,,Missing subcategories,No mention of a specific population,,,empty list
+37638499,gpt-5,,,,,,,,No mention of a specific population,,,
+37638499,gpt-5-mini,,,,,,,,No mention of a specific population,,,
+38516009,llama3,,,,,,,,No mention of a specific population,,,
+38516009,llama3-2,,,,,,,,No mention of a specific population,,,
+38516009,deepseek-r1,,,,,,,,No mention of a specific population,,,
+38516009,o4-mini,,,,,,,,No mention of a specific population,,,
+38516009,gpt-4-1,,,,,,,,No mention of a specific population,,,
+38516009,gpt-4o,,,,,,,,No mention of a specific population,,,
+38516009,gpt-5,,Includes subcategories,,,,,,No mention of a specific population,,,
+38516009,gpt-5-mini,,Includes subcategories,,,,,,No mention of a specific population,,,
+38576413,llama3,,,,,,,,European,,,
+38576413,llama3-2,,,,,,,,European,,,
+38576413,deepseek-r1,,,,,Missing 3 cancers noot in results,,,European,,,
+38576413,o4-mini,,Includes broad category,,,,,,European,,,
+38576413,gpt-4-1,,,,,,,,European,,,
+38576413,gpt-4o,,Broad category,,,Missing four outcomes,,,European,,,
+38576413,gpt-5,,Includes broad category,,,,,,European,,,
+38576413,gpt-5-mini,,Includes broad category,,,,,,European,,,
+35575213,llama3,,,,,,,,No mention of a specific population,,,
+35575213,llama3-2,,,,,,,,No mention of a specific population,,,
+35575213,deepseek-r1,,,Missing height as exposure,,,,,No mention of a specific population,,,
+35575213,o4-mini,,Includes subcategories,,,,,,No mention of a specific population,,,
+35575213,gpt-4-1,,,,,,,,No mention of a specific population,,,
+35575213,gpt-4o,,,,,,,,No mention of a specific population,,,
+35575213,gpt-5,,includes subcategories and bidirectional MR,,Includes exposures bcz bidirectional MR,,,,No mention of a specific population,,,
+35575213,gpt-5-mini,,includes subcategories,,,,,,No mention of a specific population,,,
+38646850,llama3,,,,,,,,Finngen,,,
+38646850,llama3-2,,,,,,,,Finngen,,,
+38646850,deepseek-r1,,,,,,,Does not recognise methods,Finngen,,,
+38646850,o4-mini,,,,,,,,Finngen,,,
+38646850,gpt-4-1,,,,,,,,Finngen,,,
+38646850,gpt-4o,,,,,,,Missing subcategories,Finngen,,,
+38646850,gpt-5,,Bidirectional MR,,Bidirectional MR,,,,Finngen,,,
+38646850,gpt-5-mini,,,,,,,,Finngen,,,
+38511766,llama3,,,,,,,Missing one sensitivity analysis,No mention of a specific population,,,
+38511766,llama3-2,,,,,,,,No mention of a specific population,,,
+38511766,deepseek-r1,,,,,,Detailed description of subcategories,,No mention of a specific population,,,
+38511766,o4-mini,,,,,,,,No mention of a specific population,,,
+38511766,gpt-4-1,,,,,,,,No mention of a specific population,,,
+38511766,gpt-4o,,,,,,High level categories only,Missing specific methods,No mention of a specific population,,,
+38511766,gpt-5,,,,,,,,No mention of a specific population,,,
+38511766,gpt-5-mini,,,,,,,,No mention of a specific population,,,
+37052410,llama3,,No data,No data,No data,No data,No data,No data,No data,No data,No data,No data
+37052410,llama3-2,,,,,,,,No mention of a specific population but with more details,,,
+37052410,deepseek-r1,,Duplicates the exposure,,,,,,No mention of a specific population,,,
+37052410,o4-mini,,,,,,,,No mention of a specific population,,,
+37052410,gpt-4-1,,Broad category and subcategories together,,,,,,No mention of a specific population but with more details,,,
+37052410,gpt-4o,,,,,,,Missing main method IVW,No mention of a specific population,,,
+37052410,gpt-5,,,,,,,,No mention of a specific population but with more details,,,
+37052410,gpt-5-mini,,,,,,,,No mention of a specific population but with more details,,,
+29232439,llama3,,,,,,,,European,,,
+29232439,llama3-2,,,,,,,,European,,,
+29232439,deepseek-r1,,,,,,Other category is included,,European,,,
+29232439,o4-mini,,,,,,,,,,,
+29232439,gpt-4-1,,,,,,,,,,,
+29232439,gpt-4o,,,,,,,,,,,
+29232439,gpt-5,,,,,,,,,,,
+29232439,gpt-5-mini,,,,,,,,,,,
+34184784,llama3,,,,,,,,European,,,
+34184784,llama3-2,,,,,,,,European,,,
+34184784,deepseek-r1,,,,,,,,European,,,
+34184784,o4-mini,,,,,,,,European,,,
+34184784,gpt-4-1,,,,,,,,European,,,
+34184784,gpt-4o,,,,,,,,European,,,
+34184784,gpt-5,,,,,,,,European,,,
+34184784,gpt-5-mini,,,,,,,,European,,,
+38007229,llama3,,Includes broad exposure category,,,,,,No mention of a specific population but with more details,,,
+38007229,llama3-2,,Includes broad exposure category,,,,,,No mention of a specific population,,,
+38007229,deepseek-r1,,,,,,,,No mention of a specific population,,,
+38007229,o4-mini,,,,,,,,No mention of a specific population but with more details,,,
+38007229,gpt-4-1,,,,,,,,No mention of a specific population,,,
+38007229,gpt-4o,,,,,,,,Empty list,,,
+38007229,gpt-5,,,,,,,,No mention of a specific population but with more details,,,
+38007229,gpt-5-mini,,,,,,,,No mention of a specific population but with more details,,,
+38293563,llama3,,,,includes broad outcome category,,,,No mention of a specific population but with more details,,,
+38293563,llama3-2,,,,,,,,No mention of a specific population,,,
+38293563,deepseek-r1,,,,,,,,No mention of a specific population,,,
+38293563,o4-mini,,,,,,,,Empty list,,,
+38293563,gpt-4-1,,,,,,,,Empty list,,,
+38293563,gpt-4o,,,,,,,,Empty list,,,
+38293563,gpt-5,,,,,,,,No mention of a specific population but with more details,,,
+38293563,gpt-5-mini,,,,Includes broad category,,,,No mention of a specific population but with more details,,,
+34025845,llama3,,,,,,,,No mention of a specific population but with more details,,,
+34025845,llama3-2,,,,,,,,No mention of a specific population,,,
+34025845,deepseek-r1,,,,,,,,No mention of a specific population,,,
+34025845,o4-mini,,,,,,,,Empty list,,,
+34025845,gpt-4-1,,,,,,,,Empty list,,,
+34025845,gpt-4o,,,,,,Broad categories,,Empty list,,,
+34025845,gpt-5,,,,,,,,No mention of a specific population but with more details,,,
+34025845,gpt-5-mini,,,,,,,,No mention of a specific population but with more details,,,
