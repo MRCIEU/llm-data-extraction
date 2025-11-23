@@ -1,0 +1,8 @@
+model,sample_size,total_extractions,valid_extractions,invalid_extractions,validation_issue_rate
+gpt-5,15635,15606,15606,0,0.0
+gpt-4-1,15635,15628,15626,2,0.0
+o4-mini,7000,5369,5366,3,0.1
+llama3-2,7000,6720,6670,50,0.7
+llama3,7000,6901,6416,485,7.0
+deepseek-r1-distilled,7000,6184,718,5466,88.4
+gpt-4o,7000,6985,2,6983,100.0
