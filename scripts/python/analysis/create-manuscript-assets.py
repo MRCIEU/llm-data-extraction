@@ -9,23 +9,17 @@ This script generates:
 # ==== Imports ====
 
 # ---- Standard library ----
-from pathlib import Path
-from typing import Dict, List, Optional
 import argparse
-import sys
 import json
-import io
-import base64
-
-# ---- Data and computation ----
-import pandas as pd
-import numpy as np
+from pathlib import Path
 
 # ---- Visualization ----
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
-import seaborn as sns
+import numpy as np
 
+# ---- Data and computation ----
+import pandas as pd
+import seaborn as sns
 
 # ==== Constants ====
 
@@ -330,8 +324,8 @@ def create_combined_figure(
     ].tolist()
 
     gruvbox_colors = [
-        "#282828",
-        "#3c3836",
+        # "#282828",
+        # "#3c3836",
         "#504945",
         "#665c54",
         "#7c6f64",
@@ -342,6 +336,7 @@ def create_combined_figure(
         "#ebdbb2",
         "#fbf1c7",
     ]
+    gruvbox_colors.reverse()
 
     from matplotlib.colors import LinearSegmentedColormap
 
