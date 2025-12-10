@@ -19,7 +19,6 @@ import numpy as np
 
 # ---- Data and computation ----
 import pandas as pd
-import seaborn as sns
 
 # ==== Constants ====
 
@@ -307,7 +306,12 @@ def create_combined_figure(
     output_file: Path,
     verbose: bool = False,
 ):
-    """Create heatmap figure with gruvbox dark colorscheme.
+    """Create heatmap figure with gruvbox colorschemes.
+
+    Uses different gruvbox color scales for each dimension:
+    - Accuracy: gruvbox aqua/cyan tones
+    - Detail: gruvbox purple tones
+    - Completeness: gruvbox yellow/orange tones
 
     Args:
         group_metrics: Metrics by group and dimension
@@ -323,27 +327,88 @@ def create_combined_figure(
         "model"
     ].tolist()
 
-    gruvbox_colors = [
-        # "#282828",
-        # "#3c3836",
-        "#504945",
-        "#665c54",
-        "#7c6f64",
-        "#928374",
-        "#a89984",
-        "#bdae93",
-        "#d5c4a1",
-        "#ebdbb2",
-        "#fbf1c7",
-    ]
-    # gruvbox_colors.reverse()
-
     from matplotlib.colors import LinearSegmentedColormap
 
-    gruvbox_cmap = LinearSegmentedColormap.from_list("gruvbox_dark", gruvbox_colors)
+    # ---- Gruvbox color scales for each dimension ----
+    # Use position-based color stops to keep 0 as black but spread colors
+    # more across the 8-10 range where actual scores fall
+    # Position 0.0 = score 0, position 1.0 = score 10
+    # Compress 0-8 range and expand 8-10 range for better differentiation
 
-    fig = plt.figure(figsize=(14, 7))
+    # Accuracy: aqua/cyan tones (gruvbox aqua)
+    accuracy_colors = [
+        (0.0, "#282828"),  # 0: black
+        (0.7, "#1d4540"),  # 7: very dark aqua (compressed)
+        (0.8, "#2a5a4a"),  # 8: dark aqua
+        (0.85, "#3a7058"),  # 8.5: medium-dark aqua
+        (0.9, "#4a8568"),  # 9: medium aqua
+        (0.93, "#5a9a70"),  # 9.3: medium-light aqua
+        (0.96, "#6aaf78"),  # 9.6: light aqua
+        (0.98, "#7ac480"),  # 9.8: lighter aqua
+        (1.0, "#8ec07c"),  # 10: lightest aqua
+    ]
 
+    # Detail: purple tones (gruvbox purple)
+    detail_colors = [
+        (0.0, "#282828"),  # 0: black
+        (0.7, "#3a2035"),  # 7: very dark purple (compressed)
+        (0.8, "#5a3050"),  # 8: dark purple
+        (0.85, "#7a4068"),  # 8.5: medium-dark purple
+        (0.9, "#9a5080"),  # 9: medium purple
+        (0.93, "#aa6090"),  # 9.3: medium-light purple
+        (0.96, "#ba70a0"),  # 9.6: light purple
+        (0.98, "#ca80aa"),  # 9.8: lighter purple
+        (1.0, "#d3869b"),  # 10: lightest purple
+    ]
+
+    # Completeness: yellow/orange tones (gruvbox yellow/orange)
+    completeness_colors = [
+        (0.0, "#282828"),  # 0: black
+        (0.7, "#4a3008"),  # 7: very dark yellow (compressed)
+        (0.8, "#7a5010"),  # 8: dark yellow
+        (0.85, "#9a6815"),  # 8.5: medium-dark yellow
+        (0.9, "#ba8018"),  # 9: medium yellow
+        (0.93, "#ca901c"),  # 9.3: medium-light yellow
+        (0.96, "#daa020"),  # 9.6: light yellow
+        (0.98, "#eab028"),  # 9.8: lighter yellow
+        (1.0, "#fabd2f"),  # 10: lightest yellow
+    ]
+
+    # Detail: purple tones (gruvbox purple)
+    detail_colors = [
+        (0.0, "#282828"),  # 0: black
+        (0.5, "#4a2845"),  # 5: very dark purple
+        (0.7, "#8f3f71"),  # 7: dark purple
+        (0.8, "#9a4a7c"),  # 8: medium-dark purple
+        (0.85, "#a55687"),  # 8.5: medium purple
+        (0.9, "#b16286"),  # 9: medium-light purple
+        (0.95, "#c275a0"),  # 9.5: light purple
+        (1.0, "#d3869b"),  # 10: lightest purple
+    ]
+
+    # Completeness: yellow/orange tones (gruvbox yellow/orange)
+    completeness_colors = [
+        (0.0, "#282828"),  # 0: black
+        (0.5, "#5a3c0a"),  # 5: very dark yellow
+        (0.7, "#b57614"),  # 7: dark yellow
+        (0.8, "#c4851a"),  # 8: medium-dark yellow
+        (0.85, "#cc8f1d"),  # 8.5: medium yellow
+        (0.9, "#d79921"),  # 9: medium-light yellow
+        (0.95, "#e8b528"),  # 9.5: light yellow
+        (1.0, "#fabd2f"),  # 10: lightest yellow
+    ]
+
+    # Create colormaps from position-color pairs
+    def make_cmap_from_positions(name, pos_colors):
+        positions = [p for p, c in pos_colors]
+        colors = [c for p, c in pos_colors]
+        return LinearSegmentedColormap.from_list(name, list(zip(positions, colors)))
+
+    cmap_accuracy = make_cmap_from_positions("gruvbox_aqua", accuracy_colors)
+    cmap_detail = make_cmap_from_positions("gruvbox_purple", detail_colors)
+    cmap_completeness = make_cmap_from_positions("gruvbox_yellow", completeness_colors)
+
+    # ---- Prepare data ----
     pivot_data = group_metrics.pivot_table(
         index="model", columns="metric", values="mean_score"
     )
@@ -356,24 +421,94 @@ def create_combined_figure(
     ]
     pivot_data = pivot_data[metric_order]
 
-    sns.heatmap(
-        pivot_data,
-        annot=True,
-        fmt=".1f",
-        cmap=gruvbox_cmap,
-        vmin=0,
-        vmax=10,
-        cbar_kws={"label": "Score (0-10)"},
-        linewidths=0.5,
-        linecolor="white",
-    )
+    # ---- Create figure with custom coloring ----
+    fig, ax = plt.subplots(figsize=(14, 7))
 
-    plt.xlabel("Extraction Group and Metric", fontsize=11)
-    plt.ylabel("Model", fontsize=11)
-    plt.title("LLM Performance Across Extraction Tasks", fontsize=13, pad=10)
+    # Get dimensions for manual plotting
+    n_models = len(model_order)
+    n_metrics = len(metric_order)
 
-    plt.xticks(rotation=45, ha="right", fontsize=9)
-    plt.yticks(rotation=0, fontsize=10)
+    # Create base heatmap structure (for grid lines and annotations)
+    # We'll overlay colored rectangles for each cell
+    ax.set_xlim(0, n_metrics)
+    ax.set_ylim(0, n_models)
+
+    # Plot each cell with appropriate colormap
+    for i, model in enumerate(model_order):
+        for j, metric in enumerate(metric_order):
+            value = pivot_data.loc[model, metric]
+
+            # Determine which colormap to use based on dimension
+            if "Accuracy" in metric:
+                cmap = cmap_accuracy
+            elif "Detail" in metric:
+                cmap = cmap_detail
+            else:  # Completeness
+                cmap = cmap_completeness
+
+            # Normalize value to [0, 1] for colormap (scores are 0-10)
+            norm_value = value / 10.0
+            color = cmap(norm_value)
+
+            # Draw rectangle
+            rect = plt.Rectangle(
+                (j, n_models - i - 1),
+                1,
+                1,
+                facecolor=color,
+                edgecolor="white",
+                linewidth=0.5,
+            )
+            ax.add_patch(rect)
+
+            # Add annotation
+            # Use white text for dark backgrounds, black for light
+            text_color = "white" if norm_value < 0.6 else "black"
+            ax.text(
+                j + 0.5,
+                n_models - i - 0.5,
+                f"{value:.1f}",
+                ha="center",
+                va="center",
+                fontsize=9,
+                color=text_color,
+            )
+
+    # ---- Set axis labels and ticks ----
+    ax.set_xticks([x + 0.5 for x in range(n_metrics)])
+    ax.set_xticklabels(metric_order, rotation=45, ha="right", fontsize=9)
+    ax.set_yticks([y + 0.5 for y in range(n_models)])
+    ax.set_yticklabels(reversed(model_order), fontsize=10)
+
+    ax.set_xlabel("Extraction Group and Metric", fontsize=11)
+    ax.set_ylabel("Model", fontsize=11)
+    ax.set_title("LLM Performance Across Extraction Tasks", fontsize=13, pad=10)
+
+    # ---- Add legend for color scales ----
+    from mpl_toolkits.axes_grid1 import make_axes_locatable
+    from matplotlib.colorbar import ColorbarBase
+    from matplotlib.colors import Normalize
+
+    divider = make_axes_locatable(ax)
+
+    # Add three small colorbars for each dimension
+    cax1 = divider.append_axes("right", size="2%", pad=0.1)
+    cax2 = divider.append_axes("right", size="2%", pad=0.3)
+    cax3 = divider.append_axes("right", size="2%", pad=0.3)
+
+    norm = Normalize(vmin=0, vmax=10)
+
+    cb1 = ColorbarBase(cax1, cmap=cmap_accuracy, norm=norm)
+    cb1.set_label("Accuracy", fontsize=9)
+    cb1.ax.tick_params(labelsize=8)
+
+    cb2 = ColorbarBase(cax2, cmap=cmap_detail, norm=norm)
+    cb2.set_label("Detail", fontsize=9)
+    cb2.ax.tick_params(labelsize=8)
+
+    cb3 = ColorbarBase(cax3, cmap=cmap_completeness, norm=norm)
+    cb3.ax.tick_params(labelsize=8)
+    # No label for cb3 to avoid duplicate "Completeness" text
 
     plt.tight_layout()
     plt.savefig(output_file, dpi=300, bbox_inches="tight")
