@@ -7,7 +7,6 @@ consolidated datasets for downstream analysis.
 """
 
 from pathlib import Path
-from typing import Dict, List
 
 import pandas as pd
 
@@ -99,6 +98,13 @@ def load_reviewer_2_data(csv_path: Path) -> pd.DataFrame:
         "deepseek": "deepseek-r1",
     }
     df["model"] = df["model"].replace(model_name_map)
+
+    # ---- Apply score correction for reviewer 2 ----
+    # Reviewer 2 scored these columns on an inverted scale; transform as 10 - X
+    cols_to_transform = ["Q-1-c-2", "Q-2-c-2", "Q-3-c-2", "Q-4-c-2", "Q-5-c-2"]
+    for col in cols_to_transform:
+        if col in df.columns:
+            df[col] = 10 - df[col]
 
     res = df
     return res

@@ -336,7 +336,7 @@ def create_combined_figure(
         "#ebdbb2",
         "#fbf1c7",
     ]
-    gruvbox_colors.reverse()
+    # gruvbox_colors.reverse()
 
     from matplotlib.colors import LinearSegmentedColormap
 
