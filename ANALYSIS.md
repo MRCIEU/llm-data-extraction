@@ -1,20 +1,22 @@
-# Analysis steps
+# Analysis workflow
 
-last updated: 2025-10-21
+Last updated: 2025-10-21
 
 ## Overview
 
-This document describes the analysis workflow for LLM-based data extraction.
-The workflow consists of three main phases:
+This document describes the complete analysis workflow for LLM-based data extraction, from raw PubMed abstracts to manuscript-ready figures and tables.
+
+The workflow consists of four main phases:
 
 1. Data preprocessing and preparation
 2. Extraction processing (via local LLMs or OpenAI models)
 3. Post-processing and analysis
+4. Manuscript asset generation
 
 Two parallel workflows exist:
 
-1. Standard workflow: Full dataset with chunked processing
-2. Special sample (SP) workflow: Targeted subset for detailed review
+1. Standard workflow: Full dataset with chunked processing for model comparison
+2. Special sample (SP) workflow: Targeted subset for detailed review analysis
 
 ```mermaid
 flowchart TD
@@ -585,3 +587,55 @@ Analysis data structure:
   }
 ]
 ```
+
+______________________________________________________________________
+
+## Manuscript assets generation
+
+### Overview
+
+Scripts in `scripts/python/analysis/` generate publication-ready outputs:
+
+- `create-manuscript-assets.py` - Main figures and tables
+- `create-supplementary-figures.py` - Supplementary visualizations
+- `analyze-assessment-results.py` - Statistical analysis of assessments
+
+### Main manuscript assets
+
+Script: `scripts/python/analysis/create-manuscript-assets.py`
+
+Available flags:
+
+- `--assessment-file`: Path to assessment results CSV (default: auto-detected)
+- `--aggregated-dir`: Directory with aggregated LLM results (default: auto-detected)
+- `--output-figures`: Output directory for figures (default: `data/artifacts/manuscript-figures`)
+- `--output-tables`: Output directory for tables (default: `data/artifacts/manuscript-tables`)
+- `-n / --dry-run`: Preview without generating outputs
+- `-v / --verbose`: Print detailed progress information
+
+Generate all manuscript assets:
+
+```bash
+python scripts/python/analysis/create-manuscript-assets.py --verbose
+```
+
+Outputs:
+
+- `data/artifacts/manuscript-figures/llm-performance.png` - Performance heatmap
+- `data/artifacts/manuscript-tables/llm-extraction-performance-detail.csv` - Detailed performance table
+- `data/artifacts/manuscript-tables/llm-extraction-performance-detail.tex` - LaTeX version
+- `data/artifacts/manuscript-tables/llm-validation-metrics.csv` - Validation metrics table
+- `data/artifacts/manuscript-tables/llm-validation-metrics.tex` - LaTeX version
+
+For detailed description of assets and methodology, see docs/manuscript-assets.md
+
+______________________________________________________________________
+
+## Related documentation
+
+- README.md - Project overview and quick start
+- DEV.md - Development setup and task runners
+- DATA.md - Data organization and file structure
+- docs/manuscript-assets.md - Detailed manuscript asset documentation
+
+______________________________________________________________________

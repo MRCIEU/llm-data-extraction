@@ -15,6 +15,29 @@ Data flows through these stages:
 4. Aggregation: combine raw JSON outputs per model
 5. Processing: parse, validate against schema, and split valid/invalid
 6. Analysis: produce cross-model samples for inspection and downstream analysis
+7. Manuscript assets: generate publication-ready figures and tables
+
+```mermaid
+flowchart LR
+    A[Raw<br/>PubMed] --> B[Preprocessing]
+    B --> C[Intermediate<br/>Prepared Data]
+    C --> D[Extraction<br/>ISB/BC4]
+    D --> E[Intermediate<br/>Raw Results]
+    E --> F[Aggregation]
+    F --> G[Intermediate<br/>Aggregated]
+    G --> H[Processing &<br/>Validation]
+    H --> I[Intermediate<br/>Valid/Invalid]
+    I --> J[Analysis<br/>Sampling]
+    J --> K[Assessment<br/>Review]
+    K --> L[Artifacts<br/>Manuscript]
+    
+    style A fill:#e8e8e8
+    style C fill:#cce5ff
+    style E fill:#cce5ff
+    style G fill:#cce5ff
+    style I fill:#cce5ff
+    style L fill:#d4f4dd
+```
 
 ### Standard workflow
 
@@ -240,9 +263,11 @@ ______________________________________________________________________
 
 ## Operational notes
 
-- Extraction orchestration lives in `justfile-batch` (ISB local and BC4 OpenAI jobs, plus SP extraction).
-- Post-processing lives in `justfile-processing` (aggregation, processing, sampling). See `ANALYSIS.md` for step-by-step I/O mappings.
-- Transient outputs may appear under `output/` during runs before being moved to `data/intermediate/llm-results/<JOB-ID>`.
+- Extraction orchestration: See DEV.md for `justfile-batch` task runner usage
+- Post-processing workflows: See DEV.md for `justfile-processing` task runner usage
+- Complete workflow details: See ANALYSIS.md for step-by-step procedures
+- Transient outputs may appear under `output/` during runs before being moved to `data/intermediate/llm-results/<JOB-ID>`
+- Manuscript assets generation: See docs/manuscript-assets.md for detailed documentation
 
 ### Workflow comparison
 
