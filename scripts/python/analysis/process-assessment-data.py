@@ -11,6 +11,50 @@ from pathlib import Path
 import pandas as pd
 
 
+# ==== Raw scored-field validation ====
+
+SCORE_COLUMNS = tuple(
+    f"Q-{group}-{suffix}"
+    for group in range(1, 6)
+    for suffix in ("a-3", "b-2", "c-2")
+)
+AUDIT_COLUMNS = ("reviewer", "pmid", "model", "question", "raw_value", "reason")
+
+
+def validate_raw_scores(
+    df: pd.DataFrame,
+    reviewer: str,
+    exclusions: list[dict] | None = None,
+) -> pd.DataFrame:
+    """Exclude invalid scored cells before recoding; keep existing NA/zero.
+
+    Only the 15 scored fields are parsed and checked against raw range 1-10.
+    Zero is the existing unassessed sentinel, not a new invalid response.
+    Counts, free text, keys and row order are unchanged. The optional audit
+    contains numeric responses and keys only, never assessment free text.
+    """
+    res = df.copy()
+    for col in SCORE_COLUMNS:
+        if col not in res.columns:
+            continue
+        values = pd.to_numeric(res[col], errors="coerce")
+        invalid = values.notna() & values.ne(0) & ~values.between(1, 10)
+        if exclusions is not None:
+            for index in res.index[invalid]:
+                exclusions.append(
+                    {
+                        "reviewer": reviewer,
+                        "pmid": res.at[index, "pmid"],
+                        "model": res.at[index, "model"],
+                        "question": col,
+                        "raw_value": values.at[index],
+                        "reason": "raw_score_outside_1_10",
+                    }
+                )
+        res[col] = values.mask(invalid)
+    return res
+
+
 def parse_args():
     """Parse command-line arguments.
 
@@ -73,7 +117,9 @@ def parse_args():
     return res
 
 
-def load_reviewer_2_data(csv_path: Path) -> pd.DataFrame:
+def load_reviewer_2_data(
+    csv_path: Path, exclusions: list[dict] | None = None
+) -> pd.DataFrame:
     """Load and process reviewer 2 data.
 
     Args:
@@ -98,6 +144,10 @@ def load_reviewer_2_data(csv_path: Path) -> pd.DataFrame:
         "deepseek": "deepseek-r1",
     }
     df["model"] = df["model"].replace(model_name_map)
+    df = harmonize_model_names(df)
+
+    # Validate raw responses, not the later 10-X completeness values.
+    df = validate_raw_scores(df, "Reviewer 2", exclusions)
 
     # ---- Apply score correction for reviewer 2 ----
     # Reviewer 2 scored these columns on an inverted scale; transform as 10 - X
@@ -111,7 +161,10 @@ def load_reviewer_2_data(csv_path: Path) -> pd.DataFrame:
 
 
 def load_reviewer_1_data(
-    xlsx_path: Path, sheets_path: Path, columns_path: Path
+    xlsx_path: Path,
+    sheets_path: Path,
+    columns_path: Path,
+    exclusions: list[dict] | None = None,
 ) -> pd.DataFrame:
     """Load and process reviewer 1 data.
 
@@ -161,6 +214,8 @@ def load_reviewer_1_data(
 
     # ---- Concatenate all sheets ----
     res = pd.concat(dfs, ignore_index=True)
+    res = harmonize_model_names(res)
+    res = validate_raw_scores(res, "Reviewer 1", exclusions)
     return res
 
 
@@ -235,7 +290,12 @@ def print_diagnostics(df: pd.DataFrame) -> None:
     print()
 
 
-def save_outputs(df: pd.DataFrame, output_dir: Path, dry_run: bool) -> None:
+def save_outputs(
+    df: pd.DataFrame,
+    output_dir: Path,
+    dry_run: bool,
+    exclusions: list[dict] | None = None,
+) -> None:
     """Save processed data to output files.
 
     Args:
@@ -273,6 +333,13 @@ def save_outputs(df: pd.DataFrame, output_dir: Path, dry_run: bool) -> None:
     df_strings.to_csv(strings_output_path, index=False)
     print(f"Saved string results to: {strings_output_path}")
 
+    if exclusions is not None:
+        audit_path = output_dir / "assessment-score-exclusions.csv"
+        pd.DataFrame(exclusions, columns=AUDIT_COLUMNS).to_csv(
+            audit_path, index=False
+        )
+        print(f"Saved {len(exclusions)} excluded scored cells to: {audit_path}")
+
 
 def main():
     """Main processing workflow."""
@@ -282,13 +349,17 @@ def main():
 
     # ---- Load reviewer 2 data ----
     print(f"Loading reviewer 2 data from: {args.reviewer_2_csv}")
-    df_reviewer_2 = load_reviewer_2_data(args.reviewer_2_csv)
+    exclusions = []
+    df_reviewer_2 = load_reviewer_2_data(args.reviewer_2_csv, exclusions)
     print(f"Loaded {len(df_reviewer_2)} rows from reviewer 2")
 
     # ---- Load reviewer 1 data ----
     print(f"\nLoading reviewer 1 data from: {args.reviewer_1_xlsx}")
     df_reviewer_1 = load_reviewer_1_data(
-        args.reviewer_1_xlsx, args.reviewer_1_sheets, args.reviewer_1_columns
+        args.reviewer_1_xlsx,
+        args.reviewer_1_sheets,
+        args.reviewer_1_columns,
+        exclusions,
     )
     print(f"Loaded {len(df_reviewer_1)} rows from reviewer 1")
 
@@ -308,7 +379,7 @@ def main():
     print_diagnostics(df_combined)
 
     # ---- Save outputs ----
-    save_outputs(df_combined, args.output_dir, args.dry_run)
+    save_outputs(df_combined, args.output_dir, args.dry_run, exclusions)
 
     print("\n==== Processing complete ====")
 

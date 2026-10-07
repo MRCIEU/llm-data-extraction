@@ -43,6 +43,13 @@ def parse_args():
         help="Path to numeric assessment results CSV",
     )
 
+    # ---- --assessment-only ----
+    parser.add_argument(
+        "--assessment-only",
+        action="store_true",
+        help="Generate assessment figure/table without validation-data access",
+    )
+
     # ---- --aggregated-dir ----
     parser.add_argument(
         "--aggregated-dir",
@@ -629,7 +636,11 @@ def main():
 
     assessment_df = load_assessment_data(args.assessment_file, args.verbose)
 
-    validation_metrics = load_validation_metrics(args.aggregated_dir, args.verbose)
+    validation_metrics = pd.DataFrame()
+    if not args.assessment_only:
+        validation_metrics = load_validation_metrics(
+            args.aggregated_dir, args.verbose
+        )
 
     group_metrics = compute_group_metrics(assessment_df)
     overall_metrics = compute_overall_metrics(assessment_df)
@@ -643,8 +654,9 @@ def main():
         print(
             f"  - Table: {args.output_tables / 'llm-extraction-performance-detail.tex'}"
         )
-        print(f"  - Table: {args.output_tables / 'llm-validation-metrics.csv'}")
-        print(f"  - Table: {args.output_tables / 'llm-validation-metrics.tex'}")
+        if not args.assessment_only:
+            print(f"  - Table: {args.output_tables / 'llm-validation-metrics.csv'}")
+            print(f"  - Table: {args.output_tables / 'llm-validation-metrics.tex'}")
         return
 
     args.output_figures.mkdir(parents=True, exist_ok=True)
@@ -665,11 +677,12 @@ def main():
         args.verbose,
     )
 
-    create_table_validation(
-        validation_metrics,
-        args.output_tables / "llm-validation-metrics.csv",
-        args.verbose,
-    )
+    if not args.assessment_only:
+        create_table_validation(
+            validation_metrics,
+            args.output_tables / "llm-validation-metrics.csv",
+            args.verbose,
+        )
 
     if args.verbose:
         print("\nManuscript asset generation complete!")

@@ -1,0 +1,17 @@
+reviewer,pmid,model,question,raw_value,reason
+Reviewer 2,38293563,llama3,Q-5-b-2,11.0,raw_score_outside_1_10
+Reviewer 2,38293563,llama3-2,Q-5-b-2,12.0,raw_score_outside_1_10
+Reviewer 2,38293563,deepseek-r1,Q-5-b-2,13.0,raw_score_outside_1_10
+Reviewer 2,38293563,o4-mini,Q-5-b-2,14.0,raw_score_outside_1_10
+Reviewer 2,38293563,gpt-4-1,Q-5-b-2,15.0,raw_score_outside_1_10
+Reviewer 2,38293563,gpt-4o,Q-5-b-2,16.0,raw_score_outside_1_10
+Reviewer 2,38293563,gpt-5,Q-5-b-2,17.0,raw_score_outside_1_10
+Reviewer 2,38293563,gpt-5-mini,Q-5-b-2,18.0,raw_score_outside_1_10
+Reviewer 2,34025845,llama3,Q-5-b-2,19.0,raw_score_outside_1_10
+Reviewer 2,34025845,llama3-2,Q-5-b-2,20.0,raw_score_outside_1_10
+Reviewer 2,34025845,deepseek-r1,Q-5-b-2,21.0,raw_score_outside_1_10
+Reviewer 2,34025845,o4-mini,Q-5-b-2,22.0,raw_score_outside_1_10
+Reviewer 2,34025845,gpt-4-1,Q-5-b-2,23.0,raw_score_outside_1_10
+Reviewer 2,34025845,gpt-4o,Q-5-b-2,24.0,raw_score_outside_1_10
+Reviewer 2,34025845,gpt-5,Q-5-b-2,25.0,raw_score_outside_1_10
+Reviewer 2,34025845,gpt-5-mini,Q-5-b-2,26.0,raw_score_outside_1_10

@@ -40,8 +40,18 @@ process-llm-batch-results-sp:
 
 # Process reviewer assessment data
 [group('analysis')]
-process-assessment-data:
-    python scripts/python/analysis/process-assessment-data.py
+process-assessment-data *args:
+    python scripts/python/analysis/process-assessment-data.py {{args}}
+
+# Assessment heatmap/performance table only; never load validation results
+[group('analysis')]
+assessment-assets input figures tables:
+    MPLBACKEND=Agg python scripts/python/analysis/create-manuscript-assets.py --assessment-only --assessment-file "{{input}}" --output-figures "{{figures}}" --output-tables "{{tables}}" --verbose
+
+# Supplementary assessment figures from an explicit processed input
+[group('analysis')]
+assessment-supplementary input output:
+    python scripts/python/analysis/create-supplementary-figures.py --input-file "{{input}}" --output-dir "{{output}}" --verbose
 
 # analysis sample: trial
 [group('data-processing')]

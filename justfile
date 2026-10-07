@@ -42,6 +42,16 @@ ty-check:
 test:
     python -m pytest
 
+# Focused assessment-score regression checks (no extraction/network calls)
+[group('codebase')]
+assessment-test:
+    MPLBACKEND=Agg python -m pytest -q tests/test_assessment_score_validation.py
+
+# Check changed assessment sources without applying lint fixes
+[group('codebase')]
+assessment-lint:
+    ruff check scripts/python/analysis/process-assessment-data.py scripts/python/analysis/create-manuscript-assets.py tests/test_assessment_score_validation.py
+
 # vscode server
 [group('codebase'), group('isb')]
 vscode-isb:
