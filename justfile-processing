@@ -48,6 +48,31 @@ process-assessment-data *args:
 assessment-assets input figures tables:
     MPLBACKEND=Agg python scripts/python/analysis/create-manuscript-assets.py --assessment-only --assessment-file "{{input}}" --output-figures "{{figures}}" --output-tables "{{tables}}" --verbose
 
+# Heatmap only from corrected assessment input; no tables or validation
+[group('analysis')]
+assessment-heatmap input output:
+    MPLBACKEND=Agg python scripts/python/analysis/create-manuscript-assets.py --heatmap-only --assessment-file "{{input}}" --output-figures "{{output}}" --verbose
+
+# Focused heatmap tests with the existing environment
+[group('analysis')]
+assessment-heatmap-test:
+    MPLBACKEND=Agg python -m pytest -q tests/test_assessment_figures.py tests/test_assessment_score_validation.py
+
+# Non-fixing checks for the heatmap source and focused tests
+[group('analysis')]
+assessment-heatmap-lint:
+    ruff check scripts/python/analysis/create-manuscript-assets.py tests/test_assessment_figures.py tests/test_assessment_score_validation.py
+
+# Non-fixing checks for supplementary presentation source and tests
+[group('analysis')]
+assessment-presentation-lint:
+    ruff check scripts/python/analysis/create-manuscript-assets.py scripts/python/analysis/create-supplementary-figures.py tests/test_assessment_figures.py tests/test_supplementary_assessment_figures.py
+
+# Assessment presentation and score regressions; no extraction/network calls
+[group('analysis')]
+assessment-presentation-test:
+    MPLBACKEND=Agg python -m pytest -q tests/test_assessment_figures.py tests/test_supplementary_assessment_figures.py tests/test_assessment_score_validation.py
+
 # Supplementary assessment figures from an explicit processed input
 [group('analysis')]
 assessment-supplementary input output:
@@ -72,3 +97,23 @@ analysis-sample-sp:
     python scripts/python/analysis/render-analysis-sample-sp.py --file all-results.json
 
 # vim: filetype=just
+
+# Standalone uncertainty prototype; never process scores or canonical figures
+[group('analysis')]
+assessment-dimension-summary *args:
+    MPLBACKEND=Agg python scripts/python/analysis/create-assessment-dimension-summary.py {{args}}
+
+# Focused standalone bootstrap and export tests
+[group('analysis')]
+assessment-dimension-summary-test:
+    MPLBACKEND=Agg python -m pytest -q tests/test_assessment_dimension_summary.py
+
+# Non-fixing standalone source/test checks
+[group('analysis')]
+assessment-dimension-summary-lint:
+    ruff check scripts/python/analysis/create-assessment-dimension-summary.py tests/test_assessment_dimension_summary.py
+
+# Compact and combine approved statistics; no bootstrap or CSV rewrite
+[group('analysis')]
+assessment-combined *args:
+    MPLBACKEND=Agg python scripts/python/analysis/create-assessment-dimension-summary.py --render-only {{args}}

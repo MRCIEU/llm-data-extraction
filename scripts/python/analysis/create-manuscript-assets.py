@@ -50,6 +50,13 @@ def parse_args():
         help="Generate assessment figure/table without validation-data access",
     )
 
+    # ---- --heatmap-only ----
+    parser.add_argument(
+        "--heatmap-only",
+        action="store_true",
+        help="Render only the heatmap; do not access validation or tables",
+    )
+
     # ---- --aggregated-dir ----
     parser.add_argument(
         "--aggregated-dir",
@@ -313,213 +320,159 @@ def create_combined_figure(
     output_file: Path,
     verbose: bool = False,
 ):
-    """Create heatmap figure with gruvbox colorschemes.
+    """Render unchanged assessment means at the manuscript display width.
 
-    Uses different gruvbox color scales for each dimension:
-    - Accuracy: gruvbox aqua/cyan tones
-    - Detail: gruvbox purple tones
-    - Completeness: gruvbox yellow/orange tones
-
-    Args:
-        group_metrics: Metrics by group and dimension
-        overall_metrics: Overall performance metrics
-        validation_metrics: Validation metrics
-        output_file: Path to save figure
-        verbose: Print detailed information if True
+    Three dimension palettes and their strips share 6-10 normalization.
+    The original assessment response scale remains 1-10.
+    Validation metrics are retained for call compatibility but are unused.
     """
-    if verbose:
-        print("Creating figure...")
+    from matplotlib.cm import ScalarMappable
+    from matplotlib.colors import (
+        LinearSegmentedColormap,
+        Normalize,
+        to_rgb,
+    )
 
-    model_order = overall_metrics.sort_values("overall_mean", ascending=False)[
-        "model"
-    ].tolist()
-
-    from matplotlib.colors import LinearSegmentedColormap
-
-    # ---- Gruvbox color scales for each dimension ----
-    # Use position-based color stops to keep 0 as black but spread colors
-    # more across the 8-10 range where actual scores fall
-    # Position 0.0 = score 0, position 1.0 = score 10
-    # Compress 0-8 range and expand 8-10 range for better differentiation
-
-    # Accuracy: aqua/cyan tones (gruvbox aqua)
-    accuracy_colors = [
-        (0.0, "#282828"),  # 0: black
-        (0.7, "#1d4540"),  # 7: very dark aqua (compressed)
-        (0.8, "#2a5a4a"),  # 8: dark aqua
-        (0.85, "#3a7058"),  # 8.5: medium-dark aqua
-        (0.9, "#4a8568"),  # 9: medium aqua
-        (0.93, "#5a9a70"),  # 9.3: medium-light aqua
-        (0.96, "#6aaf78"),  # 9.6: light aqua
-        (0.98, "#7ac480"),  # 9.8: lighter aqua
-        (1.0, "#8ec07c"),  # 10: lightest aqua
+    model_order = overall_metrics.sort_values(
+        "overall_mean", ascending=False
+    )["model"].tolist()
+    groups = [
+        ("Q-1", "Q1\nExposure\ntraits"),
+        ("Q-2", "Q2\nOutcome\ntraits"),
+        ("Q-3", "Q3\nAnalytical\nmethods"),
+        ("Q-4", "Q4\nPopulations"),
+        ("Q-5", "Q5\nMR findings"),
     ]
-
-    # Detail: purple tones (gruvbox purple)
-    detail_colors = [
-        (0.0, "#282828"),  # 0: black
-        (0.7, "#3a2035"),  # 7: very dark purple (compressed)
-        (0.8, "#5a3050"),  # 8: dark purple
-        (0.85, "#7a4068"),  # 8.5: medium-dark purple
-        (0.9, "#9a5080"),  # 9: medium purple
-        (0.93, "#aa6090"),  # 9.3: medium-light purple
-        (0.96, "#ba70a0"),  # 9.6: light purple
-        (0.98, "#ca80aa"),  # 9.8: lighter purple
-        (1.0, "#d3869b"),  # 10: lightest purple
+    dimensions = ["Accuracy", "Detail", "Completeness"]
+    metric_order = [
+        f"{code}-{dimension}"
+        for code, _ in groups
+        for dimension in dimensions
     ]
-
-    # Completeness: yellow/orange tones (gruvbox yellow/orange)
-    completeness_colors = [
-        (0.0, "#282828"),  # 0: black
-        (0.7, "#4a3008"),  # 7: very dark yellow (compressed)
-        (0.8, "#7a5010"),  # 8: dark yellow
-        (0.85, "#9a6815"),  # 8.5: medium-dark yellow
-        (0.9, "#ba8018"),  # 9: medium yellow
-        (0.93, "#ca901c"),  # 9.3: medium-light yellow
-        (0.96, "#daa020"),  # 9.6: light yellow
-        (0.98, "#eab028"),  # 9.8: lighter yellow
-        (1.0, "#fabd2f"),  # 10: lightest yellow
-    ]
-
-    # Detail: purple tones (gruvbox purple)
-    detail_colors = [
-        (0.0, "#282828"),  # 0: black
-        (0.5, "#4a2845"),  # 5: very dark purple
-        (0.7, "#8f3f71"),  # 7: dark purple
-        (0.8, "#9a4a7c"),  # 8: medium-dark purple
-        (0.85, "#a55687"),  # 8.5: medium purple
-        (0.9, "#b16286"),  # 9: medium-light purple
-        (0.95, "#c275a0"),  # 9.5: light purple
-        (1.0, "#d3869b"),  # 10: lightest purple
-    ]
-
-    # Completeness: yellow/orange tones (gruvbox yellow/orange)
-    completeness_colors = [
-        (0.0, "#282828"),  # 0: black
-        (0.5, "#5a3c0a"),  # 5: very dark yellow
-        (0.7, "#b57614"),  # 7: dark yellow
-        (0.8, "#c4851a"),  # 8: medium-dark yellow
-        (0.85, "#cc8f1d"),  # 8.5: medium yellow
-        (0.9, "#d79921"),  # 9: medium-light yellow
-        (0.95, "#e8b528"),  # 9.5: light yellow
-        (1.0, "#fabd2f"),  # 10: lightest yellow
-    ]
-
-    # Create colormaps from position-color pairs
-    def make_cmap_from_positions(name, pos_colors):
-        positions = [p for p, c in pos_colors]
-        colors = [c for p, c in pos_colors]
-        return LinearSegmentedColormap.from_list(name, list(zip(positions, colors)))
-
-    cmap_accuracy = make_cmap_from_positions("gruvbox_aqua", accuracy_colors)
-    cmap_detail = make_cmap_from_positions("gruvbox_purple", detail_colors)
-    cmap_completeness = make_cmap_from_positions("gruvbox_yellow", completeness_colors)
-
-    # ---- Prepare data ----
     pivot_data = group_metrics.pivot_table(
         index="model", columns="metric", values="mean_score"
-    )
-    pivot_data = pivot_data.reindex(model_order)
+    ).reindex(index=model_order, columns=metric_order)
 
-    metric_order = [
-        f"{g}-{d}"
-        for g in ["Q-1", "Q-2", "Q-3", "Q-4", "Q-5"]
-        for d in ["Accuracy", "Detail", "Completeness"]
-    ]
-    pivot_data = pivot_data[metric_order]
-
-    # ---- Create figure with custom coloring ----
-    fig, ax = plt.subplots(figsize=(14, 7))
-
-    # Get dimensions for manual plotting
+    # ---- Fixed physical size and shared score encoding ----
+    fig, ax = plt.subplots(figsize=(6.175, 3.65))
+    fig.subplots_adjust(left=0.18, right=0.85, bottom=0.25, top=0.78)
+    norm = Normalize(vmin=6, vmax=10)
+    # Effective original stops from producer revision bcf09f8.
+    # D/C use its final assignments, not the earlier overridden lists.
+    original_stops = {
+        "Accuracy": [
+            (0.0, "#282828"), (0.7, "#1d4540"), (0.8, "#2a5a4a"),
+            (0.85, "#3a7058"), (0.9, "#4a8568"), (0.93, "#5a9a70"),
+            (0.96, "#6aaf78"), (0.98, "#7ac480"), (1.0, "#8ec07c"),
+        ],
+        "Detail": [
+            (0.0, "#282828"), (0.5, "#4a2845"), (0.7, "#8f3f71"),
+            (0.8, "#9a4a7c"), (0.85, "#a55687"), (0.9, "#b16286"),
+            (0.95, "#c275a0"), (1.0, "#d3869b"),
+        ],
+        "Completeness": [
+            (0.0, "#282828"), (0.5, "#5a3c0a"), (0.7, "#b57614"),
+            (0.8, "#c4851a"), (0.85, "#cc8f1d"), (0.9, "#d79921"),
+            (0.95, "#e8b528"), (1.0, "#fabd2f"),
+        ],
+    }
+    cmaps = {}
+    for dimension, stops in original_stops.items():
+        positions = np.array([position for position, _ in stops])
+        colors = np.array([to_rgb(color) for _, color in stops])
+        # Restrict the original 0-10 ramp to scores 6-10.
+        # Interpolate its score-6 endpoint; retain every higher anchor.
+        lower_color = tuple(
+            np.interp(0.6, positions, colors[:, channel])
+            for channel in range(3)
+        )
+        displayed_stops = [(0.0, lower_color)] + [
+            ((position - 0.6) / 0.4, color)
+            for position, color in stops if position > 0.6
+        ]
+        cmaps[dimension] = LinearSegmentedColormap.from_list(
+            f"gruvbox_{dimension.lower()}", displayed_stops
+        )
     n_models = len(model_order)
-    n_metrics = len(metric_order)
-
-    # Create base heatmap structure (for grid lines and annotations)
-    # We'll overlay colored rectangles for each cell
-    ax.set_xlim(0, n_metrics)
+    ax.set_xlim(0, len(metric_order))
     ax.set_ylim(0, n_models)
 
-    # Plot each cell with appropriate colormap
     for i, model in enumerate(model_order):
         for j, metric in enumerate(metric_order):
             value = pivot_data.loc[model, metric]
-
-            # Determine which colormap to use based on dimension
-            if "Accuracy" in metric:
-                cmap = cmap_accuracy
-            elif "Detail" in metric:
-                cmap = cmap_detail
-            else:  # Completeness
-                cmap = cmap_completeness
-
-            # Normalize value to [0, 1] for colormap (scores are 0-10)
-            norm_value = value / 10.0
-            color = cmap(norm_value)
-
-            # Draw rectangle
+            cmap = cmaps[dimensions[j % 3]]
+            color = cmap(norm(value))
             rect = plt.Rectangle(
                 (j, n_models - i - 1),
                 1,
                 1,
                 facecolor=color,
                 edgecolor="white",
-                linewidth=0.5,
+                linewidth=0.4,
             )
             ax.add_patch(rect)
 
-            # Add annotation
-            # Use white text for dark backgrounds, black for light
-            text_color = "white" if norm_value < 0.6 else "black"
+            # Uniform annotation color; no additional meaning is encoded.
             ax.text(
                 j + 0.5,
                 n_models - i - 0.5,
                 f"{value:.1f}",
                 ha="center",
                 va="center",
-                fontsize=9,
-                color=text_color,
+                fontsize=8.5,
+                color="black",
             )
 
-    # ---- Set axis labels and ticks ----
-    ax.set_xticks([x + 0.5 for x in range(n_metrics)])
-    ax.set_xticklabels(metric_order, rotation=45, ha="right", fontsize=9)
-    ax.set_yticks([y + 0.5 for y in range(n_models)])
-    ax.set_yticklabels(reversed(model_order), fontsize=10)
+    # ---- Grouped headings and compact dimension key ----
+    for index, (_, heading) in enumerate(groups):
+        ax.text(
+            index * 3 + 1.5,
+            n_models + 1.8,
+            heading,
+            ha="center",
+            va="top",
+            fontsize=8.5,
+            linespacing=1.3,
+        )
+    for boundary in range(3, len(metric_order), 3):
+        ax.axvline(boundary, color="white", linewidth=1.5)
+    ax.set_xticks(np.arange(len(metric_order)) + 0.5)
+    ax.set_xticklabels(["A", "D", "C"] * len(groups), fontsize=8.5)
+    ax.set_yticks(np.arange(n_models) + 0.5)
+    ax.set_yticklabels(reversed(model_order), fontsize=8.5)
+    ax.tick_params(axis="both", length=0, pad=4)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.set_title(
+        "LLM Performance Across Extraction Tasks", fontsize=10, pad=46
+    )
+    fig.text(
+        0.535,
+        0.12,
+        "A: Accuracy    D: Detail    C: Completeness",
+        ha="center",
+        fontsize=8.5,
+    )
 
-    ax.set_xlabel("Extraction Group and Metric", fontsize=11)
-    ax.set_ylabel("Model", fontsize=11)
-    ax.set_title("LLM Performance Across Extraction Tasks", fontsize=13, pad=10)
-
-    # ---- Add legend for color scales ----
-    from mpl_toolkits.axes_grid1 import make_axes_locatable
-    from matplotlib.colorbar import ColorbarBase
-    from matplotlib.colors import Normalize
-
-    divider = make_axes_locatable(ax)
-
-    # Add three small colorbars for each dimension
-    cax1 = divider.append_axes("right", size="2%", pad=0.1)
-    cax2 = divider.append_axes("right", size="2%", pad=0.3)
-    cax3 = divider.append_axes("right", size="2%", pad=0.3)
-
-    norm = Normalize(vmin=0, vmax=10)
-
-    cb1 = ColorbarBase(cax1, cmap=cmap_accuracy, norm=norm)
-    cb1.set_label("Accuracy", fontsize=9)
-    cb1.ax.tick_params(labelsize=8)
-
-    cb2 = ColorbarBase(cax2, cmap=cmap_detail, norm=norm)
-    cb2.set_label("Detail", fontsize=9)
-    cb2.ax.tick_params(labelsize=8)
-
-    cb3 = ColorbarBase(cax3, cmap=cmap_completeness, norm=norm)
-    cb3.ax.tick_params(labelsize=8)
-    # No label for cb3 to avoid duplicate "Completeness" text
-
-    plt.tight_layout()
-    plt.savefig(output_file, dpi=300, bbox_inches="tight")
-    plt.close()
+    # ---- Adjacent dimension strips with one shared score axis ----
+    for index, dimension in enumerate(dimensions):
+        cax = fig.add_axes([0.87 + index * 0.021, 0.25, 0.014, 0.53])
+        colorbar = fig.colorbar(
+            ScalarMappable(norm=norm, cmap=cmaps[dimension]),
+            cax=cax,
+            ticks=[6, 7, 8, 9, 10] if index == 2 else [],
+        )
+        cax.set_xlabel(["A", "D", "C"][index], fontsize=8.5, labelpad=4)
+        cax.tick_params(labelsize=8.5, length=2, pad=3)
+        colorbar.outline.set_linewidth(0.4)
+    fig.text(
+        0.898, 0.805, "Mean score", ha="center", va="bottom", fontsize=8.5
+    )
+    try:
+        # No tight bounding-box rescaling: preserve the 6.175-inch width.
+        fig.savefig(output_file, dpi=300)
+    finally:
+        plt.close(fig)
 
     if verbose:
         print(f"Saved figure to: {output_file}")
@@ -635,6 +588,23 @@ def main():
         print(f"Output tables: {args.output_tables}")
 
     assessment_df = load_assessment_data(args.assessment_file, args.verbose)
+
+    if args.heatmap_only:
+        group_metrics = compute_group_metrics(assessment_df)
+        overall_metrics = compute_overall_metrics(assessment_df)
+        output_file = args.output_figures / "llm-performance.png"
+        if args.dry_run:
+            print(f"Dry run mode - would generate heatmap: {output_file}")
+            return
+        args.output_figures.mkdir(parents=True, exist_ok=True)
+        create_combined_figure(
+            group_metrics,
+            overall_metrics,
+            pd.DataFrame(),
+            output_file,
+            args.verbose,
+        )
+        return
 
     validation_metrics = pd.DataFrame()
     if not args.assessment_only:

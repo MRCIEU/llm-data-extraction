@@ -24,10 +24,21 @@ import altair as alt
 QUESTION_GROUPS = {
     "Q-1": "Exposure Traits",
     "Q-2": "Outcome Traits",
-    "Q-3": "Methods",
+    "Q-3": "Analytical methods",
     "Q-4": "Populations",
-    "Q-5": "Results",
+    "Q-5": "MR findings extracted from the abstract",
 }
+
+# Output identities are independent of presentation titles.
+FIGURE_NAMES = {
+    "Q-1": "supplementary-q-1-exposure-traits",
+    "Q-2": "supplementary-q-2-outcome-traits",
+    "Q-3": "supplementary-q-3-methods",
+    "Q-4": "supplementary-q-4-populations",
+    "Q-5": "supplementary-q-5-results",
+}
+
+SCORE_DOMAIN = [4.5, 10.2]
 
 DIMENSIONS = {
     "Accuracy": "a-3",
@@ -178,21 +189,23 @@ def create_question_group_figure(
     # ---- Create points ----
     points = (
         alt.Chart(plot_df)
-        .mark_point(filled=True, size=100)
+        .mark_point(filled=True, size=55)
         .encode(
             x=alt.X(
                 "Mean:Q",
-                title="Mean Score",
-                scale=alt.Scale(domain=[0, 10]),
+                title="Mean score",
+                scale=alt.Scale(domain=SCORE_DOMAIN, zero=False),
+                axis=alt.Axis(values=[5, 7, 9, 10], labelOverlap=False),
             ),
             y=alt.Y(
                 "Model:N",
                 sort=alt.EncodingSortField(field="Mean", op="mean", order="descending"),
-                title="Model",
+                title=None,
             ),
             color=alt.Color(
                 "Reviewer:N",
-                title="Reviewer",
+                title=None,
+                legend=alt.Legend(orient="bottom", direction="horizontal"),
                 scale=alt.Scale(
                     domain=["Reviewer 1", "Reviewer 2"],
                     # Gruvbox colors: aqua and yellow
@@ -207,15 +220,17 @@ def create_question_group_figure(
                 alt.Tooltip("SD:Q", format=".2f"),
             ],
         )
-        .properties(width=250, height=300)
+        .properties(width=150, height=220)
     )
 
     # ---- Create error bars (clipped to valid range) ----
     error_bars = (
         alt.Chart(plot_df)
-        .mark_rule()
+        .mark_rule(strokeWidth=1.4)
         .encode(
-            x=alt.X("Lower:Q"),
+            x=alt.X(
+                "Lower:Q", scale=alt.Scale(domain=SCORE_DOMAIN, zero=False)
+            ),
             x2=alt.X2("Upper:Q"),
             y=alt.Y(
                 "Model:N",
@@ -228,10 +243,23 @@ def create_question_group_figure(
     # ---- Combine and facet ----
     res = (
         alt.layer(points, error_bars)
-        .facet(column=alt.Column("Dimension:N", title="Assessment Dimension"))
+        .facet(
+            column=alt.Column("Dimension:N", title=None),
+            spacing=12,
+        )
         .properties(title=f"{question_group}: {group_name}")
-        .configure_axis(labelFontSize=10, titleFontSize=11)
-        .configure_title(fontSize=14)
+        .configure_axis(
+            labelFontSize=12,
+            titleFontSize=13,
+            labelLimit=0,
+            titlePadding=8,
+            gridColor="#e5e5e5",
+        )
+        .configure_header(labelFontSize=13, labelPadding=8)
+        .configure_legend(
+            labelFontSize=12, symbolSize=60, padding=4, columnPadding=20
+        )
+        .configure_title(fontSize=15, anchor="middle", offset=12)
     )
 
     return res
@@ -253,7 +281,7 @@ def create_all_supplementary_figures(
     figures = {}
 
     for question_group, group_name in QUESTION_GROUPS.items():
-        fig_name = f"supplementary-{question_group.lower()}-{group_name.lower().replace(' ', '-')}"
+        fig_name = FIGURE_NAMES[question_group]
         figures[fig_name] = create_question_group_figure(
             df, question_group, group_name, verbose
         )
@@ -293,14 +321,11 @@ def save_figures(
         # ---- Save JSON (always works) ----
         chart.save(str(json_path))
 
-        # ---- Try to save PNG ----
-        try:
-            chart.save(str(png_path), scale_factor=2)
-            if verbose:
-                print(f"Saved: {json_path} and {png_path}")
-        except Exception as e:
-            if verbose:
-                print(f"Saved: {json_path} (PNG export failed: {e})")
+        # ---- Save PNG with the installed offline renderer ----
+        # Export failures propagate: a JSON alone is not successful delivery.
+        chart.save(str(png_path), scale_factor=3)
+        if verbose:
+            print(f"Saved: {json_path} and {png_path}")
 
 
 # ==== Main ====

@@ -1,0 +1,241 @@
+{
+  "input": {
+    "path": "data/artifacts/assessment-results/assessment-results-numeric.csv",
+    "sha256": "35dad47800462f9899cb361bc7feb77b3bee780851eed2e00b4783f27aa39874",
+    "bytes": 253222
+  },
+  "exclusions": {
+    "path": "data/artifacts/assessment-results/assessment-score-exclusions.csv",
+    "sha256": "f80c0c79c45eafc83a46c7aa96f8ff02cc8bff74e5667f8a9de10b6847ccd781",
+    "bytes": 1078
+  },
+  "source": {
+    "path": "/Users/ik18445/local-projects/+dmer/+mr-paper-data-extraction/llm-data-extraction/scripts/python/analysis/create-assessment-dimension-summary.py",
+    "sha256": "8f71f1bf7864a489e444d7edb122128e4e28700054230d861dfdb0182fb4fa36",
+    "bytes": 23341
+  },
+  "software": {
+    "python": "3.13.7",
+    "numpy": "2.3.4",
+    "pandas": "2.3.2",
+    "matplotlib": "3.10.7"
+  },
+  "estimand": "pooled positive nonmissing cell sum / eligible cell count",
+  "cluster": "study",
+  "study_order": [
+    "21282362",
+    "23900446",
+    "29232439",
+    "30167974",
+    "30707692",
+    "31661179",
+    "31733098",
+    "31908803",
+    "32062614",
+    "32309857",
+    "32433745",
+    "32493397",
+    "32529581",
+    "32714368",
+    "33125193",
+    "33408737",
+    "33657885",
+    "34023889",
+    "34025845",
+    "34088753",
+    "34184784",
+    "34227468",
+    "34727949",
+    "35011056",
+    "35575213",
+    "35594314",
+    "35615025",
+    "35656325",
+    "35703944",
+    "35726641",
+    "35761866",
+    "35957835",
+    "35992145",
+    "36104772",
+    "36247759",
+    "36305497",
+    "36333784",
+    "36514134",
+    "36738839",
+    "36773317",
+    "36789917",
+    "36793015",
+    "36895273",
+    "36909950",
+    "36924037",
+    "36936171",
+    "36980988",
+    "37052410",
+    "37158995",
+    "37271768",
+    "37409643",
+    "37422736",
+    "37432894",
+    "37495778",
+    "37565992",
+    "37638499",
+    "37668928",
+    "37675772",
+    "37693321",
+    "37718242",
+    "37787818",
+    "37789337",
+    "37822602",
+    "37829610",
+    "37904919",
+    "37916108",
+    "37925898",
+    "37933065",
+    "38007229",
+    "38030236",
+    "38053214",
+    "38156559",
+    "38179043",
+    "38179450",
+    "38242214",
+    "38246357",
+    "38263277",
+    "38264282",
+    "38280379",
+    "38293563",
+    "38298515",
+    "38365715",
+    "38378549",
+    "38409624",
+    "38504987",
+    "38511766",
+    "38516009",
+    "38576413",
+    "38584824",
+    "38622701",
+    "38625888",
+    "38643889",
+    "38646850",
+    "38672162",
+    "38699385",
+    "38716647",
+    "38725159",
+    "38746746",
+    "38765751",
+    "38782862"
+  ],
+  "model_order": [
+    "deepseek-r1",
+    "gpt-4-1",
+    "gpt-4o",
+    "gpt-5",
+    "gpt-5-mini",
+    "llama3",
+    "llama3-2",
+    "o4-mini"
+  ],
+  "dimension_order": [
+    "Accuracy",
+    "Detail",
+    "Completeness"
+  ],
+  "reviewer_partition": [
+    800,
+    800
+  ],
+  "replicates": 10000,
+  "seed": 20261010,
+  "rng": "numpy.random.Generator(PCG64)",
+  "confidence": 0.95,
+  "interval": "percentile",
+  "quantile_method": "linear",
+  "shared_draws": true,
+  "undefined_policy": "withhold CI if any undefined",
+  "status_counts": {
+    "ok": 24
+  },
+  "undefined_replicates_total": 0,
+  "outputs": [
+    "assessment-dimension-summary.png",
+    "assessment-dimension-summary.pdf",
+    "assessment-combined.png",
+    "assessment-combined.pdf",
+    "assessment-dimension-summary.csv",
+    "method.md",
+    "metadata.json"
+  ],
+  "embedded_heatmap": {
+    "path": "data/artifacts/manuscript-figures/llm-performance.png",
+    "sha256": "56fccc7b44e802e6db7f9d7bac2fb6670c1009dd4eb542b1710bb32537958940",
+    "bytes": 249383
+  },
+  "summary": {
+    "path": "data/artifacts/assessment-dimension-summary/assessment-dimension-summary.csv",
+    "sha256": "2811cec127e802a19d7924e4f592be30666e8b96f3128d054602a2f0a1f2a3a4",
+    "bytes": 2107
+  },
+  "layout": {
+    "width_inches": 6.175,
+    "compact_height_inches": 2.2,
+    "combined_height_inches": 5.77,
+    "heatmap_inches": [
+      6.175,
+      3.35
+    ],
+    "heatmap_source_pixels": [
+      1852,
+      1095
+    ],
+    "heatmap_display_crop": [
+      0,
+      0,
+      1852,
+      1005
+    ],
+    "removed_margin": "90 bottom rows, verified all-white RGB",
+    "png_dpi": 300,
+    "minimum_lower_text_points": 8,
+    "mean_labels": "right-aligned RHS columns; two decimals",
+    "mean_label_font": "DejaVu Sans Mono, 8 points",
+    "pdf_components": "heatmap raster with blank-margin crop; vector intervals",
+    "panel_A_order": "descending pooled overall score",
+    "panel_B_order": "descending pooled overall score"
+  },
+  "output_identities": [
+    {
+      "path": "data/artifacts/assessment-dimension-summary/assessment-dimension-summary.png",
+      "sha256": "0244b3224b680695fc13a3294340aed035da2a3bddfa274430504179e736bd3f",
+      "bytes": 114616
+    },
+    {
+      "path": "data/artifacts/assessment-dimension-summary/assessment-dimension-summary.pdf",
+      "sha256": "90dcf297ff9e57365dee7ced30b414e087c2e5257219d7abbf7b260205f4d5db",
+      "bytes": 22904
+    },
+    {
+      "path": "data/artifacts/assessment-dimension-summary/assessment-combined.png",
+      "sha256": "ad2989bd5c208b81acc2db92a9d183e4c31cd856d959b272bcfa83dc1b69b1d9",
+      "bytes": 378075
+    },
+    {
+      "path": "data/artifacts/assessment-dimension-summary/assessment-combined.pdf",
+      "sha256": "3b258ce792cd6a53fc1666532ce39671dcc0f0c3e55f1a3cb0d6a3c7ae289302",
+      "bytes": 265176
+    },
+    {
+      "path": "data/artifacts/assessment-dimension-summary/method.md",
+      "sha256": "ea05f20a63dcaf44f5b73af28fd0032c7dc0cfee30bc8a84b6a0ad8a09846aca",
+      "bytes": 3855
+    }
+  ],
+  "plot_model_order": [
+    "gpt-5-mini",
+    "gpt-5",
+    "gpt-4-1",
+    "o4-mini",
+    "llama3-2",
+    "gpt-4o",
+    "deepseek-r1",
+    "llama3"
+  ]
+}

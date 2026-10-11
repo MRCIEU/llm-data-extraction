@@ -17,7 +17,7 @@ scripts/python/analysis/create-manuscript-assets.py
 
 Three assets are produced:
 
-- Figure 1: Heatmap visualization of LLM performance with gruvbox dark colorscheme
+- Figure 1: Heatmap visualization of LLM performance with a shared sequential score palette
 - Table 1: Comprehensive model performance by extraction group (CSV and LaTeX)
 - Table 2: Validation and data quality metrics (CSV and LaTeX)
 
@@ -27,7 +27,9 @@ Three assets are produced:
 
 **Location**: `data/artifacts/manuscript-figures/llm-performance.png`
 
-**Description**: Heatmap showing mean assessment scores (scale 0-10) for 8 LLMs evaluated across 5 extraction groups and 3 assessment dimensions.
+Heatmap showing mean assessment scores for 8 LLMs evaluated across 5 extraction groups and 3 assessment dimensions.
+The displayed color range is 6-10; the original assessment response scale is 1-10.
+The unchanged aggregation uses positive processed scores, including the established reviewer completeness transformation and invalid-raw-score exclusions.
 
 **Heatmap value calculation**:
 
@@ -69,7 +71,7 @@ Each cell in the heatmap represents the mean score for a specific model, extract
 - Q-2: Outcome Traits
 - Q-3: Analytical Methods
 - Q-4: Populations
-- Q-5: Reported Results
+- Q-5: MR findings extracted from the abstract
 
 **Structure**:
 
@@ -81,17 +83,18 @@ Each cell in the heatmap represents the mean score for a specific model, extract
   - Q-4 (Populations): Accuracy, Detail, Completeness
   - Q-5 (Results): Accuracy, Detail, Completeness
 
-**Visual encoding**:
+Visual encoding:
 
-- Color scheme: Gruvbox dark colormap (dark to light gradient)
-- Scale: 0-10 score range
-- Annotations: Score values displayed in each cell
-
-**Key findings**:
-
-- All models achieved high accuracy (9.5-9.9) and detail (9.4-9.9) in assessments
-- Completeness varied more (4.6-5.7)
-- Populations (Q-4) and Results (Q-5) showed lowest completeness across all models
+- Accuracy, Detail and Completeness retain the original effective Gruvbox aqua-green, purple and yellow ramps, respectively.
+- All cells and three compact adjacent A/D/C color strips use the same Normalize(6, 10), with one shared Mean score tick axis.
+- Each palette restricts the original score-to-color ramp to its 6-10 portion; the score-6 endpoint is interpolated and every higher original color stop is retained.
+- Original effective stops are recovered from producer revision bcf09f8; its final Detail/Completeness assignments supersede earlier overridden definitions.
+- Color lookup discretization may differ from the older 0-10 export; exact historical cell-color bytes are not asserted.
+- Five grouped question headings retain Accuracy, Detail and Completeness as horizontal A/D/C sublabels, with an explicit dimension key.
+- All 120 cell means retain one-decimal annotations and descending full-precision overall model ordering.
+- All cell annotations are black; annotation color does not encode an additional statistic or threshold.
+- The PNG is 6.175 inches wide at 300 DPI, with 8.5-point annotations and tick labels at that display width.
+- Q5 is displayed as MR findings; these are findings extracted from the abstract.
 
 ### Table 1: Comprehensive model performance
 
@@ -217,13 +220,61 @@ Options:
 - `-n / --dry-run`: Preview without generating outputs
 - `-v / --verbose`: Print detailed progress information
 
+### Heatmap-only rendering
+
+Use the corrected numeric assessment CSV rather than rounded performance-table values.
+The narrow path reproduces the existing full-precision group and overall summaries using the unchanged metric functions, then renders only the heatmap.
+It does not load validation data, create table directories, write tables or run assessment processing.
+
+```bash
+just --no-dotenv -f justfile-processing assessment-heatmap \
+  data/artifacts/assessment-results/assessment-results-numeric.csv \
+  /path/to/selected-output-directory
+just --no-dotenv -f justfile-processing assessment-heatmap-test
+just --no-dotenv -f justfile-processing assessment-heatmap-lint
+```
+
+The output basename remains llm-performance.png.
+The CLI equivalent is --heatmap-only with --assessment-file and --output-figures; --dry-run previews the figure write without creating output directories.
+The older --assessment-only path also writes performance tables and is not a figure-only command.
+
+### Supplementary assessment plots
+
+The five existing supplementary plots use a common displayed mean-score axis of 4.5-10.2, containing every retained mean and clipped sample-SD bound.
+This is a display domain, not a change to the original 1-10 assessment response scale.
+Mean, sample SD (ddof=1), Lower=max(0, Mean-SD) and Upper=min(10, Mean+SD) remain unchanged.
+Reviewer 1 uses aqua #689d6a and Reviewer 2 uses yellow #d79921.
+The original numbered input halves, model identifiers and all 48 plotted records per figure are preserved.
+
+The y scale remains shared across the three facets.
+Within each question group, the model domain is sorted by the descending arithmetic mean of the six plotted means per model (two reviewers by three dimensions), as compiled by Vega-Lite.
+This is not the main table's pooled-score overall order or an independent order per facet.
+Facet order remains Accuracy, Completeness, Detail.
+Model labels are displayed without truncation.
+The 12-pixel axis/legend text and 13-pixel facet headers are designed for insertion at approximately 6.175 inches wide.
+
+Q3 displays Analytical methods.
+Q5 displays MR findings extracted from the abstract.
+Output basenames remain supplementary-q-1-exposure-traits through supplementary-q-5-results, independent of display titles.
+
+```bash
+just --no-dotenv -f justfile-processing assessment-supplementary \
+  data/artifacts/assessment-results/assessment-results-numeric.csv \
+  /path/to/selected-output-directory
+just --no-dotenv -f justfile-processing assessment-presentation-test
+just --no-dotenv -f justfile-processing assessment-presentation-lint
+```
+
+The script writes one JSON specification and one PNG per plot using the installed offline vl-convert renderer.
+PNG export errors propagate rather than reporting JSON-only output as success.
+The focused tests compare exact records against canonical JSON and preserve compiled shared-y sorting and rendered model order.
+
 ### Modifying visualizations
 
-The figure uses matplotlib and seaborn with a gruvbox dark colorscheme. To customize:
-
-1. Edit `create_combined_figure()` in `create-manuscript-assets.py`
-2. Modify color schemes (change `gruvbox_colors` list), figure dimensions, or metrics
-3. Regenerate with `--verbose` flag to see changes
+Edit create_combined_figure() for presentation changes and use the heatmap-only recipe to render to a selected directory.
+Preserve the metric function bodies, full-precision means, model ordering and one-decimal annotations.
+Keep each dimension's cell palette identical to its matching A/D/C strip palette, with one shared normalization across all three.
+Retain the fixed export width without a tight bounding-box crop, which would change the physical text scale.
 
 ### Exporting for publication
 
@@ -296,3 +347,52 @@ For each cell in the heatmap:
 - ANALYSIS.md - Complete analysis workflow
 - Assessment data processing: `scripts/python/analysis/process-assessment-data.py`
 - Validation and processing: `scripts/python/postprocessing/process-llm-aggregated-results.py`
+
+## Standalone dimension uncertainty prototype
+
+The separate `scripts/python/analysis/create-assessment-dimension-summary.py` produces a three-panel candidate for author review without changing the six existing assessment figures or tables.
+For each model and dimension, it pools positive, nonmissing cells across five question groups and both observed reviewers, using available-cell weighting.
+It validates the original 800/800 reviewer partition and full study/model pairing, and checks that all 16 audited Q5 exclusions remain missing.
+No processing or completeness transformation is repeated.
+
+```sh
+just --no-dotenv -f justfile-processing assessment-dimension-summary --dry-run
+just --no-dotenv -f justfile-processing assessment-dimension-summary
+just --no-dotenv -f justfile-processing assessment-dimension-summary-test
+just --no-dotenv -f justfile-processing assessment-dimension-summary-lint
+```
+
+Outputs are isolated in `data/artifacts/assessment-dimension-summary/`: PNG and PDF previews, full-precision CSV estimates/intervals/counts, `metadata.json` and `method.md`.
+The default is a 95% percentile study-cluster bootstrap with 10,000 replicates, seed 20261010, NumPy PCG64 and linear quantiles.
+Shared study draws preserve multiplicities, both reviewers and missingness for all 24 targets.
+Undefined replicates withhold the affected interval and stop figure export, while the CSV records diagnostic counts and degenerate intervals explicitly.
+The fixed display order matches the heatmap's descending pooled overall score and does not constitute a formal model comparison.
+The statistical target-array order remains alphabetical.
+
+The generated method note gives the exact reproduction command and interpretation limits, and metadata records input/source identities and software versions.
+Intervals describe study-sampling variation conditional on these reviewers and extraction outputs, not formal model comparisons.
+The candidate remains separate from manuscript numbering and awaits author assessment of its usefulness.
+
+### Compact uncertainty and combined assessment figure
+
+The uncertainty preview is 6.175 by 2.2 inches with lower-panel text at least 8 points.
+Each subplot includes a right-aligned Mean column showing the eight observed means to two decimal places, aligned with the model rows and outside the interval plotting area.
+The 24 labels report means only, without numerical interval-endpoint labels.
+The new `assessment-combined.png` and `assessment-combined.pdf` are 6.175 by 5.77 inches.
+Panel A retains the canonical heatmap content at its original full-width placement, including its pooled overall-score model order.
+Only 90 verified all-white bottom rows are cropped from the display, preserving all nonwhite pixels and 34 blank rows below the content; the canonical file remains unchanged.
+Panel B uses the unchanged 24 approved estimates and intervals in the same descending pooled overall-score order as panel A.
+Both panels display gpt-5-mini, gpt-5, gpt-4-1, o4-mini, llama3-2, gpt-4o, deepseek-r1 and llama3 from top to bottom.
+Metadata records this plot order separately from the unchanged scientific model order.
+The combined PNG retains the native heatmap pixels, and the PDF embeds that raster above vector uncertainty marks and text.
+The combined PDF is not fully vector.
+
+```sh
+just --no-dotenv -f justfile-processing assessment-combined --dry-run
+just --no-dotenv -f justfile-processing assessment-combined
+```
+
+This presentation-only path reads the approved CSV without bootstrapping or rewriting it and requires its recorded statistical settings and input identities to match.
+Both compact and combined pairs share export failure cleanup, so failed exports remove stale or partial PNG/PDF previews in the dedicated output directory.
+Metadata records the embedded heatmap hash, physical sizes and final output identities.
+The canonical heatmap, supplementary plots and published tables are not rewritten.

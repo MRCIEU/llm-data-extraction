@@ -149,6 +149,7 @@ def test_assessment_only_never_reads_or_writes_validation(
     args = SimpleNamespace(
         assessment_file=tmp_path / "input.csv",
         assessment_only=True,
+        heatmap_only=False,
         aggregated_dir=tmp_path / "must-not-read",
         output_figures=tmp_path / "figures",
         output_tables=tmp_path / "tables",
