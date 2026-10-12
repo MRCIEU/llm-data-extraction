@@ -204,7 +204,7 @@ def create_figure(
         ax.set_axis_off()
         fig.text(
             0.015, (height - 0.05) / height,
-            "A  Question groups (models ordered by pooled overall score)",
+            "A  Question groups",
             fontsize=8.5, va="top",
         )
     axes = []

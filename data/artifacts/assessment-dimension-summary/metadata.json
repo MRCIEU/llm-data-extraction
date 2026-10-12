@@ -11,8 +11,8 @@
   },
   "source": {
     "path": "/Users/ik18445/local-projects/+dmer/+mr-paper-data-extraction/llm-data-extraction/scripts/python/analysis/create-assessment-dimension-summary.py",
-    "sha256": "8f71f1bf7864a489e444d7edb122128e4e28700054230d861dfdb0182fb4fa36",
-    "bytes": 23341
+    "sha256": "9316baf9651e673108bf93c6cad6ddcee14b792f4ca050573a9e35ab0b7c410a",
+    "bytes": 23300
   },
   "software": {
     "python": "3.13.7",
@@ -209,18 +209,18 @@
     },
     {
       "path": "data/artifacts/assessment-dimension-summary/assessment-dimension-summary.pdf",
-      "sha256": "90dcf297ff9e57365dee7ced30b414e087c2e5257219d7abbf7b260205f4d5db",
+      "sha256": "a40a816eac93a2d1f2b807638732325c443412007c385258726eb8e909ee2324",
       "bytes": 22904
     },
     {
       "path": "data/artifacts/assessment-dimension-summary/assessment-combined.png",
-      "sha256": "ad2989bd5c208b81acc2db92a9d183e4c31cd856d959b272bcfa83dc1b69b1d9",
-      "bytes": 378075
+      "sha256": "c8bbcd56b752ca8ab2a28f3d35d44d1007de409a4f3637ecaf4ddfc47549484e",
+      "bytes": 369671
     },
     {
       "path": "data/artifacts/assessment-dimension-summary/assessment-combined.pdf",
-      "sha256": "3b258ce792cd6a53fc1666532ce39671dcc0f0c3e55f1a3cb0d6a3c7ae289302",
-      "bytes": 265176
+      "sha256": "1189b6acbaa7f5c66ababd6febe7ec4e516e55a3524a0c0d2a68c760eb75e534",
+      "bytes": 264598
     },
     {
       "path": "data/artifacts/assessment-dimension-summary/method.md",

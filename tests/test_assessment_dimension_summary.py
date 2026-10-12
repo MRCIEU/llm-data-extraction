@@ -261,6 +261,7 @@ def test_combined_preserves_native_heatmap_and_lower_geometry(data, tmp_path):
     sums, counts, _ = assets.cluster_totals(data)
     summary = assets.summarise(sums, counts, replicates=20)
     fig = assets.create_figure(summary, 0.95, ROOT / assets.HEATMAP)
+    assert fig.texts[0].get_text() == "A  Question groups"
     np.testing.assert_array_equal(fig.get_size_inches(), [6.175, 5.77])
     raster = plt.imread(ROOT / assets.HEATMAP)
     np.testing.assert_array_equal(fig.axes[0].images[0].get_array(), raster[:1005])
